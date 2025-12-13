@@ -1,0 +1,17757 @@
+module.exports = [
+"[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */ /* global Reflect, Promise, SuppressedError, Symbol, Iterator */ __turbopack_context__.s([
+    "__addDisposableResource",
+    ()=>__addDisposableResource,
+    "__assign",
+    ()=>__assign,
+    "__asyncDelegator",
+    ()=>__asyncDelegator,
+    "__asyncGenerator",
+    ()=>__asyncGenerator,
+    "__asyncValues",
+    ()=>__asyncValues,
+    "__await",
+    ()=>__await,
+    "__awaiter",
+    ()=>__awaiter,
+    "__classPrivateFieldGet",
+    ()=>__classPrivateFieldGet,
+    "__classPrivateFieldIn",
+    ()=>__classPrivateFieldIn,
+    "__classPrivateFieldSet",
+    ()=>__classPrivateFieldSet,
+    "__createBinding",
+    ()=>__createBinding,
+    "__decorate",
+    ()=>__decorate,
+    "__disposeResources",
+    ()=>__disposeResources,
+    "__esDecorate",
+    ()=>__esDecorate,
+    "__exportStar",
+    ()=>__exportStar,
+    "__extends",
+    ()=>__extends,
+    "__generator",
+    ()=>__generator,
+    "__importDefault",
+    ()=>__importDefault,
+    "__importStar",
+    ()=>__importStar,
+    "__makeTemplateObject",
+    ()=>__makeTemplateObject,
+    "__metadata",
+    ()=>__metadata,
+    "__param",
+    ()=>__param,
+    "__propKey",
+    ()=>__propKey,
+    "__read",
+    ()=>__read,
+    "__rest",
+    ()=>__rest,
+    "__rewriteRelativeImportExtension",
+    ()=>__rewriteRelativeImportExtension,
+    "__runInitializers",
+    ()=>__runInitializers,
+    "__setFunctionName",
+    ()=>__setFunctionName,
+    "__spread",
+    ()=>__spread,
+    "__spreadArray",
+    ()=>__spreadArray,
+    "__spreadArrays",
+    ()=>__spreadArrays,
+    "__values",
+    ()=>__values,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf || ({
+        __proto__: []
+    }) instanceof Array && function(d, b) {
+        d.__proto__ = b;
+    } || function(d, b) {
+        for(var p in b)if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+    };
+    return extendStatics(d, b);
+};
+function __extends(d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    extendStatics(d, b);
+    function __() {
+        this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for(var s, i = 1, n = arguments.length; i < n; i++){
+            s = arguments[i];
+            for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+function __rest(s, e) {
+    var t = {};
+    for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function") for(var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++){
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+    }
+    return t;
+}
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function __param(paramIndex, decorator) {
+    return function(target, key) {
+        decorator(target, key, paramIndex);
+    };
+}
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) {
+        if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected");
+        return f;
+    }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for(var i = decorators.length - 1; i >= 0; i--){
+        var context = {};
+        for(var p in contextIn)context[p] = p === "access" ? {} : contextIn[p];
+        for(var p in contextIn.access)context.access[p] = contextIn.access[p];
+        context.addInitializer = function(f) {
+            if (done) throw new TypeError("Cannot add initializers after decoration has completed");
+            extraInitializers.push(accept(f || null));
+        };
+        var result = (0, decorators[i])(kind === "accessor" ? {
+            get: descriptor.get,
+            set: descriptor.set
+        } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.unshift(_);
+        } else if (_ = accept(result)) {
+            if (kind === "field") initializers.unshift(_);
+            else descriptor[key] = _;
+        }
+    }
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+}
+;
+function __runInitializers(thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for(var i = 0; i < initializers.length; i++){
+        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+    }
+    return useValue ? value : void 0;
+}
+;
+function __propKey(x) {
+    return typeof x === "symbol" ? x : "".concat(x);
+}
+;
+function __setFunctionName(f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", {
+        configurable: true,
+        value: prefix ? "".concat(prefix, " ", name) : name
+    });
+}
+;
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) {
+        return value instanceof P ? value : new P(function(resolve) {
+            resolve(value);
+        });
+    }
+    return new (P || (P = Promise))(function(resolve, reject) {
+        function fulfilled(value) {
+            try {
+                step(generator.next(value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function rejected(value) {
+            try {
+                step(generator["throw"](value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+function __generator(thisArg, body) {
+    var _ = {
+        label: 0,
+        sent: function() {
+            if (t[0] & 1) throw t[1];
+            return t[1];
+        },
+        trys: [],
+        ops: []
+    }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+        return this;
+    }), g;
+    //TURBOPACK unreachable
+    ;
+    function verb(n) {
+        return function(v) {
+            return step([
+                n,
+                v
+            ]);
+        };
+    }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while(g && (g = 0, op[0] && (_ = 0)), _)try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [
+                op[0] & 2,
+                t.value
+            ];
+            switch(op[0]){
+                case 0:
+                case 1:
+                    t = op;
+                    break;
+                case 4:
+                    _.label++;
+                    return {
+                        value: op[1],
+                        done: false
+                    };
+                case 5:
+                    _.label++;
+                    y = op[1];
+                    op = [
+                        0
+                    ];
+                    continue;
+                case 7:
+                    op = _.ops.pop();
+                    _.trys.pop();
+                    continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                        _ = 0;
+                        continue;
+                    }
+                    if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                        _.label = op[1];
+                        break;
+                    }
+                    if (op[0] === 6 && _.label < t[1]) {
+                        _.label = t[1];
+                        t = op;
+                        break;
+                    }
+                    if (t && _.label < t[2]) {
+                        _.label = t[2];
+                        _.ops.push(op);
+                        break;
+                    }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop();
+                    continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) {
+            op = [
+                6,
+                e
+            ];
+            y = 0;
+        } finally{
+            f = t = 0;
+        }
+        if (op[0] & 5) throw op[1];
+        return {
+            value: op[0] ? op[1] : void 0,
+            done: true
+        };
+    }
+}
+var __createBinding = Object.create ? function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = {
+            enumerable: true,
+            get: function() {
+                return m[k];
+            }
+        };
+    }
+    Object.defineProperty(o, k2, desc);
+} : function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+};
+function __exportStar(m, o) {
+    for(var p in m)if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function() {
+            if (o && i >= o.length) o = void 0;
+            return {
+                value: o && o[i++],
+                done: !o
+            };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while((n === void 0 || n-- > 0) && !(r = i.next()).done)ar.push(r.value);
+    } catch (error) {
+        e = {
+            error: error
+        };
+    } finally{
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally{
+            if (e) throw e.error;
+        }
+    }
+    return ar;
+}
+function __spread() {
+    for(var ar = [], i = 0; i < arguments.length; i++)ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+function __spreadArrays() {
+    for(var s = 0, i = 0, il = arguments.length; i < il; i++)s += arguments[i].length;
+    for(var r = Array(s), k = 0, i = 0; i < il; i++)for(var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)r[k] = a[j];
+    return r;
+}
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for(var i = 0, l = from.length, ar; i < l; i++){
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
+        return this;
+    }, i;
+    //TURBOPACK unreachable
+    ;
+    function awaitReturn(f) {
+        return function(v) {
+            return Promise.resolve(v).then(f, reject);
+        };
+    }
+    function verb(n, f) {
+        if (g[n]) {
+            i[n] = function(v) {
+                return new Promise(function(a, b) {
+                    q.push([
+                        n,
+                        v,
+                        a,
+                        b
+                    ]) > 1 || resume(n, v);
+                });
+            };
+            if (f) i[n] = f(i[n]);
+        }
+    }
+    function resume(n, v) {
+        try {
+            step(g[n](v));
+        } catch (e) {
+            settle(q[0][3], e);
+        }
+    }
+    function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+    }
+    function fulfill(value) {
+        resume("next", value);
+    }
+    function reject(value) {
+        resume("throw", value);
+    }
+    function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+    }
+}
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function(e) {
+        throw e;
+    }), verb("return"), i[Symbol.iterator] = function() {
+        return this;
+    }, i;
+    //TURBOPACK unreachable
+    ;
+    function verb(n, f) {
+        i[n] = o[n] ? function(v) {
+            return (p = !p) ? {
+                value: __await(o[n](v)),
+                done: false
+            } : f ? f(v) : v;
+        } : f;
+    }
+}
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+        return this;
+    }, i);
+    //TURBOPACK unreachable
+    ;
+    function verb(n) {
+        i[n] = o[n] && function(v) {
+            return new Promise(function(resolve, reject) {
+                v = o[n](v), settle(resolve, reject, v.done, v.value);
+            });
+        };
+    }
+    function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function(v) {
+            resolve({
+                value: v,
+                done: d
+            });
+        }, reject);
+    }
+}
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) {
+        Object.defineProperty(cooked, "raw", {
+            value: raw
+        });
+    } else {
+        cooked.raw = raw;
+    }
+    return cooked;
+}
+;
+var __setModuleDefault = Object.create ? function(o, v) {
+    Object.defineProperty(o, "default", {
+        enumerable: true,
+        value: v
+    });
+} : function(o, v) {
+    o["default"] = v;
+};
+var ownKeys = function(o) {
+    ownKeys = Object.getOwnPropertyNames || function(o) {
+        var ar = [];
+        for(var k in o)if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+        return ar;
+    };
+    return ownKeys(o);
+};
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) {
+        for(var k = ownKeys(mod), i = 0; i < k.length; i++)if (k[i] !== "default") __createBinding(result, mod, k[i]);
+    }
+    __setModuleDefault(result, mod);
+    return result;
+}
+function __importDefault(mod) {
+    return mod && mod.__esModule ? mod : {
+        default: mod
+    };
+}
+function __classPrivateFieldGet(receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
+}
+function __classPrivateFieldIn(state, receiver) {
+    if (receiver === null || typeof receiver !== "object" && typeof receiver !== "function") throw new TypeError("Cannot use 'in' operator on non-object");
+    return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+function __addDisposableResource(env, value, async) {
+    if (value !== null && value !== void 0) {
+        if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
+        var dispose, inner;
+        if (async) {
+            if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+            dispose = value[Symbol.asyncDispose];
+        }
+        if (dispose === void 0) {
+            if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+            dispose = value[Symbol.dispose];
+            if (async) inner = dispose;
+        }
+        if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+        if (inner) dispose = function() {
+            try {
+                inner.call(this);
+            } catch (e) {
+                return Promise.reject(e);
+            }
+        };
+        env.stack.push({
+            value: value,
+            dispose: dispose,
+            async: async
+        });
+    } else if (async) {
+        env.stack.push({
+            async: true
+        });
+    }
+    return value;
+}
+var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+function __disposeResources(env) {
+    function fail(e) {
+        env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
+        env.hasError = true;
+    }
+    var r, s = 0;
+    function next() {
+        while(r = env.stack.pop()){
+            try {
+                if (!r.async && s === 1) return s = 0, env.stack.push(r), Promise.resolve().then(next);
+                if (r.dispose) {
+                    var result = r.dispose.call(r.value);
+                    if (r.async) return s |= 2, Promise.resolve(result).then(next, function(e) {
+                        fail(e);
+                        return next();
+                    });
+                } else s |= 1;
+            } catch (e) {
+                fail(e);
+            }
+        }
+        if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
+        if (env.hasError) throw env.error;
+    }
+    return next();
+}
+function __rewriteRelativeImportExtension(path, preserveJsx) {
+    if (typeof path === "string" && /^\.\.?\//.test(path)) {
+        return path.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function(m, tsx, d, ext, cm) {
+            return tsx ? preserveJsx ? ".jsx" : ".js" : d && (!ext || !cm) ? m : d + ext + "." + cm.toLowerCase() + "js";
+        });
+    }
+    return path;
+}
+const __TURBOPACK__default__export__ = {
+    __extends,
+    __assign,
+    __rest,
+    __decorate,
+    __param,
+    __esDecorate,
+    __runInitializers,
+    __propKey,
+    __setFunctionName,
+    __metadata,
+    __awaiter,
+    __generator,
+    __createBinding,
+    __exportStar,
+    __values,
+    __read,
+    __spread,
+    __spreadArrays,
+    __spreadArray,
+    __await,
+    __asyncGenerator,
+    __asyncDelegator,
+    __asyncValues,
+    __makeTemplateObject,
+    __importStar,
+    __importDefault,
+    __classPrivateFieldGet,
+    __classPrivateFieldSet,
+    __classPrivateFieldIn,
+    __addDisposableResource,
+    __disposeResources,
+    __rewriteRelativeImportExtension
+};
+}),
+"[project]/frontend/node_modules/@supabase/functions-js/dist/module/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+;
+;
+ //# sourceMappingURL=index.js.map
+}),
+"[project]/frontend/node_modules/@supabase/functions-js/dist/module/helper.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "resolveFetch",
+    ()=>resolveFetch
+]);
+const resolveFetch = (customFetch)=>{
+    if (customFetch) {
+        return (...args)=>customFetch(...args);
+    }
+    return (...args)=>fetch(...args);
+}; //# sourceMappingURL=helper.js.map
+}),
+"[project]/frontend/node_modules/@supabase/functions-js/dist/module/types.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Base error for Supabase Edge Function invocations.
+ *
+ * @example
+ * ```ts
+ * import { FunctionsError } from '@supabase/functions-js'
+ *
+ * throw new FunctionsError('Unexpected error invoking function', 'FunctionsError', {
+ *   requestId: 'abc123',
+ * })
+ * ```
+ */ __turbopack_context__.s([
+    "FunctionRegion",
+    ()=>FunctionRegion,
+    "FunctionsError",
+    ()=>FunctionsError,
+    "FunctionsFetchError",
+    ()=>FunctionsFetchError,
+    "FunctionsHttpError",
+    ()=>FunctionsHttpError,
+    "FunctionsRelayError",
+    ()=>FunctionsRelayError
+]);
+class FunctionsError extends Error {
+    constructor(message, name = 'FunctionsError', context){
+        super(message);
+        this.name = name;
+        this.context = context;
+    }
+}
+class FunctionsFetchError extends FunctionsError {
+    constructor(context){
+        super('Failed to send a request to the Edge Function', 'FunctionsFetchError', context);
+    }
+}
+class FunctionsRelayError extends FunctionsError {
+    constructor(context){
+        super('Relay Error invoking the Edge Function', 'FunctionsRelayError', context);
+    }
+}
+class FunctionsHttpError extends FunctionsError {
+    constructor(context){
+        super('Edge Function returned a non-2xx status code', 'FunctionsHttpError', context);
+    }
+}
+var FunctionRegion;
+(function(FunctionRegion) {
+    FunctionRegion["Any"] = "any";
+    FunctionRegion["ApNortheast1"] = "ap-northeast-1";
+    FunctionRegion["ApNortheast2"] = "ap-northeast-2";
+    FunctionRegion["ApSouth1"] = "ap-south-1";
+    FunctionRegion["ApSoutheast1"] = "ap-southeast-1";
+    FunctionRegion["ApSoutheast2"] = "ap-southeast-2";
+    FunctionRegion["CaCentral1"] = "ca-central-1";
+    FunctionRegion["EuCentral1"] = "eu-central-1";
+    FunctionRegion["EuWest1"] = "eu-west-1";
+    FunctionRegion["EuWest2"] = "eu-west-2";
+    FunctionRegion["EuWest3"] = "eu-west-3";
+    FunctionRegion["SaEast1"] = "sa-east-1";
+    FunctionRegion["UsEast1"] = "us-east-1";
+    FunctionRegion["UsWest1"] = "us-west-1";
+    FunctionRegion["UsWest2"] = "us-west-2";
+})(FunctionRegion || (FunctionRegion = {})); //# sourceMappingURL=types.js.map
+}),
+"[project]/frontend/node_modules/@supabase/functions-js/dist/module/FunctionsClient.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "FunctionsClient",
+    ()=>FunctionsClient
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$helper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@supabase/functions-js/dist/module/helper.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@supabase/functions-js/dist/module/types.js [app-ssr] (ecmascript)");
+;
+;
+;
+class FunctionsClient {
+    /**
+     * Creates a new Functions client bound to an Edge Functions URL.
+     *
+     * @example
+     * ```ts
+     * import { FunctionsClient, FunctionRegion } from '@supabase/functions-js'
+     *
+     * const functions = new FunctionsClient('https://xyzcompany.supabase.co/functions/v1', {
+     *   headers: { apikey: 'public-anon-key' },
+     *   region: FunctionRegion.UsEast1,
+     * })
+     * ```
+     */ constructor(url, { headers = {}, customFetch, region = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionRegion"].Any } = {}){
+        this.url = url;
+        this.headers = headers;
+        this.region = region;
+        this.fetch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$helper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["resolveFetch"])(customFetch);
+    }
+    /**
+     * Updates the authorization header
+     * @param token - the new jwt token sent in the authorisation header
+     * @example
+     * ```ts
+     * functions.setAuth(session.access_token)
+     * ```
+     */ setAuth(token) {
+        this.headers.Authorization = `Bearer ${token}`;
+    }
+    /**
+     * Invokes a function
+     * @param functionName - The name of the Function to invoke.
+     * @param options - Options for invoking the Function.
+     * @example
+     * ```ts
+     * const { data, error } = await functions.invoke('hello-world', {
+     *   body: { name: 'Ada' },
+     * })
+     * ```
+     */ invoke(functionName_1) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, arguments, void 0, function*(functionName, options = {}) {
+            var _a;
+            let timeoutId;
+            let timeoutController;
+            try {
+                const { headers, method, body: functionArgs, signal, timeout } = options;
+                let _headers = {};
+                let { region } = options;
+                if (!region) {
+                    region = this.region;
+                }
+                // Add region as query parameter using URL API
+                const url = new URL(`${this.url}/${functionName}`);
+                if (region && region !== 'any') {
+                    _headers['x-region'] = region;
+                    url.searchParams.set('forceFunctionRegion', region);
+                }
+                let body;
+                if (functionArgs && (headers && !Object.prototype.hasOwnProperty.call(headers, 'Content-Type') || !headers)) {
+                    if (typeof Blob !== 'undefined' && functionArgs instanceof Blob || functionArgs instanceof ArrayBuffer) {
+                        // will work for File as File inherits Blob
+                        // also works for ArrayBuffer as it is the same underlying structure as a Blob
+                        _headers['Content-Type'] = 'application/octet-stream';
+                        body = functionArgs;
+                    } else if (typeof functionArgs === 'string') {
+                        // plain string
+                        _headers['Content-Type'] = 'text/plain';
+                        body = functionArgs;
+                    } else if (typeof FormData !== 'undefined' && functionArgs instanceof FormData) {
+                        // don't set content-type headers
+                        // Request will automatically add the right boundary value
+                        body = functionArgs;
+                    } else {
+                        // default, assume this is JSON
+                        _headers['Content-Type'] = 'application/json';
+                        body = JSON.stringify(functionArgs);
+                    }
+                } else {
+                    // if the Content-Type was supplied, simply set the body
+                    body = functionArgs;
+                }
+                // Handle timeout by creating an AbortController
+                let effectiveSignal = signal;
+                if (timeout) {
+                    timeoutController = new AbortController();
+                    timeoutId = setTimeout(()=>timeoutController.abort(), timeout);
+                    // If user provided their own signal, we need to respect both
+                    if (signal) {
+                        effectiveSignal = timeoutController.signal;
+                        // If the user's signal is aborted, abort our timeout controller too
+                        signal.addEventListener('abort', ()=>timeoutController.abort());
+                    } else {
+                        effectiveSignal = timeoutController.signal;
+                    }
+                }
+                const response = yield this.fetch(url.toString(), {
+                    method: method || 'POST',
+                    // headers priority is (high to low):
+                    // 1. invoke-level headers
+                    // 2. client-level headers
+                    // 3. default Content-Type header
+                    headers: Object.assign(Object.assign(Object.assign({}, _headers), this.headers), headers),
+                    body,
+                    signal: effectiveSignal
+                }).catch((fetchError)=>{
+                    throw new __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsFetchError"](fetchError);
+                });
+                const isRelayError = response.headers.get('x-relay-error');
+                if (isRelayError && isRelayError === 'true') {
+                    throw new __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsRelayError"](response);
+                }
+                if (!response.ok) {
+                    throw new __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsHttpError"](response);
+                }
+                let responseType = ((_a = response.headers.get('Content-Type')) !== null && _a !== void 0 ? _a : 'text/plain').split(';')[0].trim();
+                let data;
+                if (responseType === 'application/json') {
+                    data = yield response.json();
+                } else if (responseType === 'application/octet-stream' || responseType === 'application/pdf') {
+                    data = yield response.blob();
+                } else if (responseType === 'text/event-stream') {
+                    data = response;
+                } else if (responseType === 'multipart/form-data') {
+                    data = yield response.formData();
+                } else {
+                    // default to text
+                    data = yield response.text();
+                }
+                return {
+                    data,
+                    error: null,
+                    response
+                };
+            } catch (error) {
+                return {
+                    data: null,
+                    error,
+                    response: error instanceof __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsHttpError"] || error instanceof __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsRelayError"] ? error.context : undefined
+                };
+            } finally{
+                // Clear the timeout if it was set
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+            }
+        });
+    }
+} //# sourceMappingURL=FunctionsClient.js.map
+}),
+"[project]/frontend/node_modules/@supabase/functions-js/dist/module/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "FunctionRegion",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionRegion"],
+    "FunctionsClient",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$FunctionsClient$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsClient"],
+    "FunctionsError",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsError"],
+    "FunctionsFetchError",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsFetchError"],
+    "FunctionsHttpError",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsHttpError"],
+    "FunctionsRelayError",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FunctionsRelayError"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/frontend/node_modules/@supabase/functions-js/dist/module/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$FunctionsClient$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@supabase/functions-js/dist/module/FunctionsClient.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$functions$2d$js$2f$dist$2f$module$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@supabase/functions-js/dist/module/types.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/**
+ * Error format
+ *
+ * {@link https://postgrest.org/en/stable/api.html?highlight=options#errors-and-http-status-codes}
+ */ class PostgrestError extends Error {
+    /**
+     * @example
+     * ```ts
+     * import PostgrestError from '@supabase/postgrest-js'
+     *
+     * throw new PostgrestError({
+     *   message: 'Row level security prevented the request',
+     *   details: 'RLS denied the insert',
+     *   hint: 'Check your policies',
+     *   code: 'PGRST301',
+     * })
+     * ```
+     */ constructor(context){
+        super(context.message);
+        this.name = 'PostgrestError';
+        this.details = context.details;
+        this.hint = context.hint;
+        this.code = context.code;
+    }
+}
+exports.default = PostgrestError; //# sourceMappingURL=PostgrestError.js.map
+}),
+"[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+const tslib_1 = __turbopack_context__.r("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+const PostgrestError_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.js [app-ssr] (ecmascript)"));
+class PostgrestBuilder {
+    /**
+     * Creates a builder configured for a specific PostgREST request.
+     *
+     * @example
+     * ```ts
+     * import PostgrestQueryBuilder from '@supabase/postgrest-js'
+     *
+     * const builder = new PostgrestQueryBuilder(
+     *   new URL('https://xyzcompany.supabase.co/rest/v1/users'),
+     *   { headers: new Headers({ apikey: 'public-anon-key' }) }
+     * )
+     * ```
+     */ constructor(builder){
+        var _a, _b;
+        this.shouldThrowOnError = false;
+        this.method = builder.method;
+        this.url = builder.url;
+        this.headers = new Headers(builder.headers);
+        this.schema = builder.schema;
+        this.body = builder.body;
+        this.shouldThrowOnError = (_a = builder.shouldThrowOnError) !== null && _a !== void 0 ? _a : false;
+        this.signal = builder.signal;
+        this.isMaybeSingle = (_b = builder.isMaybeSingle) !== null && _b !== void 0 ? _b : false;
+        if (builder.fetch) {
+            this.fetch = builder.fetch;
+        } else {
+            this.fetch = fetch;
+        }
+    }
+    /**
+     * If there's an error with the query, throwOnError will reject the promise by
+     * throwing the error instead of returning it as part of a successful response.
+     *
+     * {@link https://github.com/supabase/supabase-js/issues/92}
+     */ throwOnError() {
+        this.shouldThrowOnError = true;
+        return this;
+    }
+    /**
+     * Set an HTTP header for the request.
+     */ setHeader(name, value) {
+        this.headers = new Headers(this.headers);
+        this.headers.set(name, value);
+        return this;
+    }
+    then(onfulfilled, onrejected) {
+        // https://postgrest.org/en/stable/api.html#switching-schemas
+        if (this.schema === undefined) {
+        // skip
+        } else if ([
+            'GET',
+            'HEAD'
+        ].includes(this.method)) {
+            this.headers.set('Accept-Profile', this.schema);
+        } else {
+            this.headers.set('Content-Profile', this.schema);
+        }
+        if (this.method !== 'GET' && this.method !== 'HEAD') {
+            this.headers.set('Content-Type', 'application/json');
+        }
+        // NOTE: Invoke w/o `this` to avoid illegal invocation error.
+        // https://github.com/supabase/postgrest-js/pull/247
+        const _fetch = this.fetch;
+        let res = _fetch(this.url.toString(), {
+            method: this.method,
+            headers: this.headers,
+            body: JSON.stringify(this.body),
+            signal: this.signal
+        }).then(async (res)=>{
+            var _a, _b, _c, _d;
+            let error = null;
+            let data = null;
+            let count = null;
+            let status = res.status;
+            let statusText = res.statusText;
+            if (res.ok) {
+                if (this.method !== 'HEAD') {
+                    const body = await res.text();
+                    if (body === '') {
+                    // Prefer: return=minimal
+                    } else if (this.headers.get('Accept') === 'text/csv') {
+                        data = body;
+                    } else if (this.headers.get('Accept') && ((_a = this.headers.get('Accept')) === null || _a === void 0 ? void 0 : _a.includes('application/vnd.pgrst.plan+text'))) {
+                        data = body;
+                    } else {
+                        data = JSON.parse(body);
+                    }
+                }
+                const countHeader = (_b = this.headers.get('Prefer')) === null || _b === void 0 ? void 0 : _b.match(/count=(exact|planned|estimated)/);
+                const contentRange = (_c = res.headers.get('content-range')) === null || _c === void 0 ? void 0 : _c.split('/');
+                if (countHeader && contentRange && contentRange.length > 1) {
+                    count = parseInt(contentRange[1]);
+                }
+                // Temporary partial fix for https://github.com/supabase/postgrest-js/issues/361
+                // Issue persists e.g. for `.insert([...]).select().maybeSingle()`
+                if (this.isMaybeSingle && this.method === 'GET' && Array.isArray(data)) {
+                    if (data.length > 1) {
+                        error = {
+                            // https://github.com/PostgREST/postgrest/blob/a867d79c42419af16c18c3fb019eba8df992626f/src/PostgREST/Error.hs#L553
+                            code: 'PGRST116',
+                            details: `Results contain ${data.length} rows, application/vnd.pgrst.object+json requires 1 row`,
+                            hint: null,
+                            message: 'JSON object requested, multiple (or no) rows returned'
+                        };
+                        data = null;
+                        count = null;
+                        status = 406;
+                        statusText = 'Not Acceptable';
+                    } else if (data.length === 1) {
+                        data = data[0];
+                    } else {
+                        data = null;
+                    }
+                }
+            } else {
+                const body = await res.text();
+                try {
+                    error = JSON.parse(body);
+                    // Workaround for https://github.com/supabase/postgrest-js/issues/295
+                    if (Array.isArray(error) && res.status === 404) {
+                        data = [];
+                        error = null;
+                        status = 200;
+                        statusText = 'OK';
+                    }
+                } catch (_e) {
+                    // Workaround for https://github.com/supabase/postgrest-js/issues/295
+                    if (res.status === 404 && body === '') {
+                        status = 204;
+                        statusText = 'No Content';
+                    } else {
+                        error = {
+                            message: body
+                        };
+                    }
+                }
+                if (error && this.isMaybeSingle && ((_d = error === null || error === void 0 ? void 0 : error.details) === null || _d === void 0 ? void 0 : _d.includes('0 rows'))) {
+                    error = null;
+                    status = 200;
+                    statusText = 'OK';
+                }
+                if (error && this.shouldThrowOnError) {
+                    throw new PostgrestError_1.default(error);
+                }
+            }
+            const postgrestResponse = {
+                error,
+                data,
+                count,
+                status,
+                statusText
+            };
+            return postgrestResponse;
+        });
+        if (!this.shouldThrowOnError) {
+            res = res.catch((fetchError)=>{
+                var _a, _b, _c, _d, _e, _f;
+                // Build detailed error information including cause if available
+                // Note: We don't populate code/hint for client-side network errors since those
+                // fields are meant for upstream service errors (PostgREST/PostgreSQL)
+                let errorDetails = '';
+                // Add cause information if available (e.g., DNS errors, network failures)
+                const cause = fetchError === null || fetchError === void 0 ? void 0 : fetchError.cause;
+                if (cause) {
+                    const causeMessage = (_a = cause === null || cause === void 0 ? void 0 : cause.message) !== null && _a !== void 0 ? _a : '';
+                    const causeCode = (_b = cause === null || cause === void 0 ? void 0 : cause.code) !== null && _b !== void 0 ? _b : '';
+                    errorDetails = `${(_c = fetchError === null || fetchError === void 0 ? void 0 : fetchError.name) !== null && _c !== void 0 ? _c : 'FetchError'}: ${fetchError === null || fetchError === void 0 ? void 0 : fetchError.message}`;
+                    errorDetails += `\n\nCaused by: ${(_d = cause === null || cause === void 0 ? void 0 : cause.name) !== null && _d !== void 0 ? _d : 'Error'}: ${causeMessage}`;
+                    if (causeCode) {
+                        errorDetails += ` (${causeCode})`;
+                    }
+                    if (cause === null || cause === void 0 ? void 0 : cause.stack) {
+                        errorDetails += `\n${cause.stack}`;
+                    }
+                } else {
+                    // No cause available, just include the error stack
+                    errorDetails = (_e = fetchError === null || fetchError === void 0 ? void 0 : fetchError.stack) !== null && _e !== void 0 ? _e : '';
+                }
+                return {
+                    error: {
+                        message: `${(_f = fetchError === null || fetchError === void 0 ? void 0 : fetchError.name) !== null && _f !== void 0 ? _f : 'FetchError'}: ${fetchError === null || fetchError === void 0 ? void 0 : fetchError.message}`,
+                        details: errorDetails,
+                        hint: '',
+                        code: ''
+                    },
+                    data: null,
+                    count: null,
+                    status: 0,
+                    statusText: ''
+                };
+            });
+        }
+        return res.then(onfulfilled, onrejected);
+    }
+    /**
+     * Override the type of the returned `data`.
+     *
+     * @typeParam NewResult - The new result type to override with
+     * @deprecated Use overrideTypes<yourType, { merge: false }>() method at the end of your call chain instead
+     */ returns() {
+        /* istanbul ignore next */ return this;
+    }
+    /**
+     * Override the type of the returned `data` field in the response.
+     *
+     * @typeParam NewResult - The new type to cast the response data to
+     * @typeParam Options - Optional type configuration (defaults to { merge: true })
+     * @typeParam Options.merge - When true, merges the new type with existing return type. When false, replaces the existing types entirely (defaults to true)
+     * @example
+     * ```typescript
+     * // Merge with existing types (default behavior)
+     * const query = supabase
+     *   .from('users')
+     *   .select()
+     *   .overrideTypes<{ custom_field: string }>()
+     *
+     * // Replace existing types completely
+     * const replaceQuery = supabase
+     *   .from('users')
+     *   .select()
+     *   .overrideTypes<{ id: number; name: string }, { merge: false }>()
+     * ```
+     * @returns A PostgrestBuilder instance with the new type
+     */ overrideTypes() {
+        return this;
+    }
+}
+exports.default = PostgrestBuilder; //# sourceMappingURL=PostgrestBuilder.js.map
+}),
+"[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+const tslib_1 = __turbopack_context__.r("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+const PostgrestBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.js [app-ssr] (ecmascript)"));
+class PostgrestTransformBuilder extends PostgrestBuilder_1.default {
+    /**
+     * Perform a SELECT on the query result.
+     *
+     * By default, `.insert()`, `.update()`, `.upsert()`, and `.delete()` do not
+     * return modified rows. By calling this method, modified rows are returned in
+     * `data`.
+     *
+     * @param columns - The columns to retrieve, separated by commas
+     */ select(columns) {
+        // Remove whitespaces except when quoted
+        let quoted = false;
+        const cleanedColumns = (columns !== null && columns !== void 0 ? columns : '*').split('').map((c)=>{
+            if (/\s/.test(c) && !quoted) {
+                return '';
+            }
+            if (c === '"') {
+                quoted = !quoted;
+            }
+            return c;
+        }).join('');
+        this.url.searchParams.set('select', cleanedColumns);
+        this.headers.append('Prefer', 'return=representation');
+        return this;
+    }
+    /**
+     * Order the query result by `column`.
+     *
+     * You can call this method multiple times to order by multiple columns.
+     *
+     * You can order referenced tables, but it only affects the ordering of the
+     * parent table if you use `!inner` in the query.
+     *
+     * @param column - The column to order by
+     * @param options - Named parameters
+     * @param options.ascending - If `true`, the result will be in ascending order
+     * @param options.nullsFirst - If `true`, `null`s appear first. If `false`,
+     * `null`s appear last.
+     * @param options.referencedTable - Set this to order a referenced table by
+     * its columns
+     * @param options.foreignTable - Deprecated, use `options.referencedTable`
+     * instead
+     */ order(column, { ascending = true, nullsFirst, foreignTable, referencedTable = foreignTable } = {}) {
+        const key = referencedTable ? `${referencedTable}.order` : 'order';
+        const existingOrder = this.url.searchParams.get(key);
+        this.url.searchParams.set(key, `${existingOrder ? `${existingOrder},` : ''}${column}.${ascending ? 'asc' : 'desc'}${nullsFirst === undefined ? '' : nullsFirst ? '.nullsfirst' : '.nullslast'}`);
+        return this;
+    }
+    /**
+     * Limit the query result by `count`.
+     *
+     * @param count - The maximum number of rows to return
+     * @param options - Named parameters
+     * @param options.referencedTable - Set this to limit rows of referenced
+     * tables instead of the parent table
+     * @param options.foreignTable - Deprecated, use `options.referencedTable`
+     * instead
+     */ limit(count, { foreignTable, referencedTable = foreignTable } = {}) {
+        const key = typeof referencedTable === 'undefined' ? 'limit' : `${referencedTable}.limit`;
+        this.url.searchParams.set(key, `${count}`);
+        return this;
+    }
+    /**
+     * Limit the query result by starting at an offset `from` and ending at the offset `to`.
+     * Only records within this range are returned.
+     * This respects the query order and if there is no order clause the range could behave unexpectedly.
+     * The `from` and `to` values are 0-based and inclusive: `range(1, 3)` will include the second, third
+     * and fourth rows of the query.
+     *
+     * @param from - The starting index from which to limit the result
+     * @param to - The last index to which to limit the result
+     * @param options - Named parameters
+     * @param options.referencedTable - Set this to limit rows of referenced
+     * tables instead of the parent table
+     * @param options.foreignTable - Deprecated, use `options.referencedTable`
+     * instead
+     */ range(from, to, { foreignTable, referencedTable = foreignTable } = {}) {
+        const keyOffset = typeof referencedTable === 'undefined' ? 'offset' : `${referencedTable}.offset`;
+        const keyLimit = typeof referencedTable === 'undefined' ? 'limit' : `${referencedTable}.limit`;
+        this.url.searchParams.set(keyOffset, `${from}`);
+        // Range is inclusive, so add 1
+        this.url.searchParams.set(keyLimit, `${to - from + 1}`);
+        return this;
+    }
+    /**
+     * Set the AbortSignal for the fetch request.
+     *
+     * @param signal - The AbortSignal to use for the fetch request
+     */ abortSignal(signal) {
+        this.signal = signal;
+        return this;
+    }
+    /**
+     * Return `data` as a single object instead of an array of objects.
+     *
+     * Query result must be one row (e.g. using `.limit(1)`), otherwise this
+     * returns an error.
+     */ single() {
+        this.headers.set('Accept', 'application/vnd.pgrst.object+json');
+        return this;
+    }
+    /**
+     * Return `data` as a single object instead of an array of objects.
+     *
+     * Query result must be zero or one row (e.g. using `.limit(1)`), otherwise
+     * this returns an error.
+     */ maybeSingle() {
+        // Temporary partial fix for https://github.com/supabase/postgrest-js/issues/361
+        // Issue persists e.g. for `.insert([...]).select().maybeSingle()`
+        if (this.method === 'GET') {
+            this.headers.set('Accept', 'application/json');
+        } else {
+            this.headers.set('Accept', 'application/vnd.pgrst.object+json');
+        }
+        this.isMaybeSingle = true;
+        return this;
+    }
+    /**
+     * Return `data` as a string in CSV format.
+     */ csv() {
+        this.headers.set('Accept', 'text/csv');
+        return this;
+    }
+    /**
+     * Return `data` as an object in [GeoJSON](https://geojson.org) format.
+     */ geojson() {
+        this.headers.set('Accept', 'application/geo+json');
+        return this;
+    }
+    /**
+     * Return `data` as the EXPLAIN plan for the query.
+     *
+     * You need to enable the
+     * [db_plan_enabled](https://supabase.com/docs/guides/database/debugging-performance#enabling-explain)
+     * setting before using this method.
+     *
+     * @param options - Named parameters
+     *
+     * @param options.analyze - If `true`, the query will be executed and the
+     * actual run time will be returned
+     *
+     * @param options.verbose - If `true`, the query identifier will be returned
+     * and `data` will include the output columns of the query
+     *
+     * @param options.settings - If `true`, include information on configuration
+     * parameters that affect query planning
+     *
+     * @param options.buffers - If `true`, include information on buffer usage
+     *
+     * @param options.wal - If `true`, include information on WAL record generation
+     *
+     * @param options.format - The format of the output, can be `"text"` (default)
+     * or `"json"`
+     */ explain({ analyze = false, verbose = false, settings = false, buffers = false, wal = false, format = 'text' } = {}) {
+        var _a;
+        const options = [
+            analyze ? 'analyze' : null,
+            verbose ? 'verbose' : null,
+            settings ? 'settings' : null,
+            buffers ? 'buffers' : null,
+            wal ? 'wal' : null
+        ].filter(Boolean).join('|');
+        // An Accept header can carry multiple media types but postgrest-js always sends one
+        const forMediatype = (_a = this.headers.get('Accept')) !== null && _a !== void 0 ? _a : 'application/json';
+        this.headers.set('Accept', `application/vnd.pgrst.plan+${format}; for="${forMediatype}"; options=${options};`);
+        if (format === 'json') {
+            return this;
+        } else {
+            return this;
+        }
+    }
+    /**
+     * Rollback the query.
+     *
+     * `data` will still be returned, but the query is not committed.
+     */ rollback() {
+        this.headers.append('Prefer', 'tx=rollback');
+        return this;
+    }
+    /**
+     * Override the type of the returned `data`.
+     *
+     * @typeParam NewResult - The new result type to override with
+     * @deprecated Use overrideTypes<yourType, { merge: false }>() method at the end of your call chain instead
+     */ returns() {
+        return this;
+    }
+    /**
+     * Set the maximum number of rows that can be affected by the query.
+     * Only available in PostgREST v13+ and only works with PATCH and DELETE methods.
+     *
+     * @param value - The maximum number of rows that can be affected
+     */ maxAffected(value) {
+        this.headers.append('Prefer', 'handling=strict');
+        this.headers.append('Prefer', `max-affected=${value}`);
+        return this;
+    }
+}
+exports.default = PostgrestTransformBuilder; //# sourceMappingURL=PostgrestTransformBuilder.js.map
+}),
+"[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+const tslib_1 = __turbopack_context__.r("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+const PostgrestTransformBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.js [app-ssr] (ecmascript)"));
+const PostgrestReservedCharsRegexp = new RegExp('[,()]');
+class PostgrestFilterBuilder extends PostgrestTransformBuilder_1.default {
+    /**
+     * Match only rows where `column` is equal to `value`.
+     *
+     * To check if the value of `column` is NULL, you should use `.is()` instead.
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ eq(column, value) {
+        this.url.searchParams.append(column, `eq.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` is not equal to `value`.
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ neq(column, value) {
+        this.url.searchParams.append(column, `neq.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` is greater than `value`.
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ gt(column, value) {
+        this.url.searchParams.append(column, `gt.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` is greater than or equal to `value`.
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ gte(column, value) {
+        this.url.searchParams.append(column, `gte.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` is less than `value`.
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ lt(column, value) {
+        this.url.searchParams.append(column, `lt.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` is less than or equal to `value`.
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ lte(column, value) {
+        this.url.searchParams.append(column, `lte.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches `pattern` case-sensitively.
+     *
+     * @param column - The column to filter on
+     * @param pattern - The pattern to match with
+     */ like(column, pattern) {
+        this.url.searchParams.append(column, `like.${pattern}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches all of `patterns` case-sensitively.
+     *
+     * @param column - The column to filter on
+     * @param patterns - The patterns to match with
+     */ likeAllOf(column, patterns) {
+        this.url.searchParams.append(column, `like(all).{${patterns.join(',')}}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches any of `patterns` case-sensitively.
+     *
+     * @param column - The column to filter on
+     * @param patterns - The patterns to match with
+     */ likeAnyOf(column, patterns) {
+        this.url.searchParams.append(column, `like(any).{${patterns.join(',')}}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches `pattern` case-insensitively.
+     *
+     * @param column - The column to filter on
+     * @param pattern - The pattern to match with
+     */ ilike(column, pattern) {
+        this.url.searchParams.append(column, `ilike.${pattern}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches all of `patterns` case-insensitively.
+     *
+     * @param column - The column to filter on
+     * @param patterns - The patterns to match with
+     */ ilikeAllOf(column, patterns) {
+        this.url.searchParams.append(column, `ilike(all).{${patterns.join(',')}}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches any of `patterns` case-insensitively.
+     *
+     * @param column - The column to filter on
+     * @param patterns - The patterns to match with
+     */ ilikeAnyOf(column, patterns) {
+        this.url.searchParams.append(column, `ilike(any).{${patterns.join(',')}}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches the PostgreSQL regex `pattern`
+     * case-sensitively (using the `~` operator).
+     *
+     * @param column - The column to filter on
+     * @param pattern - The PostgreSQL regular expression pattern to match with
+     */ regexMatch(column, pattern) {
+        this.url.searchParams.append(column, `match.${pattern}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` matches the PostgreSQL regex `pattern`
+     * case-insensitively (using the `~*` operator).
+     *
+     * @param column - The column to filter on
+     * @param pattern - The PostgreSQL regular expression pattern to match with
+     */ regexIMatch(column, pattern) {
+        this.url.searchParams.append(column, `imatch.${pattern}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` IS `value`.
+     *
+     * For non-boolean columns, this is only relevant for checking if the value of
+     * `column` is NULL by setting `value` to `null`.
+     *
+     * For boolean columns, you can also set `value` to `true` or `false` and it
+     * will behave the same way as `.eq()`.
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ is(column, value) {
+        this.url.searchParams.append(column, `is.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` IS DISTINCT FROM `value`.
+     *
+     * Unlike `.neq()`, this treats `NULL` as a comparable value. Two `NULL` values
+     * are considered equal (not distinct), and comparing `NULL` with any non-NULL
+     * value returns true (distinct).
+     *
+     * @param column - The column to filter on
+     * @param value - The value to filter with
+     */ isDistinct(column, value) {
+        this.url.searchParams.append(column, `isdistinct.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows where `column` is included in the `values` array.
+     *
+     * @param column - The column to filter on
+     * @param values - The values array to filter with
+     */ in(column, values) {
+        const cleanedValues = Array.from(new Set(values)).map((s)=>{
+            // handle postgrest reserved characters
+            // https://postgrest.org/en/v7.0.0/api.html#reserved-characters
+            if (typeof s === 'string' && PostgrestReservedCharsRegexp.test(s)) return `"${s}"`;
+            else return `${s}`;
+        }).join(',');
+        this.url.searchParams.append(column, `in.(${cleanedValues})`);
+        return this;
+    }
+    /**
+     * Only relevant for jsonb, array, and range columns. Match only rows where
+     * `column` contains every element appearing in `value`.
+     *
+     * @param column - The jsonb, array, or range column to filter on
+     * @param value - The jsonb, array, or range value to filter with
+     */ contains(column, value) {
+        if (typeof value === 'string') {
+            // range types can be inclusive '[', ']' or exclusive '(', ')' so just
+            // keep it simple and accept a string
+            this.url.searchParams.append(column, `cs.${value}`);
+        } else if (Array.isArray(value)) {
+            // array
+            this.url.searchParams.append(column, `cs.{${value.join(',')}}`);
+        } else {
+            // json
+            this.url.searchParams.append(column, `cs.${JSON.stringify(value)}`);
+        }
+        return this;
+    }
+    /**
+     * Only relevant for jsonb, array, and range columns. Match only rows where
+     * every element appearing in `column` is contained by `value`.
+     *
+     * @param column - The jsonb, array, or range column to filter on
+     * @param value - The jsonb, array, or range value to filter with
+     */ containedBy(column, value) {
+        if (typeof value === 'string') {
+            // range
+            this.url.searchParams.append(column, `cd.${value}`);
+        } else if (Array.isArray(value)) {
+            // array
+            this.url.searchParams.append(column, `cd.{${value.join(',')}}`);
+        } else {
+            // json
+            this.url.searchParams.append(column, `cd.${JSON.stringify(value)}`);
+        }
+        return this;
+    }
+    /**
+     * Only relevant for range columns. Match only rows where every element in
+     * `column` is greater than any element in `range`.
+     *
+     * @param column - The range column to filter on
+     * @param range - The range to filter with
+     */ rangeGt(column, range) {
+        this.url.searchParams.append(column, `sr.${range}`);
+        return this;
+    }
+    /**
+     * Only relevant for range columns. Match only rows where every element in
+     * `column` is either contained in `range` or greater than any element in
+     * `range`.
+     *
+     * @param column - The range column to filter on
+     * @param range - The range to filter with
+     */ rangeGte(column, range) {
+        this.url.searchParams.append(column, `nxl.${range}`);
+        return this;
+    }
+    /**
+     * Only relevant for range columns. Match only rows where every element in
+     * `column` is less than any element in `range`.
+     *
+     * @param column - The range column to filter on
+     * @param range - The range to filter with
+     */ rangeLt(column, range) {
+        this.url.searchParams.append(column, `sl.${range}`);
+        return this;
+    }
+    /**
+     * Only relevant for range columns. Match only rows where every element in
+     * `column` is either contained in `range` or less than any element in
+     * `range`.
+     *
+     * @param column - The range column to filter on
+     * @param range - The range to filter with
+     */ rangeLte(column, range) {
+        this.url.searchParams.append(column, `nxr.${range}`);
+        return this;
+    }
+    /**
+     * Only relevant for range columns. Match only rows where `column` is
+     * mutually exclusive to `range` and there can be no element between the two
+     * ranges.
+     *
+     * @param column - The range column to filter on
+     * @param range - The range to filter with
+     */ rangeAdjacent(column, range) {
+        this.url.searchParams.append(column, `adj.${range}`);
+        return this;
+    }
+    /**
+     * Only relevant for array and range columns. Match only rows where
+     * `column` and `value` have an element in common.
+     *
+     * @param column - The array or range column to filter on
+     * @param value - The array or range value to filter with
+     */ overlaps(column, value) {
+        if (typeof value === 'string') {
+            // range
+            this.url.searchParams.append(column, `ov.${value}`);
+        } else {
+            // array
+            this.url.searchParams.append(column, `ov.{${value.join(',')}}`);
+        }
+        return this;
+    }
+    /**
+     * Only relevant for text and tsvector columns. Match only rows where
+     * `column` matches the query string in `query`.
+     *
+     * @param column - The text or tsvector column to filter on
+     * @param query - The query text to match with
+     * @param options - Named parameters
+     * @param options.config - The text search configuration to use
+     * @param options.type - Change how the `query` text is interpreted
+     */ textSearch(column, query, { config, type } = {}) {
+        let typePart = '';
+        if (type === 'plain') {
+            typePart = 'pl';
+        } else if (type === 'phrase') {
+            typePart = 'ph';
+        } else if (type === 'websearch') {
+            typePart = 'w';
+        }
+        const configPart = config === undefined ? '' : `(${config})`;
+        this.url.searchParams.append(column, `${typePart}fts${configPart}.${query}`);
+        return this;
+    }
+    /**
+     * Match only rows where each column in `query` keys is equal to its
+     * associated value. Shorthand for multiple `.eq()`s.
+     *
+     * @param query - The object to filter with, with column names as keys mapped
+     * to their filter values
+     */ match(query) {
+        Object.entries(query).forEach(([column, value])=>{
+            this.url.searchParams.append(column, `eq.${value}`);
+        });
+        return this;
+    }
+    /**
+     * Match only rows which doesn't satisfy the filter.
+     *
+     * Unlike most filters, `opearator` and `value` are used as-is and need to
+     * follow [PostgREST
+     * syntax](https://postgrest.org/en/stable/api.html#operators). You also need
+     * to make sure they are properly sanitized.
+     *
+     * @param column - The column to filter on
+     * @param operator - The operator to be negated to filter with, following
+     * PostgREST syntax
+     * @param value - The value to filter with, following PostgREST syntax
+     */ not(column, operator, value) {
+        this.url.searchParams.append(column, `not.${operator}.${value}`);
+        return this;
+    }
+    /**
+     * Match only rows which satisfy at least one of the filters.
+     *
+     * Unlike most filters, `filters` is used as-is and needs to follow [PostgREST
+     * syntax](https://postgrest.org/en/stable/api.html#operators). You also need
+     * to make sure it's properly sanitized.
+     *
+     * It's currently not possible to do an `.or()` filter across multiple tables.
+     *
+     * @param filters - The filters to use, following PostgREST syntax
+     * @param options - Named parameters
+     * @param options.referencedTable - Set this to filter on referenced tables
+     * instead of the parent table
+     * @param options.foreignTable - Deprecated, use `referencedTable` instead
+     */ or(filters, { foreignTable, referencedTable = foreignTable } = {}) {
+        const key = referencedTable ? `${referencedTable}.or` : 'or';
+        this.url.searchParams.append(key, `(${filters})`);
+        return this;
+    }
+    /**
+     * Match only rows which satisfy the filter. This is an escape hatch - you
+     * should use the specific filter methods wherever possible.
+     *
+     * Unlike most filters, `opearator` and `value` are used as-is and need to
+     * follow [PostgREST
+     * syntax](https://postgrest.org/en/stable/api.html#operators). You also need
+     * to make sure they are properly sanitized.
+     *
+     * @param column - The column to filter on
+     * @param operator - The operator to filter with, following PostgREST syntax
+     * @param value - The value to filter with, following PostgREST syntax
+     */ filter(column, operator, value) {
+        this.url.searchParams.append(column, `${operator}.${value}`);
+        return this;
+    }
+}
+exports.default = PostgrestFilterBuilder; //# sourceMappingURL=PostgrestFilterBuilder.js.map
+}),
+"[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+const tslib_1 = __turbopack_context__.r("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+const PostgrestFilterBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js [app-ssr] (ecmascript)"));
+class PostgrestQueryBuilder {
+    /**
+     * Creates a query builder scoped to a Postgres table or view.
+     *
+     * @example
+     * ```ts
+     * import PostgrestQueryBuilder from '@supabase/postgrest-js'
+     *
+     * const query = new PostgrestQueryBuilder(
+     *   new URL('https://xyzcompany.supabase.co/rest/v1/users'),
+     *   { headers: { apikey: 'public-anon-key' } }
+     * )
+     * ```
+     */ constructor(url, { headers = {}, schema, fetch: fetch1 }){
+        this.url = url;
+        this.headers = new Headers(headers);
+        this.schema = schema;
+        this.fetch = fetch1;
+    }
+    /**
+     * Perform a SELECT query on the table or view.
+     *
+     * @param columns - The columns to retrieve, separated by commas. Columns can be renamed when returned with `customName:columnName`
+     *
+     * @param options - Named parameters
+     *
+     * @param options.head - When set to `true`, `data` will not be returned.
+     * Useful if you only need the count.
+     *
+     * @param options.count - Count algorithm to use to count rows in the table or view.
+     *
+     * `"exact"`: Exact but slow count algorithm. Performs a `COUNT(*)` under the
+     * hood.
+     *
+     * `"planned"`: Approximated but fast count algorithm. Uses the Postgres
+     * statistics under the hood.
+     *
+     * `"estimated"`: Uses exact count for low numbers and planned count for high
+     * numbers.
+     */ select(columns, options) {
+        const { head = false, count } = options !== null && options !== void 0 ? options : {};
+        const method = head ? 'HEAD' : 'GET';
+        // Remove whitespaces except when quoted
+        let quoted = false;
+        const cleanedColumns = (columns !== null && columns !== void 0 ? columns : '*').split('').map((c)=>{
+            if (/\s/.test(c) && !quoted) {
+                return '';
+            }
+            if (c === '"') {
+                quoted = !quoted;
+            }
+            return c;
+        }).join('');
+        this.url.searchParams.set('select', cleanedColumns);
+        if (count) {
+            this.headers.append('Prefer', `count=${count}`);
+        }
+        return new PostgrestFilterBuilder_1.default({
+            method,
+            url: this.url,
+            headers: this.headers,
+            schema: this.schema,
+            fetch: this.fetch
+        });
+    }
+    /**
+     * Perform an INSERT into the table or view.
+     *
+     * By default, inserted rows are not returned. To return it, chain the call
+     * with `.select()`.
+     *
+     * @param values - The values to insert. Pass an object to insert a single row
+     * or an array to insert multiple rows.
+     *
+     * @param options - Named parameters
+     *
+     * @param options.count - Count algorithm to use to count inserted rows.
+     *
+     * `"exact"`: Exact but slow count algorithm. Performs a `COUNT(*)` under the
+     * hood.
+     *
+     * `"planned"`: Approximated but fast count algorithm. Uses the Postgres
+     * statistics under the hood.
+     *
+     * `"estimated"`: Uses exact count for low numbers and planned count for high
+     * numbers.
+     *
+     * @param options.defaultToNull - Make missing fields default to `null`.
+     * Otherwise, use the default value for the column. Only applies for bulk
+     * inserts.
+     */ insert(values, { count, defaultToNull = true } = {}) {
+        var _a;
+        const method = 'POST';
+        if (count) {
+            this.headers.append('Prefer', `count=${count}`);
+        }
+        if (!defaultToNull) {
+            this.headers.append('Prefer', `missing=default`);
+        }
+        if (Array.isArray(values)) {
+            const columns = values.reduce((acc, x)=>acc.concat(Object.keys(x)), []);
+            if (columns.length > 0) {
+                const uniqueColumns = [
+                    ...new Set(columns)
+                ].map((column)=>`"${column}"`);
+                this.url.searchParams.set('columns', uniqueColumns.join(','));
+            }
+        }
+        return new PostgrestFilterBuilder_1.default({
+            method,
+            url: this.url,
+            headers: this.headers,
+            schema: this.schema,
+            body: values,
+            fetch: (_a = this.fetch) !== null && _a !== void 0 ? _a : fetch
+        });
+    }
+    /**
+   * Perform an UPSERT on the table or view. Depending on the column(s) passed
+   * to `onConflict`, `.upsert()` allows you to perform the equivalent of
+   * `.insert()` if a row with the corresponding `onConflict` columns doesn't
+   * exist, or if it does exist, perform an alternative action depending on
+   * `ignoreDuplicates`.
+   *
+   * By default, upserted rows are not returned. To return it, chain the call
+   * with `.select()`.
+   *
+   * @param values - The values to upsert with. Pass an object to upsert a
+   * single row or an array to upsert multiple rows.
+   *
+   * @param options - Named parameters
+   *
+   * @param options.onConflict - Comma-separated UNIQUE column(s) to specify how
+   * duplicate rows are determined. Two rows are duplicates if all the
+   * `onConflict` columns are equal.
+   *
+   * @param options.ignoreDuplicates - If `true`, duplicate rows are ignored. If
+   * `false`, duplicate rows are merged with existing rows.
+   *
+   * @param options.count - Count algorithm to use to count upserted rows.
+   *
+   * `"exact"`: Exact but slow count algorithm. Performs a `COUNT(*)` under the
+   * hood.
+   *
+   * `"planned"`: Approximated but fast count algorithm. Uses the Postgres
+   * statistics under the hood.
+   *
+   * `"estimated"`: Uses exact count for low numbers and planned count for high
+   * numbers.
+   *
+   * @param options.defaultToNull - Make missing fields default to `null`.
+   * Otherwise, use the default value for the column. This only applies when
+   * inserting new rows, not when merging with existing rows under
+   * `ignoreDuplicates: false`. This also only applies when doing bulk upserts.
+   *
+   * @example Upsert a single row using a unique key
+   * ```ts
+   * // Upserting a single row, overwriting based on the 'username' unique column
+   * const { data, error } = await supabase
+   *   .from('users')
+   *   .upsert({ username: 'supabot' }, { onConflict: 'username' })
+   *
+   * // Example response:
+   * // {
+   * //   data: [
+   * //     { id: 4, message: 'bar', username: 'supabot' }
+   * //   ],
+   * //   error: null
+   * // }
+   * ```
+   *
+   * @example Upsert with conflict resolution and exact row counting
+   * ```ts
+   * // Upserting and returning exact count
+   * const { data, error, count } = await supabase
+   *   .from('users')
+   *   .upsert(
+   *     {
+   *       id: 3,
+   *       message: 'foo',
+   *       username: 'supabot'
+   *     },
+   *     {
+   *       onConflict: 'username',
+   *       count: 'exact'
+   *     }
+   *   )
+   *
+   * // Example response:
+   * // {
+   * //   data: [
+   * //     {
+   * //       id: 42,
+   * //       handle: "saoirse",
+   * //       display_name: "Saoirse"
+   * //     }
+   * //   ],
+   * //   count: 1,
+   * //   error: null
+   * // }
+   * ```
+   */ upsert(values, { onConflict, ignoreDuplicates = false, count, defaultToNull = true } = {}) {
+        var _a;
+        const method = 'POST';
+        this.headers.append('Prefer', `resolution=${ignoreDuplicates ? 'ignore' : 'merge'}-duplicates`);
+        if (onConflict !== undefined) this.url.searchParams.set('on_conflict', onConflict);
+        if (count) {
+            this.headers.append('Prefer', `count=${count}`);
+        }
+        if (!defaultToNull) {
+            this.headers.append('Prefer', 'missing=default');
+        }
+        if (Array.isArray(values)) {
+            const columns = values.reduce((acc, x)=>acc.concat(Object.keys(x)), []);
+            if (columns.length > 0) {
+                const uniqueColumns = [
+                    ...new Set(columns)
+                ].map((column)=>`"${column}"`);
+                this.url.searchParams.set('columns', uniqueColumns.join(','));
+            }
+        }
+        return new PostgrestFilterBuilder_1.default({
+            method,
+            url: this.url,
+            headers: this.headers,
+            schema: this.schema,
+            body: values,
+            fetch: (_a = this.fetch) !== null && _a !== void 0 ? _a : fetch
+        });
+    }
+    /**
+     * Perform an UPDATE on the table or view.
+     *
+     * By default, updated rows are not returned. To return it, chain the call
+     * with `.select()` after filters.
+     *
+     * @param values - The values to update with
+     *
+     * @param options - Named parameters
+     *
+     * @param options.count - Count algorithm to use to count updated rows.
+     *
+     * `"exact"`: Exact but slow count algorithm. Performs a `COUNT(*)` under the
+     * hood.
+     *
+     * `"planned"`: Approximated but fast count algorithm. Uses the Postgres
+     * statistics under the hood.
+     *
+     * `"estimated"`: Uses exact count for low numbers and planned count for high
+     * numbers.
+     */ update(values, { count } = {}) {
+        var _a;
+        const method = 'PATCH';
+        if (count) {
+            this.headers.append('Prefer', `count=${count}`);
+        }
+        return new PostgrestFilterBuilder_1.default({
+            method,
+            url: this.url,
+            headers: this.headers,
+            schema: this.schema,
+            body: values,
+            fetch: (_a = this.fetch) !== null && _a !== void 0 ? _a : fetch
+        });
+    }
+    /**
+     * Perform a DELETE on the table or view.
+     *
+     * By default, deleted rows are not returned. To return it, chain the call
+     * with `.select()` after filters.
+     *
+     * @param options - Named parameters
+     *
+     * @param options.count - Count algorithm to use to count deleted rows.
+     *
+     * `"exact"`: Exact but slow count algorithm. Performs a `COUNT(*)` under the
+     * hood.
+     *
+     * `"planned"`: Approximated but fast count algorithm. Uses the Postgres
+     * statistics under the hood.
+     *
+     * `"estimated"`: Uses exact count for low numbers and planned count for high
+     * numbers.
+     */ delete({ count } = {}) {
+        var _a;
+        const method = 'DELETE';
+        if (count) {
+            this.headers.append('Prefer', `count=${count}`);
+        }
+        return new PostgrestFilterBuilder_1.default({
+            method,
+            url: this.url,
+            headers: this.headers,
+            schema: this.schema,
+            fetch: (_a = this.fetch) !== null && _a !== void 0 ? _a : fetch
+        });
+    }
+}
+exports.default = PostgrestQueryBuilder; //# sourceMappingURL=PostgrestQueryBuilder.js.map
+}),
+"[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestClient.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+const tslib_1 = __turbopack_context__.r("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+const PostgrestQueryBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.js [app-ssr] (ecmascript)"));
+const PostgrestFilterBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js [app-ssr] (ecmascript)"));
+/**
+ * PostgREST client.
+ *
+ * @typeParam Database - Types for the schema from the [type
+ * generator](https://supabase.com/docs/reference/javascript/next/typescript-support)
+ *
+ * @typeParam SchemaName - Postgres schema to switch to. Must be a string
+ * literal, the same one passed to the constructor. If the schema is not
+ * `"public"`, this must be supplied manually.
+ */ class PostgrestClient {
+    // TODO: Add back shouldThrowOnError once we figure out the typings
+    /**
+     * Creates a PostgREST client.
+     *
+     * @param url - URL of the PostgREST endpoint
+     * @param options - Named parameters
+     * @param options.headers - Custom headers
+     * @param options.schema - Postgres schema to switch to
+     * @param options.fetch - Custom fetch
+     * @example
+     * ```ts
+     * import PostgrestClient from '@supabase/postgrest-js'
+     *
+     * const postgrest = new PostgrestClient('https://xyzcompany.supabase.co/rest/v1', {
+     *   headers: { apikey: 'public-anon-key' },
+     *   schema: 'public',
+     * })
+     * ```
+     */ constructor(url, { headers = {}, schema, fetch: fetch1 } = {}){
+        this.url = url;
+        this.headers = new Headers(headers);
+        this.schemaName = schema;
+        this.fetch = fetch1;
+    }
+    /**
+     * Perform a query on a table or a view.
+     *
+     * @param relation - The table or view name to query
+     */ from(relation) {
+        if (!relation || typeof relation !== 'string' || relation.trim() === '') {
+            throw new Error('Invalid relation name: relation must be a non-empty string.');
+        }
+        const url = new URL(`${this.url}/${relation}`);
+        return new PostgrestQueryBuilder_1.default(url, {
+            headers: new Headers(this.headers),
+            schema: this.schemaName,
+            fetch: this.fetch
+        });
+    }
+    /**
+     * Select a schema to query or perform an function (rpc) call.
+     *
+     * The schema needs to be on the list of exposed schemas inside Supabase.
+     *
+     * @param schema - The schema to query
+     */ schema(schema) {
+        return new PostgrestClient(this.url, {
+            headers: this.headers,
+            schema,
+            fetch: this.fetch
+        });
+    }
+    /**
+     * Perform a function call.
+     *
+     * @param fn - The function name to call
+     * @param args - The arguments to pass to the function call
+     * @param options - Named parameters
+     * @param options.head - When set to `true`, `data` will not be returned.
+     * Useful if you only need the count.
+     * @param options.get - When set to `true`, the function will be called with
+     * read-only access mode.
+     * @param options.count - Count algorithm to use to count rows returned by the
+     * function. Only applicable for [set-returning
+     * functions](https://www.postgresql.org/docs/current/functions-srf.html).
+     *
+     * `"exact"`: Exact but slow count algorithm. Performs a `COUNT(*)` under the
+     * hood.
+     *
+     * `"planned"`: Approximated but fast count algorithm. Uses the Postgres
+     * statistics under the hood.
+     *
+     * `"estimated"`: Uses exact count for low numbers and planned count for high
+     * numbers.
+     *
+     * @example
+     * ```ts
+     * // For cross-schema functions where type inference fails, use overrideTypes:
+     * const { data } = await supabase
+     *   .schema('schema_b')
+     *   .rpc('function_a', {})
+     *   .overrideTypes<{ id: string; user_id: string }[]>()
+     * ```
+     */ rpc(fn, args = {}, { head = false, get = false, count } = {}) {
+        var _a;
+        let method;
+        const url = new URL(`${this.url}/rpc/${fn}`);
+        let body;
+        if (head || get) {
+            method = head ? 'HEAD' : 'GET';
+            Object.entries(args)// params with undefined value needs to be filtered out, otherwise it'll
+            // show up as `?param=undefined`
+            .filter(([_, value])=>value !== undefined)// array values need special syntax
+            .map(([name, value])=>[
+                    name,
+                    Array.isArray(value) ? `{${value.join(',')}}` : `${value}`
+                ]).forEach(([name, value])=>{
+                url.searchParams.append(name, value);
+            });
+        } else {
+            method = 'POST';
+            body = args;
+        }
+        const headers = new Headers(this.headers);
+        if (count) {
+            headers.set('Prefer', `count=${count}`);
+        }
+        return new PostgrestFilterBuilder_1.default({
+            method,
+            url,
+            headers,
+            schema: this.schemaName,
+            body,
+            fetch: (_a = this.fetch) !== null && _a !== void 0 ? _a : fetch
+        });
+    }
+}
+exports.default = PostgrestClient; //# sourceMappingURL=PostgrestClient.js.map
+}),
+"[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.PostgrestError = exports.PostgrestBuilder = exports.PostgrestTransformBuilder = exports.PostgrestFilterBuilder = exports.PostgrestQueryBuilder = exports.PostgrestClient = void 0;
+const tslib_1 = __turbopack_context__.r("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+// Always update wrapper.mjs when updating this file.
+const PostgrestClient_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestClient.js [app-ssr] (ecmascript)"));
+exports.PostgrestClient = PostgrestClient_1.default;
+const PostgrestQueryBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.js [app-ssr] (ecmascript)"));
+exports.PostgrestQueryBuilder = PostgrestQueryBuilder_1.default;
+const PostgrestFilterBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js [app-ssr] (ecmascript)"));
+exports.PostgrestFilterBuilder = PostgrestFilterBuilder_1.default;
+const PostgrestTransformBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.js [app-ssr] (ecmascript)"));
+exports.PostgrestTransformBuilder = PostgrestTransformBuilder_1.default;
+const PostgrestBuilder_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.js [app-ssr] (ecmascript)"));
+exports.PostgrestBuilder = PostgrestBuilder_1.default;
+const PostgrestError_1 = tslib_1.__importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.js [app-ssr] (ecmascript)"));
+exports.PostgrestError = PostgrestError_1.default;
+exports.default = {
+    PostgrestClient: PostgrestClient_1.default,
+    PostgrestQueryBuilder: PostgrestQueryBuilder_1.default,
+    PostgrestFilterBuilder: PostgrestFilterBuilder_1.default,
+    PostgrestTransformBuilder: PostgrestTransformBuilder_1.default,
+    PostgrestBuilder: PostgrestBuilder_1.default,
+    PostgrestError: PostgrestError_1.default
+}; //# sourceMappingURL=index.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/version.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.version = void 0;
+// Generated automatically during releases by scripts/update-version-files.ts
+// This file provides runtime access to the package version for:
+// - HTTP request headers (e.g., X-Client-Info header for API requests)
+// - Debugging and support (identifying which version is running)
+// - Telemetry and logging (version reporting in errors/analytics)
+// - Ensuring build artifacts match the published package version
+exports.version = '2.87.1'; //# sourceMappingURL=version.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/constants.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.DEFAULT_REALTIME_OPTIONS = exports.DEFAULT_AUTH_OPTIONS = exports.DEFAULT_DB_OPTIONS = exports.DEFAULT_GLOBAL_OPTIONS = exports.DEFAULT_HEADERS = void 0;
+const version_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/version.js [app-ssr] (ecmascript)");
+let JS_ENV = '';
+// @ts-ignore
+if (typeof Deno !== 'undefined') {
+    JS_ENV = 'deno';
+} else if (typeof document !== 'undefined') {
+    JS_ENV = 'web';
+} else if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    JS_ENV = 'react-native';
+} else {
+    JS_ENV = 'node';
+}
+exports.DEFAULT_HEADERS = {
+    'X-Client-Info': `supabase-js-${JS_ENV}/${version_1.version}`
+};
+exports.DEFAULT_GLOBAL_OPTIONS = {
+    headers: exports.DEFAULT_HEADERS
+};
+exports.DEFAULT_DB_OPTIONS = {
+    schema: 'public'
+};
+exports.DEFAULT_AUTH_OPTIONS = {
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true,
+    flowType: 'implicit'
+};
+exports.DEFAULT_REALTIME_OPTIONS = {}; //# sourceMappingURL=constants.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/fetch.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.fetchWithAuth = exports.resolveHeadersConstructor = exports.resolveFetch = void 0;
+const resolveFetch = (customFetch)=>{
+    if (customFetch) {
+        return (...args)=>customFetch(...args);
+    }
+    return (...args)=>fetch(...args);
+};
+exports.resolveFetch = resolveFetch;
+const resolveHeadersConstructor = ()=>{
+    return Headers;
+};
+exports.resolveHeadersConstructor = resolveHeadersConstructor;
+const fetchWithAuth = (supabaseKey, getAccessToken, customFetch)=>{
+    const fetch1 = (0, exports.resolveFetch)(customFetch);
+    const HeadersConstructor = (0, exports.resolveHeadersConstructor)();
+    return async (input, init)=>{
+        var _a;
+        const accessToken = (_a = await getAccessToken()) !== null && _a !== void 0 ? _a : supabaseKey;
+        let headers = new HeadersConstructor(init === null || init === void 0 ? void 0 : init.headers);
+        if (!headers.has('apikey')) {
+            headers.set('apikey', supabaseKey);
+        }
+        if (!headers.has('Authorization')) {
+            headers.set('Authorization', `Bearer ${accessToken}`);
+        }
+        return fetch1(input, Object.assign(Object.assign({}, init), {
+            headers
+        }));
+    };
+};
+exports.fetchWithAuth = fetchWithAuth; //# sourceMappingURL=fetch.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.isBrowser = void 0;
+exports.uuid = uuid;
+exports.ensureTrailingSlash = ensureTrailingSlash;
+exports.applySettingDefaults = applySettingDefaults;
+exports.validateSupabaseUrl = validateSupabaseUrl;
+function uuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : r & 0x3 | 0x8;
+        return v.toString(16);
+    });
+}
+function ensureTrailingSlash(url) {
+    return url.endsWith('/') ? url : url + '/';
+}
+const isBrowser = ()=>("TURBOPACK compile-time value", "undefined") !== 'undefined';
+exports.isBrowser = isBrowser;
+function applySettingDefaults(options, defaults) {
+    var _a, _b;
+    const { db: dbOptions, auth: authOptions, realtime: realtimeOptions, global: globalOptions } = options;
+    const { db: DEFAULT_DB_OPTIONS, auth: DEFAULT_AUTH_OPTIONS, realtime: DEFAULT_REALTIME_OPTIONS, global: DEFAULT_GLOBAL_OPTIONS } = defaults;
+    const result = {
+        db: Object.assign(Object.assign({}, DEFAULT_DB_OPTIONS), dbOptions),
+        auth: Object.assign(Object.assign({}, DEFAULT_AUTH_OPTIONS), authOptions),
+        realtime: Object.assign(Object.assign({}, DEFAULT_REALTIME_OPTIONS), realtimeOptions),
+        storage: {},
+        global: Object.assign(Object.assign(Object.assign({}, DEFAULT_GLOBAL_OPTIONS), globalOptions), {
+            headers: Object.assign(Object.assign({}, (_a = DEFAULT_GLOBAL_OPTIONS === null || DEFAULT_GLOBAL_OPTIONS === void 0 ? void 0 : DEFAULT_GLOBAL_OPTIONS.headers) !== null && _a !== void 0 ? _a : {}), (_b = globalOptions === null || globalOptions === void 0 ? void 0 : globalOptions.headers) !== null && _b !== void 0 ? _b : {})
+        }),
+        accessToken: async ()=>''
+    };
+    if (options.accessToken) {
+        result.accessToken = options.accessToken;
+    } else {
+        // hack around Required<>
+        delete result.accessToken;
+    }
+    return result;
+}
+/**
+ * Validates a Supabase client URL
+ *
+ * @param {string} supabaseUrl - The Supabase client URL string.
+ * @returns {URL} - The validated base URL.
+ * @throws {Error}
+ */ function validateSupabaseUrl(supabaseUrl) {
+    const trimmedUrl = supabaseUrl === null || supabaseUrl === void 0 ? void 0 : supabaseUrl.trim();
+    if (!trimmedUrl) {
+        throw new Error('supabaseUrl is required.');
+    }
+    if (!trimmedUrl.match(/^https?:\/\//i)) {
+        throw new Error('Invalid supabaseUrl: Must be a valid HTTP or HTTPS URL.');
+    }
+    try {
+        return new URL(ensureTrailingSlash(trimmedUrl));
+    } catch (_a) {
+        throw Error('Invalid supabaseUrl: Provided URL is malformed.');
+    }
+} //# sourceMappingURL=helpers.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/SupabaseAuthClient.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.SupabaseAuthClient = void 0;
+const auth_js_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/auth-js/dist/module/index.js [app-ssr] (ecmascript)");
+class SupabaseAuthClient extends auth_js_1.AuthClient {
+    constructor(options){
+        super(options);
+    }
+}
+exports.SupabaseAuthClient = SupabaseAuthClient; //# sourceMappingURL=SupabaseAuthClient.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+const functions_js_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/functions-js/dist/module/index.js [app-ssr] (ecmascript)");
+const postgrest_js_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/index.js [app-ssr] (ecmascript)");
+const realtime_js_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/realtime-js/dist/module/index.js [app-ssr] (ecmascript)");
+const storage_js_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/storage-js/dist/module/index.js [app-ssr] (ecmascript)");
+const constants_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/constants.js [app-ssr] (ecmascript)");
+const fetch_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/fetch.js [app-ssr] (ecmascript)");
+const helpers_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js [app-ssr] (ecmascript)");
+const SupabaseAuthClient_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/lib/SupabaseAuthClient.js [app-ssr] (ecmascript)");
+/**
+ * Supabase Client.
+ *
+ * An isomorphic Javascript client for interacting with Postgres.
+ */ class SupabaseClient {
+    /**
+     * Create a new client for use in the browser.
+     * @param supabaseUrl The unique Supabase URL which is supplied when you create a new project in your project dashboard.
+     * @param supabaseKey The unique Supabase Key which is supplied when you create a new project in your project dashboard.
+     * @param options.db.schema You can switch in between schemas. The schema needs to be on the list of exposed schemas inside Supabase.
+     * @param options.auth.autoRefreshToken Set to "true" if you want to automatically refresh the token before expiring.
+     * @param options.auth.persistSession Set to "true" if you want to automatically save the user session into local storage.
+     * @param options.auth.detectSessionInUrl Set to "true" if you want to automatically detects OAuth grants in the URL and signs in the user.
+     * @param options.realtime Options passed along to realtime-js constructor.
+     * @param options.storage Options passed along to the storage-js constructor.
+     * @param options.global.fetch A custom fetch implementation.
+     * @param options.global.headers Any additional headers to send with each network request.
+     * @example
+     * ```ts
+     * import { createClient } from '@supabase/supabase-js'
+     *
+     * const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
+     * const { data } = await supabase.from('profiles').select('*')
+     * ```
+     */ constructor(supabaseUrl, supabaseKey, options){
+        var _a, _b, _c;
+        this.supabaseUrl = supabaseUrl;
+        this.supabaseKey = supabaseKey;
+        const baseUrl = (0, helpers_1.validateSupabaseUrl)(supabaseUrl);
+        if (!supabaseKey) throw new Error('supabaseKey is required.');
+        this.realtimeUrl = new URL('realtime/v1', baseUrl);
+        this.realtimeUrl.protocol = this.realtimeUrl.protocol.replace('http', 'ws');
+        this.authUrl = new URL('auth/v1', baseUrl);
+        this.storageUrl = new URL('storage/v1', baseUrl);
+        this.functionsUrl = new URL('functions/v1', baseUrl);
+        // default storage key uses the supabase project ref as a namespace
+        const defaultStorageKey = `sb-${baseUrl.hostname.split('.')[0]}-auth-token`;
+        const DEFAULTS = {
+            db: constants_1.DEFAULT_DB_OPTIONS,
+            realtime: constants_1.DEFAULT_REALTIME_OPTIONS,
+            auth: Object.assign(Object.assign({}, constants_1.DEFAULT_AUTH_OPTIONS), {
+                storageKey: defaultStorageKey
+            }),
+            global: constants_1.DEFAULT_GLOBAL_OPTIONS
+        };
+        const settings = (0, helpers_1.applySettingDefaults)(options !== null && options !== void 0 ? options : {}, DEFAULTS);
+        this.storageKey = (_a = settings.auth.storageKey) !== null && _a !== void 0 ? _a : '';
+        this.headers = (_b = settings.global.headers) !== null && _b !== void 0 ? _b : {};
+        if (!settings.accessToken) {
+            this.auth = this._initSupabaseAuthClient((_c = settings.auth) !== null && _c !== void 0 ? _c : {}, this.headers, settings.global.fetch);
+        } else {
+            this.accessToken = settings.accessToken;
+            this.auth = new Proxy({}, {
+                get: (_, prop)=>{
+                    throw new Error(`@supabase/supabase-js: Supabase Client is configured with the accessToken option, accessing supabase.auth.${String(prop)} is not possible`);
+                }
+            });
+        }
+        this.fetch = (0, fetch_1.fetchWithAuth)(supabaseKey, this._getAccessToken.bind(this), settings.global.fetch);
+        this.realtime = this._initRealtimeClient(Object.assign({
+            headers: this.headers,
+            accessToken: this._getAccessToken.bind(this)
+        }, settings.realtime));
+        if (this.accessToken) {
+            // Start auth immediately to avoid race condition with channel subscriptions
+            this.accessToken().then((token)=>this.realtime.setAuth(token)).catch((e)=>console.warn('Failed to set initial Realtime auth token:', e));
+        }
+        this.rest = new postgrest_js_1.PostgrestClient(new URL('rest/v1', baseUrl).href, {
+            headers: this.headers,
+            schema: settings.db.schema,
+            fetch: this.fetch
+        });
+        this.storage = new storage_js_1.StorageClient(this.storageUrl.href, this.headers, this.fetch, options === null || options === void 0 ? void 0 : options.storage);
+        if (!settings.accessToken) {
+            this._listenForAuthEvents();
+        }
+    }
+    /**
+     * Supabase Functions allows you to deploy and invoke edge functions.
+     */ get functions() {
+        return new functions_js_1.FunctionsClient(this.functionsUrl.href, {
+            headers: this.headers,
+            customFetch: this.fetch
+        });
+    }
+    /**
+     * Perform a query on a table or a view.
+     *
+     * @param relation - The table or view name to query
+     */ from(relation) {
+        return this.rest.from(relation);
+    }
+    // NOTE: signatures must be kept in sync with PostgrestClient.schema
+    /**
+     * Select a schema to query or perform an function (rpc) call.
+     *
+     * The schema needs to be on the list of exposed schemas inside Supabase.
+     *
+     * @param schema - The schema to query
+     */ schema(schema) {
+        return this.rest.schema(schema);
+    }
+    // NOTE: signatures must be kept in sync with PostgrestClient.rpc
+    /**
+     * Perform a function call.
+     *
+     * @param fn - The function name to call
+     * @param args - The arguments to pass to the function call
+     * @param options - Named parameters
+     * @param options.head - When set to `true`, `data` will not be returned.
+     * Useful if you only need the count.
+     * @param options.get - When set to `true`, the function will be called with
+     * read-only access mode.
+     * @param options.count - Count algorithm to use to count rows returned by the
+     * function. Only applicable for [set-returning
+     * functions](https://www.postgresql.org/docs/current/functions-srf.html).
+     *
+     * `"exact"`: Exact but slow count algorithm. Performs a `COUNT(*)` under the
+     * hood.
+     *
+     * `"planned"`: Approximated but fast count algorithm. Uses the Postgres
+     * statistics under the hood.
+     *
+     * `"estimated"`: Uses exact count for low numbers and planned count for high
+     * numbers.
+     */ rpc(fn, args = {}, options = {
+        head: false,
+        get: false,
+        count: undefined
+    }) {
+        return this.rest.rpc(fn, args, options);
+    }
+    /**
+     * Creates a Realtime channel with Broadcast, Presence, and Postgres Changes.
+     *
+     * @param {string} name - The name of the Realtime channel.
+     * @param {Object} opts - The options to pass to the Realtime channel.
+     *
+     */ channel(name, opts = {
+        config: {}
+    }) {
+        return this.realtime.channel(name, opts);
+    }
+    /**
+     * Returns all Realtime channels.
+     */ getChannels() {
+        return this.realtime.getChannels();
+    }
+    /**
+     * Unsubscribes and removes Realtime channel from Realtime client.
+     *
+     * @param {RealtimeChannel} channel - The name of the Realtime channel.
+     *
+     */ removeChannel(channel) {
+        return this.realtime.removeChannel(channel);
+    }
+    /**
+     * Unsubscribes and removes all Realtime channels from Realtime client.
+     */ removeAllChannels() {
+        return this.realtime.removeAllChannels();
+    }
+    async _getAccessToken() {
+        var _a, _b;
+        if (this.accessToken) {
+            return await this.accessToken();
+        }
+        const { data } = await this.auth.getSession();
+        return (_b = (_a = data.session) === null || _a === void 0 ? void 0 : _a.access_token) !== null && _b !== void 0 ? _b : this.supabaseKey;
+    }
+    _initSupabaseAuthClient({ autoRefreshToken, persistSession, detectSessionInUrl, storage, userStorage, storageKey, flowType, lock, debug, throwOnError }, headers, fetch) {
+        const authHeaders = {
+            Authorization: `Bearer ${this.supabaseKey}`,
+            apikey: `${this.supabaseKey}`
+        };
+        return new SupabaseAuthClient_1.SupabaseAuthClient({
+            url: this.authUrl.href,
+            headers: Object.assign(Object.assign({}, authHeaders), headers),
+            storageKey: storageKey,
+            autoRefreshToken,
+            persistSession,
+            detectSessionInUrl,
+            storage,
+            userStorage,
+            flowType,
+            lock,
+            debug,
+            throwOnError,
+            fetch,
+            // auth checks if there is a custom authorizaiton header using this flag
+            // so it knows whether to return an error when getUser is called with no session
+            hasCustomAuthorizationHeader: Object.keys(this.headers).some((key)=>key.toLowerCase() === 'authorization')
+        });
+    }
+    _initRealtimeClient(options) {
+        return new realtime_js_1.RealtimeClient(this.realtimeUrl.href, Object.assign(Object.assign({}, options), {
+            params: Object.assign({
+                apikey: this.supabaseKey
+            }, options === null || options === void 0 ? void 0 : options.params)
+        }));
+    }
+    _listenForAuthEvents() {
+        const data = this.auth.onAuthStateChange((event, session)=>{
+            this._handleTokenChanged(event, 'CLIENT', session === null || session === void 0 ? void 0 : session.access_token);
+        });
+        return data;
+    }
+    _handleTokenChanged(event, source, token) {
+        if ((event === 'TOKEN_REFRESHED' || event === 'SIGNED_IN') && this.changedAccessToken !== token) {
+            this.changedAccessToken = token;
+            this.realtime.setAuth(token);
+        } else if (event === 'SIGNED_OUT') {
+            this.realtime.setAuth();
+            if (source == 'STORAGE') this.auth.signOut();
+            this.changedAccessToken = undefined;
+        }
+    }
+}
+exports.default = SupabaseClient; //# sourceMappingURL=SupabaseClient.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/main/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __createBinding = /*TURBOPACK member replacement*/ __turbopack_context__.e && /*TURBOPACK member replacement*/ __turbopack_context__.e.__createBinding || (Object.create ? function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = {
+            enumerable: true,
+            get: function() {
+                return m[k];
+            }
+        };
+    }
+    Object.defineProperty(o, k2, desc);
+} : function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+var __exportStar = /*TURBOPACK member replacement*/ __turbopack_context__.e && /*TURBOPACK member replacement*/ __turbopack_context__.e.__exportStar || function(m, exports1) {
+    for(var p in m)if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports1, p)) __createBinding(exports1, m, p);
+};
+var __importDefault = /*TURBOPACK member replacement*/ __turbopack_context__.e && /*TURBOPACK member replacement*/ __turbopack_context__.e.__importDefault || function(mod) {
+    return mod && mod.__esModule ? mod : {
+        "default": mod
+    };
+};
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.createClient = exports.SupabaseClient = exports.FunctionRegion = exports.FunctionsError = exports.FunctionsRelayError = exports.FunctionsFetchError = exports.FunctionsHttpError = exports.PostgrestError = void 0;
+const SupabaseClient_1 = __importDefault(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js [app-ssr] (ecmascript)"));
+__exportStar(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/auth-js/dist/module/index.js [app-ssr] (ecmascript)"), exports);
+var postgrest_js_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/postgrest-js/dist/cjs/index.js [app-ssr] (ecmascript)");
+Object.defineProperty(exports, "PostgrestError", {
+    enumerable: true,
+    get: function() {
+        return postgrest_js_1.PostgrestError;
+    }
+});
+var functions_js_1 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/functions-js/dist/module/index.js [app-ssr] (ecmascript)");
+Object.defineProperty(exports, "FunctionsHttpError", {
+    enumerable: true,
+    get: function() {
+        return functions_js_1.FunctionsHttpError;
+    }
+});
+Object.defineProperty(exports, "FunctionsFetchError", {
+    enumerable: true,
+    get: function() {
+        return functions_js_1.FunctionsFetchError;
+    }
+});
+Object.defineProperty(exports, "FunctionsRelayError", {
+    enumerable: true,
+    get: function() {
+        return functions_js_1.FunctionsRelayError;
+    }
+});
+Object.defineProperty(exports, "FunctionsError", {
+    enumerable: true,
+    get: function() {
+        return functions_js_1.FunctionsError;
+    }
+});
+Object.defineProperty(exports, "FunctionRegion", {
+    enumerable: true,
+    get: function() {
+        return functions_js_1.FunctionRegion;
+    }
+});
+__exportStar(__turbopack_context__.r("[project]/frontend/node_modules/@supabase/realtime-js/dist/module/index.js [app-ssr] (ecmascript)"), exports);
+var SupabaseClient_2 = __turbopack_context__.r("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js [app-ssr] (ecmascript)");
+Object.defineProperty(exports, "SupabaseClient", {
+    enumerable: true,
+    get: function() {
+        return __importDefault(SupabaseClient_2).default;
+    }
+});
+/**
+ * Creates a new Supabase Client.
+ *
+ * @example
+ * ```ts
+ * import { createClient } from '@supabase/supabase-js'
+ *
+ * const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
+ * const { data, error } = await supabase.from('profiles').select('*')
+ * ```
+ */ const createClient = (supabaseUrl, supabaseKey, options)=>{
+    return new SupabaseClient_1.default(supabaseUrl, supabaseKey, options);
+};
+exports.createClient = createClient;
+// Check for Node.js <= 18 deprecation
+function shouldShowDeprecationWarning() {
+    // Skip in browser environments
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // Skip if process is not available (e.g., Edge Runtime)
+    if (typeof process === 'undefined') {
+        return false;
+    }
+    // Use dynamic property access to avoid Next.js Edge Runtime static analysis warnings
+    const processVersion = process['version'];
+    if (processVersion === undefined || processVersion === null) {
+        return false;
+    }
+    const versionMatch = processVersion.match(/^v(\d+)\./);
+    if (!versionMatch) {
+        return false;
+    }
+    const majorVersion = parseInt(versionMatch[1], 10);
+    return majorVersion <= 18;
+}
+if (shouldShowDeprecationWarning()) {
+    console.warn(`⚠️  Node.js 18 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. ` + `Please upgrade to Node.js 20 or later. ` + `For more information, visit: https://github.com/orgs/supabase/discussions/37217`);
+} //# sourceMappingURL=index.js.map
+}),
+"[project]/frontend/node_modules/@supabase/supabase-js/dist/esm/wrapper.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "AuthAdminApi",
+    ()=>AuthAdminApi,
+    "AuthApiError",
+    ()=>AuthApiError,
+    "AuthClient",
+    ()=>AuthClient,
+    "AuthError",
+    ()=>AuthError,
+    "AuthImplicitGrantRedirectError",
+    ()=>AuthImplicitGrantRedirectError,
+    "AuthInvalidCredentialsError",
+    ()=>AuthInvalidCredentialsError,
+    "AuthInvalidJwtError",
+    ()=>AuthInvalidJwtError,
+    "AuthInvalidTokenResponseError",
+    ()=>AuthInvalidTokenResponseError,
+    "AuthPKCEGrantCodeExchangeError",
+    ()=>AuthPKCEGrantCodeExchangeError,
+    "AuthRetryableFetchError",
+    ()=>AuthRetryableFetchError,
+    "AuthSessionMissingError",
+    ()=>AuthSessionMissingError,
+    "AuthUnknownError",
+    ()=>AuthUnknownError,
+    "AuthWeakPasswordError",
+    ()=>AuthWeakPasswordError,
+    "CustomAuthError",
+    ()=>CustomAuthError,
+    "FunctionRegion",
+    ()=>FunctionRegion,
+    "FunctionsError",
+    ()=>FunctionsError,
+    "FunctionsFetchError",
+    ()=>FunctionsFetchError,
+    "FunctionsHttpError",
+    ()=>FunctionsHttpError,
+    "FunctionsRelayError",
+    ()=>FunctionsRelayError,
+    "GoTrueAdminApi",
+    ()=>GoTrueAdminApi,
+    "GoTrueClient",
+    ()=>GoTrueClient,
+    "NavigatorLockAcquireTimeoutError",
+    ()=>NavigatorLockAcquireTimeoutError,
+    "PostgrestError",
+    ()=>PostgrestError,
+    "REALTIME_CHANNEL_STATES",
+    ()=>REALTIME_CHANNEL_STATES,
+    "REALTIME_LISTEN_TYPES",
+    ()=>REALTIME_LISTEN_TYPES,
+    "REALTIME_POSTGRES_CHANGES_LISTEN_EVENT",
+    ()=>REALTIME_POSTGRES_CHANGES_LISTEN_EVENT,
+    "REALTIME_PRESENCE_LISTEN_EVENTS",
+    ()=>REALTIME_PRESENCE_LISTEN_EVENTS,
+    "REALTIME_SUBSCRIBE_STATES",
+    ()=>REALTIME_SUBSCRIBE_STATES,
+    "RealtimeChannel",
+    ()=>RealtimeChannel,
+    "RealtimeClient",
+    ()=>RealtimeClient,
+    "RealtimePresence",
+    ()=>RealtimePresence,
+    "SIGN_OUT_SCOPES",
+    ()=>SIGN_OUT_SCOPES,
+    "SupabaseClient",
+    ()=>SupabaseClient,
+    "createClient",
+    ()=>createClient,
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "isAuthApiError",
+    ()=>isAuthApiError,
+    "isAuthError",
+    ()=>isAuthError,
+    "isAuthImplicitGrantRedirectError",
+    ()=>isAuthImplicitGrantRedirectError,
+    "isAuthRetryableFetchError",
+    ()=>isAuthRetryableFetchError,
+    "isAuthSessionMissingError",
+    ()=>isAuthSessionMissingError,
+    "isAuthWeakPasswordError",
+    ()=>isAuthWeakPasswordError,
+    "lockInternals",
+    ()=>lockInternals,
+    "navigatorLock",
+    ()=>navigatorLock,
+    "processLock",
+    ()=>processLock
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$main$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@supabase/supabase-js/dist/main/index.js [app-ssr] (ecmascript)");
+;
+const { PostgrestError, FunctionsHttpError, FunctionsFetchError, FunctionsRelayError, FunctionsError, FunctionRegion, SupabaseClient, createClient, GoTrueAdminApi, GoTrueClient, AuthAdminApi, AuthClient, navigatorLock, NavigatorLockAcquireTimeoutError, lockInternals, processLock, SIGN_OUT_SCOPES, AuthError, AuthApiError, AuthUnknownError, CustomAuthError, AuthSessionMissingError, AuthInvalidTokenResponseError, AuthInvalidCredentialsError, AuthImplicitGrantRedirectError, AuthPKCEGrantCodeExchangeError, AuthRetryableFetchError, AuthWeakPasswordError, AuthInvalidJwtError, isAuthError, isAuthApiError, isAuthSessionMissingError, isAuthImplicitGrantRedirectError, isAuthRetryableFetchError, isAuthWeakPasswordError, RealtimePresence, RealtimeChannel, RealtimeClient, REALTIME_LISTEN_TYPES, REALTIME_POSTGRES_CHANGES_LISTEN_EVENT, REALTIME_PRESENCE_LISTEN_EVENTS, REALTIME_SUBSCRIBE_STATES, REALTIME_CHANNEL_STATES } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$main$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.default || __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$main$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__;
+;
+const __TURBOPACK__default__export__ = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$main$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.default || __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$main$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__;
+}),
+"[project]/frontend/node_modules/iceberg-js/dist/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// src/errors/IcebergError.ts
+__turbopack_context__.s([
+    "IcebergError",
+    ()=>IcebergError,
+    "IcebergRestCatalog",
+    ()=>IcebergRestCatalog,
+    "getCurrentSchema",
+    ()=>getCurrentSchema,
+    "isDecimalType",
+    ()=>isDecimalType,
+    "isFixedType",
+    ()=>isFixedType,
+    "parseDecimalType",
+    ()=>parseDecimalType,
+    "parseFixedType",
+    ()=>parseFixedType,
+    "typesEqual",
+    ()=>typesEqual
+]);
+var IcebergError = class extends Error {
+    constructor(message, opts){
+        super(message);
+        this.name = "IcebergError";
+        this.status = opts.status;
+        this.icebergType = opts.icebergType;
+        this.icebergCode = opts.icebergCode;
+        this.details = opts.details;
+        this.isCommitStateUnknown = opts.icebergType === "CommitStateUnknownException" || [
+            500,
+            502,
+            504
+        ].includes(opts.status) && opts.icebergType?.includes("CommitState") === true;
+    }
+    /**
+   * Returns true if the error is a 404 Not Found error.
+   */ isNotFound() {
+        return this.status === 404;
+    }
+    /**
+   * Returns true if the error is a 409 Conflict error.
+   */ isConflict() {
+        return this.status === 409;
+    }
+    /**
+   * Returns true if the error is a 419 Authentication Timeout error.
+   */ isAuthenticationTimeout() {
+        return this.status === 419;
+    }
+};
+// src/utils/url.ts
+function buildUrl(baseUrl, path, query) {
+    const url = new URL(path, baseUrl);
+    if (query) {
+        for (const [key, value] of Object.entries(query)){
+            if (value !== void 0) {
+                url.searchParams.set(key, value);
+            }
+        }
+    }
+    return url.toString();
+}
+// src/http/createFetchClient.ts
+async function buildAuthHeaders(auth) {
+    if (!auth || auth.type === "none") {
+        return {};
+    }
+    if (auth.type === "bearer") {
+        return {
+            Authorization: `Bearer ${auth.token}`
+        };
+    }
+    if (auth.type === "header") {
+        return {
+            [auth.name]: auth.value
+        };
+    }
+    if (auth.type === "custom") {
+        return await auth.getHeaders();
+    }
+    return {};
+}
+function createFetchClient(options) {
+    const fetchFn = options.fetchImpl ?? globalThis.fetch;
+    return {
+        async request ({ method, path, query, body, headers }) {
+            const url = buildUrl(options.baseUrl, path, query);
+            const authHeaders = await buildAuthHeaders(options.auth);
+            const res = await fetchFn(url, {
+                method,
+                headers: {
+                    ...body ? {
+                        "Content-Type": "application/json"
+                    } : {},
+                    ...authHeaders,
+                    ...headers
+                },
+                body: body ? JSON.stringify(body) : void 0
+            });
+            const text = await res.text();
+            const isJson = (res.headers.get("content-type") || "").includes("application/json");
+            const data = isJson && text ? JSON.parse(text) : text;
+            if (!res.ok) {
+                const errBody = isJson ? data : void 0;
+                const errorDetail = errBody?.error;
+                throw new IcebergError(errorDetail?.message ?? `Request failed with status ${res.status}`, {
+                    status: res.status,
+                    icebergType: errorDetail?.type,
+                    icebergCode: errorDetail?.code,
+                    details: errBody
+                });
+            }
+            return {
+                status: res.status,
+                headers: res.headers,
+                data
+            };
+        }
+    };
+}
+// src/catalog/namespaces.ts
+function namespaceToPath(namespace) {
+    return namespace.join("");
+}
+var NamespaceOperations = class {
+    constructor(client, prefix = ""){
+        this.client = client;
+        this.prefix = prefix;
+    }
+    async listNamespaces(parent) {
+        const query = parent ? {
+            parent: namespaceToPath(parent.namespace)
+        } : void 0;
+        const response = await this.client.request({
+            method: "GET",
+            path: `${this.prefix}/namespaces`,
+            query
+        });
+        return response.data.namespaces.map((ns)=>({
+                namespace: ns
+            }));
+    }
+    async createNamespace(id, metadata) {
+        const request = {
+            namespace: id.namespace,
+            properties: metadata?.properties
+        };
+        const response = await this.client.request({
+            method: "POST",
+            path: `${this.prefix}/namespaces`,
+            body: request
+        });
+        return response.data;
+    }
+    async dropNamespace(id) {
+        await this.client.request({
+            method: "DELETE",
+            path: `${this.prefix}/namespaces/${namespaceToPath(id.namespace)}`
+        });
+    }
+    async loadNamespaceMetadata(id) {
+        const response = await this.client.request({
+            method: "GET",
+            path: `${this.prefix}/namespaces/${namespaceToPath(id.namespace)}`
+        });
+        return {
+            properties: response.data.properties
+        };
+    }
+    async namespaceExists(id) {
+        try {
+            await this.client.request({
+                method: "HEAD",
+                path: `${this.prefix}/namespaces/${namespaceToPath(id.namespace)}`
+            });
+            return true;
+        } catch (error) {
+            if (error instanceof IcebergError && error.status === 404) {
+                return false;
+            }
+            throw error;
+        }
+    }
+    async createNamespaceIfNotExists(id, metadata) {
+        try {
+            return await this.createNamespace(id, metadata);
+        } catch (error) {
+            if (error instanceof IcebergError && error.status === 409) {
+                return;
+            }
+            throw error;
+        }
+    }
+};
+// src/catalog/tables.ts
+function namespaceToPath2(namespace) {
+    return namespace.join("");
+}
+var TableOperations = class {
+    constructor(client, prefix = "", accessDelegation){
+        this.client = client;
+        this.prefix = prefix;
+        this.accessDelegation = accessDelegation;
+    }
+    async listTables(namespace) {
+        const response = await this.client.request({
+            method: "GET",
+            path: `${this.prefix}/namespaces/${namespaceToPath2(namespace.namespace)}/tables`
+        });
+        return response.data.identifiers;
+    }
+    async createTable(namespace, request) {
+        const headers = {};
+        if (this.accessDelegation) {
+            headers["X-Iceberg-Access-Delegation"] = this.accessDelegation;
+        }
+        const response = await this.client.request({
+            method: "POST",
+            path: `${this.prefix}/namespaces/${namespaceToPath2(namespace.namespace)}/tables`,
+            body: request,
+            headers
+        });
+        return response.data.metadata;
+    }
+    async updateTable(id, request) {
+        const response = await this.client.request({
+            method: "POST",
+            path: `${this.prefix}/namespaces/${namespaceToPath2(id.namespace)}/tables/${id.name}`,
+            body: request
+        });
+        return {
+            "metadata-location": response.data["metadata-location"],
+            metadata: response.data.metadata
+        };
+    }
+    async dropTable(id, options) {
+        await this.client.request({
+            method: "DELETE",
+            path: `${this.prefix}/namespaces/${namespaceToPath2(id.namespace)}/tables/${id.name}`,
+            query: {
+                purgeRequested: String(options?.purge ?? false)
+            }
+        });
+    }
+    async loadTable(id) {
+        const headers = {};
+        if (this.accessDelegation) {
+            headers["X-Iceberg-Access-Delegation"] = this.accessDelegation;
+        }
+        const response = await this.client.request({
+            method: "GET",
+            path: `${this.prefix}/namespaces/${namespaceToPath2(id.namespace)}/tables/${id.name}`,
+            headers
+        });
+        return response.data.metadata;
+    }
+    async tableExists(id) {
+        const headers = {};
+        if (this.accessDelegation) {
+            headers["X-Iceberg-Access-Delegation"] = this.accessDelegation;
+        }
+        try {
+            await this.client.request({
+                method: "HEAD",
+                path: `${this.prefix}/namespaces/${namespaceToPath2(id.namespace)}/tables/${id.name}`,
+                headers
+            });
+            return true;
+        } catch (error) {
+            if (error instanceof IcebergError && error.status === 404) {
+                return false;
+            }
+            throw error;
+        }
+    }
+    async createTableIfNotExists(namespace, request) {
+        try {
+            return await this.createTable(namespace, request);
+        } catch (error) {
+            if (error instanceof IcebergError && error.status === 409) {
+                return await this.loadTable({
+                    namespace: namespace.namespace,
+                    name: request.name
+                });
+            }
+            throw error;
+        }
+    }
+};
+// src/catalog/IcebergRestCatalog.ts
+var IcebergRestCatalog = class {
+    /**
+   * Creates a new Iceberg REST Catalog client.
+   *
+   * @param options - Configuration options for the catalog client
+   */ constructor(options){
+        let prefix = "v1";
+        if (options.catalogName) {
+            prefix += `/${options.catalogName}`;
+        }
+        const baseUrl = options.baseUrl.endsWith("/") ? options.baseUrl : `${options.baseUrl}/`;
+        this.client = createFetchClient({
+            baseUrl,
+            auth: options.auth,
+            fetchImpl: options.fetch
+        });
+        this.accessDelegation = options.accessDelegation?.join(",");
+        this.namespaceOps = new NamespaceOperations(this.client, prefix);
+        this.tableOps = new TableOperations(this.client, prefix, this.accessDelegation);
+    }
+    /**
+   * Lists all namespaces in the catalog.
+   *
+   * @param parent - Optional parent namespace to list children under
+   * @returns Array of namespace identifiers
+   *
+   * @example
+   * ```typescript
+   * // List all top-level namespaces
+   * const namespaces = await catalog.listNamespaces();
+   *
+   * // List namespaces under a parent
+   * const children = await catalog.listNamespaces({ namespace: ['analytics'] });
+   * ```
+   */ async listNamespaces(parent) {
+        return this.namespaceOps.listNamespaces(parent);
+    }
+    /**
+   * Creates a new namespace in the catalog.
+   *
+   * @param id - Namespace identifier to create
+   * @param metadata - Optional metadata properties for the namespace
+   * @returns Response containing the created namespace and its properties
+   *
+   * @example
+   * ```typescript
+   * const response = await catalog.createNamespace(
+   *   { namespace: ['analytics'] },
+   *   { properties: { owner: 'data-team' } }
+   * );
+   * console.log(response.namespace); // ['analytics']
+   * console.log(response.properties); // { owner: 'data-team', ... }
+   * ```
+   */ async createNamespace(id, metadata) {
+        return this.namespaceOps.createNamespace(id, metadata);
+    }
+    /**
+   * Drops a namespace from the catalog.
+   *
+   * The namespace must be empty (contain no tables) before it can be dropped.
+   *
+   * @param id - Namespace identifier to drop
+   *
+   * @example
+   * ```typescript
+   * await catalog.dropNamespace({ namespace: ['analytics'] });
+   * ```
+   */ async dropNamespace(id) {
+        await this.namespaceOps.dropNamespace(id);
+    }
+    /**
+   * Loads metadata for a namespace.
+   *
+   * @param id - Namespace identifier to load
+   * @returns Namespace metadata including properties
+   *
+   * @example
+   * ```typescript
+   * const metadata = await catalog.loadNamespaceMetadata({ namespace: ['analytics'] });
+   * console.log(metadata.properties);
+   * ```
+   */ async loadNamespaceMetadata(id) {
+        return this.namespaceOps.loadNamespaceMetadata(id);
+    }
+    /**
+   * Lists all tables in a namespace.
+   *
+   * @param namespace - Namespace identifier to list tables from
+   * @returns Array of table identifiers
+   *
+   * @example
+   * ```typescript
+   * const tables = await catalog.listTables({ namespace: ['analytics'] });
+   * console.log(tables); // [{ namespace: ['analytics'], name: 'events' }, ...]
+   * ```
+   */ async listTables(namespace) {
+        return this.tableOps.listTables(namespace);
+    }
+    /**
+   * Creates a new table in the catalog.
+   *
+   * @param namespace - Namespace to create the table in
+   * @param request - Table creation request including name, schema, partition spec, etc.
+   * @returns Table metadata for the created table
+   *
+   * @example
+   * ```typescript
+   * const metadata = await catalog.createTable(
+   *   { namespace: ['analytics'] },
+   *   {
+   *     name: 'events',
+   *     schema: {
+   *       type: 'struct',
+   *       fields: [
+   *         { id: 1, name: 'id', type: 'long', required: true },
+   *         { id: 2, name: 'timestamp', type: 'timestamp', required: true }
+   *       ],
+   *       'schema-id': 0
+   *     },
+   *     'partition-spec': {
+   *       'spec-id': 0,
+   *       fields: [
+   *         { source_id: 2, field_id: 1000, name: 'ts_day', transform: 'day' }
+   *       ]
+   *     }
+   *   }
+   * );
+   * ```
+   */ async createTable(namespace, request) {
+        return this.tableOps.createTable(namespace, request);
+    }
+    /**
+   * Updates an existing table's metadata.
+   *
+   * Can update the schema, partition spec, or properties of a table.
+   *
+   * @param id - Table identifier to update
+   * @param request - Update request with fields to modify
+   * @returns Response containing the metadata location and updated table metadata
+   *
+   * @example
+   * ```typescript
+   * const response = await catalog.updateTable(
+   *   { namespace: ['analytics'], name: 'events' },
+   *   {
+   *     properties: { 'read.split.target-size': '134217728' }
+   *   }
+   * );
+   * console.log(response['metadata-location']); // s3://...
+   * console.log(response.metadata); // TableMetadata object
+   * ```
+   */ async updateTable(id, request) {
+        return this.tableOps.updateTable(id, request);
+    }
+    /**
+   * Drops a table from the catalog.
+   *
+   * @param id - Table identifier to drop
+   *
+   * @example
+   * ```typescript
+   * await catalog.dropTable({ namespace: ['analytics'], name: 'events' });
+   * ```
+   */ async dropTable(id, options) {
+        await this.tableOps.dropTable(id, options);
+    }
+    /**
+   * Loads metadata for a table.
+   *
+   * @param id - Table identifier to load
+   * @returns Table metadata including schema, partition spec, location, etc.
+   *
+   * @example
+   * ```typescript
+   * const metadata = await catalog.loadTable({ namespace: ['analytics'], name: 'events' });
+   * console.log(metadata.schema);
+   * console.log(metadata.location);
+   * ```
+   */ async loadTable(id) {
+        return this.tableOps.loadTable(id);
+    }
+    /**
+   * Checks if a namespace exists in the catalog.
+   *
+   * @param id - Namespace identifier to check
+   * @returns True if the namespace exists, false otherwise
+   *
+   * @example
+   * ```typescript
+   * const exists = await catalog.namespaceExists({ namespace: ['analytics'] });
+   * console.log(exists); // true or false
+   * ```
+   */ async namespaceExists(id) {
+        return this.namespaceOps.namespaceExists(id);
+    }
+    /**
+   * Checks if a table exists in the catalog.
+   *
+   * @param id - Table identifier to check
+   * @returns True if the table exists, false otherwise
+   *
+   * @example
+   * ```typescript
+   * const exists = await catalog.tableExists({ namespace: ['analytics'], name: 'events' });
+   * console.log(exists); // true or false
+   * ```
+   */ async tableExists(id) {
+        return this.tableOps.tableExists(id);
+    }
+    /**
+   * Creates a namespace if it does not exist.
+   *
+   * If the namespace already exists, returns void. If created, returns the response.
+   *
+   * @param id - Namespace identifier to create
+   * @param metadata - Optional metadata properties for the namespace
+   * @returns Response containing the created namespace and its properties, or void if it already exists
+   *
+   * @example
+   * ```typescript
+   * const response = await catalog.createNamespaceIfNotExists(
+   *   { namespace: ['analytics'] },
+   *   { properties: { owner: 'data-team' } }
+   * );
+   * if (response) {
+   *   console.log('Created:', response.namespace);
+   * } else {
+   *   console.log('Already exists');
+   * }
+   * ```
+   */ async createNamespaceIfNotExists(id, metadata) {
+        return this.namespaceOps.createNamespaceIfNotExists(id, metadata);
+    }
+    /**
+   * Creates a table if it does not exist.
+   *
+   * If the table already exists, returns its metadata instead.
+   *
+   * @param namespace - Namespace to create the table in
+   * @param request - Table creation request including name, schema, partition spec, etc.
+   * @returns Table metadata for the created or existing table
+   *
+   * @example
+   * ```typescript
+   * const metadata = await catalog.createTableIfNotExists(
+   *   { namespace: ['analytics'] },
+   *   {
+   *     name: 'events',
+   *     schema: {
+   *       type: 'struct',
+   *       fields: [
+   *         { id: 1, name: 'id', type: 'long', required: true },
+   *         { id: 2, name: 'timestamp', type: 'timestamp', required: true }
+   *       ],
+   *       'schema-id': 0
+   *     }
+   *   }
+   * );
+   * ```
+   */ async createTableIfNotExists(namespace, request) {
+        return this.tableOps.createTableIfNotExists(namespace, request);
+    }
+};
+// src/catalog/types.ts
+var DECIMAL_REGEX = /^decimal\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)$/;
+var FIXED_REGEX = /^fixed\s*\[\s*(\d+)\s*\]$/;
+function parseDecimalType(type) {
+    const match = type.match(DECIMAL_REGEX);
+    if (!match) return null;
+    return {
+        precision: parseInt(match[1], 10),
+        scale: parseInt(match[2], 10)
+    };
+}
+function parseFixedType(type) {
+    const match = type.match(FIXED_REGEX);
+    if (!match) return null;
+    return {
+        length: parseInt(match[1], 10)
+    };
+}
+function isDecimalType(type) {
+    return DECIMAL_REGEX.test(type);
+}
+function isFixedType(type) {
+    return FIXED_REGEX.test(type);
+}
+function typesEqual(a, b) {
+    const decimalA = parseDecimalType(a);
+    const decimalB = parseDecimalType(b);
+    if (decimalA && decimalB) {
+        return decimalA.precision === decimalB.precision && decimalA.scale === decimalB.scale;
+    }
+    const fixedA = parseFixedType(a);
+    const fixedB = parseFixedType(b);
+    if (fixedA && fixedB) {
+        return fixedA.length === fixedB.length;
+    }
+    return a === b;
+}
+function getCurrentSchema(metadata) {
+    return metadata.schemas.find((s)=>s["schema-id"] === metadata["current-schema-id"]);
+}
+;
+ //# sourceMappingURL=index.mjs.map
+ //# sourceMappingURL=index.mjs.map
+}),
+"[project]/frontend/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interop_require_wildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+        __proto__: null
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj){
+        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+            if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+            else newObj[key] = obj[key];
+        }
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+exports._ = _interop_require_wildcard;
+}),
+"[project]/frontend/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+function _interop_require_default(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+exports._ = _interop_require_default;
+}),
+"[project]/frontend/node_modules/clsx/dist/clsx.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "clsx",
+    ()=>clsx,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+function r(e) {
+    var t, f, n = "";
+    if ("string" == typeof e || "number" == typeof e) n += e;
+    else if ("object" == typeof e) if (Array.isArray(e)) {
+        var o = e.length;
+        for(t = 0; t < o; t++)e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+    } else for(f in e)e[f] && (n && (n += " "), n += f);
+    return n;
+}
+function clsx() {
+    for(var e, t, f = 0, n = "", o = arguments.length; f < o; f++)(e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+    return n;
+}
+const __TURBOPACK__default__export__ = clsx;
+}),
+"[project]/frontend/node_modules/class-variance-authority/dist/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Copyright 2022 Joe Bell. All rights reserved.
+ *
+ * This file is licensed to you under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR REPRESENTATIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */ __turbopack_context__.s([
+    "cva",
+    ()=>cva,
+    "cx",
+    ()=>cx
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/clsx/dist/clsx.mjs [app-ssr] (ecmascript)");
+;
+const falsyToString = (value)=>typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
+const cx = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["clsx"];
+const cva = (base, config)=>(props)=>{
+        var _config_compoundVariants;
+        if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+        const { variants, defaultVariants } = config;
+        const getVariantClassNames = Object.keys(variants).map((variant)=>{
+            const variantProp = props === null || props === void 0 ? void 0 : props[variant];
+            const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
+            if (variantProp === null) return null;
+            const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
+            return variants[variant][variantKey];
+        });
+        const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param)=>{
+            let [key, value] = param;
+            if (value === undefined) {
+                return acc;
+            }
+            acc[key] = value;
+            return acc;
+        }, {});
+        const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (_config_compoundVariants = config.compoundVariants) === null || _config_compoundVariants === void 0 ? void 0 : _config_compoundVariants.reduce((acc, param)=>{
+            let { class: cvClass, className: cvClassName, ...compoundVariantOptions } = param;
+            return Object.entries(compoundVariantOptions).every((param)=>{
+                let [key, value] = param;
+                return Array.isArray(value) ? value.includes({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                }[key]) : ({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                })[key] === value;
+            }) ? [
+                ...acc,
+                cvClass,
+                cvClassName
+            ] : acc;
+        }, []);
+        return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+    };
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "hasA11yProp",
+    ()=>hasA11yProp,
+    "mergeClasses",
+    ()=>mergeClasses,
+    "toCamelCase",
+    ()=>toCamelCase,
+    "toKebabCase",
+    ()=>toKebabCase,
+    "toPascalCase",
+    ()=>toPascalCase
+]);
+const toKebabCase = (string)=>string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string)=>string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2)=>p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toPascalCase = (string)=>{
+    const camelCase = toCamelCase(string);
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
+        return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
+    }).join(" ").trim();
+const hasA11yProp = (props)=>{
+    for(const prop in props){
+        if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+            return true;
+        }
+    }
+};
+;
+ //# sourceMappingURL=utils.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/defaultAttributes.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>defaultAttributes
+]);
+var defaultAttributes = {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+};
+;
+ //# sourceMappingURL=defaultAttributes.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/Icon.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>Icon
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$defaultAttributes$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/defaultAttributes.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)");
+;
+;
+;
+const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ color = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children, iconNode, ...rest }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])("svg", {
+        ref,
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$defaultAttributes$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
+        width: size,
+        height: size,
+        stroke: color,
+        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])("lucide", className),
+        ...!children && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["hasA11yProp"])(rest) && {
+            "aria-hidden": "true"
+        },
+        ...rest
+    }, [
+        ...iconNode.map(([tag, attrs])=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(tag, attrs)),
+        ...Array.isArray(children) ? children : [
+            children
+        ]
+    ]));
+;
+ //# sourceMappingURL=Icon.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>createLucideIcon
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/Icon.js [app-ssr] (ecmascript)");
+;
+;
+;
+const createLucideIcon = (iconName, iconNode)=>{
+    const Component = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, ...props }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+            ref,
+            iconNode,
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toKebabCase"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName))}`, `lucide-${iconName}`, className),
+            ...props
+        }));
+    Component.displayName = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName);
+    return Component;
+};
+;
+ //# sourceMappingURL=createLucideIcon.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ChevronDown
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m6 9 6 6 6-6",
+            key: "qrunsl"
+        }
+    ]
+];
+const ChevronDown = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("chevron-down", __iconNode);
+;
+ //# sourceMappingURL=chevron-down.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-ssr] (ecmascript) <export default as ChevronDownIcon>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ChevronDownIcon",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>X
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M18 6 6 18",
+            key: "1bl5f8"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m6 6 12 12",
+            key: "d8bk6v"
+        }
+    ]
+];
+const X = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("x", __iconNode);
+;
+ //# sourceMappingURL=x.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as XIcon>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "XIcon",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Menu
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M4 5h16",
+            key: "1tepv9"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M4 12h16",
+            key: "1lakjw"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M4 19h16",
+            key: "1djgab"
+        }
+    ]
+];
+const Menu = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("menu", __iconNode);
+;
+ //# sourceMappingURL=menu.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript) <export default as Menu>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Menu",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "X",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/mail.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Mail
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7",
+            key: "132q7q"
+        }
+    ],
+    [
+        "rect",
+        {
+            x: "2",
+            y: "4",
+            width: "20",
+            height: "16",
+            rx: "2",
+            key: "izxlao"
+        }
+    ]
+];
+const Mail = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("mail", __iconNode);
+;
+ //# sourceMappingURL=mail.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/mail.js [app-ssr] (ecmascript) <export default as Mail>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Mail",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/mail.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>BookOpen
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12 7v14",
+            key: "1akyts"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
+            key: "ruj8y"
+        }
+    ]
+];
+const BookOpen = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("book-open", __iconNode);
+;
+ //# sourceMappingURL=book-open.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript) <export default as BookOpen>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "BookOpen",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/file-text.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>FileText
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+            key: "1oefj6"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M14 2v5a1 1 0 0 0 1 1h5",
+            key: "wfsgrz"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 9H8",
+            key: "b1mrlr"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 13H8",
+            key: "t4e002"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 17H8",
+            key: "z1uh3a"
+        }
+    ]
+];
+const FileText = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("file-text", __iconNode);
+;
+ //# sourceMappingURL=file-text.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/file-text.js [app-ssr] (ecmascript) <export default as FileText>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "FileText",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/file-text.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Building2
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M10 12h4",
+            key: "a56b0p"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 8h4",
+            key: "1sr2af"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M14 21v-3a2 2 0 0 0-4 0v3",
+            key: "1rgiei"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2",
+            key: "secmi2"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16",
+            key: "16ra0t"
+        }
+    ]
+];
+const Building2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("building-2", __iconNode);
+;
+ //# sourceMappingURL=building-2.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript) <export default as Building2>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Building2",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>GraduationCap
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z",
+            key: "j76jl0"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 10v6",
+            key: "1lu8f3"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5",
+            key: "1r8lef"
+        }
+    ]
+];
+const GraduationCap = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("graduation-cap", __iconNode);
+;
+ //# sourceMappingURL=graduation-cap.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript) <export default as GraduationCap>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "GraduationCap",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ArrowRight
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M5 12h14",
+            key: "1ays0h"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m12 5 7 7-7 7",
+            key: "xquz4c"
+        }
+    ]
+];
+const ArrowRight = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("arrow-right", __iconNode);
+;
+ //# sourceMappingURL=arrow-right.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript) <export default as ArrowRight>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ArrowRight",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/play.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Play
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z",
+            key: "10ikf1"
+        }
+    ]
+];
+const Play = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("play", __iconNode);
+;
+ //# sourceMappingURL=play.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/play.js [app-ssr] (ecmascript) <export default as Play>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Play",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/play.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/search.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Search
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m21 21-4.34-4.34",
+            key: "14j7rj"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "11",
+            cy: "11",
+            r: "8",
+            key: "4ej97u"
+        }
+    ]
+];
+const Search = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("search", __iconNode);
+;
+ //# sourceMappingURL=search.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/search.js [app-ssr] (ecmascript) <export default as Search>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Search",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/search.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/database.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Database
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "ellipse",
+        {
+            cx: "12",
+            cy: "5",
+            rx: "9",
+            ry: "3",
+            key: "msslwz"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 5V19A9 3 0 0 0 21 19V5",
+            key: "1wlel7"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 12A9 3 0 0 0 21 12",
+            key: "mv7ke4"
+        }
+    ]
+];
+const Database = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("database", __iconNode);
+;
+ //# sourceMappingURL=database.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/database.js [app-ssr] (ecmascript) <export default as Database>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Database",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/database.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/globe.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Globe
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "12",
+            r: "10",
+            key: "1mglay"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+            key: "13o1zl"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M2 12h20",
+            key: "9i4pu4"
+        }
+    ]
+];
+const Globe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("globe", __iconNode);
+;
+ //# sourceMappingURL=globe.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/globe.js [app-ssr] (ecmascript) <export default as Globe>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Globe",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/globe.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Users
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+            key: "1yyitq"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 3.128a4 4 0 0 1 0 7.744",
+            key: "16gr8j"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 21v-2a4 4 0 0 0-3-3.87",
+            key: "kshegd"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "9",
+            cy: "7",
+            r: "4",
+            key: "nufk8"
+        }
+    ]
+];
+const Users = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("users", __iconNode);
+;
+ //# sourceMappingURL=users.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript) <export default as Users>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Users",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/send.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Send
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
+            key: "1ffxy3"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m21.854 2.147-10.94 10.939",
+            key: "12cjpa"
+        }
+    ]
+];
+const Send = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("send", __iconNode);
+;
+ //# sourceMappingURL=send.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/send.js [app-ssr] (ecmascript) <export default as Send>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Send",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/send.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>CircleCheckBig
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M21.801 10A10 10 0 1 1 17 3.335",
+            key: "yps3ct"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m9 11 3 3L22 4",
+            key: "1pflzl"
+        }
+    ]
+];
+const CircleCheckBig = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("circle-check-big", __iconNode);
+;
+ //# sourceMappingURL=circle-check-big.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-ssr] (ecmascript) <export default as CheckCircle>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "CheckCircle",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/award.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Award
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
+            key: "1yiouv"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "8",
+            r: "6",
+            key: "1vp47v"
+        }
+    ]
+];
+const Award = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("award", __iconNode);
+;
+ //# sourceMappingURL=award.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/award.js [app-ssr] (ecmascript) <export default as Award>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Award",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/award.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/chart-column.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ChartColumn
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M3 3v16a2 2 0 0 0 2 2h16",
+            key: "c24i48"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M18 17V9",
+            key: "2bz60n"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M13 17V5",
+            key: "1frdt8"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M8 17v-3",
+            key: "17ska0"
+        }
+    ]
+];
+const ChartColumn = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("chart-column", __iconNode);
+;
+ //# sourceMappingURL=chart-column.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/chart-column.js [app-ssr] (ecmascript) <export default as BarChart3>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "BarChart3",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/chart-column.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/target.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Target
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "12",
+            r: "10",
+            key: "1mglay"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "12",
+            r: "6",
+            key: "1vlfrh"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "12",
+            r: "2",
+            key: "1c9p78"
+        }
+    ]
+];
+const Target = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("target", __iconNode);
+;
+ //# sourceMappingURL=target.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/target.js [app-ssr] (ecmascript) <export default as Target>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Target",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/target.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/circle-question-mark.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>CircleQuestionMark
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "12",
+            r: "10",
+            key: "1mglay"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3",
+            key: "1u773s"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M12 17h.01",
+            key: "p32p05"
+        }
+    ]
+];
+const CircleQuestionMark = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("circle-question-mark", __iconNode);
+;
+ //# sourceMappingURL=circle-question-mark.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/circle-question-mark.js [app-ssr] (ecmascript) <export default as HelpCircle>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "HelpCircle",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/circle-question-mark.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/github.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Github
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4",
+            key: "tonef"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M9 18c-4.51 2-5-2-7-2",
+            key: "9comsn"
+        }
+    ]
+];
+const Github = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("github", __iconNode);
+;
+ //# sourceMappingURL=github.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/github.js [app-ssr] (ecmascript) <export default as Github>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Github",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$github$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$github$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/github.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/linkedin.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Linkedin
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+            key: "c2jq9f"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "4",
+            height: "12",
+            x: "2",
+            y: "9",
+            key: "mk3on5"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "4",
+            cy: "4",
+            r: "2",
+            key: "bt5ra8"
+        }
+    ]
+];
+const Linkedin = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("linkedin", __iconNode);
+;
+ //# sourceMappingURL=linkedin.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/linkedin.js [app-ssr] (ecmascript) <export default as Linkedin>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Linkedin",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/linkedin.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/lock-open.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>LockOpen
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "rect",
+        {
+            width: "18",
+            height: "11",
+            x: "3",
+            y: "11",
+            rx: "2",
+            ry: "2",
+            key: "1w4ew1"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M7 11V7a5 5 0 0 1 9.9-1",
+            key: "1mm8w8"
+        }
+    ]
+];
+const LockOpen = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("lock-open", __iconNode);
+;
+ //# sourceMappingURL=lock-open.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/lock-open.js [app-ssr] (ecmascript) <export default as Unlock>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Unlock",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/lock-open.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/layers.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Layers
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
+            key: "zw3jo"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12",
+            key: "1wduqc"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17",
+            key: "kqbvx6"
+        }
+    ]
+];
+const Layers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("layers", __iconNode);
+;
+ //# sourceMappingURL=layers.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/layers.js [app-ssr] (ecmascript) <export default as Layers>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Layers",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/layers.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/lightbulb.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Lightbulb
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5",
+            key: "1gvzjb"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M9 18h6",
+            key: "x1upvd"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 22h4",
+            key: "ceow96"
+        }
+    ]
+];
+const Lightbulb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("lightbulb", __iconNode);
+;
+ //# sourceMappingURL=lightbulb.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/lightbulb.js [app-ssr] (ecmascript) <export default as Lightbulb>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Lightbulb",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/lightbulb.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Sparkles
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",
+            key: "1s2grr"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M20 2v4",
+            key: "1rf3ol"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 4h-4",
+            key: "gwowj6"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "4",
+            cy: "20",
+            r: "2",
+            key: "6kqj1y"
+        }
+    ]
+];
+const Sparkles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("sparkles", __iconNode);
+;
+ //# sourceMappingURL=sparkles.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript) <export default as Sparkles>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Sparkles",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/upload.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Upload
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12 3v12",
+            key: "1x0j5s"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m17 8-5-5-5 5",
+            key: "7q97r8"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4",
+            key: "ih7n3h"
+        }
+    ]
+];
+const Upload = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("upload", __iconNode);
+;
+ //# sourceMappingURL=upload.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/upload.js [app-ssr] (ecmascript) <export default as Upload>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Upload",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/upload.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/check.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Check
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M20 6 9 17l-5-5",
+            key: "1gmf2c"
+        }
+    ]
+];
+const Check = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("check", __iconNode);
+;
+ //# sourceMappingURL=check.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/check.js [app-ssr] (ecmascript) <export default as CheckIcon>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "CheckIcon",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/check.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/chevron-up.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ChevronUp
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m18 15-6-6-6 6",
+            key: "153udz"
+        }
+    ]
+];
+const ChevronUp = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("chevron-up", __iconNode);
+;
+ //# sourceMappingURL=chevron-up.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/chevron-up.js [app-ssr] (ecmascript) <export default as ChevronUpIcon>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ChevronUpIcon",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/chevron-up.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/message-circle.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>MessageCircle
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719",
+            key: "1sd12s"
+        }
+    ]
+];
+const MessageCircle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("message-circle", __iconNode);
+;
+ //# sourceMappingURL=message-circle.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/message-circle.js [app-ssr] (ecmascript) <export default as MessageCircle>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "MessageCircle",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/message-circle.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/bot.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Bot
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12 8V4H8",
+            key: "hb8ula"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "16",
+            height: "12",
+            x: "4",
+            y: "8",
+            rx: "2",
+            key: "enze0r"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M2 14h2",
+            key: "vft8re"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M20 14h2",
+            key: "4cs60a"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M15 13v2",
+            key: "1xurst"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M9 13v2",
+            key: "rq6x2g"
+        }
+    ]
+];
+const Bot = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("bot", __iconNode);
+;
+ //# sourceMappingURL=bot.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/bot.js [app-ssr] (ecmascript) <export default as Bot>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Bot",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/bot.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/user.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>User
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2",
+            key: "975kel"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "7",
+            r: "4",
+            key: "17ys0d"
+        }
+    ]
+];
+const User = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("user", __iconNode);
+;
+ //# sourceMappingURL=user.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/user.js [app-ssr] (ecmascript) <export default as User>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "User",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/user.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>MapPin
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+            key: "1r0f0z"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "10",
+            r: "3",
+            key: "ilqhr7"
+        }
+    ]
+];
+const MapPin = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("map-pin", __iconNode);
+;
+ //# sourceMappingURL=map-pin.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript) <export default as MapPin>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "MapPin",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/twitter.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Twitter
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z",
+            key: "pff0z6"
+        }
+    ]
+];
+const Twitter = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("twitter", __iconNode);
+;
+ //# sourceMappingURL=twitter.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/twitter.js [app-ssr] (ecmascript) <export default as Twitter>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Twitter",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$twitter$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$twitter$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/twitter.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/youtube.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Youtube
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17",
+            key: "1q2vi4"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m10 15 5-3-5-3z",
+            key: "1jp15x"
+        }
+    ]
+];
+const Youtube = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("youtube", __iconNode);
+;
+ //# sourceMappingURL=youtube.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/youtube.js [app-ssr] (ecmascript) <export default as Youtube>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Youtube",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$youtube$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$youtube$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/youtube.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/heart.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Heart
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5",
+            key: "mvr1a0"
+        }
+    ]
+];
+const Heart = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("heart", __iconNode);
+;
+ //# sourceMappingURL=heart.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/heart.js [app-ssr] (ecmascript) <export default as Heart>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Heart",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/heart.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/funnel.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Funnel
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z",
+            key: "sc7q7i"
+        }
+    ]
+];
+const Funnel = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("funnel", __iconNode);
+;
+ //# sourceMappingURL=funnel.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/funnel.js [app-ssr] (ecmascript) <export default as Filter>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Filter",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$funnel$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$funnel$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/funnel.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-up-narrow-wide.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ArrowUpNarrowWide
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m3 8 4-4 4 4",
+            key: "11wl7u"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M7 4v16",
+            key: "1glfcx"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M11 12h4",
+            key: "q8tih4"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M11 16h7",
+            key: "uosisv"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M11 20h10",
+            key: "jvxblo"
+        }
+    ]
+];
+const ArrowUpNarrowWide = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("arrow-up-narrow-wide", __iconNode);
+;
+ //# sourceMappingURL=arrow-up-narrow-wide.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-up-narrow-wide.js [app-ssr] (ecmascript) <export default as SortAsc>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SortAsc",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$narrow$2d$wide$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$narrow$2d$wide$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-up-narrow-wide.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-down-wide-narrow.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ArrowDownWideNarrow
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m3 16 4 4 4-4",
+            key: "1co6wj"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M7 20V4",
+            key: "1yoxec"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M11 4h10",
+            key: "1w87gc"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M11 8h7",
+            key: "djye34"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M11 12h4",
+            key: "q8tih4"
+        }
+    ]
+];
+const ArrowDownWideNarrow = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("arrow-down-wide-narrow", __iconNode);
+;
+ //# sourceMappingURL=arrow-down-wide-narrow.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-down-wide-narrow.js [app-ssr] (ecmascript) <export default as SortDesc>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SortDesc",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2d$wide$2d$narrow$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2d$wide$2d$narrow$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-down-wide-narrow.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-up-down.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ArrowUpDown
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m21 16-4 4-4-4",
+            key: "f6ql7i"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M17 20V4",
+            key: "1ejh1v"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m3 8 4-4 4 4",
+            key: "11wl7u"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M7 4v16",
+            key: "1glfcx"
+        }
+    ]
+];
+const ArrowUpDown = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("arrow-up-down", __iconNode);
+;
+ //# sourceMappingURL=arrow-up-down.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-up-down.js [app-ssr] (ecmascript) <export default as ArrowUpDown>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ArrowUpDown",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/arrow-up-down.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/external-link.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ExternalLink
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M15 3h6v6",
+            key: "1q9fwt"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 14 21 3",
+            key: "gplh6r"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+            key: "a6xqqp"
+        }
+    ]
+];
+const ExternalLink = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("external-link", __iconNode);
+;
+ //# sourceMappingURL=external-link.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/external-link.js [app-ssr] (ecmascript) <export default as ExternalLink>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ExternalLink",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/external-link.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/printer.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Printer
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2",
+            key: "143wyd"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6",
+            key: "1itne7"
+        }
+    ],
+    [
+        "rect",
+        {
+            x: "6",
+            y: "14",
+            width: "12",
+            height: "8",
+            rx: "1",
+            key: "1ue0tg"
+        }
+    ]
+];
+const Printer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("printer", __iconNode);
+;
+ //# sourceMappingURL=printer.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/printer.js [app-ssr] (ecmascript) <export default as Printer>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Printer",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$printer$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$printer$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/printer.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/download.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.554.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Download
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12 15V3",
+            key: "m9g1x1"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4",
+            key: "ih7n3h"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m7 10 5 5 5-5",
+            key: "brsn70"
+        }
+    ]
+];
+const Download = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("download", __iconNode);
+;
+ //# sourceMappingURL=download.js.map
+}),
+"[project]/frontend/node_modules/lucide-react/dist/esm/icons/download.js [app-ssr] (ecmascript) <export default as Download>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Download",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/lucide-react/dist/esm/icons/download.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/constants.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "fullWidthClassName",
+    ()=>fullWidthClassName,
+    "noScrollbarsClassName",
+    ()=>noScrollbarsClassName,
+    "removedBarSizeVariable",
+    ()=>removedBarSizeVariable,
+    "zeroRightClassName",
+    ()=>zeroRightClassName
+]);
+var zeroRightClassName = 'right-scroll-bar-position';
+var fullWidthClassName = 'width-before-scroll-bar';
+var noScrollbarsClassName = 'with-scroll-bars-hidden';
+var removedBarSizeVariable = '--removed-body-scroll-bar-size';
+}),
+"[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/utils.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getGapWidth",
+    ()=>getGapWidth,
+    "zeroGap",
+    ()=>zeroGap
+]);
+var zeroGap = {
+    left: 0,
+    top: 0,
+    right: 0,
+    gap: 0
+};
+var parse = function(x) {
+    return parseInt(x || '', 10) || 0;
+};
+var getOffset = function(gapMode) {
+    var cs = window.getComputedStyle(document.body);
+    var left = cs[gapMode === 'padding' ? 'paddingLeft' : 'marginLeft'];
+    var top = cs[gapMode === 'padding' ? 'paddingTop' : 'marginTop'];
+    var right = cs[gapMode === 'padding' ? 'paddingRight' : 'marginRight'];
+    return [
+        parse(left),
+        parse(top),
+        parse(right)
+    ];
+};
+var getGapWidth = function(gapMode) {
+    if (gapMode === void 0) {
+        gapMode = 'margin';
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        return zeroGap;
+    }
+    //TURBOPACK unreachable
+    ;
+    var offsets;
+    var documentWidth;
+    var windowWidth;
+};
+}),
+"[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/component.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "RemoveScrollBar",
+    ()=>RemoveScrollBar,
+    "lockAttribute",
+    ()=>lockAttribute,
+    "useLockAttribute",
+    ()=>useLockAttribute
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/component.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/constants.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/utils.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+var Style = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["styleSingleton"])();
+var lockAttribute = 'data-scroll-locked';
+// important tip - once we measure scrollBar width and remove them
+// we could not repeat this operation
+// thus we are using style-singleton - only the first "yet correct" style will be applied.
+var getStyles = function(_a, allowRelative, gapMode, important) {
+    var left = _a.left, top = _a.top, right = _a.right, gap = _a.gap;
+    if (gapMode === void 0) {
+        gapMode = 'margin';
+    }
+    return "\n  .".concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["noScrollbarsClassName"], " {\n   overflow: hidden ").concat(important, ";\n   padding-right: ").concat(gap, "px ").concat(important, ";\n  }\n  body[").concat(lockAttribute, "] {\n    overflow: hidden ").concat(important, ";\n    overscroll-behavior: contain;\n    ").concat([
+        allowRelative && "position: relative ".concat(important, ";"),
+        gapMode === 'margin' && "\n    padding-left: ".concat(left, "px;\n    padding-top: ").concat(top, "px;\n    padding-right: ").concat(right, "px;\n    margin-left:0;\n    margin-top:0;\n    margin-right: ").concat(gap, "px ").concat(important, ";\n    "),
+        gapMode === 'padding' && "padding-right: ".concat(gap, "px ").concat(important, ";")
+    ].filter(Boolean).join(''), "\n  }\n  \n  .").concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["zeroRightClassName"], " {\n    right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fullWidthClassName"], " {\n    margin-right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["zeroRightClassName"], " .").concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["zeroRightClassName"], " {\n    right: 0 ").concat(important, ";\n  }\n  \n  .").concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fullWidthClassName"], " .").concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fullWidthClassName"], " {\n    margin-right: 0 ").concat(important, ";\n  }\n  \n  body[").concat(lockAttribute, "] {\n    ").concat(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["removedBarSizeVariable"], ": ").concat(gap, "px;\n  }\n");
+};
+var getCurrentUseCounter = function() {
+    var counter = parseInt(document.body.getAttribute(lockAttribute) || '0', 10);
+    return isFinite(counter) ? counter : 0;
+};
+var useLockAttribute = function() {
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](function() {
+        document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
+        return function() {
+            var newCounter = getCurrentUseCounter() - 1;
+            if (newCounter <= 0) {
+                document.body.removeAttribute(lockAttribute);
+            } else {
+                document.body.setAttribute(lockAttribute, newCounter.toString());
+            }
+        };
+    }, []);
+};
+var RemoveScrollBar = function(_a) {
+    var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? 'margin' : _b;
+    useLockAttribute();
+    /*
+     gap will be measured on every component mount
+     however it will be used only by the "first" invocation
+     due to singleton nature of <Style
+     */ var gap = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"](function() {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getGapWidth"])(gapMode);
+    }, [
+        gapMode
+    ]);
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](Style, {
+        styles: getStyles(gap, !noRelative, gapMode, !noImportant ? '!important' : '')
+    });
+};
+}),
+"[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/component.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/constants.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/utils.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+}),
+"[project]/frontend/node_modules/use-callback-ref/dist/es2015/assignRef.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Assigns a value for a given ref, no matter of the ref format
+ * @param {RefObject} ref - a callback function or ref object
+ * @param value - a new value
+ *
+ * @see https://github.com/theKashey/use-callback-ref#assignref
+ * @example
+ * const refObject = useRef();
+ * const refFn = (ref) => {....}
+ *
+ * assignRef(refObject, "refValue");
+ * assignRef(refFn, "refValue");
+ */ __turbopack_context__.s([
+    "assignRef",
+    ()=>assignRef
+]);
+function assignRef(ref, value) {
+    if (typeof ref === 'function') {
+        ref(value);
+    } else if (ref) {
+        ref.current = value;
+    }
+    return ref;
+}
+}),
+"[project]/frontend/node_modules/use-callback-ref/dist/es2015/useRef.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useCallbackRef",
+    ()=>useCallbackRef
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
+function useCallbackRef(initialValue, callback) {
+    var ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(function() {
+        return {
+            // value
+            value: initialValue,
+            // last callback
+            callback: callback,
+            // "memoized" public interface
+            facade: {
+                get current () {
+                    return ref.value;
+                },
+                set current (value){
+                    var last = ref.value;
+                    if (last !== value) {
+                        ref.value = value;
+                        ref.callback(value, last);
+                    }
+                }
+            }
+        };
+    })[0];
+    // update callback
+    ref.callback = callback;
+    return ref.facade;
+}
+}),
+"[project]/frontend/node_modules/use-callback-ref/dist/es2015/useMergeRef.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useMergeRefs",
+    ()=>useMergeRefs
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$assignRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/use-callback-ref/dist/es2015/assignRef.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$useRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/use-callback-ref/dist/es2015/useRef.js [app-ssr] (ecmascript)");
+;
+;
+;
+var useIsomorphicLayoutEffect = ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"];
+var currentValues = new WeakMap();
+function useMergeRefs(refs, defaultValue) {
+    var callbackRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$useRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallbackRef"])(defaultValue || null, function(newValue) {
+        return refs.forEach(function(ref) {
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$assignRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["assignRef"])(ref, newValue);
+        });
+    });
+    // handle refs changes - added or removed
+    useIsomorphicLayoutEffect(function() {
+        var oldValue = currentValues.get(callbackRef);
+        if (oldValue) {
+            var prevRefs_1 = new Set(oldValue);
+            var nextRefs_1 = new Set(refs);
+            var current_1 = callbackRef.current;
+            prevRefs_1.forEach(function(ref) {
+                if (!nextRefs_1.has(ref)) {
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$assignRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["assignRef"])(ref, null);
+                }
+            });
+            nextRefs_1.forEach(function(ref) {
+                if (!prevRefs_1.has(ref)) {
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$assignRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["assignRef"])(ref, current_1);
+                }
+            });
+        }
+        currentValues.set(callbackRef, refs);
+    }, [
+        refs
+    ]);
+    return callbackRef;
+}
+}),
+"[project]/frontend/node_modules/use-sidecar/dist/es2015/medium.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createMedium",
+    ()=>createMedium,
+    "createSidecarMedium",
+    ()=>createSidecarMedium
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+;
+function ItoI(a) {
+    return a;
+}
+function innerCreateMedium(defaults, middleware) {
+    if (middleware === void 0) {
+        middleware = ItoI;
+    }
+    var buffer = [];
+    var assigned = false;
+    var medium = {
+        read: function() {
+            if (assigned) {
+                throw new Error('Sidecar: could not `read` from an `assigned` medium. `read` could be used only with `useMedium`.');
+            }
+            if (buffer.length) {
+                return buffer[buffer.length - 1];
+            }
+            return defaults;
+        },
+        useMedium: function(data) {
+            var item = middleware(data, assigned);
+            buffer.push(item);
+            return function() {
+                buffer = buffer.filter(function(x) {
+                    return x !== item;
+                });
+            };
+        },
+        assignSyncMedium: function(cb) {
+            assigned = true;
+            while(buffer.length){
+                var cbs = buffer;
+                buffer = [];
+                cbs.forEach(cb);
+            }
+            buffer = {
+                push: function(x) {
+                    return cb(x);
+                },
+                filter: function() {
+                    return buffer;
+                }
+            };
+        },
+        assignMedium: function(cb) {
+            assigned = true;
+            var pendingQueue = [];
+            if (buffer.length) {
+                var cbs = buffer;
+                buffer = [];
+                cbs.forEach(cb);
+                pendingQueue = buffer;
+            }
+            var executeQueue = function() {
+                var cbs = pendingQueue;
+                pendingQueue = [];
+                cbs.forEach(cb);
+            };
+            var cycle = function() {
+                return Promise.resolve().then(executeQueue);
+            };
+            cycle();
+            buffer = {
+                push: function(x) {
+                    pendingQueue.push(x);
+                    cycle();
+                },
+                filter: function(filter) {
+                    pendingQueue = pendingQueue.filter(filter);
+                    return buffer;
+                }
+            };
+        }
+    };
+    return medium;
+}
+function createMedium(defaults, middleware) {
+    if (middleware === void 0) {
+        middleware = ItoI;
+    }
+    return innerCreateMedium(defaults, middleware);
+}
+function createSidecarMedium(options) {
+    if (options === void 0) {
+        options = {};
+    }
+    var medium = innerCreateMedium(null);
+    medium.options = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])({
+        async: true,
+        ssr: false
+    }, options);
+    return medium;
+}
+}),
+"[project]/frontend/node_modules/use-sidecar/dist/es2015/exports.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "exportSidecar",
+    ()=>exportSidecar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
+;
+var SideCar = function(_a) {
+    var sideCar = _a.sideCar, rest = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__rest"])(_a, [
+        "sideCar"
+    ]);
+    if (!sideCar) {
+        throw new Error('Sidecar: please provide `sideCar` property to import the right car');
+    }
+    var Target = sideCar.read();
+    if (!Target) {
+        throw new Error('Sidecar medium not found');
+    }
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](Target, (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])({}, rest));
+};
+SideCar.isSideCarExport = true;
+function exportSidecar(medium, exported) {
+    medium.useMedium(exported);
+    return SideCar;
+}
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/medium.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "effectCar",
+    ()=>effectCar
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$sidecar$2f$dist$2f$es2015$2f$medium$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/use-sidecar/dist/es2015/medium.js [app-ssr] (ecmascript)");
+;
+var effectCar = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$sidecar$2f$dist$2f$es2015$2f$medium$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSidecarMedium"])();
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/UI.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "RemoveScroll",
+    ()=>RemoveScroll
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/constants.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$useMergeRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/use-callback-ref/dist/es2015/useMergeRef.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$medium$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/medium.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+var nothing = function() {
+    return;
+};
+/**
+ * Removes scrollbar from the page and contain the scroll within the Lock
+ */ var RemoveScroll = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"](function(props, parentRef) {
+    var ref = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"](null);
+    var _a = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"]({
+        onScrollCapture: nothing,
+        onWheelCapture: nothing,
+        onTouchMoveCapture: nothing
+    }), callbacks = _a[0], setCallbacks = _a[1];
+    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noRelative = props.noRelative, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, gapMode = props.gapMode, rest = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__rest"])(props, [
+        "forwardProps",
+        "children",
+        "className",
+        "removeScrollBar",
+        "enabled",
+        "shards",
+        "sideCar",
+        "noRelative",
+        "noIsolation",
+        "inert",
+        "allowPinchZoom",
+        "as",
+        "gapMode"
+    ]);
+    var SideCar = sideCar;
+    var containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$callback$2d$ref$2f$dist$2f$es2015$2f$useMergeRef$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMergeRefs"])([
+        ref,
+        parentRef
+    ]);
+    var containerProps = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])({}, rest), callbacks);
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], null, enabled && __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](SideCar, {
+        sideCar: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$medium$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["effectCar"],
+        removeScrollBar: removeScrollBar,
+        shards: shards,
+        noRelative: noRelative,
+        noIsolation: noIsolation,
+        inert: inert,
+        setCallbacks: setCallbacks,
+        allowPinchZoom: !!allowPinchZoom,
+        lockRef: ref,
+        gapMode: gapMode
+    }), forwardProps ? __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cloneElement"](__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Children"].only(children), (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])({}, containerProps), {
+        ref: containerRef
+    })) : __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](Container, (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])({}, containerProps, {
+        className: className,
+        ref: containerRef
+    }), children));
+});
+RemoveScroll.defaultProps = {
+    enabled: true,
+    removeScrollBar: true,
+    inert: false
+};
+RemoveScroll.classNames = {
+    fullWidth: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fullWidthClassName"],
+    zeroRight: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["zeroRightClassName"]
+};
+;
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "nonPassive",
+    ()=>nonPassive
+]);
+var passiveSupported = false;
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+{
+    var options;
+}
+var nonPassive = passiveSupported ? {
+    passive: false
+} : false;
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/handleScroll.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "handleScroll",
+    ()=>handleScroll,
+    "locationCouldBeScrolled",
+    ()=>locationCouldBeScrolled
+]);
+var alwaysContainsScroll = function(node) {
+    // textarea will always _contain_ scroll inside self. It only can be hidden
+    return node.tagName === 'TEXTAREA';
+};
+var elementCanBeScrolled = function(node, overflow) {
+    if (!(node instanceof Element)) {
+        return false;
+    }
+    var styles = window.getComputedStyle(node);
+    return(// not-not-scrollable
+    styles[overflow] !== 'hidden' && // contains scroll inside self
+    !(styles.overflowY === styles.overflowX && !alwaysContainsScroll(node) && styles[overflow] === 'visible'));
+};
+var elementCouldBeVScrolled = function(node) {
+    return elementCanBeScrolled(node, 'overflowY');
+};
+var elementCouldBeHScrolled = function(node) {
+    return elementCanBeScrolled(node, 'overflowX');
+};
+var locationCouldBeScrolled = function(axis, node) {
+    var ownerDocument = node.ownerDocument;
+    var current = node;
+    do {
+        // Skip over shadow root
+        if (typeof ShadowRoot !== 'undefined' && current instanceof ShadowRoot) {
+            current = current.host;
+        }
+        var isScrollable = elementCouldBeScrolled(axis, current);
+        if (isScrollable) {
+            var _a = getScrollVariables(axis, current), scrollHeight = _a[1], clientHeight = _a[2];
+            if (scrollHeight > clientHeight) {
+                return true;
+            }
+        }
+        current = current.parentNode;
+    }while (current && current !== ownerDocument.body)
+    return false;
+};
+var getVScrollVariables = function(_a) {
+    var scrollTop = _a.scrollTop, scrollHeight = _a.scrollHeight, clientHeight = _a.clientHeight;
+    return [
+        scrollTop,
+        scrollHeight,
+        clientHeight
+    ];
+};
+var getHScrollVariables = function(_a) {
+    var scrollLeft = _a.scrollLeft, scrollWidth = _a.scrollWidth, clientWidth = _a.clientWidth;
+    return [
+        scrollLeft,
+        scrollWidth,
+        clientWidth
+    ];
+};
+var elementCouldBeScrolled = function(axis, node) {
+    return axis === 'v' ? elementCouldBeVScrolled(node) : elementCouldBeHScrolled(node);
+};
+var getScrollVariables = function(axis, node) {
+    return axis === 'v' ? getVScrollVariables(node) : getHScrollVariables(node);
+};
+var getDirectionFactor = function(axis, direction) {
+    /**
+     * If the element's direction is rtl (right-to-left), then scrollLeft is 0 when the scrollbar is at its rightmost position,
+     * and then increasingly negative as you scroll towards the end of the content.
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+     */ return axis === 'h' && direction === 'rtl' ? -1 : 1;
+};
+var handleScroll = function(axis, endTarget, event, sourceDelta, noOverscroll) {
+    var directionFactor = getDirectionFactor(axis, window.getComputedStyle(endTarget).direction);
+    var delta = directionFactor * sourceDelta;
+    // find scrollable target
+    var target = event.target;
+    var targetInLock = endTarget.contains(target);
+    var shouldCancelScroll = false;
+    var isDeltaPositive = delta > 0;
+    var availableScroll = 0;
+    var availableScrollTop = 0;
+    do {
+        if (!target) {
+            break;
+        }
+        var _a = getScrollVariables(axis, target), position = _a[0], scroll_1 = _a[1], capacity = _a[2];
+        var elementScroll = scroll_1 - capacity - directionFactor * position;
+        if (position || elementScroll) {
+            if (elementCouldBeScrolled(axis, target)) {
+                availableScroll += elementScroll;
+                availableScrollTop += position;
+            }
+        }
+        var parent_1 = target.parentNode;
+        // we will "bubble" from ShadowDom in case we are, or just to the parent in normal case
+        // this is the same logic used in focus-lock
+        target = parent_1 && parent_1.nodeType === Node.DOCUMENT_FRAGMENT_NODE ? parent_1.host : parent_1;
+    }while (// portaled content
+    !targetInLock && target !== document.body || targetInLock && (endTarget.contains(target) || endTarget === target))
+    // handle epsilon around 0 (non standard zoom levels)
+    if (isDeltaPositive && (noOverscroll && Math.abs(availableScroll) < 1 || !noOverscroll && delta > availableScroll)) {
+        shouldCancelScroll = true;
+    } else if (!isDeltaPositive && (noOverscroll && Math.abs(availableScrollTop) < 1 || !noOverscroll && -delta > availableScrollTop)) {
+        shouldCancelScroll = true;
+    }
+    return shouldCancelScroll;
+};
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/SideEffect.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "RemoveScrollSideCar",
+    ()=>RemoveScrollSideCar,
+    "getDeltaXY",
+    ()=>getDeltaXY,
+    "getTouchXY",
+    ()=>getTouchXY
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll-bar/dist/es2015/component.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/component.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$aggresiveCapture$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$handleScroll$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/handleScroll.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+var getTouchXY = function(event) {
+    return 'changedTouches' in event ? [
+        event.changedTouches[0].clientX,
+        event.changedTouches[0].clientY
+    ] : [
+        0,
+        0
+    ];
+};
+var getDeltaXY = function(event) {
+    return [
+        event.deltaX,
+        event.deltaY
+    ];
+};
+var extractRef = function(ref) {
+    return ref && 'current' in ref ? ref.current : ref;
+};
+var deltaCompare = function(x, y) {
+    return x[0] === y[0] && x[1] === y[1];
+};
+var generateStyle = function(id) {
+    return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n");
+};
+var idCounter = 0;
+var lockStack = [];
+function RemoveScrollSideCar(props) {
+    var shouldPreventQueue = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"]([]);
+    var touchStartRef = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"]([
+        0,
+        0
+    ]);
+    var activeAxis = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"]();
+    var id = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"](idCounter++)[0];
+    var Style = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"](__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["styleSingleton"])[0];
+    var lastProps = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"](props);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](function() {
+        lastProps.current = props;
+    }, [
+        props
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](function() {
+        if (props.inert) {
+            document.body.classList.add("block-interactivity-".concat(id));
+            var allow_1 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__spreadArray"])([
+                props.lockRef.current
+            ], (props.shards || []).map(extractRef), true).filter(Boolean);
+            allow_1.forEach(function(el) {
+                return el.classList.add("allow-interactivity-".concat(id));
+            });
+            return function() {
+                document.body.classList.remove("block-interactivity-".concat(id));
+                allow_1.forEach(function(el) {
+                    return el.classList.remove("allow-interactivity-".concat(id));
+                });
+            };
+        }
+        return;
+    }, [
+        props.inert,
+        props.lockRef.current,
+        props.shards
+    ]);
+    var shouldCancelEvent = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"](function(event, parent) {
+        if ('touches' in event && event.touches.length === 2 || event.type === 'wheel' && event.ctrlKey) {
+            return !lastProps.current.allowPinchZoom;
+        }
+        var touch = getTouchXY(event);
+        var touchStart = touchStartRef.current;
+        var deltaX = 'deltaX' in event ? event.deltaX : touchStart[0] - touch[0];
+        var deltaY = 'deltaY' in event ? event.deltaY : touchStart[1] - touch[1];
+        var currentAxis;
+        var target = event.target;
+        var moveDirection = Math.abs(deltaX) > Math.abs(deltaY) ? 'h' : 'v';
+        // allow horizontal touch move on Range inputs. They will not cause any scroll
+        if ('touches' in event && moveDirection === 'h' && target.type === 'range') {
+            return false;
+        }
+        // allow drag selection (iOS); check if selection's anchorNode is the same as target or contains target
+        var selection = window.getSelection();
+        var anchorNode = selection && selection.anchorNode;
+        var isTouchingSelection = anchorNode ? anchorNode === target || anchorNode.contains(target) : false;
+        if (isTouchingSelection) {
+            return false;
+        }
+        var canBeScrolledInMainDirection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$handleScroll$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["locationCouldBeScrolled"])(moveDirection, target);
+        if (!canBeScrolledInMainDirection) {
+            return true;
+        }
+        if (canBeScrolledInMainDirection) {
+            currentAxis = moveDirection;
+        } else {
+            currentAxis = moveDirection === 'v' ? 'h' : 'v';
+            canBeScrolledInMainDirection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$handleScroll$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["locationCouldBeScrolled"])(moveDirection, target);
+        // other axis might be not scrollable
+        }
+        if (!canBeScrolledInMainDirection) {
+            return false;
+        }
+        if (!activeAxis.current && 'changedTouches' in event && (deltaX || deltaY)) {
+            activeAxis.current = currentAxis;
+        }
+        if (!currentAxis) {
+            return true;
+        }
+        var cancelingAxis = activeAxis.current || currentAxis;
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$handleScroll$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["handleScroll"])(cancelingAxis, parent, event, cancelingAxis === 'h' ? deltaX : deltaY, true);
+    }, []);
+    var shouldPrevent = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"](function(_event) {
+        var event = _event;
+        if (!lockStack.length || lockStack[lockStack.length - 1] !== Style) {
+            // not the last active
+            return;
+        }
+        var delta = 'deltaY' in event ? getDeltaXY(event) : getTouchXY(event);
+        var sourceEvent = shouldPreventQueue.current.filter(function(e) {
+            return e.name === event.type && (e.target === event.target || event.target === e.shadowParent) && deltaCompare(e.delta, delta);
+        })[0];
+        // self event, and should be canceled
+        if (sourceEvent && sourceEvent.should) {
+            if (event.cancelable) {
+                event.preventDefault();
+            }
+            return;
+        }
+        // outside or shard event
+        if (!sourceEvent) {
+            var shardNodes = (lastProps.current.shards || []).map(extractRef).filter(Boolean).filter(function(node) {
+                return node.contains(event.target);
+            });
+            var shouldStop = shardNodes.length > 0 ? shouldCancelEvent(event, shardNodes[0]) : !lastProps.current.noIsolation;
+            if (shouldStop) {
+                if (event.cancelable) {
+                    event.preventDefault();
+                }
+            }
+        }
+    }, []);
+    var shouldCancel = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"](function(name, delta, target, should) {
+        var event = {
+            name: name,
+            delta: delta,
+            target: target,
+            should: should,
+            shadowParent: getOutermostShadowParent(target)
+        };
+        shouldPreventQueue.current.push(event);
+        setTimeout(function() {
+            shouldPreventQueue.current = shouldPreventQueue.current.filter(function(e) {
+                return e !== event;
+            });
+        }, 1);
+    }, []);
+    var scrollTouchStart = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"](function(event) {
+        touchStartRef.current = getTouchXY(event);
+        activeAxis.current = undefined;
+    }, []);
+    var scrollWheel = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"](function(event) {
+        shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
+    }, []);
+    var scrollTouchMove = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"](function(event) {
+        shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
+    }, []);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](function() {
+        lockStack.push(Style);
+        props.setCallbacks({
+            onScrollCapture: scrollWheel,
+            onWheelCapture: scrollWheel,
+            onTouchMoveCapture: scrollTouchMove
+        });
+        document.addEventListener('wheel', shouldPrevent, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$aggresiveCapture$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nonPassive"]);
+        document.addEventListener('touchmove', shouldPrevent, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$aggresiveCapture$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nonPassive"]);
+        document.addEventListener('touchstart', scrollTouchStart, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$aggresiveCapture$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nonPassive"]);
+        return function() {
+            lockStack = lockStack.filter(function(inst) {
+                return inst !== Style;
+            });
+            document.removeEventListener('wheel', shouldPrevent, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$aggresiveCapture$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nonPassive"]);
+            document.removeEventListener('touchmove', shouldPrevent, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$aggresiveCapture$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nonPassive"]);
+            document.removeEventListener('touchstart', scrollTouchStart, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$aggresiveCapture$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nonPassive"]);
+        };
+    }, []);
+    var removeScrollBar = props.removeScrollBar, inert = props.inert;
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], null, inert ? __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](Style, {
+        styles: generateStyle(id)
+    }) : null, removeScrollBar ? __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2d$bar$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RemoveScrollBar"], {
+        noRelative: props.noRelative,
+        gapMode: props.gapMode
+    }) : null);
+}
+function getOutermostShadowParent(node) {
+    var shadowParent = null;
+    while(node !== null){
+        if (node instanceof ShadowRoot) {
+            shadowParent = node.host;
+            node = node.host;
+        }
+        node = node.parentNode;
+    }
+    return shadowParent;
+}
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/sidecar.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$sidecar$2f$dist$2f$es2015$2f$exports$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/use-sidecar/dist/es2015/exports.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$SideEffect$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/SideEffect.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$medium$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/medium.js [app-ssr] (ecmascript)");
+;
+;
+;
+const __TURBOPACK__default__export__ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$use$2d$sidecar$2f$dist$2f$es2015$2f$exports$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["exportSidecar"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$medium$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["effectCar"], __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$SideEffect$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RemoveScrollSideCar"]);
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/Combination.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$UI$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/UI.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$sidecar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/sidecar.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+var ReactRemoveScroll = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"](function(props, ref) {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$UI$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RemoveScroll"], (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__assign"])({}, props, {
+        ref: ref,
+        sideCar: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$sidecar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+    }));
+});
+ReactRemoveScroll.classNames = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$UI$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RemoveScroll"].classNames;
+const __TURBOPACK__default__export__ = ReactRemoveScroll;
+}),
+"[project]/frontend/node_modules/react-remove-scroll/dist/es2015/Combination.js [app-ssr] (ecmascript) <export default as RemoveScroll>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "RemoveScroll",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$Combination$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$remove$2d$scroll$2f$dist$2f$es2015$2f$Combination$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-remove-scroll/dist/es2015/Combination.js [app-ssr] (ecmascript)");
+}),
+"[project]/frontend/node_modules/get-nonce/dist/es2015/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getNonce",
+    ()=>getNonce,
+    "setNonce",
+    ()=>setNonce
+]);
+var currentNonce;
+var setNonce = function(nonce) {
+    currentNonce = nonce;
+};
+var getNonce = function() {
+    if (currentNonce) {
+        return currentNonce;
+    }
+    if (typeof __webpack_nonce__ !== 'undefined') {
+        return __webpack_nonce__;
+    }
+    return undefined;
+};
+}),
+"[project]/frontend/node_modules/react-style-singleton/dist/es2015/singleton.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "stylesheetSingleton",
+    ()=>stylesheetSingleton
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$get$2d$nonce$2f$dist$2f$es2015$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/get-nonce/dist/es2015/index.js [app-ssr] (ecmascript)");
+;
+function makeStyleTag() {
+    if (!document) return null;
+    var tag = document.createElement('style');
+    tag.type = 'text/css';
+    var nonce = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$get$2d$nonce$2f$dist$2f$es2015$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getNonce"])();
+    if (nonce) {
+        tag.setAttribute('nonce', nonce);
+    }
+    return tag;
+}
+function injectStyles(tag, css) {
+    // @ts-ignore
+    if (tag.styleSheet) {
+        // @ts-ignore
+        tag.styleSheet.cssText = css;
+    } else {
+        tag.appendChild(document.createTextNode(css));
+    }
+}
+function insertStyleTag(tag) {
+    var head = document.head || document.getElementsByTagName('head')[0];
+    head.appendChild(tag);
+}
+var stylesheetSingleton = function() {
+    var counter = 0;
+    var stylesheet = null;
+    return {
+        add: function(style) {
+            if (counter == 0) {
+                if (stylesheet = makeStyleTag()) {
+                    injectStyles(stylesheet, style);
+                    insertStyleTag(stylesheet);
+                }
+            }
+            counter++;
+        },
+        remove: function() {
+            counter--;
+            if (!counter && stylesheet) {
+                stylesheet.parentNode && stylesheet.parentNode.removeChild(stylesheet);
+                stylesheet = null;
+            }
+        }
+    };
+};
+}),
+"[project]/frontend/node_modules/react-style-singleton/dist/es2015/hook.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "styleHookSingleton",
+    ()=>styleHookSingleton
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$singleton$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/singleton.js [app-ssr] (ecmascript)");
+;
+;
+var styleHookSingleton = function() {
+    var sheet = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$singleton$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["stylesheetSingleton"])();
+    return function(styles, isDynamic) {
+        __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](function() {
+            sheet.add(styles);
+            return function() {
+                sheet.remove();
+            };
+        }, [
+            styles && isDynamic
+        ]);
+    };
+};
+}),
+"[project]/frontend/node_modules/react-style-singleton/dist/es2015/component.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "styleSingleton",
+    ()=>styleSingleton
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$hook$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/hook.js [app-ssr] (ecmascript)");
+;
+var styleSingleton = function() {
+    var useStyle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$hook$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["styleHookSingleton"])();
+    var Sheet = function(_a) {
+        var styles = _a.styles, dynamic = _a.dynamic;
+        useStyle(styles, dynamic);
+        return null;
+    };
+    return Sheet;
+};
+}),
+"[project]/frontend/node_modules/react-style-singleton/dist/es2015/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$component$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/component.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$singleton$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/singleton.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$style$2d$singleton$2f$dist$2f$es2015$2f$hook$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-style-singleton/dist/es2015/hook.js [app-ssr] (ecmascript)");
+;
+;
+;
+}),
+"[project]/frontend/node_modules/aria-hidden/dist/es2015/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "hideOthers",
+    ()=>hideOthers,
+    "inertOthers",
+    ()=>inertOthers,
+    "supportsInert",
+    ()=>supportsInert,
+    "suppressOthers",
+    ()=>suppressOthers
+]);
+var getDefaultParent = function(originalTarget) {
+    if (typeof document === 'undefined') {
+        return null;
+    }
+    var sampleTarget = Array.isArray(originalTarget) ? originalTarget[0] : originalTarget;
+    return sampleTarget.ownerDocument.body;
+};
+var counterMap = new WeakMap();
+var uncontrolledNodes = new WeakMap();
+var markerMap = {};
+var lockCount = 0;
+var unwrapHost = function(node) {
+    return node && (node.host || unwrapHost(node.parentNode));
+};
+var correctTargets = function(parent, targets) {
+    return targets.map(function(target) {
+        if (parent.contains(target)) {
+            return target;
+        }
+        var correctedTarget = unwrapHost(target);
+        if (correctedTarget && parent.contains(correctedTarget)) {
+            return correctedTarget;
+        }
+        console.error('aria-hidden', target, 'in not contained inside', parent, '. Doing nothing');
+        return null;
+    }).filter(function(x) {
+        return Boolean(x);
+    });
+};
+/**
+ * Marks everything except given node(or nodes) as aria-hidden
+ * @param {Element | Element[]} originalTarget - elements to keep on the page
+ * @param [parentNode] - top element, defaults to document.body
+ * @param {String} [markerName] - a special attribute to mark every node
+ * @param {String} [controlAttribute] - html Attribute to control
+ * @return {Undo} undo command
+ */ var applyAttributeToOthers = function(originalTarget, parentNode, markerName, controlAttribute) {
+    var targets = correctTargets(parentNode, Array.isArray(originalTarget) ? originalTarget : [
+        originalTarget
+    ]);
+    if (!markerMap[markerName]) {
+        markerMap[markerName] = new WeakMap();
+    }
+    var markerCounter = markerMap[markerName];
+    var hiddenNodes = [];
+    var elementsToKeep = new Set();
+    var elementsToStop = new Set(targets);
+    var keep = function(el) {
+        if (!el || elementsToKeep.has(el)) {
+            return;
+        }
+        elementsToKeep.add(el);
+        keep(el.parentNode);
+    };
+    targets.forEach(keep);
+    var deep = function(parent) {
+        if (!parent || elementsToStop.has(parent)) {
+            return;
+        }
+        Array.prototype.forEach.call(parent.children, function(node) {
+            if (elementsToKeep.has(node)) {
+                deep(node);
+            } else {
+                try {
+                    var attr = node.getAttribute(controlAttribute);
+                    var alreadyHidden = attr !== null && attr !== 'false';
+                    var counterValue = (counterMap.get(node) || 0) + 1;
+                    var markerValue = (markerCounter.get(node) || 0) + 1;
+                    counterMap.set(node, counterValue);
+                    markerCounter.set(node, markerValue);
+                    hiddenNodes.push(node);
+                    if (counterValue === 1 && alreadyHidden) {
+                        uncontrolledNodes.set(node, true);
+                    }
+                    if (markerValue === 1) {
+                        node.setAttribute(markerName, 'true');
+                    }
+                    if (!alreadyHidden) {
+                        node.setAttribute(controlAttribute, 'true');
+                    }
+                } catch (e) {
+                    console.error('aria-hidden: cannot operate on ', node, e);
+                }
+            }
+        });
+    };
+    deep(parentNode);
+    elementsToKeep.clear();
+    lockCount++;
+    return function() {
+        hiddenNodes.forEach(function(node) {
+            var counterValue = counterMap.get(node) - 1;
+            var markerValue = markerCounter.get(node) - 1;
+            counterMap.set(node, counterValue);
+            markerCounter.set(node, markerValue);
+            if (!counterValue) {
+                if (!uncontrolledNodes.has(node)) {
+                    node.removeAttribute(controlAttribute);
+                }
+                uncontrolledNodes.delete(node);
+            }
+            if (!markerValue) {
+                node.removeAttribute(markerName);
+            }
+        });
+        lockCount--;
+        if (!lockCount) {
+            // clear
+            counterMap = new WeakMap();
+            counterMap = new WeakMap();
+            uncontrolledNodes = new WeakMap();
+            markerMap = {};
+        }
+    };
+};
+var hideOthers = function(originalTarget, parentNode, markerName) {
+    if (markerName === void 0) {
+        markerName = 'data-aria-hidden';
+    }
+    var targets = Array.from(Array.isArray(originalTarget) ? originalTarget : [
+        originalTarget
+    ]);
+    var activeParentNode = parentNode || getDefaultParent(originalTarget);
+    if (!activeParentNode) {
+        return function() {
+            return null;
+        };
+    }
+    // we should not hide aria-live elements - https://github.com/theKashey/aria-hidden/issues/10
+    // and script elements, as they have no impact on accessibility.
+    targets.push.apply(targets, Array.from(activeParentNode.querySelectorAll('[aria-live], script')));
+    return applyAttributeToOthers(targets, activeParentNode, markerName, 'aria-hidden');
+};
+var inertOthers = function(originalTarget, parentNode, markerName) {
+    if (markerName === void 0) {
+        markerName = 'data-inert-ed';
+    }
+    var activeParentNode = parentNode || getDefaultParent(originalTarget);
+    if (!activeParentNode) {
+        return function() {
+            return null;
+        };
+    }
+    return applyAttributeToOthers(originalTarget, activeParentNode, markerName, 'inert');
+};
+var supportsInert = function() {
+    return typeof HTMLElement !== 'undefined' && HTMLElement.prototype.hasOwnProperty('inert');
+};
+var suppressOthers = function(originalTarget, parentNode, markerName) {
+    if (markerName === void 0) {
+        markerName = 'data-suppressed';
+    }
+    return (supportsInert() ? inertOthers : hideOthers)(originalTarget, parentNode, markerName);
+};
+}),
+"[project]/frontend/node_modules/react-hook-form/dist/index.esm.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Controller",
+    ()=>Controller,
+    "Form",
+    ()=>Form,
+    "FormProvider",
+    ()=>FormProvider,
+    "FormStateSubscribe",
+    ()=>FormStateSubscribe,
+    "Watch",
+    ()=>Watch,
+    "appendErrors",
+    ()=>appendErrors,
+    "createFormControl",
+    ()=>createFormControl,
+    "get",
+    ()=>get,
+    "set",
+    ()=>set,
+    "useController",
+    ()=>useController,
+    "useFieldArray",
+    ()=>useFieldArray,
+    "useForm",
+    ()=>useForm,
+    "useFormContext",
+    ()=>useFormContext,
+    "useFormState",
+    ()=>useFormState,
+    "useWatch",
+    ()=>useWatch
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
+var isCheckBoxInput = (element)=>element.type === 'checkbox';
+var isDateObject = (value1)=>value1 instanceof Date;
+var isNullOrUndefined = (value1)=>value1 == null;
+const isObjectType = (value1)=>typeof value1 === 'object';
+var isObject = (value1)=>!isNullOrUndefined(value1) && !Array.isArray(value1) && isObjectType(value1) && !isDateObject(value1);
+var getEventValue = (event)=>isObject(event) && event.target ? isCheckBoxInput(event.target) ? event.target.checked : event.target.value : event;
+var getNodeParentName = (name)=>name.substring(0, name.search(/\.\d+(\.|$)/)) || name;
+var isNameInFieldArray = (names, name)=>names.has(getNodeParentName(name));
+var isPlainObject = (tempObject)=>{
+    const prototypeCopy = tempObject.constructor && tempObject.constructor.prototype;
+    return isObject(prototypeCopy) && prototypeCopy.hasOwnProperty('isPrototypeOf');
+};
+var isWeb = ("TURBOPACK compile-time value", "undefined") !== 'undefined' && typeof window.HTMLElement !== 'undefined' && typeof document !== 'undefined';
+function cloneObject(data) {
+    let copy;
+    const isArray = Array.isArray(data);
+    const isFileListInstance = typeof FileList !== 'undefined' ? data instanceof FileList : false;
+    if (data instanceof Date) {
+        copy = new Date(data);
+    } else if (!(isWeb && (data instanceof Blob || isFileListInstance)) && (isArray || isObject(data))) {
+        copy = isArray ? [] : Object.create(Object.getPrototypeOf(data));
+        if (!isArray && !isPlainObject(data)) {
+            copy = data;
+        } else {
+            for(const key in data){
+                if (data.hasOwnProperty(key)) {
+                    copy[key] = cloneObject(data[key]);
+                }
+            }
+        }
+    } else {
+        return data;
+    }
+    return copy;
+}
+var isKey = (value1)=>/^\w*$/.test(value1);
+var isUndefined = (val)=>val === undefined;
+var compact = (value1)=>Array.isArray(value1) ? value1.filter(Boolean) : [];
+var stringToPath = (input)=>compact(input.replace(/["|']|\]/g, '').split(/\.|\[/));
+var get = (object, path, defaultValue)=>{
+    if (!path || !isObject(object)) {
+        return defaultValue;
+    }
+    const result = (isKey(path) ? [
+        path
+    ] : stringToPath(path)).reduce((result, key)=>isNullOrUndefined(result) ? result : result[key], object);
+    return isUndefined(result) || result === object ? isUndefined(object[path]) ? defaultValue : object[path] : result;
+};
+var isBoolean = (value1)=>typeof value1 === 'boolean';
+var set = (object, path, value1)=>{
+    let index = -1;
+    const tempPath = isKey(path) ? [
+        path
+    ] : stringToPath(path);
+    const length = tempPath.length;
+    const lastIndex = length - 1;
+    while(++index < length){
+        const key = tempPath[index];
+        let newValue = value1;
+        if (index !== lastIndex) {
+            const objValue = object[key];
+            newValue = isObject(objValue) || Array.isArray(objValue) ? objValue : !isNaN(+tempPath[index + 1]) ? [] : {};
+        }
+        if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+            return;
+        }
+        object[key] = newValue;
+        object = object[key];
+    }
+};
+const EVENTS = {
+    BLUR: 'blur',
+    FOCUS_OUT: 'focusout',
+    CHANGE: 'change'
+};
+const VALIDATION_MODE = {
+    onBlur: 'onBlur',
+    onChange: 'onChange',
+    onSubmit: 'onSubmit',
+    onTouched: 'onTouched',
+    all: 'all'
+};
+const INPUT_VALIDATION_RULES = {
+    max: 'max',
+    min: 'min',
+    maxLength: 'maxLength',
+    minLength: 'minLength',
+    pattern: 'pattern',
+    required: 'required',
+    validate: 'validate'
+};
+const HookFormContext = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].createContext(null);
+HookFormContext.displayName = 'HookFormContext';
+/**
+ * This custom hook allows you to access the form context. useFormContext is intended to be used in deeply nested structures, where it would become inconvenient to pass the context as a prop. To be used with {@link FormProvider}.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
+ *
+ * @returns return all useForm methods
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const methods = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   return (
+ *     <FormProvider {...methods} >
+ *       <form onSubmit={methods.handleSubmit(onSubmit)}>
+ *         <NestedInput />
+ *         <input type="submit" />
+ *       </form>
+ *     </FormProvider>
+ *   );
+ * }
+ *
+ *  function NestedInput() {
+ *   const { register } = useFormContext(); // retrieve all hook methods
+ *   return <input {...register("test")} />;
+ * }
+ * ```
+ */ const useFormContext = ()=>__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useContext(HookFormContext);
+/**
+ * A provider component that propagates the `useForm` methods to all children components via [React Context](https://react.dev/reference/react/useContext) API. To be used with {@link useFormContext}.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
+ *
+ * @param props - all useForm methods
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const methods = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   return (
+ *     <FormProvider {...methods} >
+ *       <form onSubmit={methods.handleSubmit(onSubmit)}>
+ *         <NestedInput />
+ *         <input type="submit" />
+ *       </form>
+ *     </FormProvider>
+ *   );
+ * }
+ *
+ *  function NestedInput() {
+ *   const { register } = useFormContext(); // retrieve all hook methods
+ *   return <input {...register("test")} />;
+ * }
+ * ```
+ */ const FormProvider = (props)=>{
+    const { children, ...data } = props;
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].createElement(HookFormContext.Provider, {
+        value: data
+    }, children);
+};
+var getProxyFormState = (formState, control, localProxyFormState, isRoot = true)=>{
+    const result = {
+        defaultValues: control._defaultValues
+    };
+    for(const key in formState){
+        Object.defineProperty(result, key, {
+            get: ()=>{
+                const _key = key;
+                if (control._proxyFormState[_key] !== VALIDATION_MODE.all) {
+                    control._proxyFormState[_key] = !isRoot || VALIDATION_MODE.all;
+                }
+                localProxyFormState && (localProxyFormState[_key] = true);
+                return formState[_key];
+            }
+        });
+    }
+    return result;
+};
+const useIsomorphicLayoutEffect = ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect;
+/**
+ * This custom hook allows you to subscribe to each form state, and isolate the re-render at the custom hook level. It has its scope in terms of form state subscription, so it would not affect other useFormState and useForm. Using this hook can reduce the re-render impact on large and complex form application.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformstate) • [Demo](https://codesandbox.io/s/useformstate-75xly)
+ *
+ * @param props - include options on specify fields to subscribe. {@link UseFormStateReturn}
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { register, handleSubmit, control } = useForm({
+ *     defaultValues: {
+ *     firstName: "firstName"
+ *   }});
+ *   const { dirtyFields } = useFormState({
+ *     control
+ *   });
+ *   const onSubmit = (data) => console.log(data);
+ *
+ *   return (
+ *     <form onSubmit={handleSubmit(onSubmit)}>
+ *       <input {...register("firstName")} placeholder="First Name" />
+ *       {dirtyFields.firstName && <p>Field is dirty.</p>}
+ *       <input type="submit" />
+ *     </form>
+ *   );
+ * }
+ * ```
+ */ function useFormState(props) {
+    const methods = useFormContext();
+    const { control = methods.control, disabled, name, exact } = props || {};
+    const [formState, updateFormState] = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useState(control._formState);
+    const _localProxyFormState = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef({
+        isDirty: false,
+        isLoading: false,
+        dirtyFields: false,
+        touchedFields: false,
+        validatingFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false
+    });
+    useIsomorphicLayoutEffect(()=>control._subscribe({
+            name,
+            formState: _localProxyFormState.current,
+            exact,
+            callback: (formState)=>{
+                !disabled && updateFormState({
+                    ...control._formState,
+                    ...formState
+                });
+            }
+        }), [
+        name,
+        disabled,
+        exact
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        _localProxyFormState.current.isValid && control._setValid(true);
+    }, [
+        control
+    ]);
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>getProxyFormState(formState, control, _localProxyFormState.current, false), [
+        formState,
+        control
+    ]);
+}
+var isString = (value1)=>typeof value1 === 'string';
+var generateWatchOutput = (names, _names, formValues, isGlobal, defaultValue)=>{
+    if (isString(names)) {
+        isGlobal && _names.watch.add(names);
+        return get(formValues, names, defaultValue);
+    }
+    if (Array.isArray(names)) {
+        return names.map((fieldName)=>(isGlobal && _names.watch.add(fieldName), get(formValues, fieldName)));
+    }
+    isGlobal && (_names.watchAll = true);
+    return formValues;
+};
+var isPrimitive = (value1)=>isNullOrUndefined(value1) || !isObjectType(value1);
+function deepEqual(object1, object2, _internal_visited = new WeakSet()) {
+    if (isPrimitive(object1) || isPrimitive(object2)) {
+        return Object.is(object1, object2);
+    }
+    if (isDateObject(object1) && isDateObject(object2)) {
+        return object1.getTime() === object2.getTime();
+    }
+    const keys1 = Object.keys(object1);
+    const keys2 = Object.keys(object2);
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+    if (_internal_visited.has(object1) || _internal_visited.has(object2)) {
+        return true;
+    }
+    _internal_visited.add(object1);
+    _internal_visited.add(object2);
+    for (const key of keys1){
+        const val1 = object1[key];
+        if (!keys2.includes(key)) {
+            return false;
+        }
+        if (key !== 'ref') {
+            const val2 = object2[key];
+            if (isDateObject(val1) && isDateObject(val2) || isObject(val1) && isObject(val2) || Array.isArray(val1) && Array.isArray(val2) ? !deepEqual(val1, val2, _internal_visited) : !Object.is(val1, val2)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+/**
+ * Custom hook to subscribe to field change and isolate re-rendering at the component level.
+ *
+ * @remarks
+ *
+ * [API](https://react-hook-form.com/docs/usewatch) • [Demo](https://codesandbox.io/s/react-hook-form-v7-ts-usewatch-h9i5e)
+ *
+ * @example
+ * ```tsx
+ * const { control } = useForm();
+ * const values = useWatch({
+ *   name: "fieldName"
+ *   control,
+ * })
+ * ```
+ */ function useWatch(props) {
+    const methods = useFormContext();
+    const { control = methods.control, name, defaultValue, disabled, exact, compute } = props || {};
+    const _defaultValue = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(defaultValue);
+    const _compute = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(compute);
+    const _computeFormValues = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(undefined);
+    const _prevControl = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(control);
+    const _prevName = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(name);
+    _compute.current = compute;
+    const [value1, updateValue] = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useState(()=>{
+        const defaultValue = control._getWatch(name, _defaultValue.current);
+        return _compute.current ? _compute.current(defaultValue) : defaultValue;
+    });
+    const getCurrentOutput = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback((values)=>{
+        const formValues = generateWatchOutput(name, control._names, values || control._formValues, false, _defaultValue.current);
+        return _compute.current ? _compute.current(formValues) : formValues;
+    }, [
+        control._formValues,
+        control._names,
+        name
+    ]);
+    const refreshValue = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback((values)=>{
+        if (!disabled) {
+            const formValues = generateWatchOutput(name, control._names, values || control._formValues, false, _defaultValue.current);
+            if (_compute.current) {
+                const computedFormValues = _compute.current(formValues);
+                if (!deepEqual(computedFormValues, _computeFormValues.current)) {
+                    updateValue(computedFormValues);
+                    _computeFormValues.current = computedFormValues;
+                }
+            } else {
+                updateValue(formValues);
+            }
+        }
+    }, [
+        control._formValues,
+        control._names,
+        disabled,
+        name
+    ]);
+    useIsomorphicLayoutEffect(()=>{
+        if (_prevControl.current !== control || !deepEqual(_prevName.current, name)) {
+            _prevControl.current = control;
+            _prevName.current = name;
+            refreshValue();
+        }
+        return control._subscribe({
+            name,
+            formState: {
+                values: true
+            },
+            exact,
+            callback: (formState)=>{
+                refreshValue(formState.values);
+            }
+        });
+    }, [
+        control,
+        exact,
+        name,
+        refreshValue
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>control._removeUnmounted());
+    // If name or control changed for this render, synchronously reflect the
+    // latest value so callers (like useController) see the correct value
+    // immediately on the same render.
+    // Optimize: Check control reference first before expensive deepEqual
+    const controlChanged = _prevControl.current !== control;
+    const prevName = _prevName.current;
+    // Cache the computed output to avoid duplicate calls within the same render
+    // We include shouldReturnImmediate in deps to ensure proper recomputation
+    const computedOutput = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>{
+        if (disabled) {
+            return null;
+        }
+        const nameChanged = !controlChanged && !deepEqual(prevName, name);
+        const shouldReturnImmediate = controlChanged || nameChanged;
+        return shouldReturnImmediate ? getCurrentOutput() : null;
+    }, [
+        disabled,
+        controlChanged,
+        name,
+        prevName,
+        getCurrentOutput
+    ]);
+    return computedOutput !== null ? computedOutput : value1;
+}
+/**
+ * Custom hook to work with controlled component, this function provide you with both form and field level state. Re-render is isolated at the hook level.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/usecontroller) • [Demo](https://codesandbox.io/s/usecontroller-0o8px)
+ *
+ * @param props - the path name to the form field value, and validation rules.
+ *
+ * @returns field properties, field and form state. {@link UseControllerReturn}
+ *
+ * @example
+ * ```tsx
+ * function Input(props) {
+ *   const { field, fieldState, formState } = useController(props);
+ *   return (
+ *     <div>
+ *       <input {...field} placeholder={props.name} />
+ *       <p>{fieldState.isTouched && "Touched"}</p>
+ *       <p>{formState.isSubmitted ? "submitted" : ""}</p>
+ *     </div>
+ *   );
+ * }
+ * ```
+ */ function useController(props) {
+    const methods = useFormContext();
+    const { name, disabled, control = methods.control, shouldUnregister, defaultValue, exact = true } = props;
+    const isArrayField = isNameInFieldArray(control._names.array, name);
+    const defaultValueMemo = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>get(control._formValues, name, get(control._defaultValues, name, defaultValue)), [
+        control,
+        name,
+        defaultValue
+    ]);
+    const value1 = useWatch({
+        control,
+        name,
+        defaultValue: defaultValueMemo,
+        exact
+    });
+    const formState = useFormState({
+        control,
+        name,
+        exact
+    });
+    const _props = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(props);
+    const _previousNameRef = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(undefined);
+    const _registerProps = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(control.register(name, {
+        ...props.rules,
+        value: value1,
+        ...isBoolean(props.disabled) ? {
+            disabled: props.disabled
+        } : {}
+    }));
+    _props.current = props;
+    const fieldState = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>Object.defineProperties({}, {
+            invalid: {
+                enumerable: true,
+                get: ()=>!!get(formState.errors, name)
+            },
+            isDirty: {
+                enumerable: true,
+                get: ()=>!!get(formState.dirtyFields, name)
+            },
+            isTouched: {
+                enumerable: true,
+                get: ()=>!!get(formState.touchedFields, name)
+            },
+            isValidating: {
+                enumerable: true,
+                get: ()=>!!get(formState.validatingFields, name)
+            },
+            error: {
+                enumerable: true,
+                get: ()=>get(formState.errors, name)
+            }
+        }), [
+        formState,
+        name
+    ]);
+    const onChange = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback((event)=>_registerProps.current.onChange({
+            target: {
+                value: getEventValue(event),
+                name: name
+            },
+            type: EVENTS.CHANGE
+        }), [
+        name
+    ]);
+    const onBlur = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(()=>_registerProps.current.onBlur({
+            target: {
+                value: get(control._formValues, name),
+                name: name
+            },
+            type: EVENTS.BLUR
+        }), [
+        name,
+        control._formValues
+    ]);
+    const ref = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback((elm)=>{
+        const field = get(control._fields, name);
+        if (field && elm) {
+            field._f.ref = {
+                focus: ()=>elm.focus && elm.focus(),
+                select: ()=>elm.select && elm.select(),
+                setCustomValidity: (message)=>elm.setCustomValidity(message),
+                reportValidity: ()=>elm.reportValidity()
+            };
+        }
+    }, [
+        control._fields,
+        name
+    ]);
+    const field = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>({
+            name,
+            value: value1,
+            ...isBoolean(disabled) || formState.disabled ? {
+                disabled: formState.disabled || disabled
+            } : {},
+            onChange,
+            onBlur,
+            ref
+        }), [
+        name,
+        disabled,
+        formState.disabled,
+        onChange,
+        onBlur,
+        ref,
+        value1
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        const _shouldUnregisterField = control._options.shouldUnregister || shouldUnregister;
+        const previousName = _previousNameRef.current;
+        if (previousName && previousName !== name && !isArrayField) {
+            control.unregister(previousName);
+        }
+        control.register(name, {
+            ..._props.current.rules,
+            ...isBoolean(_props.current.disabled) ? {
+                disabled: _props.current.disabled
+            } : {}
+        });
+        const updateMounted = (name, value1)=>{
+            const field = get(control._fields, name);
+            if (field && field._f) {
+                field._f.mount = value1;
+            }
+        };
+        updateMounted(name, true);
+        if (_shouldUnregisterField) {
+            const value1 = cloneObject(get(control._options.defaultValues, name, _props.current.defaultValue));
+            set(control._defaultValues, name, value1);
+            if (isUndefined(get(control._formValues, name))) {
+                set(control._formValues, name, value1);
+            }
+        }
+        !isArrayField && control.register(name);
+        _previousNameRef.current = name;
+        return ()=>{
+            (isArrayField ? _shouldUnregisterField && !control._state.action : _shouldUnregisterField) ? control.unregister(name) : updateMounted(name, false);
+        };
+    }, [
+        name,
+        control,
+        isArrayField,
+        shouldUnregister
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        control._setDisabledField({
+            disabled,
+            name
+        });
+    }, [
+        disabled,
+        name,
+        control
+    ]);
+    return __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>({
+            field,
+            formState,
+            fieldState
+        }), [
+        field,
+        formState,
+        fieldState
+    ]);
+}
+/**
+ * Component based on `useController` hook to work with controlled component.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/usecontroller/controller) • [Demo](https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw) • [Video](https://www.youtube.com/watch?v=N2UNk_UCVyA)
+ *
+ * @param props - the path name to the form field value, and validation rules.
+ *
+ * @returns provide field handler functions, field and form state.
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { control } = useForm<FormValues>({
+ *     defaultValues: {
+ *       test: ""
+ *     }
+ *   });
+ *
+ *   return (
+ *     <form>
+ *       <Controller
+ *         control={control}
+ *         name="test"
+ *         render={({ field: { onChange, onBlur, value, ref }, formState, fieldState }) => (
+ *           <>
+ *             <input
+ *               onChange={onChange} // send value to hook form
+ *               onBlur={onBlur} // notify when input is touched
+ *               value={value} // return updated value
+ *               ref={ref} // set ref for focus management
+ *             />
+ *             <p>{formState.isSubmitted ? "submitted" : ""}</p>
+ *             <p>{fieldState.isTouched ? "touched" : ""}</p>
+ *           </>
+ *         )}
+ *       />
+ *     </form>
+ *   );
+ * }
+ * ```
+ */ const Controller = (props)=>props.render(useController(props));
+const flatten = (obj)=>{
+    const output = {};
+    for (const key of Object.keys(obj)){
+        if (isObjectType(obj[key]) && obj[key] !== null) {
+            const nested = flatten(obj[key]);
+            for (const nestedKey of Object.keys(nested)){
+                output[`${key}.${nestedKey}`] = nested[nestedKey];
+            }
+        } else {
+            output[key] = obj[key];
+        }
+    }
+    return output;
+};
+const POST_REQUEST = 'post';
+/**
+ * Form component to manage submission.
+ *
+ * @param props - to setup submission detail. {@link FormProps}
+ *
+ * @returns form component or headless render prop.
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { control, formState: { errors } } = useForm();
+ *
+ *   return (
+ *     <Form action="/api" control={control}>
+ *       <input {...register("name")} />
+ *       <p>{errors?.root?.server && 'Server error'}</p>
+ *       <button>Submit</button>
+ *     </Form>
+ *   );
+ * }
+ * ```
+ */ function Form(props) {
+    const methods = useFormContext();
+    const [mounted, setMounted] = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useState(false);
+    const { control = methods.control, onSubmit, children, action, method = POST_REQUEST, headers, encType, onError, render, onSuccess, validateStatus, ...rest } = props;
+    const submit = async (event)=>{
+        let hasError = false;
+        let type = '';
+        await control.handleSubmit(async (data)=>{
+            const formData = new FormData();
+            let formDataJson = '';
+            try {
+                formDataJson = JSON.stringify(data);
+            } catch (_a) {}
+            const flattenFormValues = flatten(control._formValues);
+            for(const key in flattenFormValues){
+                formData.append(key, flattenFormValues[key]);
+            }
+            if (onSubmit) {
+                await onSubmit({
+                    data,
+                    event,
+                    method,
+                    formData,
+                    formDataJson
+                });
+            }
+            if (action) {
+                try {
+                    const shouldStringifySubmissionData = [
+                        headers && headers['Content-Type'],
+                        encType
+                    ].some((value1)=>value1 && value1.includes('json'));
+                    const response = await fetch(String(action), {
+                        method,
+                        headers: {
+                            ...headers,
+                            ...encType && encType !== 'multipart/form-data' ? {
+                                'Content-Type': encType
+                            } : {}
+                        },
+                        body: shouldStringifySubmissionData ? formDataJson : formData
+                    });
+                    if (response && (validateStatus ? !validateStatus(response.status) : response.status < 200 || response.status >= 300)) {
+                        hasError = true;
+                        onError && onError({
+                            response
+                        });
+                        type = String(response.status);
+                    } else {
+                        onSuccess && onSuccess({
+                            response
+                        });
+                    }
+                } catch (error) {
+                    hasError = true;
+                    onError && onError({
+                        error
+                    });
+                }
+            }
+        })(event);
+        if (hasError && props.control) {
+            props.control._subjects.state.next({
+                isSubmitSuccessful: false
+            });
+            props.control.setError('root.server', {
+                type
+            });
+        }
+    };
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        setMounted(true);
+    }, []);
+    return render ? __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].createElement(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].Fragment, null, render({
+        submit
+    })) : __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].createElement("form", {
+        noValidate: mounted,
+        action: action,
+        method: method,
+        encType: encType,
+        onSubmit: submit,
+        ...rest
+    }, children);
+}
+const FormStateSubscribe = ({ control, disabled, exact, name, render })=>render(useFormState({
+        control,
+        name,
+        disabled,
+        exact
+    }));
+var appendErrors = (name, validateAllFieldCriteria, errors, type, message)=>validateAllFieldCriteria ? {
+        ...errors[name],
+        types: {
+            ...errors[name] && errors[name].types ? errors[name].types : {},
+            [type]: message || true
+        }
+    } : {};
+var convertToArrayPayload = (value1)=>Array.isArray(value1) ? value1 : [
+        value1
+    ];
+var createSubject = ()=>{
+    let _observers = [];
+    const next = (value1)=>{
+        for (const observer of _observers){
+            observer.next && observer.next(value1);
+        }
+    };
+    const subscribe = (observer)=>{
+        _observers.push(observer);
+        return {
+            unsubscribe: ()=>{
+                _observers = _observers.filter((o)=>o !== observer);
+            }
+        };
+    };
+    const unsubscribe = ()=>{
+        _observers = [];
+    };
+    return {
+        get observers () {
+            return _observers;
+        },
+        next,
+        subscribe,
+        unsubscribe
+    };
+};
+function extractFormValues(fieldsState, formValues) {
+    const values = {};
+    for(const key in fieldsState){
+        if (fieldsState.hasOwnProperty(key)) {
+            const fieldState = fieldsState[key];
+            const fieldValue = formValues[key];
+            if (fieldState && isObject(fieldState) && fieldValue) {
+                const nestedFieldsState = extractFormValues(fieldState, fieldValue);
+                if (isObject(nestedFieldsState)) {
+                    values[key] = nestedFieldsState;
+                }
+            } else if (fieldsState[key]) {
+                values[key] = fieldValue;
+            }
+        }
+    }
+    return values;
+}
+var isEmptyObject = (value1)=>isObject(value1) && !Object.keys(value1).length;
+var isFileInput = (element)=>element.type === 'file';
+var isFunction = (value1)=>typeof value1 === 'function';
+var isHTMLElement = (value1)=>{
+    if ("TURBOPACK compile-time truthy", 1) {
+        return false;
+    }
+    //TURBOPACK unreachable
+    ;
+    const owner = undefined;
+};
+var isMultipleSelect = (element)=>element.type === `select-multiple`;
+var isRadioInput = (element)=>element.type === 'radio';
+var isRadioOrCheckbox = (ref)=>isRadioInput(ref) || isCheckBoxInput(ref);
+var live = (ref)=>isHTMLElement(ref) && ref.isConnected;
+function baseGet(object, updatePath) {
+    const length = updatePath.slice(0, -1).length;
+    let index = 0;
+    while(index < length){
+        object = isUndefined(object) ? index++ : object[updatePath[index++]];
+    }
+    return object;
+}
+function isEmptyArray(obj) {
+    for(const key in obj){
+        if (obj.hasOwnProperty(key) && !isUndefined(obj[key])) {
+            return false;
+        }
+    }
+    return true;
+}
+function unset(object, path) {
+    const paths = Array.isArray(path) ? path : isKey(path) ? [
+        path
+    ] : stringToPath(path);
+    const childObject = paths.length === 1 ? object : baseGet(object, paths);
+    const index = paths.length - 1;
+    const key = paths[index];
+    if (childObject) {
+        delete childObject[key];
+    }
+    if (index !== 0 && (isObject(childObject) && isEmptyObject(childObject) || Array.isArray(childObject) && isEmptyArray(childObject))) {
+        unset(object, paths.slice(0, -1));
+    }
+    return object;
+}
+var objectHasFunction = (data)=>{
+    for(const key in data){
+        if (isFunction(data[key])) {
+            return true;
+        }
+    }
+    return false;
+};
+function isTraversable(value1) {
+    return Array.isArray(value1) || isObject(value1) && !objectHasFunction(value1);
+}
+function markFieldsDirty(data, fields = {}) {
+    for(const key in data){
+        const value1 = data[key];
+        if (isTraversable(value1)) {
+            fields[key] = Array.isArray(value1) ? [] : {};
+            markFieldsDirty(value1, fields[key]);
+        } else if (!isUndefined(value1)) {
+            fields[key] = true;
+        }
+    }
+    return fields;
+}
+function getDirtyFields(data, formValues, dirtyFieldsFromValues) {
+    if (!dirtyFieldsFromValues) {
+        dirtyFieldsFromValues = markFieldsDirty(formValues);
+    }
+    for(const key in data){
+        const value1 = data[key];
+        if (isTraversable(value1)) {
+            if (isUndefined(formValues) || isPrimitive(dirtyFieldsFromValues[key])) {
+                dirtyFieldsFromValues[key] = markFieldsDirty(value1, Array.isArray(value1) ? [] : {});
+            } else {
+                getDirtyFields(value1, isNullOrUndefined(formValues) ? {} : formValues[key], dirtyFieldsFromValues[key]);
+            }
+        } else {
+            const formValue = formValues[key];
+            dirtyFieldsFromValues[key] = !deepEqual(value1, formValue);
+        }
+    }
+    return dirtyFieldsFromValues;
+}
+const defaultResult = {
+    value: false,
+    isValid: false
+};
+const validResult = {
+    value: true,
+    isValid: true
+};
+var getCheckboxValue = (options)=>{
+    if (Array.isArray(options)) {
+        if (options.length > 1) {
+            const values = options.filter((option)=>option && option.checked && !option.disabled).map((option)=>option.value);
+            return {
+                value: values,
+                isValid: !!values.length
+            };
+        }
+        return options[0].checked && !options[0].disabled ? options[0].attributes && !isUndefined(options[0].attributes.value) ? isUndefined(options[0].value) || options[0].value === '' ? validResult : {
+            value: options[0].value,
+            isValid: true
+        } : validResult : defaultResult;
+    }
+    return defaultResult;
+};
+var getFieldValueAs = (value1, { valueAsNumber, valueAsDate, setValueAs })=>isUndefined(value1) ? value1 : valueAsNumber ? value1 === '' ? NaN : value1 ? +value1 : value1 : valueAsDate && isString(value1) ? new Date(value1) : setValueAs ? setValueAs(value1) : value1;
+const defaultReturn = {
+    isValid: false,
+    value: null
+};
+var getRadioValue = (options)=>Array.isArray(options) ? options.reduce((previous, option)=>option && option.checked && !option.disabled ? {
+            isValid: true,
+            value: option.value
+        } : previous, defaultReturn) : defaultReturn;
+function getFieldValue(_f) {
+    const ref = _f.ref;
+    if (isFileInput(ref)) {
+        return ref.files;
+    }
+    if (isRadioInput(ref)) {
+        return getRadioValue(_f.refs).value;
+    }
+    if (isMultipleSelect(ref)) {
+        return [
+            ...ref.selectedOptions
+        ].map(({ value: value1 })=>value1);
+    }
+    if (isCheckBoxInput(ref)) {
+        return getCheckboxValue(_f.refs).value;
+    }
+    return getFieldValueAs(isUndefined(ref.value) ? _f.ref.value : ref.value, _f);
+}
+var getResolverOptions = (fieldsNames, _fields, criteriaMode, shouldUseNativeValidation)=>{
+    const fields = {};
+    for (const name of fieldsNames){
+        const field = get(_fields, name);
+        field && set(fields, name, field._f);
+    }
+    return {
+        criteriaMode,
+        names: [
+            ...fieldsNames
+        ],
+        fields,
+        shouldUseNativeValidation
+    };
+};
+var isRegex = (value1)=>value1 instanceof RegExp;
+var getRuleValue = (rule)=>isUndefined(rule) ? rule : isRegex(rule) ? rule.source : isObject(rule) ? isRegex(rule.value) ? rule.value.source : rule.value : rule;
+var getValidationModes = (mode)=>({
+        isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
+        isOnBlur: mode === VALIDATION_MODE.onBlur,
+        isOnChange: mode === VALIDATION_MODE.onChange,
+        isOnAll: mode === VALIDATION_MODE.all,
+        isOnTouch: mode === VALIDATION_MODE.onTouched
+    });
+const ASYNC_FUNCTION = 'AsyncFunction';
+var hasPromiseValidation = (fieldReference)=>!!fieldReference && !!fieldReference.validate && !!(isFunction(fieldReference.validate) && fieldReference.validate.constructor.name === ASYNC_FUNCTION || isObject(fieldReference.validate) && Object.values(fieldReference.validate).find((validateFunction)=>validateFunction.constructor.name === ASYNC_FUNCTION));
+var hasValidation = (options)=>options.mount && (options.required || options.min || options.max || options.maxLength || options.minLength || options.pattern || options.validate);
+var isWatched = (name, _names, isBlurEvent)=>!isBlurEvent && (_names.watchAll || _names.watch.has(name) || [
+        ..._names.watch
+    ].some((watchName)=>name.startsWith(watchName) && /^\.\w+/.test(name.slice(watchName.length))));
+const iterateFieldsByAction = (fields, action, fieldsNames, abortEarly)=>{
+    for (const key of fieldsNames || Object.keys(fields)){
+        const field = get(fields, key);
+        if (field) {
+            const { _f, ...currentField } = field;
+            if (_f) {
+                if (_f.refs && _f.refs[0] && action(_f.refs[0], key) && !abortEarly) {
+                    return true;
+                } else if (_f.ref && action(_f.ref, _f.name) && !abortEarly) {
+                    return true;
+                } else {
+                    if (iterateFieldsByAction(currentField, action)) {
+                        break;
+                    }
+                }
+            } else if (isObject(currentField)) {
+                if (iterateFieldsByAction(currentField, action)) {
+                    break;
+                }
+            }
+        }
+    }
+    return;
+};
+function schemaErrorLookup(errors, _fields, name) {
+    const error = get(errors, name);
+    if (error || isKey(name)) {
+        return {
+            error,
+            name
+        };
+    }
+    const names = name.split('.');
+    while(names.length){
+        const fieldName = names.join('.');
+        const field = get(_fields, fieldName);
+        const foundError = get(errors, fieldName);
+        if (field && !Array.isArray(field) && name !== fieldName) {
+            return {
+                name
+            };
+        }
+        if (foundError && foundError.type) {
+            return {
+                name: fieldName,
+                error: foundError
+            };
+        }
+        if (foundError && foundError.root && foundError.root.type) {
+            return {
+                name: `${fieldName}.root`,
+                error: foundError.root
+            };
+        }
+        names.pop();
+    }
+    return {
+        name
+    };
+}
+var shouldRenderFormState = (formStateData, _proxyFormState, updateFormState, isRoot)=>{
+    updateFormState(formStateData);
+    const { name, ...formState } = formStateData;
+    return isEmptyObject(formState) || Object.keys(formState).length >= Object.keys(_proxyFormState).length || Object.keys(formState).find((key)=>_proxyFormState[key] === (!isRoot || VALIDATION_MODE.all));
+};
+var shouldSubscribeByName = (name, signalName, exact)=>!name || !signalName || name === signalName || convertToArrayPayload(name).some((currentName)=>currentName && (exact ? currentName === signalName : currentName.startsWith(signalName) || signalName.startsWith(currentName)));
+var skipValidation = (isBlurEvent, isTouched, isSubmitted, reValidateMode, mode)=>{
+    if (mode.isOnAll) {
+        return false;
+    } else if (!isSubmitted && mode.isOnTouch) {
+        return !(isTouched || isBlurEvent);
+    } else if (isSubmitted ? reValidateMode.isOnBlur : mode.isOnBlur) {
+        return !isBlurEvent;
+    } else if (isSubmitted ? reValidateMode.isOnChange : mode.isOnChange) {
+        return isBlurEvent;
+    }
+    return true;
+};
+var unsetEmptyArray = (ref, name)=>!compact(get(ref, name)).length && unset(ref, name);
+var updateFieldArrayRootError = (errors, error, name)=>{
+    const fieldArrayErrors = convertToArrayPayload(get(errors, name));
+    set(fieldArrayErrors, 'root', error[name]);
+    set(errors, name, fieldArrayErrors);
+    return errors;
+};
+function getValidateError(result, ref, type = 'validate') {
+    if (isString(result) || Array.isArray(result) && result.every(isString) || isBoolean(result) && !result) {
+        return {
+            type,
+            message: isString(result) ? result : '',
+            ref
+        };
+    }
+}
+var getValueAndMessage = (validationData)=>isObject(validationData) && !isRegex(validationData) ? validationData : {
+        value: validationData,
+        message: ''
+    };
+var validateField = async (field, disabledFieldNames, formValues, validateAllFieldCriteria, shouldUseNativeValidation, isFieldArray)=>{
+    const { ref, refs, required, maxLength, minLength, min, max, pattern, validate, name, valueAsNumber, mount } = field._f;
+    const inputValue = get(formValues, name);
+    if (!mount || disabledFieldNames.has(name)) {
+        return {};
+    }
+    const inputRef = refs ? refs[0] : ref;
+    const setCustomValidity = (message)=>{
+        if (shouldUseNativeValidation && inputRef.reportValidity) {
+            inputRef.setCustomValidity(isBoolean(message) ? '' : message || '');
+            inputRef.reportValidity();
+        }
+    };
+    const error = {};
+    const isRadio = isRadioInput(ref);
+    const isCheckBox = isCheckBoxInput(ref);
+    const isRadioOrCheckbox = isRadio || isCheckBox;
+    const isEmpty = (valueAsNumber || isFileInput(ref)) && isUndefined(ref.value) && isUndefined(inputValue) || isHTMLElement(ref) && ref.value === '' || inputValue === '' || Array.isArray(inputValue) && !inputValue.length;
+    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
+    const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength)=>{
+        const message = exceedMax ? maxLengthMessage : minLengthMessage;
+        error[name] = {
+            type: exceedMax ? maxType : minType,
+            message,
+            ref,
+            ...appendErrorsCurry(exceedMax ? maxType : minType, message)
+        };
+    };
+    if (isFieldArray ? !Array.isArray(inputValue) || !inputValue.length : required && (!isRadioOrCheckbox && (isEmpty || isNullOrUndefined(inputValue)) || isBoolean(inputValue) && !inputValue || isCheckBox && !getCheckboxValue(refs).isValid || isRadio && !getRadioValue(refs).isValid)) {
+        const { value: value1, message } = isString(required) ? {
+            value: !!required,
+            message: required
+        } : getValueAndMessage(required);
+        if (value1) {
+            error[name] = {
+                type: INPUT_VALIDATION_RULES.required,
+                message,
+                ref: inputRef,
+                ...appendErrorsCurry(INPUT_VALIDATION_RULES.required, message)
+            };
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(message);
+                return error;
+            }
+        }
+    }
+    if (!isEmpty && (!isNullOrUndefined(min) || !isNullOrUndefined(max))) {
+        let exceedMax;
+        let exceedMin;
+        const maxOutput = getValueAndMessage(max);
+        const minOutput = getValueAndMessage(min);
+        if (!isNullOrUndefined(inputValue) && !isNaN(inputValue)) {
+            const valueNumber = ref.valueAsNumber || (inputValue ? +inputValue : inputValue);
+            if (!isNullOrUndefined(maxOutput.value)) {
+                exceedMax = valueNumber > maxOutput.value;
+            }
+            if (!isNullOrUndefined(minOutput.value)) {
+                exceedMin = valueNumber < minOutput.value;
+            }
+        } else {
+            const valueDate = ref.valueAsDate || new Date(inputValue);
+            const convertTimeToDate = (time)=>new Date(new Date().toDateString() + ' ' + time);
+            const isTime = ref.type == 'time';
+            const isWeek = ref.type == 'week';
+            if (isString(maxOutput.value) && inputValue) {
+                exceedMax = isTime ? convertTimeToDate(inputValue) > convertTimeToDate(maxOutput.value) : isWeek ? inputValue > maxOutput.value : valueDate > new Date(maxOutput.value);
+            }
+            if (isString(minOutput.value) && inputValue) {
+                exceedMin = isTime ? convertTimeToDate(inputValue) < convertTimeToDate(minOutput.value) : isWeek ? inputValue < minOutput.value : valueDate < new Date(minOutput.value);
+            }
+        }
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(!!exceedMax, maxOutput.message, minOutput.message, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(error[name].message);
+                return error;
+            }
+        }
+    }
+    if ((maxLength || minLength) && !isEmpty && (isString(inputValue) || isFieldArray && Array.isArray(inputValue))) {
+        const maxLengthOutput = getValueAndMessage(maxLength);
+        const minLengthOutput = getValueAndMessage(minLength);
+        const exceedMax = !isNullOrUndefined(maxLengthOutput.value) && inputValue.length > +maxLengthOutput.value;
+        const exceedMin = !isNullOrUndefined(minLengthOutput.value) && inputValue.length < +minLengthOutput.value;
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(exceedMax, maxLengthOutput.message, minLengthOutput.message);
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(error[name].message);
+                return error;
+            }
+        }
+    }
+    if (pattern && !isEmpty && isString(inputValue)) {
+        const { value: patternValue, message } = getValueAndMessage(pattern);
+        if (isRegex(patternValue) && !inputValue.match(patternValue)) {
+            error[name] = {
+                type: INPUT_VALIDATION_RULES.pattern,
+                message,
+                ref,
+                ...appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, message)
+            };
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(message);
+                return error;
+            }
+        }
+    }
+    if (validate) {
+        if (isFunction(validate)) {
+            const result = await validate(inputValue, formValues);
+            const validateError = getValidateError(result, inputRef);
+            if (validateError) {
+                error[name] = {
+                    ...validateError,
+                    ...appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message)
+                };
+                if (!validateAllFieldCriteria) {
+                    setCustomValidity(validateError.message);
+                    return error;
+                }
+            }
+        } else if (isObject(validate)) {
+            let validationResult = {};
+            for(const key in validate){
+                if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) {
+                    break;
+                }
+                const validateError = getValidateError(await validate[key](inputValue, formValues), inputRef, key);
+                if (validateError) {
+                    validationResult = {
+                        ...validateError,
+                        ...appendErrorsCurry(key, validateError.message)
+                    };
+                    setCustomValidity(validateError.message);
+                    if (validateAllFieldCriteria) {
+                        error[name] = validationResult;
+                    }
+                }
+            }
+            if (!isEmptyObject(validationResult)) {
+                error[name] = {
+                    ref: inputRef,
+                    ...validationResult
+                };
+                if (!validateAllFieldCriteria) {
+                    return error;
+                }
+            }
+        }
+    }
+    setCustomValidity(true);
+    return error;
+};
+const defaultOptions = {
+    mode: VALIDATION_MODE.onSubmit,
+    reValidateMode: VALIDATION_MODE.onChange,
+    shouldFocusError: true
+};
+function createFormControl(props = {}) {
+    let _options = {
+        ...defaultOptions,
+        ...props
+    };
+    let _formState = {
+        submitCount: 0,
+        isDirty: false,
+        isReady: false,
+        isLoading: isFunction(_options.defaultValues),
+        isValidating: false,
+        isSubmitted: false,
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        touchedFields: {},
+        dirtyFields: {},
+        validatingFields: {},
+        errors: _options.errors || {},
+        disabled: _options.disabled || false
+    };
+    let _fields = {};
+    let _defaultValues = isObject(_options.defaultValues) || isObject(_options.values) ? cloneObject(_options.defaultValues || _options.values) || {} : {};
+    let _formValues = _options.shouldUnregister ? {} : cloneObject(_defaultValues);
+    let _state = {
+        action: false,
+        mount: false,
+        watch: false
+    };
+    let _names = {
+        mount: new Set(),
+        disabled: new Set(),
+        unMount: new Set(),
+        array: new Set(),
+        watch: new Set()
+    };
+    let delayErrorCallback;
+    let timer = 0;
+    const _proxyFormState = {
+        isDirty: false,
+        dirtyFields: false,
+        validatingFields: false,
+        touchedFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false
+    };
+    let _proxySubscribeFormState = {
+        ..._proxyFormState
+    };
+    const _subjects = {
+        array: createSubject(),
+        state: createSubject()
+    };
+    const shouldDisplayAllAssociatedErrors = _options.criteriaMode === VALIDATION_MODE.all;
+    const debounce = (callback)=>(wait)=>{
+            clearTimeout(timer);
+            timer = setTimeout(callback, wait);
+        };
+    const _setValid = async (shouldUpdateValid)=>{
+        if (!_options.disabled && (_proxyFormState.isValid || _proxySubscribeFormState.isValid || shouldUpdateValid)) {
+            const isValid = _options.resolver ? isEmptyObject((await _runSchema()).errors) : await executeBuiltInValidation(_fields, true);
+            if (isValid !== _formState.isValid) {
+                _subjects.state.next({
+                    isValid
+                });
+            }
+        }
+    };
+    const _updateIsValidating = (names, isValidating)=>{
+        if (!_options.disabled && (_proxyFormState.isValidating || _proxyFormState.validatingFields || _proxySubscribeFormState.isValidating || _proxySubscribeFormState.validatingFields)) {
+            (names || Array.from(_names.mount)).forEach((name)=>{
+                if (name) {
+                    isValidating ? set(_formState.validatingFields, name, isValidating) : unset(_formState.validatingFields, name);
+                }
+            });
+            _subjects.state.next({
+                validatingFields: _formState.validatingFields,
+                isValidating: !isEmptyObject(_formState.validatingFields)
+            });
+        }
+    };
+    const _setFieldArray = (name, values = [], method, args, shouldSetValues = true, shouldUpdateFieldsAndState = true)=>{
+        if (args && method && !_options.disabled) {
+            _state.action = true;
+            if (shouldUpdateFieldsAndState && Array.isArray(get(_fields, name))) {
+                const fieldValues = method(get(_fields, name), args.argA, args.argB);
+                shouldSetValues && set(_fields, name, fieldValues);
+            }
+            if (shouldUpdateFieldsAndState && Array.isArray(get(_formState.errors, name))) {
+                const errors = method(get(_formState.errors, name), args.argA, args.argB);
+                shouldSetValues && set(_formState.errors, name, errors);
+                unsetEmptyArray(_formState.errors, name);
+            }
+            if ((_proxyFormState.touchedFields || _proxySubscribeFormState.touchedFields) && shouldUpdateFieldsAndState && Array.isArray(get(_formState.touchedFields, name))) {
+                const touchedFields = method(get(_formState.touchedFields, name), args.argA, args.argB);
+                shouldSetValues && set(_formState.touchedFields, name, touchedFields);
+            }
+            if (_proxyFormState.dirtyFields || _proxySubscribeFormState.dirtyFields) {
+                _formState.dirtyFields = getDirtyFields(_defaultValues, _formValues);
+            }
+            _subjects.state.next({
+                name,
+                isDirty: _getDirty(name, values),
+                dirtyFields: _formState.dirtyFields,
+                errors: _formState.errors,
+                isValid: _formState.isValid
+            });
+        } else {
+            set(_formValues, name, values);
+        }
+    };
+    const updateErrors = (name, error)=>{
+        set(_formState.errors, name, error);
+        _subjects.state.next({
+            errors: _formState.errors
+        });
+    };
+    const _setErrors = (errors)=>{
+        _formState.errors = errors;
+        _subjects.state.next({
+            errors: _formState.errors,
+            isValid: false
+        });
+    };
+    const updateValidAndValue = (name, shouldSkipSetValueAs, value1, ref)=>{
+        const field = get(_fields, name);
+        if (field) {
+            const defaultValue = get(_formValues, name, isUndefined(value1) ? get(_defaultValues, name) : value1);
+            isUndefined(defaultValue) || ref && ref.defaultChecked || shouldSkipSetValueAs ? set(_formValues, name, shouldSkipSetValueAs ? defaultValue : getFieldValue(field._f)) : setFieldValue(name, defaultValue);
+            _state.mount && !_state.action && _setValid();
+        }
+    };
+    const updateTouchAndDirty = (name, fieldValue, isBlurEvent, shouldDirty, shouldRender)=>{
+        let shouldUpdateField = false;
+        let isPreviousDirty = false;
+        const output = {
+            name
+        };
+        if (!_options.disabled) {
+            if (!isBlurEvent || shouldDirty) {
+                if (_proxyFormState.isDirty || _proxySubscribeFormState.isDirty) {
+                    isPreviousDirty = _formState.isDirty;
+                    _formState.isDirty = output.isDirty = _getDirty();
+                    shouldUpdateField = isPreviousDirty !== output.isDirty;
+                }
+                const isCurrentFieldPristine = deepEqual(get(_defaultValues, name), fieldValue);
+                isPreviousDirty = !!get(_formState.dirtyFields, name);
+                isCurrentFieldPristine ? unset(_formState.dirtyFields, name) : set(_formState.dirtyFields, name, true);
+                output.dirtyFields = _formState.dirtyFields;
+                shouldUpdateField = shouldUpdateField || (_proxyFormState.dirtyFields || _proxySubscribeFormState.dirtyFields) && isPreviousDirty !== !isCurrentFieldPristine;
+            }
+            if (isBlurEvent) {
+                const isPreviousFieldTouched = get(_formState.touchedFields, name);
+                if (!isPreviousFieldTouched) {
+                    set(_formState.touchedFields, name, isBlurEvent);
+                    output.touchedFields = _formState.touchedFields;
+                    shouldUpdateField = shouldUpdateField || (_proxyFormState.touchedFields || _proxySubscribeFormState.touchedFields) && isPreviousFieldTouched !== isBlurEvent;
+                }
+            }
+            shouldUpdateField && shouldRender && _subjects.state.next(output);
+        }
+        return shouldUpdateField ? output : {};
+    };
+    const shouldRenderByError = (name, isValid, error, fieldState)=>{
+        const previousFieldError = get(_formState.errors, name);
+        const shouldUpdateValid = (_proxyFormState.isValid || _proxySubscribeFormState.isValid) && isBoolean(isValid) && _formState.isValid !== isValid;
+        if (_options.delayError && error) {
+            delayErrorCallback = debounce(()=>updateErrors(name, error));
+            delayErrorCallback(_options.delayError);
+        } else {
+            clearTimeout(timer);
+            delayErrorCallback = null;
+            error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
+        }
+        if ((error ? !deepEqual(previousFieldError, error) : previousFieldError) || !isEmptyObject(fieldState) || shouldUpdateValid) {
+            const updatedFormState = {
+                ...fieldState,
+                ...shouldUpdateValid && isBoolean(isValid) ? {
+                    isValid
+                } : {},
+                errors: _formState.errors,
+                name
+            };
+            _formState = {
+                ..._formState,
+                ...updatedFormState
+            };
+            _subjects.state.next(updatedFormState);
+        }
+    };
+    const _runSchema = async (name)=>{
+        _updateIsValidating(name, true);
+        const result = await _options.resolver(_formValues, _options.context, getResolverOptions(name || _names.mount, _fields, _options.criteriaMode, _options.shouldUseNativeValidation));
+        _updateIsValidating(name);
+        return result;
+    };
+    const executeSchemaAndUpdateState = async (names)=>{
+        const { errors } = await _runSchema(names);
+        if (names) {
+            for (const name of names){
+                const error = get(errors, name);
+                error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
+            }
+        } else {
+            _formState.errors = errors;
+        }
+        return errors;
+    };
+    const executeBuiltInValidation = async (fields, shouldOnlyCheckValid, context = {
+        valid: true
+    })=>{
+        for(const name in fields){
+            const field = fields[name];
+            if (field) {
+                const { _f, ...fieldValue } = field;
+                if (_f) {
+                    const isFieldArrayRoot = _names.array.has(_f.name);
+                    const isPromiseFunction = field._f && hasPromiseValidation(field._f);
+                    if (isPromiseFunction && _proxyFormState.validatingFields) {
+                        _updateIsValidating([
+                            _f.name
+                        ], true);
+                    }
+                    const fieldError = await validateField(field, _names.disabled, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation && !shouldOnlyCheckValid, isFieldArrayRoot);
+                    if (isPromiseFunction && _proxyFormState.validatingFields) {
+                        _updateIsValidating([
+                            _f.name
+                        ]);
+                    }
+                    if (fieldError[_f.name]) {
+                        context.valid = false;
+                        if (shouldOnlyCheckValid) {
+                            break;
+                        }
+                    }
+                    !shouldOnlyCheckValid && (get(fieldError, _f.name) ? isFieldArrayRoot ? updateFieldArrayRootError(_formState.errors, fieldError, _f.name) : set(_formState.errors, _f.name, fieldError[_f.name]) : unset(_formState.errors, _f.name));
+                }
+                !isEmptyObject(fieldValue) && await executeBuiltInValidation(fieldValue, shouldOnlyCheckValid, context);
+            }
+        }
+        return context.valid;
+    };
+    const _removeUnmounted = ()=>{
+        for (const name of _names.unMount){
+            const field = get(_fields, name);
+            field && (field._f.refs ? field._f.refs.every((ref)=>!live(ref)) : !live(field._f.ref)) && unregister(name);
+        }
+        _names.unMount = new Set();
+    };
+    const _getDirty = (name, data)=>!_options.disabled && (name && data && set(_formValues, name, data), !deepEqual(getValues(), _defaultValues));
+    const _getWatch = (names, defaultValue, isGlobal)=>generateWatchOutput(names, _names, {
+            ..._state.mount ? _formValues : isUndefined(defaultValue) ? _defaultValues : isString(names) ? {
+                [names]: defaultValue
+            } : defaultValue
+        }, isGlobal, defaultValue);
+    const _getFieldArray = (name)=>compact(get(_state.mount ? _formValues : _defaultValues, name, _options.shouldUnregister ? get(_defaultValues, name, []) : []));
+    const setFieldValue = (name, value1, options = {})=>{
+        const field = get(_fields, name);
+        let fieldValue = value1;
+        if (field) {
+            const fieldReference = field._f;
+            if (fieldReference) {
+                !fieldReference.disabled && set(_formValues, name, getFieldValueAs(value1, fieldReference));
+                fieldValue = isHTMLElement(fieldReference.ref) && isNullOrUndefined(value1) ? '' : value1;
+                if (isMultipleSelect(fieldReference.ref)) {
+                    [
+                        ...fieldReference.ref.options
+                    ].forEach((optionRef)=>optionRef.selected = fieldValue.includes(optionRef.value));
+                } else if (fieldReference.refs) {
+                    if (isCheckBoxInput(fieldReference.ref)) {
+                        fieldReference.refs.forEach((checkboxRef)=>{
+                            if (!checkboxRef.defaultChecked || !checkboxRef.disabled) {
+                                if (Array.isArray(fieldValue)) {
+                                    checkboxRef.checked = !!fieldValue.find((data)=>data === checkboxRef.value);
+                                } else {
+                                    checkboxRef.checked = fieldValue === checkboxRef.value || !!fieldValue;
+                                }
+                            }
+                        });
+                    } else {
+                        fieldReference.refs.forEach((radioRef)=>radioRef.checked = radioRef.value === fieldValue);
+                    }
+                } else if (isFileInput(fieldReference.ref)) {
+                    fieldReference.ref.value = '';
+                } else {
+                    fieldReference.ref.value = fieldValue;
+                    if (!fieldReference.ref.type) {
+                        _subjects.state.next({
+                            name,
+                            values: cloneObject(_formValues)
+                        });
+                    }
+                }
+            }
+        }
+        (options.shouldDirty || options.shouldTouch) && updateTouchAndDirty(name, fieldValue, options.shouldTouch, options.shouldDirty, true);
+        options.shouldValidate && trigger(name);
+    };
+    const setValues = (name, value1, options)=>{
+        for(const fieldKey in value1){
+            if (!value1.hasOwnProperty(fieldKey)) {
+                return;
+            }
+            const fieldValue = value1[fieldKey];
+            const fieldName = name + '.' + fieldKey;
+            const field = get(_fields, fieldName);
+            (_names.array.has(name) || isObject(fieldValue) || field && !field._f) && !isDateObject(fieldValue) ? setValues(fieldName, fieldValue, options) : setFieldValue(fieldName, fieldValue, options);
+        }
+    };
+    const setValue = (name, value1, options = {})=>{
+        const field = get(_fields, name);
+        const isFieldArray = _names.array.has(name);
+        const cloneValue = cloneObject(value1);
+        set(_formValues, name, cloneValue);
+        if (isFieldArray) {
+            _subjects.array.next({
+                name,
+                values: cloneObject(_formValues)
+            });
+            if ((_proxyFormState.isDirty || _proxyFormState.dirtyFields || _proxySubscribeFormState.isDirty || _proxySubscribeFormState.dirtyFields) && options.shouldDirty) {
+                _subjects.state.next({
+                    name,
+                    dirtyFields: getDirtyFields(_defaultValues, _formValues),
+                    isDirty: _getDirty(name, cloneValue)
+                });
+            }
+        } else {
+            field && !field._f && !isNullOrUndefined(cloneValue) ? setValues(name, cloneValue, options) : setFieldValue(name, cloneValue, options);
+        }
+        isWatched(name, _names) && _subjects.state.next({
+            ..._formState,
+            name
+        });
+        _subjects.state.next({
+            name: _state.mount ? name : undefined,
+            values: cloneObject(_formValues)
+        });
+    };
+    const onChange = async (event)=>{
+        _state.mount = true;
+        const target = event.target;
+        let name = target.name;
+        let isFieldValueUpdated = true;
+        const field = get(_fields, name);
+        const _updateIsFieldValueUpdated = (fieldValue)=>{
+            isFieldValueUpdated = Number.isNaN(fieldValue) || isDateObject(fieldValue) && isNaN(fieldValue.getTime()) || deepEqual(fieldValue, get(_formValues, name, fieldValue));
+        };
+        const validationModeBeforeSubmit = getValidationModes(_options.mode);
+        const validationModeAfterSubmit = getValidationModes(_options.reValidateMode);
+        if (field) {
+            let error;
+            let isValid;
+            const fieldValue = target.type ? getFieldValue(field._f) : getEventValue(event);
+            const isBlurEvent = event.type === EVENTS.BLUR || event.type === EVENTS.FOCUS_OUT;
+            const shouldSkipValidation = !hasValidation(field._f) && !_options.resolver && !get(_formState.errors, name) && !field._f.deps || skipValidation(isBlurEvent, get(_formState.touchedFields, name), _formState.isSubmitted, validationModeAfterSubmit, validationModeBeforeSubmit);
+            const watched = isWatched(name, _names, isBlurEvent);
+            set(_formValues, name, fieldValue);
+            if (isBlurEvent) {
+                if (!target || !target.readOnly) {
+                    field._f.onBlur && field._f.onBlur(event);
+                    delayErrorCallback && delayErrorCallback(0);
+                }
+            } else if (field._f.onChange) {
+                field._f.onChange(event);
+            }
+            const fieldState = updateTouchAndDirty(name, fieldValue, isBlurEvent);
+            const shouldRender = !isEmptyObject(fieldState) || watched;
+            !isBlurEvent && _subjects.state.next({
+                name,
+                type: event.type,
+                values: cloneObject(_formValues)
+            });
+            if (shouldSkipValidation) {
+                if (_proxyFormState.isValid || _proxySubscribeFormState.isValid) {
+                    if (_options.mode === 'onBlur') {
+                        if (isBlurEvent) {
+                            _setValid();
+                        }
+                    } else if (!isBlurEvent) {
+                        _setValid();
+                    }
+                }
+                return shouldRender && _subjects.state.next({
+                    name,
+                    ...watched ? {} : fieldState
+                });
+            }
+            !isBlurEvent && watched && _subjects.state.next({
+                ..._formState
+            });
+            if (_options.resolver) {
+                const { errors } = await _runSchema([
+                    name
+                ]);
+                _updateIsFieldValueUpdated(fieldValue);
+                if (isFieldValueUpdated) {
+                    const previousErrorLookupResult = schemaErrorLookup(_formState.errors, _fields, name);
+                    const errorLookupResult = schemaErrorLookup(errors, _fields, previousErrorLookupResult.name || name);
+                    error = errorLookupResult.error;
+                    name = errorLookupResult.name;
+                    isValid = isEmptyObject(errors);
+                }
+            } else {
+                _updateIsValidating([
+                    name
+                ], true);
+                error = (await validateField(field, _names.disabled, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation))[name];
+                _updateIsValidating([
+                    name
+                ]);
+                _updateIsFieldValueUpdated(fieldValue);
+                if (isFieldValueUpdated) {
+                    if (error) {
+                        isValid = false;
+                    } else if (_proxyFormState.isValid || _proxySubscribeFormState.isValid) {
+                        isValid = await executeBuiltInValidation(_fields, true);
+                    }
+                }
+            }
+            if (isFieldValueUpdated) {
+                field._f.deps && (!Array.isArray(field._f.deps) || field._f.deps.length > 0) && trigger(field._f.deps);
+                shouldRenderByError(name, isValid, error, fieldState);
+            }
+        }
+    };
+    const _focusInput = (ref, key)=>{
+        if (get(_formState.errors, key) && ref.focus) {
+            ref.focus();
+            return 1;
+        }
+        return;
+    };
+    const trigger = async (name, options = {})=>{
+        let isValid;
+        let validationResult;
+        const fieldNames = convertToArrayPayload(name);
+        if (_options.resolver) {
+            const errors = await executeSchemaAndUpdateState(isUndefined(name) ? name : fieldNames);
+            isValid = isEmptyObject(errors);
+            validationResult = name ? !fieldNames.some((name)=>get(errors, name)) : isValid;
+        } else if (name) {
+            validationResult = (await Promise.all(fieldNames.map(async (fieldName)=>{
+                const field = get(_fields, fieldName);
+                return await executeBuiltInValidation(field && field._f ? {
+                    [fieldName]: field
+                } : field);
+            }))).every(Boolean);
+            !(!validationResult && !_formState.isValid) && _setValid();
+        } else {
+            validationResult = isValid = await executeBuiltInValidation(_fields);
+        }
+        _subjects.state.next({
+            ...!isString(name) || (_proxyFormState.isValid || _proxySubscribeFormState.isValid) && isValid !== _formState.isValid ? {} : {
+                name
+            },
+            ..._options.resolver || !name ? {
+                isValid
+            } : {},
+            errors: _formState.errors
+        });
+        options.shouldFocus && !validationResult && iterateFieldsByAction(_fields, _focusInput, name ? fieldNames : _names.mount);
+        return validationResult;
+    };
+    const getValues = (fieldNames, config)=>{
+        let values = {
+            ..._state.mount ? _formValues : _defaultValues
+        };
+        if (config) {
+            values = extractFormValues(config.dirtyFields ? _formState.dirtyFields : _formState.touchedFields, values);
+        }
+        return isUndefined(fieldNames) ? values : isString(fieldNames) ? get(values, fieldNames) : fieldNames.map((name)=>get(values, name));
+    };
+    const getFieldState = (name, formState)=>({
+            invalid: !!get((formState || _formState).errors, name),
+            isDirty: !!get((formState || _formState).dirtyFields, name),
+            error: get((formState || _formState).errors, name),
+            isValidating: !!get(_formState.validatingFields, name),
+            isTouched: !!get((formState || _formState).touchedFields, name)
+        });
+    const clearErrors = (name)=>{
+        name && convertToArrayPayload(name).forEach((inputName)=>unset(_formState.errors, inputName));
+        _subjects.state.next({
+            errors: name ? _formState.errors : {}
+        });
+    };
+    const setError = (name, error, options)=>{
+        const ref = (get(_fields, name, {
+            _f: {}
+        })._f || {}).ref;
+        const currentError = get(_formState.errors, name) || {};
+        // Don't override existing error messages elsewhere in the object tree.
+        const { ref: currentRef, message, type, ...restOfErrorTree } = currentError;
+        set(_formState.errors, name, {
+            ...restOfErrorTree,
+            ...error,
+            ref
+        });
+        _subjects.state.next({
+            name,
+            errors: _formState.errors,
+            isValid: false
+        });
+        options && options.shouldFocus && ref && ref.focus && ref.focus();
+    };
+    const watch = (name, defaultValue)=>isFunction(name) ? _subjects.state.subscribe({
+            next: (payload)=>'values' in payload && name(_getWatch(undefined, defaultValue), payload)
+        }) : _getWatch(name, defaultValue, true);
+    const _subscribe = (props)=>_subjects.state.subscribe({
+            next: (formState)=>{
+                if (shouldSubscribeByName(props.name, formState.name, props.exact) && shouldRenderFormState(formState, props.formState || _proxyFormState, _setFormState, props.reRenderRoot)) {
+                    props.callback({
+                        values: {
+                            ..._formValues
+                        },
+                        ..._formState,
+                        ...formState,
+                        defaultValues: _defaultValues
+                    });
+                }
+            }
+        }).unsubscribe;
+    const subscribe = (props)=>{
+        _state.mount = true;
+        _proxySubscribeFormState = {
+            ..._proxySubscribeFormState,
+            ...props.formState
+        };
+        return _subscribe({
+            ...props,
+            formState: _proxySubscribeFormState
+        });
+    };
+    const unregister = (name, options = {})=>{
+        for (const fieldName of name ? convertToArrayPayload(name) : _names.mount){
+            _names.mount.delete(fieldName);
+            _names.array.delete(fieldName);
+            if (!options.keepValue) {
+                unset(_fields, fieldName);
+                unset(_formValues, fieldName);
+            }
+            !options.keepError && unset(_formState.errors, fieldName);
+            !options.keepDirty && unset(_formState.dirtyFields, fieldName);
+            !options.keepTouched && unset(_formState.touchedFields, fieldName);
+            !options.keepIsValidating && unset(_formState.validatingFields, fieldName);
+            !_options.shouldUnregister && !options.keepDefaultValue && unset(_defaultValues, fieldName);
+        }
+        _subjects.state.next({
+            values: cloneObject(_formValues)
+        });
+        _subjects.state.next({
+            ..._formState,
+            ...!options.keepDirty ? {} : {
+                isDirty: _getDirty()
+            }
+        });
+        !options.keepIsValid && _setValid();
+    };
+    const _setDisabledField = ({ disabled, name })=>{
+        if (isBoolean(disabled) && _state.mount || !!disabled || _names.disabled.has(name)) {
+            disabled ? _names.disabled.add(name) : _names.disabled.delete(name);
+        }
+    };
+    const register = (name, options = {})=>{
+        let field = get(_fields, name);
+        const disabledIsDefined = isBoolean(options.disabled) || isBoolean(_options.disabled);
+        set(_fields, name, {
+            ...field || {},
+            _f: {
+                ...field && field._f ? field._f : {
+                    ref: {
+                        name
+                    }
+                },
+                name,
+                mount: true,
+                ...options
+            }
+        });
+        _names.mount.add(name);
+        if (field) {
+            _setDisabledField({
+                disabled: isBoolean(options.disabled) ? options.disabled : _options.disabled,
+                name
+            });
+        } else {
+            updateValidAndValue(name, true, options.value);
+        }
+        return {
+            ...disabledIsDefined ? {
+                disabled: options.disabled || _options.disabled
+            } : {},
+            ..._options.progressive ? {
+                required: !!options.required,
+                min: getRuleValue(options.min),
+                max: getRuleValue(options.max),
+                minLength: getRuleValue(options.minLength),
+                maxLength: getRuleValue(options.maxLength),
+                pattern: getRuleValue(options.pattern)
+            } : {},
+            name,
+            onChange,
+            onBlur: onChange,
+            ref: (ref)=>{
+                if (ref) {
+                    register(name, options);
+                    field = get(_fields, name);
+                    const fieldRef = isUndefined(ref.value) ? ref.querySelectorAll ? ref.querySelectorAll('input,select,textarea')[0] || ref : ref : ref;
+                    const radioOrCheckbox = isRadioOrCheckbox(fieldRef);
+                    const refs = field._f.refs || [];
+                    if (radioOrCheckbox ? refs.find((option)=>option === fieldRef) : fieldRef === field._f.ref) {
+                        return;
+                    }
+                    set(_fields, name, {
+                        _f: {
+                            ...field._f,
+                            ...radioOrCheckbox ? {
+                                refs: [
+                                    ...refs.filter(live),
+                                    fieldRef,
+                                    ...Array.isArray(get(_defaultValues, name)) ? [
+                                        {}
+                                    ] : []
+                                ],
+                                ref: {
+                                    type: fieldRef.type,
+                                    name
+                                }
+                            } : {
+                                ref: fieldRef
+                            }
+                        }
+                    });
+                    updateValidAndValue(name, false, undefined, fieldRef);
+                } else {
+                    field = get(_fields, name, {});
+                    if (field._f) {
+                        field._f.mount = false;
+                    }
+                    (_options.shouldUnregister || options.shouldUnregister) && !(isNameInFieldArray(_names.array, name) && _state.action) && _names.unMount.add(name);
+                }
+            }
+        };
+    };
+    const _focusError = ()=>_options.shouldFocusError && iterateFieldsByAction(_fields, _focusInput, _names.mount);
+    const _disableForm = (disabled)=>{
+        if (isBoolean(disabled)) {
+            _subjects.state.next({
+                disabled
+            });
+            iterateFieldsByAction(_fields, (ref, name)=>{
+                const currentField = get(_fields, name);
+                if (currentField) {
+                    ref.disabled = currentField._f.disabled || disabled;
+                    if (Array.isArray(currentField._f.refs)) {
+                        currentField._f.refs.forEach((inputRef)=>{
+                            inputRef.disabled = currentField._f.disabled || disabled;
+                        });
+                    }
+                }
+            }, 0, false);
+        }
+    };
+    const handleSubmit = (onValid, onInvalid)=>async (e)=>{
+            let onValidError = undefined;
+            if (e) {
+                e.preventDefault && e.preventDefault();
+                e.persist && e.persist();
+            }
+            let fieldValues = cloneObject(_formValues);
+            _subjects.state.next({
+                isSubmitting: true
+            });
+            if (_options.resolver) {
+                const { errors, values } = await _runSchema();
+                _formState.errors = errors;
+                fieldValues = cloneObject(values);
+            } else {
+                await executeBuiltInValidation(_fields);
+            }
+            if (_names.disabled.size) {
+                for (const name of _names.disabled){
+                    unset(fieldValues, name);
+                }
+            }
+            unset(_formState.errors, 'root');
+            if (isEmptyObject(_formState.errors)) {
+                _subjects.state.next({
+                    errors: {}
+                });
+                try {
+                    await onValid(fieldValues, e);
+                } catch (error) {
+                    onValidError = error;
+                }
+            } else {
+                if (onInvalid) {
+                    await onInvalid({
+                        ..._formState.errors
+                    }, e);
+                }
+                _focusError();
+                setTimeout(_focusError);
+            }
+            _subjects.state.next({
+                isSubmitted: true,
+                isSubmitting: false,
+                isSubmitSuccessful: isEmptyObject(_formState.errors) && !onValidError,
+                submitCount: _formState.submitCount + 1,
+                errors: _formState.errors
+            });
+            if (onValidError) {
+                throw onValidError;
+            }
+        };
+    const resetField = (name, options = {})=>{
+        if (get(_fields, name)) {
+            if (isUndefined(options.defaultValue)) {
+                setValue(name, cloneObject(get(_defaultValues, name)));
+            } else {
+                setValue(name, options.defaultValue);
+                set(_defaultValues, name, cloneObject(options.defaultValue));
+            }
+            if (!options.keepTouched) {
+                unset(_formState.touchedFields, name);
+            }
+            if (!options.keepDirty) {
+                unset(_formState.dirtyFields, name);
+                _formState.isDirty = options.defaultValue ? _getDirty(name, cloneObject(get(_defaultValues, name))) : _getDirty();
+            }
+            if (!options.keepError) {
+                unset(_formState.errors, name);
+                _proxyFormState.isValid && _setValid();
+            }
+            _subjects.state.next({
+                ..._formState
+            });
+        }
+    };
+    const _reset = (formValues, keepStateOptions = {})=>{
+        const updatedValues = formValues ? cloneObject(formValues) : _defaultValues;
+        const cloneUpdatedValues = cloneObject(updatedValues);
+        const isEmptyResetValues = isEmptyObject(formValues);
+        const values = isEmptyResetValues ? _defaultValues : cloneUpdatedValues;
+        if (!keepStateOptions.keepDefaultValues) {
+            _defaultValues = updatedValues;
+        }
+        if (!keepStateOptions.keepValues) {
+            if (keepStateOptions.keepDirtyValues) {
+                const fieldsToCheck = new Set([
+                    ..._names.mount,
+                    ...Object.keys(getDirtyFields(_defaultValues, _formValues))
+                ]);
+                for (const fieldName of Array.from(fieldsToCheck)){
+                    get(_formState.dirtyFields, fieldName) ? set(values, fieldName, get(_formValues, fieldName)) : setValue(fieldName, get(values, fieldName));
+                }
+            } else {
+                if (isWeb && isUndefined(formValues)) //TURBOPACK unreachable
+                ;
+                if (keepStateOptions.keepFieldsRef) {
+                    for (const fieldName of _names.mount){
+                        setValue(fieldName, get(values, fieldName));
+                    }
+                } else {
+                    _fields = {};
+                }
+            }
+            _formValues = _options.shouldUnregister ? keepStateOptions.keepDefaultValues ? cloneObject(_defaultValues) : {} : cloneObject(values);
+            _subjects.array.next({
+                values: {
+                    ...values
+                }
+            });
+            _subjects.state.next({
+                values: {
+                    ...values
+                }
+            });
+        }
+        _names = {
+            mount: keepStateOptions.keepDirtyValues ? _names.mount : new Set(),
+            unMount: new Set(),
+            array: new Set(),
+            disabled: new Set(),
+            watch: new Set(),
+            watchAll: false,
+            focus: ''
+        };
+        _state.mount = !_proxyFormState.isValid || !!keepStateOptions.keepIsValid || !!keepStateOptions.keepDirtyValues || !_options.shouldUnregister && !isEmptyObject(values);
+        _state.watch = !!_options.shouldUnregister;
+        _state.action = false;
+        // Clear errors synchronously to prevent validation errors on subsequent submissions
+        // This fixes the issue where form.reset() causes validation errors on subsequent
+        // submissions in Next.js 16 with Server Actions
+        if (!keepStateOptions.keepErrors) {
+            _formState.errors = {};
+        }
+        _subjects.state.next({
+            submitCount: keepStateOptions.keepSubmitCount ? _formState.submitCount : 0,
+            isDirty: isEmptyResetValues ? false : keepStateOptions.keepDirty ? _formState.isDirty : !!(keepStateOptions.keepDefaultValues && !deepEqual(formValues, _defaultValues)),
+            isSubmitted: keepStateOptions.keepIsSubmitted ? _formState.isSubmitted : false,
+            dirtyFields: isEmptyResetValues ? {} : keepStateOptions.keepDirtyValues ? keepStateOptions.keepDefaultValues && _formValues ? getDirtyFields(_defaultValues, _formValues) : _formState.dirtyFields : keepStateOptions.keepDefaultValues && formValues ? getDirtyFields(_defaultValues, formValues) : keepStateOptions.keepDirty ? _formState.dirtyFields : {},
+            touchedFields: keepStateOptions.keepTouched ? _formState.touchedFields : {},
+            errors: keepStateOptions.keepErrors ? _formState.errors : {},
+            isSubmitSuccessful: keepStateOptions.keepIsSubmitSuccessful ? _formState.isSubmitSuccessful : false,
+            isSubmitting: false,
+            defaultValues: _defaultValues
+        });
+    };
+    const reset = (formValues, keepStateOptions)=>_reset(isFunction(formValues) ? formValues(_formValues) : formValues, keepStateOptions);
+    const setFocus = (name, options = {})=>{
+        const field = get(_fields, name);
+        const fieldReference = field && field._f;
+        if (fieldReference) {
+            const fieldRef = fieldReference.refs ? fieldReference.refs[0] : fieldReference.ref;
+            if (fieldRef.focus) {
+                fieldRef.focus();
+                options.shouldSelect && isFunction(fieldRef.select) && fieldRef.select();
+            }
+        }
+    };
+    const _setFormState = (updatedFormState)=>{
+        _formState = {
+            ..._formState,
+            ...updatedFormState
+        };
+    };
+    const _resetDefaultValues = ()=>isFunction(_options.defaultValues) && _options.defaultValues().then((values)=>{
+            reset(values, _options.resetOptions);
+            _subjects.state.next({
+                isLoading: false
+            });
+        });
+    const methods = {
+        control: {
+            register,
+            unregister,
+            getFieldState,
+            handleSubmit,
+            setError,
+            _subscribe,
+            _runSchema,
+            _focusError,
+            _getWatch,
+            _getDirty,
+            _setValid,
+            _setFieldArray,
+            _setDisabledField,
+            _setErrors,
+            _getFieldArray,
+            _reset,
+            _resetDefaultValues,
+            _removeUnmounted,
+            _disableForm,
+            _subjects,
+            _proxyFormState,
+            get _fields () {
+                return _fields;
+            },
+            get _formValues () {
+                return _formValues;
+            },
+            get _state () {
+                return _state;
+            },
+            set _state (value){
+                _state = value;
+            },
+            get _defaultValues () {
+                return _defaultValues;
+            },
+            get _names () {
+                return _names;
+            },
+            set _names (value){
+                _names = value;
+            },
+            get _formState () {
+                return _formState;
+            },
+            get _options () {
+                return _options;
+            },
+            set _options (value){
+                _options = {
+                    ..._options,
+                    ...value
+                };
+            }
+        },
+        subscribe,
+        trigger,
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        getValues,
+        reset,
+        resetField,
+        clearErrors,
+        unregister,
+        setError,
+        setFocus,
+        getFieldState
+    };
+    return {
+        ...methods,
+        formControl: methods
+    };
+}
+var generateId = ()=>{
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+        return crypto.randomUUID();
+    }
+    const d = typeof performance === 'undefined' ? Date.now() : performance.now() * 1000;
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c)=>{
+        const r = (Math.random() * 16 + d) % 16 | 0;
+        return (c == 'x' ? r : r & 0x3 | 0x8).toString(16);
+    });
+};
+var getFocusFieldName = (name, index, options = {})=>options.shouldFocus || isUndefined(options.shouldFocus) ? options.focusName || `${name}.${isUndefined(options.focusIndex) ? index : options.focusIndex}.` : '';
+var appendAt = (data, value1)=>[
+        ...data,
+        ...convertToArrayPayload(value1)
+    ];
+var fillEmptyArray = (value1)=>Array.isArray(value1) ? value1.map(()=>undefined) : undefined;
+function insert(data, index, value1) {
+    return [
+        ...data.slice(0, index),
+        ...convertToArrayPayload(value1),
+        ...data.slice(index)
+    ];
+}
+var moveArrayAt = (data, from, to)=>{
+    if (!Array.isArray(data)) {
+        return [];
+    }
+    if (isUndefined(data[to])) {
+        data[to] = undefined;
+    }
+    data.splice(to, 0, data.splice(from, 1)[0]);
+    return data;
+};
+var prependAt = (data, value1)=>[
+        ...convertToArrayPayload(value1),
+        ...convertToArrayPayload(data)
+    ];
+function removeAtIndexes(data, indexes) {
+    let i = 0;
+    const temp = [
+        ...data
+    ];
+    for (const index of indexes){
+        temp.splice(index - i, 1);
+        i++;
+    }
+    return compact(temp).length ? temp : [];
+}
+var removeArrayAt = (data, index)=>isUndefined(index) ? [] : removeAtIndexes(data, convertToArrayPayload(index).sort((a, b)=>a - b));
+var swapArrayAt = (data, indexA, indexB)=>{
+    [data[indexA], data[indexB]] = [
+        data[indexB],
+        data[indexA]
+    ];
+};
+var updateAt = (fieldValues, index, value1)=>{
+    fieldValues[index] = value1;
+    return fieldValues;
+};
+/**
+ * A custom hook that exposes convenient methods to perform operations with a list of dynamic inputs that need to be appended, updated, removed etc. • [Demo](https://codesandbox.io/s/react-hook-form-usefieldarray-ssugn) • [Video](https://youtu.be/4MrbfGSFY2A)
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/usefieldarray) • [Demo](https://codesandbox.io/s/react-hook-form-usefieldarray-ssugn)
+ *
+ * @param props - useFieldArray props
+ *
+ * @returns methods - functions to manipulate with the Field Arrays (dynamic inputs) {@link UseFieldArrayReturn}
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { register, control, handleSubmit, reset, trigger, setError } = useForm({
+ *     defaultValues: {
+ *       test: []
+ *     }
+ *   });
+ *   const { fields, append } = useFieldArray({
+ *     control,
+ *     name: "test"
+ *   });
+ *
+ *   return (
+ *     <form onSubmit={handleSubmit(data => console.log(data))}>
+ *       {fields.map((item, index) => (
+ *          <input key={item.id} {...register(`test.${index}.firstName`)}  />
+ *       ))}
+ *       <button type="button" onClick={() => append({ firstName: "bill" })}>
+ *         append
+ *       </button>
+ *       <input type="submit" />
+ *     </form>
+ *   );
+ * }
+ * ```
+ */ function useFieldArray(props) {
+    const methods = useFormContext();
+    const { control = methods.control, name, keyName = 'id', shouldUnregister, rules } = props;
+    const [fields, setFields] = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useState(control._getFieldArray(name));
+    const ids = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(control._getFieldArray(name).map(generateId));
+    const _actioned = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(false);
+    control._names.array.add(name);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>rules && fields.length >= 0 && control.register(name, rules), [
+        control,
+        name,
+        fields.length,
+        rules
+    ]);
+    useIsomorphicLayoutEffect(()=>control._subjects.array.subscribe({
+            next: ({ values, name: fieldArrayName })=>{
+                if (fieldArrayName === name || !fieldArrayName) {
+                    const fieldValues = get(values, name);
+                    if (Array.isArray(fieldValues)) {
+                        setFields(fieldValues);
+                        ids.current = fieldValues.map(generateId);
+                    }
+                }
+            }
+        }).unsubscribe, [
+        control,
+        name
+    ]);
+    const updateValues = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback((updatedFieldArrayValues)=>{
+        _actioned.current = true;
+        control._setFieldArray(name, updatedFieldArrayValues);
+    }, [
+        control,
+        name
+    ]);
+    const append = (value1, options)=>{
+        const appendValue = convertToArrayPayload(cloneObject(value1));
+        const updatedFieldArrayValues = appendAt(control._getFieldArray(name), appendValue);
+        control._names.focus = getFocusFieldName(name, updatedFieldArrayValues.length - 1, options);
+        ids.current = appendAt(ids.current, appendValue.map(generateId));
+        updateValues(updatedFieldArrayValues);
+        setFields(updatedFieldArrayValues);
+        control._setFieldArray(name, updatedFieldArrayValues, appendAt, {
+            argA: fillEmptyArray(value1)
+        });
+    };
+    const prepend = (value1, options)=>{
+        const prependValue = convertToArrayPayload(cloneObject(value1));
+        const updatedFieldArrayValues = prependAt(control._getFieldArray(name), prependValue);
+        control._names.focus = getFocusFieldName(name, 0, options);
+        ids.current = prependAt(ids.current, prependValue.map(generateId));
+        updateValues(updatedFieldArrayValues);
+        setFields(updatedFieldArrayValues);
+        control._setFieldArray(name, updatedFieldArrayValues, prependAt, {
+            argA: fillEmptyArray(value1)
+        });
+    };
+    const remove = (index)=>{
+        const updatedFieldArrayValues = removeArrayAt(control._getFieldArray(name), index);
+        ids.current = removeArrayAt(ids.current, index);
+        updateValues(updatedFieldArrayValues);
+        setFields(updatedFieldArrayValues);
+        !Array.isArray(get(control._fields, name)) && set(control._fields, name, undefined);
+        control._setFieldArray(name, updatedFieldArrayValues, removeArrayAt, {
+            argA: index
+        });
+    };
+    const insert$1 = (index, value1, options)=>{
+        const insertValue = convertToArrayPayload(cloneObject(value1));
+        const updatedFieldArrayValues = insert(control._getFieldArray(name), index, insertValue);
+        control._names.focus = getFocusFieldName(name, index, options);
+        ids.current = insert(ids.current, index, insertValue.map(generateId));
+        updateValues(updatedFieldArrayValues);
+        setFields(updatedFieldArrayValues);
+        control._setFieldArray(name, updatedFieldArrayValues, insert, {
+            argA: index,
+            argB: fillEmptyArray(value1)
+        });
+    };
+    const swap = (indexA, indexB)=>{
+        const updatedFieldArrayValues = control._getFieldArray(name);
+        swapArrayAt(updatedFieldArrayValues, indexA, indexB);
+        swapArrayAt(ids.current, indexA, indexB);
+        updateValues(updatedFieldArrayValues);
+        setFields(updatedFieldArrayValues);
+        control._setFieldArray(name, updatedFieldArrayValues, swapArrayAt, {
+            argA: indexA,
+            argB: indexB
+        }, false);
+    };
+    const move = (from, to)=>{
+        const updatedFieldArrayValues = control._getFieldArray(name);
+        moveArrayAt(updatedFieldArrayValues, from, to);
+        moveArrayAt(ids.current, from, to);
+        updateValues(updatedFieldArrayValues);
+        setFields(updatedFieldArrayValues);
+        control._setFieldArray(name, updatedFieldArrayValues, moveArrayAt, {
+            argA: from,
+            argB: to
+        }, false);
+    };
+    const update = (index, value1)=>{
+        const updateValue = cloneObject(value1);
+        const updatedFieldArrayValues = updateAt(control._getFieldArray(name), index, updateValue);
+        ids.current = [
+            ...updatedFieldArrayValues
+        ].map((item, i)=>!item || i === index ? generateId() : ids.current[i]);
+        updateValues(updatedFieldArrayValues);
+        setFields([
+            ...updatedFieldArrayValues
+        ]);
+        control._setFieldArray(name, updatedFieldArrayValues, updateAt, {
+            argA: index,
+            argB: updateValue
+        }, true, false);
+    };
+    const replace = (value1)=>{
+        const updatedFieldArrayValues = convertToArrayPayload(cloneObject(value1));
+        ids.current = updatedFieldArrayValues.map(generateId);
+        updateValues([
+            ...updatedFieldArrayValues
+        ]);
+        setFields([
+            ...updatedFieldArrayValues
+        ]);
+        control._setFieldArray(name, [
+            ...updatedFieldArrayValues
+        ], (data)=>data, {}, true, false);
+    };
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        control._state.action = false;
+        isWatched(name, control._names) && control._subjects.state.next({
+            ...control._formState
+        });
+        if (_actioned.current && (!getValidationModes(control._options.mode).isOnSubmit || control._formState.isSubmitted) && !getValidationModes(control._options.reValidateMode).isOnSubmit) {
+            if (control._options.resolver) {
+                control._runSchema([
+                    name
+                ]).then((result)=>{
+                    const error = get(result.errors, name);
+                    const existingError = get(control._formState.errors, name);
+                    if (existingError ? !error && existingError.type || error && (existingError.type !== error.type || existingError.message !== error.message) : error && error.type) {
+                        error ? set(control._formState.errors, name, error) : unset(control._formState.errors, name);
+                        control._subjects.state.next({
+                            errors: control._formState.errors
+                        });
+                    }
+                });
+            } else {
+                const field = get(control._fields, name);
+                if (field && field._f && !(getValidationModes(control._options.reValidateMode).isOnSubmit && getValidationModes(control._options.mode).isOnSubmit)) {
+                    validateField(field, control._names.disabled, control._formValues, control._options.criteriaMode === VALIDATION_MODE.all, control._options.shouldUseNativeValidation, true).then((error)=>!isEmptyObject(error) && control._subjects.state.next({
+                            errors: updateFieldArrayRootError(control._formState.errors, error, name)
+                        }));
+                }
+            }
+        }
+        control._subjects.state.next({
+            name,
+            values: cloneObject(control._formValues)
+        });
+        control._names.focus && iterateFieldsByAction(control._fields, (ref, key)=>{
+            if (control._names.focus && key.startsWith(control._names.focus) && ref.focus) {
+                ref.focus();
+                return 1;
+            }
+            return;
+        });
+        control._names.focus = '';
+        control._setValid();
+        _actioned.current = false;
+    }, [
+        fields,
+        name,
+        control
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        !get(control._formValues, name) && control._setFieldArray(name);
+        return ()=>{
+            const updateMounted = (name, value1)=>{
+                const field = get(control._fields, name);
+                if (field && field._f) {
+                    field._f.mount = value1;
+                }
+            };
+            control._options.shouldUnregister || shouldUnregister ? control.unregister(name) : updateMounted(name, false);
+        };
+    }, [
+        name,
+        control,
+        keyName,
+        shouldUnregister
+    ]);
+    return {
+        swap: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(swap, [
+            updateValues,
+            name,
+            control
+        ]),
+        move: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(move, [
+            updateValues,
+            name,
+            control
+        ]),
+        prepend: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(prepend, [
+            updateValues,
+            name,
+            control
+        ]),
+        append: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(append, [
+            updateValues,
+            name,
+            control
+        ]),
+        remove: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(remove, [
+            updateValues,
+            name,
+            control
+        ]),
+        insert: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(insert$1, [
+            updateValues,
+            name,
+            control
+        ]),
+        update: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(update, [
+            updateValues,
+            name,
+            control
+        ]),
+        replace: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useCallback(replace, [
+            updateValues,
+            name,
+            control
+        ]),
+        fields: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useMemo(()=>fields.map((field, index)=>({
+                    ...field,
+                    [keyName]: ids.current[index] || generateId()
+                })), [
+            fields,
+            keyName
+        ])
+    };
+}
+/**
+ * Custom hook to manage the entire form.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useform) • [Demo](https://codesandbox.io/s/react-hook-form-get-started-ts-5ksmm) • [Video](https://www.youtube.com/watch?v=RkXv4AXXC_4)
+ *
+ * @param props - form configuration and validation parameters.
+ *
+ * @returns methods - individual functions to manage the form state. {@link UseFormReturn}
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   console.log(watch("example"));
+ *
+ *   return (
+ *     <form onSubmit={handleSubmit(onSubmit)}>
+ *       <input defaultValue="test" {...register("example")} />
+ *       <input {...register("exampleRequired", { required: true })} />
+ *       {errors.exampleRequired && <span>This field is required</span>}
+ *       <button>Submit</button>
+ *     </form>
+ *   );
+ * }
+ * ```
+ */ function useForm(props = {}) {
+    const _formControl = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(undefined);
+    const _values = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useRef(undefined);
+    const [formState, updateFormState] = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useState({
+        isDirty: false,
+        isValidating: false,
+        isLoading: isFunction(props.defaultValues),
+        isSubmitted: false,
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        submitCount: 0,
+        dirtyFields: {},
+        touchedFields: {},
+        validatingFields: {},
+        errors: props.errors || {},
+        disabled: props.disabled || false,
+        isReady: false,
+        defaultValues: isFunction(props.defaultValues) ? undefined : props.defaultValues
+    });
+    if (!_formControl.current) {
+        if (props.formControl) {
+            _formControl.current = {
+                ...props.formControl,
+                formState
+            };
+            if (props.defaultValues && !isFunction(props.defaultValues)) {
+                props.formControl.reset(props.defaultValues, props.resetOptions);
+            }
+        } else {
+            const { formControl, ...rest } = createFormControl(props);
+            _formControl.current = {
+                ...rest,
+                formState
+            };
+        }
+    }
+    const control = _formControl.current.control;
+    control._options = props;
+    useIsomorphicLayoutEffect(()=>{
+        const sub = control._subscribe({
+            formState: control._proxyFormState,
+            callback: ()=>updateFormState({
+                    ...control._formState
+                }),
+            reRenderRoot: true
+        });
+        updateFormState((data)=>({
+                ...data,
+                isReady: true
+            }));
+        control._formState.isReady = true;
+        return sub;
+    }, [
+        control
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>control._disableForm(props.disabled), [
+        control,
+        props.disabled
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        if (props.mode) {
+            control._options.mode = props.mode;
+        }
+        if (props.reValidateMode) {
+            control._options.reValidateMode = props.reValidateMode;
+        }
+    }, [
+        control,
+        props.mode,
+        props.reValidateMode
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        if (props.errors) {
+            control._setErrors(props.errors);
+            control._focusError();
+        }
+    }, [
+        control,
+        props.errors
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        props.shouldUnregister && control._subjects.state.next({
+            values: control._getWatch()
+        });
+    }, [
+        control,
+        props.shouldUnregister
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        if (control._proxyFormState.isDirty) {
+            const isDirty = control._getDirty();
+            if (isDirty !== formState.isDirty) {
+                control._subjects.state.next({
+                    isDirty
+                });
+            }
+        }
+    }, [
+        control,
+        formState.isDirty
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        var _a;
+        if (props.values && !deepEqual(props.values, _values.current)) {
+            control._reset(props.values, {
+                keepFieldsRef: true,
+                ...control._options.resetOptions
+            });
+            if (!((_a = control._options.resetOptions) === null || _a === void 0 ? void 0 : _a.keepIsValid)) {
+                control._setValid();
+            }
+            _values.current = props.values;
+            updateFormState((state)=>({
+                    ...state
+                }));
+        } else {
+            control._resetDefaultValues();
+        }
+    }, [
+        control,
+        props.values
+    ]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useEffect(()=>{
+        if (!control._state.mount) {
+            control._setValid();
+            control._state.mount = true;
+        }
+        if (control._state.watch) {
+            control._state.watch = false;
+            control._subjects.state.next({
+                ...control._formState
+            });
+        }
+        control._removeUnmounted();
+    });
+    _formControl.current.formState = getProxyFormState(formState, control);
+    return _formControl.current;
+}
+/**
+ * Watch component that subscribes to form field changes and re-renders when watched fields update.
+ *
+ * @param control - The form control object from useForm
+ * @param names - Array of field names to watch for changes
+ * @param render - The function that receives watched values and returns ReactNode
+ * @returns The result of calling render function with watched values
+ *
+ * @example
+ * The `Watch` component only re-render when the values of `foo`, `bar`, and `baz.qux` change.
+ * The types of `foo`, `bar`, and `baz.qux` are precisely inferred.
+ *
+ * ```tsx
+ * const { control } = useForm();
+ *
+ * <Watch
+ *   control={control}
+ *   names={['foo', 'bar', 'baz.qux']}
+ *   render={([foo, bar, baz_qux]) => <div>{foo}{bar}{baz_qux}</div>}
+ * />
+ * ```
+ */ const Watch = ({ control, names, render })=>render(useWatch({
+        control,
+        name: names
+    }));
+;
+ //# sourceMappingURL=index.esm.mjs.map
+}),
+"[project]/frontend/node_modules/@hookform/resolvers/dist/resolvers.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "toNestErrors",
+    ()=>s,
+    "validateFieldsNatively",
+    ()=>o
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-hook-form/dist/index.esm.mjs [app-ssr] (ecmascript)");
+;
+const r = (t, r, o)=>{
+    if (t && "reportValidity" in t) {
+        const s = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["get"])(o, r);
+        t.setCustomValidity(s && s.message || ""), t.reportValidity();
+    }
+}, o = (e, t)=>{
+    for(const o in t.fields){
+        const s = t.fields[o];
+        s && s.ref && "reportValidity" in s.ref ? r(s.ref, o, e) : s && s.refs && s.refs.forEach((t)=>r(t, o, e));
+    }
+}, s = (r, s)=>{
+    s.shouldUseNativeValidation && o(r, s);
+    const n = {};
+    for(const o in r){
+        const f = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["get"])(s.fields, o), c = Object.assign(r[o] || {}, {
+            ref: f && f.ref
+        });
+        if (i(s.names || Object.keys(r), o)) {
+            const r = Object.assign({}, (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["get"])(n, o));
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["set"])(r, "root", c), (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["set"])(n, o, r);
+        } else (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["set"])(n, o, c);
+    }
+    return n;
+}, i = (e, t)=>{
+    const r = n(t);
+    return e.some((e)=>n(e).match(`^${r}\\.\\d+`));
+};
+function n(e) {
+    return e.replace(/\]|\[/g, "");
+}
+;
+ //# sourceMappingURL=resolvers.mjs.map
+}),
+"[project]/frontend/node_modules/@hookform/resolvers/zod/dist/zod.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "zodResolver",
+    ()=>a
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$hookform$2f$resolvers$2f$dist$2f$resolvers$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@hookform/resolvers/dist/resolvers.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-hook-form/dist/index.esm.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$zod$2f$v4$2f$core$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/frontend/node_modules/zod/v4/core/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$zod$2f$v4$2f$core$2f$errors$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/zod/v4/core/errors.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$zod$2f$v4$2f$core$2f$parse$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/zod/v4/core/parse.js [app-ssr] (ecmascript)");
+;
+;
+;
+function t(r, e) {
+    try {
+        var o = r();
+    } catch (r) {
+        return e(r);
+    }
+    return o && o.then ? o.then(void 0, e) : o;
+}
+function s(r, e) {
+    for(var n = {}; r.length;){
+        var t = r[0], s = t.code, i = t.message, a = t.path.join(".");
+        if (!n[a]) if ("unionErrors" in t) {
+            var u = t.unionErrors[0].errors[0];
+            n[a] = {
+                message: u.message,
+                type: u.code
+            };
+        } else n[a] = {
+            message: i,
+            type: s
+        };
+        if ("unionErrors" in t && t.unionErrors.forEach(function(e) {
+            return e.errors.forEach(function(e) {
+                return r.push(e);
+            });
+        }), e) {
+            var c = n[a].types, f = c && c[t.code];
+            n[a] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["appendErrors"])(a, e, n, s, f ? [].concat(f, t.message) : t.message);
+        }
+        r.shift();
+    }
+    return n;
+}
+function i(r, e) {
+    for(var n = {}; r.length;){
+        var t = r[0], s = t.code, i = t.message, a = t.path.join(".");
+        if (!n[a]) if ("invalid_union" === t.code && t.errors.length > 0) {
+            var u = t.errors[0][0];
+            n[a] = {
+                message: u.message,
+                type: u.code
+            };
+        } else n[a] = {
+            message: i,
+            type: s
+        };
+        if ("invalid_union" === t.code && t.errors.forEach(function(e) {
+            return e.forEach(function(e) {
+                return r.push(e);
+            });
+        }), e) {
+            var c = n[a].types, f = c && c[t.code];
+            n[a] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["appendErrors"])(a, e, n, s, f ? [].concat(f, t.message) : t.message);
+        }
+        r.shift();
+    }
+    return n;
+}
+function a(o, a, u) {
+    if (void 0 === u && (u = {}), function(r) {
+        return "_def" in r && "object" == typeof r._def && "typeName" in r._def;
+    }(o)) return function(n, i, c) {
+        try {
+            return Promise.resolve(t(function() {
+                return Promise.resolve(o["sync" === u.mode ? "parse" : "parseAsync"](n, a)).then(function(e) {
+                    return c.shouldUseNativeValidation && (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$hookform$2f$resolvers$2f$dist$2f$resolvers$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateFieldsNatively"])({}, c), {
+                        errors: {},
+                        values: u.raw ? Object.assign({}, n) : e
+                    };
+                });
+            }, function(r) {
+                if (function(r) {
+                    return Array.isArray(null == r ? void 0 : r.issues);
+                }(r)) return {
+                    values: {},
+                    errors: (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$hookform$2f$resolvers$2f$dist$2f$resolvers$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toNestErrors"])(s(r.errors, !c.shouldUseNativeValidation && "all" === c.criteriaMode), c)
+                };
+                throw r;
+            }));
+        } catch (r) {
+            return Promise.reject(r);
+        }
+    };
+    if (function(r) {
+        return "_zod" in r && "object" == typeof r._zod;
+    }(o)) return function(s, c, f) {
+        try {
+            return Promise.resolve(t(function() {
+                return Promise.resolve(("sync" === u.mode ? __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$zod$2f$v4$2f$core$2f$parse$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["parse"] : __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$zod$2f$v4$2f$core$2f$parse$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["parseAsync"])(o, s, a)).then(function(e) {
+                    return f.shouldUseNativeValidation && (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$hookform$2f$resolvers$2f$dist$2f$resolvers$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateFieldsNatively"])({}, f), {
+                        errors: {},
+                        values: u.raw ? Object.assign({}, s) : e
+                    };
+                });
+            }, function(r) {
+                if (function(r) {
+                    return r instanceof __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$zod$2f$v4$2f$core$2f$errors$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["$ZodError"];
+                }(r)) return {
+                    values: {},
+                    errors: (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$hookform$2f$resolvers$2f$dist$2f$resolvers$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toNestErrors"])(i(r.issues, !f.shouldUseNativeValidation && "all" === f.criteriaMode), f)
+                };
+                throw r;
+            }));
+        } catch (r) {
+            return Promise.reject(r);
+        }
+    };
+    throw new Error("Invalid input: not a Zod schema");
+}
+;
+ //# sourceMappingURL=zod.module.js.map
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "EmailJSResponseStatus",
+    ()=>EmailJSResponseStatus
+]);
+class EmailJSResponseStatus {
+    constructor(_status = 0, _text = 'Network Error'){
+        this.status = _status;
+        this.text = _text;
+    }
+}
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/createWebStorage/createWebStorage.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createWebStorage",
+    ()=>createWebStorage
+]);
+const createWebStorage = ()=>{
+    if (typeof localStorage === 'undefined') return;
+    return {
+        get: (key)=>Promise.resolve(localStorage.getItem(key)),
+        set: (key, value)=>Promise.resolve(localStorage.setItem(key, value)),
+        remove: (key)=>Promise.resolve(localStorage.removeItem(key))
+    };
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/store/store.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "store",
+    ()=>store
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$createWebStorage$2f$createWebStorage$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/createWebStorage/createWebStorage.js [app-ssr] (ecmascript)");
+;
+const store = {
+    origin: 'https://api.emailjs.com',
+    blockHeadless: false,
+    storageProvider: (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$createWebStorage$2f$createWebStorage$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createWebStorage"])()
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "buildOptions",
+    ()=>buildOptions
+]);
+const buildOptions = (options)=>{
+    if (!options) return {};
+    // support compatibility with SDK v3
+    if (typeof options === 'string') {
+        return {
+            publicKey: options
+        };
+    }
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    if (options.toString() === '[object Object]') {
+        return options;
+    }
+    return {};
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/methods/init/init.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "init",
+    ()=>init
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/store/store.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$buildOptions$2f$buildOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js [app-ssr] (ecmascript)");
+;
+;
+const init = (options, origin = 'https://api.emailjs.com')=>{
+    if (!options) return;
+    const opts = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$buildOptions$2f$buildOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildOptions"])(options);
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].publicKey = opts.publicKey;
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].blockHeadless = opts.blockHeadless;
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].storageProvider = opts.storageProvider;
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].blockList = opts.blockList;
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].limitRate = opts.limitRate;
+    __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].origin = opts.origin || origin;
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/api/sendPost.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "sendPost",
+    ()=>sendPost
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/store/store.js [app-ssr] (ecmascript)");
+;
+;
+const sendPost = async (url, data, headers = {})=>{
+    const response = await fetch(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].origin + url, {
+        method: 'POST',
+        headers,
+        body: data
+    });
+    const message = await response.text();
+    const responseStatus = new __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmailJSResponseStatus"](response.status, message);
+    if (response.ok) {
+        return responseStatus;
+    }
+    throw responseStatus;
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/validateParams/validateParams.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "validateParams",
+    ()=>validateParams
+]);
+const validateParams = (publicKey, serviceID, templateID)=>{
+    if (!publicKey || typeof publicKey !== 'string') {
+        throw 'The public key is required. Visit https://dashboard.emailjs.com/admin/account';
+    }
+    if (!serviceID || typeof serviceID !== 'string') {
+        throw 'The service ID is required. Visit https://dashboard.emailjs.com/admin';
+    }
+    if (!templateID || typeof templateID !== 'string') {
+        throw 'The template ID is required. Visit https://dashboard.emailjs.com/admin/templates';
+    }
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/validateTemplateParams/validateTemplateParams.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "validateTemplateParams",
+    ()=>validateTemplateParams
+]);
+const validateTemplateParams = (templateParams)=>{
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    if (templateParams && templateParams.toString() !== '[object Object]') {
+        throw 'The template params have to be the object. Visit https://www.emailjs.com/docs/sdk/send/';
+    }
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/isHeadless/isHeadless.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isHeadless",
+    ()=>isHeadless
+]);
+const isHeadless = (navigator)=>{
+    return navigator.webdriver || !navigator.languages || navigator.languages.length === 0;
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/errors/headlessError/headlessError.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "headlessError",
+    ()=>headlessError
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js [app-ssr] (ecmascript)");
+;
+const headlessError = ()=>{
+    return new __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmailJSResponseStatus"](451, 'Unavailable For Headless Browser');
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/validateBlockListParams/validateBlockListParams.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "validateBlockListParams",
+    ()=>validateBlockListParams
+]);
+const validateBlockListParams = (list, watchVariable)=>{
+    if (!Array.isArray(list)) {
+        throw 'The BlockList list has to be an array';
+    }
+    if (typeof watchVariable !== 'string') {
+        throw 'The BlockList watchVariable has to be a string';
+    }
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/isBlockedValueInParams/isBlockedValueInParams.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isBlockedValueInParams",
+    ()=>isBlockedValueInParams
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateBlockListParams$2f$validateBlockListParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/validateBlockListParams/validateBlockListParams.js [app-ssr] (ecmascript)");
+;
+const isBlockListDisabled = (options)=>{
+    return !options.list?.length || !options.watchVariable;
+};
+const getValue = (data, name)=>{
+    return data instanceof FormData ? data.get(name) : data[name];
+};
+const isBlockedValueInParams = (options, params)=>{
+    if (isBlockListDisabled(options)) return false;
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateBlockListParams$2f$validateBlockListParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateBlockListParams"])(options.list, options.watchVariable);
+    const value = getValue(params, options.watchVariable);
+    if (typeof value !== 'string') return false;
+    return options.list.includes(value);
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/errors/blockedEmailError/blockedEmailError.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "blockedEmailError",
+    ()=>blockedEmailError
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js [app-ssr] (ecmascript)");
+;
+const blockedEmailError = ()=>{
+    return new __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmailJSResponseStatus"](403, 'Forbidden');
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/validateLimitRateParams/validateLimitRateParams.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "validateLimitRateParams",
+    ()=>validateLimitRateParams
+]);
+const validateLimitRateParams = (throttle, id)=>{
+    if (typeof throttle !== 'number' || throttle < 0) {
+        throw 'The LimitRate throttle has to be a positive number';
+    }
+    if (id && typeof id !== 'string') {
+        throw 'The LimitRate ID has to be a non-empty string';
+    }
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/isLimitRateHit/isLimitRateHit.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isLimitRateHit",
+    ()=>isLimitRateHit
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateLimitRateParams$2f$validateLimitRateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/validateLimitRateParams/validateLimitRateParams.js [app-ssr] (ecmascript)");
+;
+const getLeftTime = async (id, throttle, storage)=>{
+    const lastTime = Number(await storage.get(id) || 0);
+    return throttle - Date.now() + lastTime;
+};
+const isLimitRateHit = async (defaultID, options, storage)=>{
+    if (!options.throttle || !storage) {
+        return false;
+    }
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateLimitRateParams$2f$validateLimitRateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateLimitRateParams"])(options.throttle, options.id);
+    const id = options.id || defaultID;
+    const leftTime = await getLeftTime(id, options.throttle, storage);
+    if (leftTime > 0) {
+        return true;
+    }
+    await storage.set(id, Date.now().toString());
+    return false;
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/errors/limitRateError/limitRateError.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "limitRateError",
+    ()=>limitRateError
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js [app-ssr] (ecmascript)");
+;
+const limitRateError = ()=>{
+    return new __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmailJSResponseStatus"](429, 'Too Many Requests');
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/methods/send/send.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "send",
+    ()=>send
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/store/store.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$api$2f$sendPost$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/api/sendPost.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$buildOptions$2f$buildOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateParams$2f$validateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/validateParams/validateParams.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateTemplateParams$2f$validateTemplateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/validateTemplateParams/validateTemplateParams.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isHeadless$2f$isHeadless$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/isHeadless/isHeadless.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$headlessError$2f$headlessError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/errors/headlessError/headlessError.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isBlockedValueInParams$2f$isBlockedValueInParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/isBlockedValueInParams/isBlockedValueInParams.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$blockedEmailError$2f$blockedEmailError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/errors/blockedEmailError/blockedEmailError.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isLimitRateHit$2f$isLimitRateHit$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/isLimitRateHit/isLimitRateHit.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$limitRateError$2f$limitRateError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/errors/limitRateError/limitRateError.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+const send = async (serviceID, templateID, templateParams, options)=>{
+    const opts = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$buildOptions$2f$buildOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildOptions"])(options);
+    const publicKey = opts.publicKey || __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].publicKey;
+    const blockHeadless = opts.blockHeadless || __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].blockHeadless;
+    const storageProvider = opts.storageProvider || __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].storageProvider;
+    const blockList = {
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].blockList,
+        ...opts.blockList
+    };
+    const limitRate = {
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].limitRate,
+        ...opts.limitRate
+    };
+    if (blockHeadless && (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isHeadless$2f$isHeadless$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isHeadless"])(navigator)) {
+        return Promise.reject((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$headlessError$2f$headlessError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["headlessError"])());
+    }
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateParams$2f$validateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateParams"])(publicKey, serviceID, templateID);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateTemplateParams$2f$validateTemplateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateTemplateParams"])(templateParams);
+    if (templateParams && (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isBlockedValueInParams$2f$isBlockedValueInParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isBlockedValueInParams"])(blockList, templateParams)) {
+        return Promise.reject((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$blockedEmailError$2f$blockedEmailError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["blockedEmailError"])());
+    }
+    if (await (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isLimitRateHit$2f$isLimitRateHit$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isLimitRateHit"])(location.pathname, limitRate, storageProvider)) {
+        return Promise.reject((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$limitRateError$2f$limitRateError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["limitRateError"])());
+    }
+    const params = {
+        lib_version: '4.4.1',
+        user_id: publicKey,
+        service_id: serviceID,
+        template_id: templateID,
+        template_params: templateParams
+    };
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$api$2f$sendPost$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sendPost"])('/api/v1.0/email/send', JSON.stringify(params), {
+        'Content-type': 'application/json'
+    });
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/utils/validateForm/validateForm.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "validateForm",
+    ()=>validateForm
+]);
+const validateForm = (form)=>{
+    if (!form || form.nodeName !== 'FORM') {
+        throw 'The 3rd parameter is expected to be the HTML form element or the style selector of the form';
+    }
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "sendForm",
+    ()=>sendForm
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/store/store.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$api$2f$sendPost$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/api/sendPost.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$buildOptions$2f$buildOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateForm$2f$validateForm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/validateForm/validateForm.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateParams$2f$validateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/validateParams/validateParams.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isHeadless$2f$isHeadless$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/isHeadless/isHeadless.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$headlessError$2f$headlessError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/errors/headlessError/headlessError.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isBlockedValueInParams$2f$isBlockedValueInParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/isBlockedValueInParams/isBlockedValueInParams.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$blockedEmailError$2f$blockedEmailError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/errors/blockedEmailError/blockedEmailError.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isLimitRateHit$2f$isLimitRateHit$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/utils/isLimitRateHit/isLimitRateHit.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$limitRateError$2f$limitRateError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/errors/limitRateError/limitRateError.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+const findHTMLForm = (form)=>{
+    return typeof form === 'string' ? document.querySelector(form) : form;
+};
+const sendForm = async (serviceID, templateID, form, options)=>{
+    const opts = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$buildOptions$2f$buildOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildOptions"])(options);
+    const publicKey = opts.publicKey || __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].publicKey;
+    const blockHeadless = opts.blockHeadless || __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].blockHeadless;
+    const storageProvider = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].storageProvider || opts.storageProvider;
+    const blockList = {
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].blockList,
+        ...opts.blockList
+    };
+    const limitRate = {
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$store$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["store"].limitRate,
+        ...opts.limitRate
+    };
+    if (blockHeadless && (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isHeadless$2f$isHeadless$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isHeadless"])(navigator)) {
+        return Promise.reject((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$headlessError$2f$headlessError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["headlessError"])());
+    }
+    const currentForm = findHTMLForm(form);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateParams$2f$validateParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateParams"])(publicKey, serviceID, templateID);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$validateForm$2f$validateForm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["validateForm"])(currentForm);
+    const formData = new FormData(currentForm);
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isBlockedValueInParams$2f$isBlockedValueInParams$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isBlockedValueInParams"])(blockList, formData)) {
+        return Promise.reject((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$blockedEmailError$2f$blockedEmailError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["blockedEmailError"])());
+    }
+    if (await (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$utils$2f$isLimitRateHit$2f$isLimitRateHit$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isLimitRateHit"])(location.pathname, limitRate, storageProvider)) {
+        return Promise.reject((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$errors$2f$limitRateError$2f$limitRateError$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["limitRateError"])());
+    }
+    formData.append('lib_version', '4.4.1');
+    formData.append('service_id', serviceID);
+    formData.append('template_id', templateID);
+    formData.append('user_id', publicKey);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$api$2f$sendPost$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sendPost"])('/api/v1.0/email/send-form', formData);
+};
+}),
+"[project]/frontend/node_modules/@emailjs/browser/es/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$methods$2f$init$2f$init$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/methods/init/init.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$methods$2f$send$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/methods/send/send.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$methods$2f$sendForm$2f$sendForm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+const __TURBOPACK__default__export__ = {
+    init: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$methods$2f$init$2f$init$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["init"],
+    send: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$methods$2f$send$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["send"],
+    sendForm: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$methods$2f$sendForm$2f$sendForm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sendForm"],
+    EmailJSResponseStatus: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$models$2f$EmailJSResponseStatus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmailJSResponseStatus"]
+};
+}),
+"[project]/frontend/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * @license React
+ * use-sync-external-store-shim.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "production" !== ("TURBOPACK compile-time value", "development") && function() {
+    function is(x, y) {
+        return x === y && (0 !== x || 1 / x === 1 / y) || x !== x && y !== y;
+    }
+    function useSyncExternalStore$2(subscribe, getSnapshot) {
+        didWarnOld18Alpha || void 0 === React.startTransition || (didWarnOld18Alpha = !0, console.error("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release."));
+        var value = getSnapshot();
+        if (!didWarnUncachedGetSnapshot) {
+            var cachedValue = getSnapshot();
+            objectIs(value, cachedValue) || (console.error("The result of getSnapshot should be cached to avoid an infinite loop"), didWarnUncachedGetSnapshot = !0);
+        }
+        cachedValue = useState({
+            inst: {
+                value: value,
+                getSnapshot: getSnapshot
+            }
+        });
+        var inst = cachedValue[0].inst, forceUpdate = cachedValue[1];
+        useLayoutEffect(function() {
+            inst.value = value;
+            inst.getSnapshot = getSnapshot;
+            checkIfSnapshotChanged(inst) && forceUpdate({
+                inst: inst
+            });
+        }, [
+            subscribe,
+            value,
+            getSnapshot
+        ]);
+        useEffect(function() {
+            checkIfSnapshotChanged(inst) && forceUpdate({
+                inst: inst
+            });
+            return subscribe(function() {
+                checkIfSnapshotChanged(inst) && forceUpdate({
+                    inst: inst
+                });
+            });
+        }, [
+            subscribe
+        ]);
+        useDebugValue(value);
+        return value;
+    }
+    function checkIfSnapshotChanged(inst) {
+        var latestGetSnapshot = inst.getSnapshot;
+        inst = inst.value;
+        try {
+            var nextValue = latestGetSnapshot();
+            return !objectIs(inst, nextValue);
+        } catch (error) {
+            return !0;
+        }
+    }
+    function useSyncExternalStore$1(subscribe, getSnapshot) {
+        return getSnapshot();
+    }
+    "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
+    var React = __turbopack_context__.r("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)"), objectIs = "function" === typeof Object.is ? Object.is : is, useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue, didWarnOld18Alpha = !1, didWarnUncachedGetSnapshot = !1, shim = ("TURBOPACK compile-time truthy", 1) ? useSyncExternalStore$1 : "TURBOPACK unreachable";
+    exports.useSyncExternalStore = void 0 !== React.useSyncExternalStore ? React.useSyncExternalStore : shim;
+    "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
+}();
+}),
+"[project]/frontend/node_modules/use-sync-external-store/shim/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/frontend/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/frontend/node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ if ("TURBOPACK compile-time truthy", 1) {
+    (function() {
+        'use strict';
+        // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+        // nor polyfill, then a plain number is used for performance.
+        var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+        var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+        var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+        var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+        var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+        var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+        var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+        var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+        // (unstable) APIs that have been removed. Can we remove the symbols?
+        var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+        var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+        var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+        var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+        var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+        var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+        var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+        var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+        var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+        var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+        var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+        function isValidElementType(type) {
+            return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+            type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+        }
+        function typeOf(object) {
+            if (typeof object === 'object' && object !== null) {
+                var $$typeof = object.$$typeof;
+                switch($$typeof){
+                    case REACT_ELEMENT_TYPE:
+                        var type = object.type;
+                        switch(type){
+                            case REACT_ASYNC_MODE_TYPE:
+                            case REACT_CONCURRENT_MODE_TYPE:
+                            case REACT_FRAGMENT_TYPE:
+                            case REACT_PROFILER_TYPE:
+                            case REACT_STRICT_MODE_TYPE:
+                            case REACT_SUSPENSE_TYPE:
+                                return type;
+                            default:
+                                var $$typeofType = type && type.$$typeof;
+                                switch($$typeofType){
+                                    case REACT_CONTEXT_TYPE:
+                                    case REACT_FORWARD_REF_TYPE:
+                                    case REACT_LAZY_TYPE:
+                                    case REACT_MEMO_TYPE:
+                                    case REACT_PROVIDER_TYPE:
+                                        return $$typeofType;
+                                    default:
+                                        return $$typeof;
+                                }
+                        }
+                    case REACT_PORTAL_TYPE:
+                        return $$typeof;
+                }
+            }
+            return undefined;
+        } // AsyncMode is deprecated along with isAsyncMode
+        var AsyncMode = REACT_ASYNC_MODE_TYPE;
+        var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+        var ContextConsumer = REACT_CONTEXT_TYPE;
+        var ContextProvider = REACT_PROVIDER_TYPE;
+        var Element = REACT_ELEMENT_TYPE;
+        var ForwardRef = REACT_FORWARD_REF_TYPE;
+        var Fragment = REACT_FRAGMENT_TYPE;
+        var Lazy = REACT_LAZY_TYPE;
+        var Memo = REACT_MEMO_TYPE;
+        var Portal = REACT_PORTAL_TYPE;
+        var Profiler = REACT_PROFILER_TYPE;
+        var StrictMode = REACT_STRICT_MODE_TYPE;
+        var Suspense = REACT_SUSPENSE_TYPE;
+        var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+        function isAsyncMode(object) {
+            {
+                if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+                    hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+                    console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+                }
+            }
+            return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+        }
+        function isConcurrentMode(object) {
+            return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+        }
+        function isContextConsumer(object) {
+            return typeOf(object) === REACT_CONTEXT_TYPE;
+        }
+        function isContextProvider(object) {
+            return typeOf(object) === REACT_PROVIDER_TYPE;
+        }
+        function isElement(object) {
+            return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+        }
+        function isForwardRef(object) {
+            return typeOf(object) === REACT_FORWARD_REF_TYPE;
+        }
+        function isFragment(object) {
+            return typeOf(object) === REACT_FRAGMENT_TYPE;
+        }
+        function isLazy(object) {
+            return typeOf(object) === REACT_LAZY_TYPE;
+        }
+        function isMemo(object) {
+            return typeOf(object) === REACT_MEMO_TYPE;
+        }
+        function isPortal(object) {
+            return typeOf(object) === REACT_PORTAL_TYPE;
+        }
+        function isProfiler(object) {
+            return typeOf(object) === REACT_PROFILER_TYPE;
+        }
+        function isStrictMode(object) {
+            return typeOf(object) === REACT_STRICT_MODE_TYPE;
+        }
+        function isSuspense(object) {
+            return typeOf(object) === REACT_SUSPENSE_TYPE;
+        }
+        exports.AsyncMode = AsyncMode;
+        exports.ConcurrentMode = ConcurrentMode;
+        exports.ContextConsumer = ContextConsumer;
+        exports.ContextProvider = ContextProvider;
+        exports.Element = Element;
+        exports.ForwardRef = ForwardRef;
+        exports.Fragment = Fragment;
+        exports.Lazy = Lazy;
+        exports.Memo = Memo;
+        exports.Portal = Portal;
+        exports.Profiler = Profiler;
+        exports.StrictMode = StrictMode;
+        exports.Suspense = Suspense;
+        exports.isAsyncMode = isAsyncMode;
+        exports.isConcurrentMode = isConcurrentMode;
+        exports.isContextConsumer = isContextConsumer;
+        exports.isContextProvider = isContextProvider;
+        exports.isElement = isElement;
+        exports.isForwardRef = isForwardRef;
+        exports.isFragment = isFragment;
+        exports.isLazy = isLazy;
+        exports.isMemo = isMemo;
+        exports.isPortal = isPortal;
+        exports.isProfiler = isProfiler;
+        exports.isStrictMode = isStrictMode;
+        exports.isSuspense = isSuspense;
+        exports.isValidElementType = isValidElementType;
+        exports.typeOf = typeOf;
+    })();
+}
+}),
+"[project]/frontend/node_modules/prop-types/node_modules/react-is/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/frontend/node_modules/prop-types/lib/ReactPropTypesSecret.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+module.exports = ReactPropTypesSecret;
+}),
+"[project]/frontend/node_modules/prop-types/lib/has.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+}),
+"[project]/frontend/node_modules/prop-types/checkPropTypes.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var printWarning = function() {};
+if ("TURBOPACK compile-time truthy", 1) {
+    var ReactPropTypesSecret = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/lib/ReactPropTypesSecret.js [app-ssr] (ecmascript)");
+    var loggedTypeFailures = {};
+    var has = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/lib/has.js [app-ssr] (ecmascript)");
+    printWarning = function(text) {
+        var message = 'Warning: ' + text;
+        if (typeof console !== 'undefined') {
+            console.error(message);
+        }
+        try {
+            // --- Welcome to debugging React ---
+            // This error was thrown as a convenience so that you can use this stack
+            // to find the callsite that caused this warning to fire.
+            throw new Error(message);
+        } catch (x) {}
+    };
+}
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        for(var typeSpecName in typeSpecs){
+            if (has(typeSpecs, typeSpecName)) {
+                var error;
+                // Prop type validation may throw. In case they do, we don't want to
+                // fail the render phase where it didn't fail before. So we log it.
+                // After these have been cleaned up, we'll let them throw.
+                try {
+                    // This is intentionally an invariant that gets caught. It's the same
+                    // behavior as without this statement except with a better message.
+                    if (typeof typeSpecs[typeSpecName] !== 'function') {
+                        var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+                        err.name = 'Invariant Violation';
+                        throw err;
+                    }
+                    error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+                } catch (ex) {
+                    error = ex;
+                }
+                if (error && !(error instanceof Error)) {
+                    printWarning((componentName || 'React class') + ': type specification of ' + location + ' `' + typeSpecName + '` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a ' + typeof error + '. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).');
+                }
+                if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+                    // Only monitor this failure once because there tends to be a lot of the
+                    // same error.
+                    loggedTypeFailures[error.message] = true;
+                    var stack = getStack ? getStack() : '';
+                    printWarning('Failed ' + location + ' type: ' + error.message + (stack != null ? stack : ''));
+                }
+            }
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    if (("TURBOPACK compile-time value", "development") !== 'production') {
+        loggedTypeFailures = {};
+    }
+};
+module.exports = checkPropTypes;
+}),
+"[project]/frontend/node_modules/prop-types/factoryWithTypeCheckers.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var ReactIs = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/node_modules/react-is/index.js [app-ssr] (ecmascript)");
+var assign = __turbopack_context__.r("[project]/frontend/node_modules/object-assign/index.js [app-ssr] (ecmascript)");
+var ReactPropTypesSecret = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/lib/ReactPropTypesSecret.js [app-ssr] (ecmascript)");
+var has = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/lib/has.js [app-ssr] (ecmascript)");
+var checkPropTypes = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/checkPropTypes.js [app-ssr] (ecmascript)");
+var printWarning = function() {};
+if ("TURBOPACK compile-time truthy", 1) {
+    printWarning = function(text) {
+        var message = 'Warning: ' + text;
+        if (typeof console !== 'undefined') {
+            console.error(message);
+        }
+        try {
+            // --- Welcome to debugging React ---
+            // This error was thrown as a convenience so that you can use this stack
+            // to find the callsite that caused this warning to fire.
+            throw new Error(message);
+        } catch (x) {}
+    };
+}
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === 'function') {
+            return iteratorFn;
+        }
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = '<<anonymous>>';
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker('array'),
+        bigint: createPrimitiveTypeChecker('bigint'),
+        bool: createPrimitiveTypeChecker('boolean'),
+        func: createPrimitiveTypeChecker('function'),
+        number: createPrimitiveTypeChecker('number'),
+        object: createPrimitiveTypeChecker('object'),
+        string: createPrimitiveTypeChecker('string'),
+        symbol: createPrimitiveTypeChecker('symbol'),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) {
+            // Steps 1-5, 7-10
+            // Steps 6.b-6.e: +0 != -0
+            return x !== 0 || 1 / x === 1 / y;
+        } else {
+            // Step 6.a: NaN == NaN
+            return x !== x && y !== y;
+        }
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === 'object' ? data : {};
+        this.stack = '';
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        if (("TURBOPACK compile-time value", "development") !== 'production') {
+            var manualPropTypeCallCache = {};
+            var manualPropTypeWarningCount = 0;
+        }
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+                    err.name = 'Invariant Violation';
+                    throw err;
+                } else if (("TURBOPACK compile-time value", "development") !== 'production' && typeof console !== 'undefined') {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ':' + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning('You are manually calling a React.PropTypes validation ' + 'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) {
+                        return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+                    }
+                    return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+                }
+                return null;
+            } else {
+                return validate(props, propName, componentName, location, propFullName);
+            }
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'), {
+                    expectedType: expectedType
+                });
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== 'function') {
+                return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+            }
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+                if (error instanceof Error) {
+                    return error;
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            if ("TURBOPACK compile-time truthy", 1) {
+                if (arguments.length > 1) {
+                    printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
+                } else {
+                    printWarning('Invalid argument supplied to oneOf, expected an array.');
+                }
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) {
+                    return null;
+                }
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === 'symbol') {
+                    return String(value);
+                }
+                return value;
+            });
+            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== 'function') {
+                return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+            }
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+            }
+            for(var key in propValue){
+                if (has(propValue, key)) {
+                    var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                    if (error instanceof Error) {
+                        return error;
+                    }
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            ("TURBOPACK compile-time truthy", 1) ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : "TURBOPACK unreachable";
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== 'function') {
+                printWarning('Invalid argument supplied to oneOfType. Expected an array of check functions, but ' + 'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) {
+                    return null;
+                }
+                if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
+                    expectedTypes.push(checkerResult.data.expectedType);
+                }
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ', expected one of type [' + expectedTypes.join(', ') + ']' : '';
+            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + type + '`.');
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+            }
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== 'function') {
+                    return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                }
+                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                if (error) {
+                    return error;
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+            }
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== 'function') {
+                    return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                }
+                if (!checker) {
+                    return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
+                }
+                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                if (error) {
+                    return error;
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case 'number':
+            case 'string':
+            case 'undefined':
+                return true;
+            case 'boolean':
+                return !propValue;
+            case 'object':
+                if (Array.isArray(propValue)) {
+                    return propValue.every(isNode);
+                }
+                if (propValue === null || isValidElement(propValue)) {
+                    return true;
+                }
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) {
+                        while(!(step = iterator.next()).done){
+                            if (!isNode(step.value)) {
+                                return false;
+                            }
+                        }
+                    } else {
+                        // Iterator will provide entry [k,v] tuples rather than values.
+                        while(!(step = iterator.next()).done){
+                            var entry = step.value;
+                            if (entry) {
+                                if (!isNode(entry[1])) {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    return false;
+                }
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === 'symbol') {
+            return true;
+        }
+        // falsy value can't be a Symbol
+        if (!propValue) {
+            return false;
+        }
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue['@@toStringTag'] === 'Symbol') {
+            return true;
+        }
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+            return true;
+        }
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) {
+            return 'array';
+        }
+        if (propValue instanceof RegExp) {
+            // Old webkits (at least until Android 4.0) return 'function' rather than
+            // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+            // passes PropTypes.object.
+            return 'object';
+        }
+        if (isSymbol(propType, propValue)) {
+            return 'symbol';
+        }
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === 'undefined' || propValue === null) {
+            return '' + propValue;
+        }
+        var propType = getPropType(propValue);
+        if (propType === 'object') {
+            if (propValue instanceof Date) {
+                return 'date';
+            } else if (propValue instanceof RegExp) {
+                return 'regexp';
+            }
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case 'array':
+            case 'object':
+                return 'an ' + type;
+            case 'boolean':
+            case 'date':
+            case 'regexp':
+                return 'a ' + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) {
+            return ANONYMOUS;
+        }
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+}),
+"[project]/frontend/node_modules/prop-types/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ if ("TURBOPACK compile-time truthy", 1) {
+    var ReactIs = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/node_modules/react-is/index.js [app-ssr] (ecmascript)");
+    // By explicitly using `prop-types` you are opting into new development behavior.
+    // http://fb.me/prop-types-in-prod
+    var throwOnDirectAccess = true;
+    module.exports = __turbopack_context__.r("[project]/frontend/node_modules/prop-types/factoryWithTypeCheckers.js [app-ssr] (ecmascript)")(ReactIs.isElement, throwOnDirectAccess);
+} else //TURBOPACK unreachable
+;
+}),
+"[project]/frontend/node_modules/object-assign/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ /* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) {
+        throw new TypeError('Object.assign cannot be called with null or undefined');
+    }
+    return Object(val);
+}
+function shouldUseNative() {
+    try {
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+        // Detect buggy property enumeration order in older V8 versions.
+        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+        var test1 = new String('abc'); // eslint-disable-line no-new-wrappers
+        test1[5] = 'de';
+        if (Object.getOwnPropertyNames(test1)[0] === '5') {
+            return false;
+        }
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test2 = {};
+        for(var i = 0; i < 10; i++){
+            test2['_' + String.fromCharCode(i)] = i;
+        }
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join('') !== '0123456789') {
+            return false;
+        }
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test3 = {};
+        'abcdefghijklmnopqrst'.split('').forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join('') !== 'abcdefghijklmnopqrst') {
+            return false;
+        }
+        return true;
+    } catch (err) {
+        // We don't expect any of the above to throw, but better to be safe.
+        return false;
+    }
+}
+module.exports = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from){
+            if (hasOwnProperty.call(from, key)) {
+                to[key] = from[key];
+            }
+        }
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++){
+                if (propIsEnumerable.call(from, symbols[i])) {
+                    to[symbols[i]] = from[symbols[i]];
+                }
+            }
+        }
+    }
+    return to;
+};
+}),
+"[project]/frontend/node_modules/file-selector/dist/es2015/file.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "COMMON_MIME_TYPES",
+    ()=>COMMON_MIME_TYPES,
+    "toFileWithPath",
+    ()=>toFileWithPath
+]);
+const COMMON_MIME_TYPES = new Map([
+    // https://github.com/guzzle/psr7/blob/2d9260799e713f1c475d3c5fdc3d6561ff7441b2/src/MimeType.php
+    [
+        '1km',
+        'application/vnd.1000minds.decision-model+xml'
+    ],
+    [
+        '3dml',
+        'text/vnd.in3d.3dml'
+    ],
+    [
+        '3ds',
+        'image/x-3ds'
+    ],
+    [
+        '3g2',
+        'video/3gpp2'
+    ],
+    [
+        '3gp',
+        'video/3gp'
+    ],
+    [
+        '3gpp',
+        'video/3gpp'
+    ],
+    [
+        '3mf',
+        'model/3mf'
+    ],
+    [
+        '7z',
+        'application/x-7z-compressed'
+    ],
+    [
+        '7zip',
+        'application/x-7z-compressed'
+    ],
+    [
+        '123',
+        'application/vnd.lotus-1-2-3'
+    ],
+    [
+        'aab',
+        'application/x-authorware-bin'
+    ],
+    [
+        'aac',
+        'audio/x-acc'
+    ],
+    [
+        'aam',
+        'application/x-authorware-map'
+    ],
+    [
+        'aas',
+        'application/x-authorware-seg'
+    ],
+    [
+        'abw',
+        'application/x-abiword'
+    ],
+    [
+        'ac',
+        'application/vnd.nokia.n-gage.ac+xml'
+    ],
+    [
+        'ac3',
+        'audio/ac3'
+    ],
+    [
+        'acc',
+        'application/vnd.americandynamics.acc'
+    ],
+    [
+        'ace',
+        'application/x-ace-compressed'
+    ],
+    [
+        'acu',
+        'application/vnd.acucobol'
+    ],
+    [
+        'acutc',
+        'application/vnd.acucorp'
+    ],
+    [
+        'adp',
+        'audio/adpcm'
+    ],
+    [
+        'aep',
+        'application/vnd.audiograph'
+    ],
+    [
+        'afm',
+        'application/x-font-type1'
+    ],
+    [
+        'afp',
+        'application/vnd.ibm.modcap'
+    ],
+    [
+        'ahead',
+        'application/vnd.ahead.space'
+    ],
+    [
+        'ai',
+        'application/pdf'
+    ],
+    [
+        'aif',
+        'audio/x-aiff'
+    ],
+    [
+        'aifc',
+        'audio/x-aiff'
+    ],
+    [
+        'aiff',
+        'audio/x-aiff'
+    ],
+    [
+        'air',
+        'application/vnd.adobe.air-application-installer-package+zip'
+    ],
+    [
+        'ait',
+        'application/vnd.dvb.ait'
+    ],
+    [
+        'ami',
+        'application/vnd.amiga.ami'
+    ],
+    [
+        'amr',
+        'audio/amr'
+    ],
+    [
+        'apk',
+        'application/vnd.android.package-archive'
+    ],
+    [
+        'apng',
+        'image/apng'
+    ],
+    [
+        'appcache',
+        'text/cache-manifest'
+    ],
+    [
+        'application',
+        'application/x-ms-application'
+    ],
+    [
+        'apr',
+        'application/vnd.lotus-approach'
+    ],
+    [
+        'arc',
+        'application/x-freearc'
+    ],
+    [
+        'arj',
+        'application/x-arj'
+    ],
+    [
+        'asc',
+        'application/pgp-signature'
+    ],
+    [
+        'asf',
+        'video/x-ms-asf'
+    ],
+    [
+        'asm',
+        'text/x-asm'
+    ],
+    [
+        'aso',
+        'application/vnd.accpac.simply.aso'
+    ],
+    [
+        'asx',
+        'video/x-ms-asf'
+    ],
+    [
+        'atc',
+        'application/vnd.acucorp'
+    ],
+    [
+        'atom',
+        'application/atom+xml'
+    ],
+    [
+        'atomcat',
+        'application/atomcat+xml'
+    ],
+    [
+        'atomdeleted',
+        'application/atomdeleted+xml'
+    ],
+    [
+        'atomsvc',
+        'application/atomsvc+xml'
+    ],
+    [
+        'atx',
+        'application/vnd.antix.game-component'
+    ],
+    [
+        'au',
+        'audio/x-au'
+    ],
+    [
+        'avi',
+        'video/x-msvideo'
+    ],
+    [
+        'avif',
+        'image/avif'
+    ],
+    [
+        'aw',
+        'application/applixware'
+    ],
+    [
+        'azf',
+        'application/vnd.airzip.filesecure.azf'
+    ],
+    [
+        'azs',
+        'application/vnd.airzip.filesecure.azs'
+    ],
+    [
+        'azv',
+        'image/vnd.airzip.accelerator.azv'
+    ],
+    [
+        'azw',
+        'application/vnd.amazon.ebook'
+    ],
+    [
+        'b16',
+        'image/vnd.pco.b16'
+    ],
+    [
+        'bat',
+        'application/x-msdownload'
+    ],
+    [
+        'bcpio',
+        'application/x-bcpio'
+    ],
+    [
+        'bdf',
+        'application/x-font-bdf'
+    ],
+    [
+        'bdm',
+        'application/vnd.syncml.dm+wbxml'
+    ],
+    [
+        'bdoc',
+        'application/x-bdoc'
+    ],
+    [
+        'bed',
+        'application/vnd.realvnc.bed'
+    ],
+    [
+        'bh2',
+        'application/vnd.fujitsu.oasysprs'
+    ],
+    [
+        'bin',
+        'application/octet-stream'
+    ],
+    [
+        'blb',
+        'application/x-blorb'
+    ],
+    [
+        'blorb',
+        'application/x-blorb'
+    ],
+    [
+        'bmi',
+        'application/vnd.bmi'
+    ],
+    [
+        'bmml',
+        'application/vnd.balsamiq.bmml+xml'
+    ],
+    [
+        'bmp',
+        'image/bmp'
+    ],
+    [
+        'book',
+        'application/vnd.framemaker'
+    ],
+    [
+        'box',
+        'application/vnd.previewsystems.box'
+    ],
+    [
+        'boz',
+        'application/x-bzip2'
+    ],
+    [
+        'bpk',
+        'application/octet-stream'
+    ],
+    [
+        'bpmn',
+        'application/octet-stream'
+    ],
+    [
+        'bsp',
+        'model/vnd.valve.source.compiled-map'
+    ],
+    [
+        'btif',
+        'image/prs.btif'
+    ],
+    [
+        'buffer',
+        'application/octet-stream'
+    ],
+    [
+        'bz',
+        'application/x-bzip'
+    ],
+    [
+        'bz2',
+        'application/x-bzip2'
+    ],
+    [
+        'c',
+        'text/x-c'
+    ],
+    [
+        'c4d',
+        'application/vnd.clonk.c4group'
+    ],
+    [
+        'c4f',
+        'application/vnd.clonk.c4group'
+    ],
+    [
+        'c4g',
+        'application/vnd.clonk.c4group'
+    ],
+    [
+        'c4p',
+        'application/vnd.clonk.c4group'
+    ],
+    [
+        'c4u',
+        'application/vnd.clonk.c4group'
+    ],
+    [
+        'c11amc',
+        'application/vnd.cluetrust.cartomobile-config'
+    ],
+    [
+        'c11amz',
+        'application/vnd.cluetrust.cartomobile-config-pkg'
+    ],
+    [
+        'cab',
+        'application/vnd.ms-cab-compressed'
+    ],
+    [
+        'caf',
+        'audio/x-caf'
+    ],
+    [
+        'cap',
+        'application/vnd.tcpdump.pcap'
+    ],
+    [
+        'car',
+        'application/vnd.curl.car'
+    ],
+    [
+        'cat',
+        'application/vnd.ms-pki.seccat'
+    ],
+    [
+        'cb7',
+        'application/x-cbr'
+    ],
+    [
+        'cba',
+        'application/x-cbr'
+    ],
+    [
+        'cbr',
+        'application/x-cbr'
+    ],
+    [
+        'cbt',
+        'application/x-cbr'
+    ],
+    [
+        'cbz',
+        'application/x-cbr'
+    ],
+    [
+        'cc',
+        'text/x-c'
+    ],
+    [
+        'cco',
+        'application/x-cocoa'
+    ],
+    [
+        'cct',
+        'application/x-director'
+    ],
+    [
+        'ccxml',
+        'application/ccxml+xml'
+    ],
+    [
+        'cdbcmsg',
+        'application/vnd.contact.cmsg'
+    ],
+    [
+        'cda',
+        'application/x-cdf'
+    ],
+    [
+        'cdf',
+        'application/x-netcdf'
+    ],
+    [
+        'cdfx',
+        'application/cdfx+xml'
+    ],
+    [
+        'cdkey',
+        'application/vnd.mediastation.cdkey'
+    ],
+    [
+        'cdmia',
+        'application/cdmi-capability'
+    ],
+    [
+        'cdmic',
+        'application/cdmi-container'
+    ],
+    [
+        'cdmid',
+        'application/cdmi-domain'
+    ],
+    [
+        'cdmio',
+        'application/cdmi-object'
+    ],
+    [
+        'cdmiq',
+        'application/cdmi-queue'
+    ],
+    [
+        'cdr',
+        'application/cdr'
+    ],
+    [
+        'cdx',
+        'chemical/x-cdx'
+    ],
+    [
+        'cdxml',
+        'application/vnd.chemdraw+xml'
+    ],
+    [
+        'cdy',
+        'application/vnd.cinderella'
+    ],
+    [
+        'cer',
+        'application/pkix-cert'
+    ],
+    [
+        'cfs',
+        'application/x-cfs-compressed'
+    ],
+    [
+        'cgm',
+        'image/cgm'
+    ],
+    [
+        'chat',
+        'application/x-chat'
+    ],
+    [
+        'chm',
+        'application/vnd.ms-htmlhelp'
+    ],
+    [
+        'chrt',
+        'application/vnd.kde.kchart'
+    ],
+    [
+        'cif',
+        'chemical/x-cif'
+    ],
+    [
+        'cii',
+        'application/vnd.anser-web-certificate-issue-initiation'
+    ],
+    [
+        'cil',
+        'application/vnd.ms-artgalry'
+    ],
+    [
+        'cjs',
+        'application/node'
+    ],
+    [
+        'cla',
+        'application/vnd.claymore'
+    ],
+    [
+        'class',
+        'application/octet-stream'
+    ],
+    [
+        'clkk',
+        'application/vnd.crick.clicker.keyboard'
+    ],
+    [
+        'clkp',
+        'application/vnd.crick.clicker.palette'
+    ],
+    [
+        'clkt',
+        'application/vnd.crick.clicker.template'
+    ],
+    [
+        'clkw',
+        'application/vnd.crick.clicker.wordbank'
+    ],
+    [
+        'clkx',
+        'application/vnd.crick.clicker'
+    ],
+    [
+        'clp',
+        'application/x-msclip'
+    ],
+    [
+        'cmc',
+        'application/vnd.cosmocaller'
+    ],
+    [
+        'cmdf',
+        'chemical/x-cmdf'
+    ],
+    [
+        'cml',
+        'chemical/x-cml'
+    ],
+    [
+        'cmp',
+        'application/vnd.yellowriver-custom-menu'
+    ],
+    [
+        'cmx',
+        'image/x-cmx'
+    ],
+    [
+        'cod',
+        'application/vnd.rim.cod'
+    ],
+    [
+        'coffee',
+        'text/coffeescript'
+    ],
+    [
+        'com',
+        'application/x-msdownload'
+    ],
+    [
+        'conf',
+        'text/plain'
+    ],
+    [
+        'cpio',
+        'application/x-cpio'
+    ],
+    [
+        'cpp',
+        'text/x-c'
+    ],
+    [
+        'cpt',
+        'application/mac-compactpro'
+    ],
+    [
+        'crd',
+        'application/x-mscardfile'
+    ],
+    [
+        'crl',
+        'application/pkix-crl'
+    ],
+    [
+        'crt',
+        'application/x-x509-ca-cert'
+    ],
+    [
+        'crx',
+        'application/x-chrome-extension'
+    ],
+    [
+        'cryptonote',
+        'application/vnd.rig.cryptonote'
+    ],
+    [
+        'csh',
+        'application/x-csh'
+    ],
+    [
+        'csl',
+        'application/vnd.citationstyles.style+xml'
+    ],
+    [
+        'csml',
+        'chemical/x-csml'
+    ],
+    [
+        'csp',
+        'application/vnd.commonspace'
+    ],
+    [
+        'csr',
+        'application/octet-stream'
+    ],
+    [
+        'css',
+        'text/css'
+    ],
+    [
+        'cst',
+        'application/x-director'
+    ],
+    [
+        'csv',
+        'text/csv'
+    ],
+    [
+        'cu',
+        'application/cu-seeme'
+    ],
+    [
+        'curl',
+        'text/vnd.curl'
+    ],
+    [
+        'cww',
+        'application/prs.cww'
+    ],
+    [
+        'cxt',
+        'application/x-director'
+    ],
+    [
+        'cxx',
+        'text/x-c'
+    ],
+    [
+        'dae',
+        'model/vnd.collada+xml'
+    ],
+    [
+        'daf',
+        'application/vnd.mobius.daf'
+    ],
+    [
+        'dart',
+        'application/vnd.dart'
+    ],
+    [
+        'dataless',
+        'application/vnd.fdsn.seed'
+    ],
+    [
+        'davmount',
+        'application/davmount+xml'
+    ],
+    [
+        'dbf',
+        'application/vnd.dbf'
+    ],
+    [
+        'dbk',
+        'application/docbook+xml'
+    ],
+    [
+        'dcr',
+        'application/x-director'
+    ],
+    [
+        'dcurl',
+        'text/vnd.curl.dcurl'
+    ],
+    [
+        'dd2',
+        'application/vnd.oma.dd2+xml'
+    ],
+    [
+        'ddd',
+        'application/vnd.fujixerox.ddd'
+    ],
+    [
+        'ddf',
+        'application/vnd.syncml.dmddf+xml'
+    ],
+    [
+        'dds',
+        'image/vnd.ms-dds'
+    ],
+    [
+        'deb',
+        'application/x-debian-package'
+    ],
+    [
+        'def',
+        'text/plain'
+    ],
+    [
+        'deploy',
+        'application/octet-stream'
+    ],
+    [
+        'der',
+        'application/x-x509-ca-cert'
+    ],
+    [
+        'dfac',
+        'application/vnd.dreamfactory'
+    ],
+    [
+        'dgc',
+        'application/x-dgc-compressed'
+    ],
+    [
+        'dic',
+        'text/x-c'
+    ],
+    [
+        'dir',
+        'application/x-director'
+    ],
+    [
+        'dis',
+        'application/vnd.mobius.dis'
+    ],
+    [
+        'disposition-notification',
+        'message/disposition-notification'
+    ],
+    [
+        'dist',
+        'application/octet-stream'
+    ],
+    [
+        'distz',
+        'application/octet-stream'
+    ],
+    [
+        'djv',
+        'image/vnd.djvu'
+    ],
+    [
+        'djvu',
+        'image/vnd.djvu'
+    ],
+    [
+        'dll',
+        'application/octet-stream'
+    ],
+    [
+        'dmg',
+        'application/x-apple-diskimage'
+    ],
+    [
+        'dmn',
+        'application/octet-stream'
+    ],
+    [
+        'dmp',
+        'application/vnd.tcpdump.pcap'
+    ],
+    [
+        'dms',
+        'application/octet-stream'
+    ],
+    [
+        'dna',
+        'application/vnd.dna'
+    ],
+    [
+        'doc',
+        'application/msword'
+    ],
+    [
+        'docm',
+        'application/vnd.ms-word.template.macroEnabled.12'
+    ],
+    [
+        'docx',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ],
+    [
+        'dot',
+        'application/msword'
+    ],
+    [
+        'dotm',
+        'application/vnd.ms-word.template.macroEnabled.12'
+    ],
+    [
+        'dotx',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.template'
+    ],
+    [
+        'dp',
+        'application/vnd.osgi.dp'
+    ],
+    [
+        'dpg',
+        'application/vnd.dpgraph'
+    ],
+    [
+        'dra',
+        'audio/vnd.dra'
+    ],
+    [
+        'drle',
+        'image/dicom-rle'
+    ],
+    [
+        'dsc',
+        'text/prs.lines.tag'
+    ],
+    [
+        'dssc',
+        'application/dssc+der'
+    ],
+    [
+        'dtb',
+        'application/x-dtbook+xml'
+    ],
+    [
+        'dtd',
+        'application/xml-dtd'
+    ],
+    [
+        'dts',
+        'audio/vnd.dts'
+    ],
+    [
+        'dtshd',
+        'audio/vnd.dts.hd'
+    ],
+    [
+        'dump',
+        'application/octet-stream'
+    ],
+    [
+        'dvb',
+        'video/vnd.dvb.file'
+    ],
+    [
+        'dvi',
+        'application/x-dvi'
+    ],
+    [
+        'dwd',
+        'application/atsc-dwd+xml'
+    ],
+    [
+        'dwf',
+        'model/vnd.dwf'
+    ],
+    [
+        'dwg',
+        'image/vnd.dwg'
+    ],
+    [
+        'dxf',
+        'image/vnd.dxf'
+    ],
+    [
+        'dxp',
+        'application/vnd.spotfire.dxp'
+    ],
+    [
+        'dxr',
+        'application/x-director'
+    ],
+    [
+        'ear',
+        'application/java-archive'
+    ],
+    [
+        'ecelp4800',
+        'audio/vnd.nuera.ecelp4800'
+    ],
+    [
+        'ecelp7470',
+        'audio/vnd.nuera.ecelp7470'
+    ],
+    [
+        'ecelp9600',
+        'audio/vnd.nuera.ecelp9600'
+    ],
+    [
+        'ecma',
+        'application/ecmascript'
+    ],
+    [
+        'edm',
+        'application/vnd.novadigm.edm'
+    ],
+    [
+        'edx',
+        'application/vnd.novadigm.edx'
+    ],
+    [
+        'efif',
+        'application/vnd.picsel'
+    ],
+    [
+        'ei6',
+        'application/vnd.pg.osasli'
+    ],
+    [
+        'elc',
+        'application/octet-stream'
+    ],
+    [
+        'emf',
+        'image/emf'
+    ],
+    [
+        'eml',
+        'message/rfc822'
+    ],
+    [
+        'emma',
+        'application/emma+xml'
+    ],
+    [
+        'emotionml',
+        'application/emotionml+xml'
+    ],
+    [
+        'emz',
+        'application/x-msmetafile'
+    ],
+    [
+        'eol',
+        'audio/vnd.digital-winds'
+    ],
+    [
+        'eot',
+        'application/vnd.ms-fontobject'
+    ],
+    [
+        'eps',
+        'application/postscript'
+    ],
+    [
+        'epub',
+        'application/epub+zip'
+    ],
+    [
+        'es',
+        'application/ecmascript'
+    ],
+    [
+        'es3',
+        'application/vnd.eszigno3+xml'
+    ],
+    [
+        'esa',
+        'application/vnd.osgi.subsystem'
+    ],
+    [
+        'esf',
+        'application/vnd.epson.esf'
+    ],
+    [
+        'et3',
+        'application/vnd.eszigno3+xml'
+    ],
+    [
+        'etx',
+        'text/x-setext'
+    ],
+    [
+        'eva',
+        'application/x-eva'
+    ],
+    [
+        'evy',
+        'application/x-envoy'
+    ],
+    [
+        'exe',
+        'application/octet-stream'
+    ],
+    [
+        'exi',
+        'application/exi'
+    ],
+    [
+        'exp',
+        'application/express'
+    ],
+    [
+        'exr',
+        'image/aces'
+    ],
+    [
+        'ext',
+        'application/vnd.novadigm.ext'
+    ],
+    [
+        'ez',
+        'application/andrew-inset'
+    ],
+    [
+        'ez2',
+        'application/vnd.ezpix-album'
+    ],
+    [
+        'ez3',
+        'application/vnd.ezpix-package'
+    ],
+    [
+        'f',
+        'text/x-fortran'
+    ],
+    [
+        'f4v',
+        'video/mp4'
+    ],
+    [
+        'f77',
+        'text/x-fortran'
+    ],
+    [
+        'f90',
+        'text/x-fortran'
+    ],
+    [
+        'fbs',
+        'image/vnd.fastbidsheet'
+    ],
+    [
+        'fcdt',
+        'application/vnd.adobe.formscentral.fcdt'
+    ],
+    [
+        'fcs',
+        'application/vnd.isac.fcs'
+    ],
+    [
+        'fdf',
+        'application/vnd.fdf'
+    ],
+    [
+        'fdt',
+        'application/fdt+xml'
+    ],
+    [
+        'fe_launch',
+        'application/vnd.denovo.fcselayout-link'
+    ],
+    [
+        'fg5',
+        'application/vnd.fujitsu.oasysgp'
+    ],
+    [
+        'fgd',
+        'application/x-director'
+    ],
+    [
+        'fh',
+        'image/x-freehand'
+    ],
+    [
+        'fh4',
+        'image/x-freehand'
+    ],
+    [
+        'fh5',
+        'image/x-freehand'
+    ],
+    [
+        'fh7',
+        'image/x-freehand'
+    ],
+    [
+        'fhc',
+        'image/x-freehand'
+    ],
+    [
+        'fig',
+        'application/x-xfig'
+    ],
+    [
+        'fits',
+        'image/fits'
+    ],
+    [
+        'flac',
+        'audio/x-flac'
+    ],
+    [
+        'fli',
+        'video/x-fli'
+    ],
+    [
+        'flo',
+        'application/vnd.micrografx.flo'
+    ],
+    [
+        'flv',
+        'video/x-flv'
+    ],
+    [
+        'flw',
+        'application/vnd.kde.kivio'
+    ],
+    [
+        'flx',
+        'text/vnd.fmi.flexstor'
+    ],
+    [
+        'fly',
+        'text/vnd.fly'
+    ],
+    [
+        'fm',
+        'application/vnd.framemaker'
+    ],
+    [
+        'fnc',
+        'application/vnd.frogans.fnc'
+    ],
+    [
+        'fo',
+        'application/vnd.software602.filler.form+xml'
+    ],
+    [
+        'for',
+        'text/x-fortran'
+    ],
+    [
+        'fpx',
+        'image/vnd.fpx'
+    ],
+    [
+        'frame',
+        'application/vnd.framemaker'
+    ],
+    [
+        'fsc',
+        'application/vnd.fsc.weblaunch'
+    ],
+    [
+        'fst',
+        'image/vnd.fst'
+    ],
+    [
+        'ftc',
+        'application/vnd.fluxtime.clip'
+    ],
+    [
+        'fti',
+        'application/vnd.anser-web-funds-transfer-initiation'
+    ],
+    [
+        'fvt',
+        'video/vnd.fvt'
+    ],
+    [
+        'fxp',
+        'application/vnd.adobe.fxp'
+    ],
+    [
+        'fxpl',
+        'application/vnd.adobe.fxp'
+    ],
+    [
+        'fzs',
+        'application/vnd.fuzzysheet'
+    ],
+    [
+        'g2w',
+        'application/vnd.geoplan'
+    ],
+    [
+        'g3',
+        'image/g3fax'
+    ],
+    [
+        'g3w',
+        'application/vnd.geospace'
+    ],
+    [
+        'gac',
+        'application/vnd.groove-account'
+    ],
+    [
+        'gam',
+        'application/x-tads'
+    ],
+    [
+        'gbr',
+        'application/rpki-ghostbusters'
+    ],
+    [
+        'gca',
+        'application/x-gca-compressed'
+    ],
+    [
+        'gdl',
+        'model/vnd.gdl'
+    ],
+    [
+        'gdoc',
+        'application/vnd.google-apps.document'
+    ],
+    [
+        'geo',
+        'application/vnd.dynageo'
+    ],
+    [
+        'geojson',
+        'application/geo+json'
+    ],
+    [
+        'gex',
+        'application/vnd.geometry-explorer'
+    ],
+    [
+        'ggb',
+        'application/vnd.geogebra.file'
+    ],
+    [
+        'ggt',
+        'application/vnd.geogebra.tool'
+    ],
+    [
+        'ghf',
+        'application/vnd.groove-help'
+    ],
+    [
+        'gif',
+        'image/gif'
+    ],
+    [
+        'gim',
+        'application/vnd.groove-identity-message'
+    ],
+    [
+        'glb',
+        'model/gltf-binary'
+    ],
+    [
+        'gltf',
+        'model/gltf+json'
+    ],
+    [
+        'gml',
+        'application/gml+xml'
+    ],
+    [
+        'gmx',
+        'application/vnd.gmx'
+    ],
+    [
+        'gnumeric',
+        'application/x-gnumeric'
+    ],
+    [
+        'gpg',
+        'application/gpg-keys'
+    ],
+    [
+        'gph',
+        'application/vnd.flographit'
+    ],
+    [
+        'gpx',
+        'application/gpx+xml'
+    ],
+    [
+        'gqf',
+        'application/vnd.grafeq'
+    ],
+    [
+        'gqs',
+        'application/vnd.grafeq'
+    ],
+    [
+        'gram',
+        'application/srgs'
+    ],
+    [
+        'gramps',
+        'application/x-gramps-xml'
+    ],
+    [
+        'gre',
+        'application/vnd.geometry-explorer'
+    ],
+    [
+        'grv',
+        'application/vnd.groove-injector'
+    ],
+    [
+        'grxml',
+        'application/srgs+xml'
+    ],
+    [
+        'gsf',
+        'application/x-font-ghostscript'
+    ],
+    [
+        'gsheet',
+        'application/vnd.google-apps.spreadsheet'
+    ],
+    [
+        'gslides',
+        'application/vnd.google-apps.presentation'
+    ],
+    [
+        'gtar',
+        'application/x-gtar'
+    ],
+    [
+        'gtm',
+        'application/vnd.groove-tool-message'
+    ],
+    [
+        'gtw',
+        'model/vnd.gtw'
+    ],
+    [
+        'gv',
+        'text/vnd.graphviz'
+    ],
+    [
+        'gxf',
+        'application/gxf'
+    ],
+    [
+        'gxt',
+        'application/vnd.geonext'
+    ],
+    [
+        'gz',
+        'application/gzip'
+    ],
+    [
+        'gzip',
+        'application/gzip'
+    ],
+    [
+        'h',
+        'text/x-c'
+    ],
+    [
+        'h261',
+        'video/h261'
+    ],
+    [
+        'h263',
+        'video/h263'
+    ],
+    [
+        'h264',
+        'video/h264'
+    ],
+    [
+        'hal',
+        'application/vnd.hal+xml'
+    ],
+    [
+        'hbci',
+        'application/vnd.hbci'
+    ],
+    [
+        'hbs',
+        'text/x-handlebars-template'
+    ],
+    [
+        'hdd',
+        'application/x-virtualbox-hdd'
+    ],
+    [
+        'hdf',
+        'application/x-hdf'
+    ],
+    [
+        'heic',
+        'image/heic'
+    ],
+    [
+        'heics',
+        'image/heic-sequence'
+    ],
+    [
+        'heif',
+        'image/heif'
+    ],
+    [
+        'heifs',
+        'image/heif-sequence'
+    ],
+    [
+        'hej2',
+        'image/hej2k'
+    ],
+    [
+        'held',
+        'application/atsc-held+xml'
+    ],
+    [
+        'hh',
+        'text/x-c'
+    ],
+    [
+        'hjson',
+        'application/hjson'
+    ],
+    [
+        'hlp',
+        'application/winhlp'
+    ],
+    [
+        'hpgl',
+        'application/vnd.hp-hpgl'
+    ],
+    [
+        'hpid',
+        'application/vnd.hp-hpid'
+    ],
+    [
+        'hps',
+        'application/vnd.hp-hps'
+    ],
+    [
+        'hqx',
+        'application/mac-binhex40'
+    ],
+    [
+        'hsj2',
+        'image/hsj2'
+    ],
+    [
+        'htc',
+        'text/x-component'
+    ],
+    [
+        'htke',
+        'application/vnd.kenameaapp'
+    ],
+    [
+        'htm',
+        'text/html'
+    ],
+    [
+        'html',
+        'text/html'
+    ],
+    [
+        'hvd',
+        'application/vnd.yamaha.hv-dic'
+    ],
+    [
+        'hvp',
+        'application/vnd.yamaha.hv-voice'
+    ],
+    [
+        'hvs',
+        'application/vnd.yamaha.hv-script'
+    ],
+    [
+        'i2g',
+        'application/vnd.intergeo'
+    ],
+    [
+        'icc',
+        'application/vnd.iccprofile'
+    ],
+    [
+        'ice',
+        'x-conference/x-cooltalk'
+    ],
+    [
+        'icm',
+        'application/vnd.iccprofile'
+    ],
+    [
+        'ico',
+        'image/x-icon'
+    ],
+    [
+        'ics',
+        'text/calendar'
+    ],
+    [
+        'ief',
+        'image/ief'
+    ],
+    [
+        'ifb',
+        'text/calendar'
+    ],
+    [
+        'ifm',
+        'application/vnd.shana.informed.formdata'
+    ],
+    [
+        'iges',
+        'model/iges'
+    ],
+    [
+        'igl',
+        'application/vnd.igloader'
+    ],
+    [
+        'igm',
+        'application/vnd.insors.igm'
+    ],
+    [
+        'igs',
+        'model/iges'
+    ],
+    [
+        'igx',
+        'application/vnd.micrografx.igx'
+    ],
+    [
+        'iif',
+        'application/vnd.shana.informed.interchange'
+    ],
+    [
+        'img',
+        'application/octet-stream'
+    ],
+    [
+        'imp',
+        'application/vnd.accpac.simply.imp'
+    ],
+    [
+        'ims',
+        'application/vnd.ms-ims'
+    ],
+    [
+        'in',
+        'text/plain'
+    ],
+    [
+        'ini',
+        'text/plain'
+    ],
+    [
+        'ink',
+        'application/inkml+xml'
+    ],
+    [
+        'inkml',
+        'application/inkml+xml'
+    ],
+    [
+        'install',
+        'application/x-install-instructions'
+    ],
+    [
+        'iota',
+        'application/vnd.astraea-software.iota'
+    ],
+    [
+        'ipfix',
+        'application/ipfix'
+    ],
+    [
+        'ipk',
+        'application/vnd.shana.informed.package'
+    ],
+    [
+        'irm',
+        'application/vnd.ibm.rights-management'
+    ],
+    [
+        'irp',
+        'application/vnd.irepository.package+xml'
+    ],
+    [
+        'iso',
+        'application/x-iso9660-image'
+    ],
+    [
+        'itp',
+        'application/vnd.shana.informed.formtemplate'
+    ],
+    [
+        'its',
+        'application/its+xml'
+    ],
+    [
+        'ivp',
+        'application/vnd.immervision-ivp'
+    ],
+    [
+        'ivu',
+        'application/vnd.immervision-ivu'
+    ],
+    [
+        'jad',
+        'text/vnd.sun.j2me.app-descriptor'
+    ],
+    [
+        'jade',
+        'text/jade'
+    ],
+    [
+        'jam',
+        'application/vnd.jam'
+    ],
+    [
+        'jar',
+        'application/java-archive'
+    ],
+    [
+        'jardiff',
+        'application/x-java-archive-diff'
+    ],
+    [
+        'java',
+        'text/x-java-source'
+    ],
+    [
+        'jhc',
+        'image/jphc'
+    ],
+    [
+        'jisp',
+        'application/vnd.jisp'
+    ],
+    [
+        'jls',
+        'image/jls'
+    ],
+    [
+        'jlt',
+        'application/vnd.hp-jlyt'
+    ],
+    [
+        'jng',
+        'image/x-jng'
+    ],
+    [
+        'jnlp',
+        'application/x-java-jnlp-file'
+    ],
+    [
+        'joda',
+        'application/vnd.joost.joda-archive'
+    ],
+    [
+        'jp2',
+        'image/jp2'
+    ],
+    [
+        'jpe',
+        'image/jpeg'
+    ],
+    [
+        'jpeg',
+        'image/jpeg'
+    ],
+    [
+        'jpf',
+        'image/jpx'
+    ],
+    [
+        'jpg',
+        'image/jpeg'
+    ],
+    [
+        'jpg2',
+        'image/jp2'
+    ],
+    [
+        'jpgm',
+        'video/jpm'
+    ],
+    [
+        'jpgv',
+        'video/jpeg'
+    ],
+    [
+        'jph',
+        'image/jph'
+    ],
+    [
+        'jpm',
+        'video/jpm'
+    ],
+    [
+        'jpx',
+        'image/jpx'
+    ],
+    [
+        'js',
+        'application/javascript'
+    ],
+    [
+        'json',
+        'application/json'
+    ],
+    [
+        'json5',
+        'application/json5'
+    ],
+    [
+        'jsonld',
+        'application/ld+json'
+    ],
+    // https://jsonlines.org/
+    [
+        'jsonl',
+        'application/jsonl'
+    ],
+    [
+        'jsonml',
+        'application/jsonml+json'
+    ],
+    [
+        'jsx',
+        'text/jsx'
+    ],
+    [
+        'jxr',
+        'image/jxr'
+    ],
+    [
+        'jxra',
+        'image/jxra'
+    ],
+    [
+        'jxrs',
+        'image/jxrs'
+    ],
+    [
+        'jxs',
+        'image/jxs'
+    ],
+    [
+        'jxsc',
+        'image/jxsc'
+    ],
+    [
+        'jxsi',
+        'image/jxsi'
+    ],
+    [
+        'jxss',
+        'image/jxss'
+    ],
+    [
+        'kar',
+        'audio/midi'
+    ],
+    [
+        'karbon',
+        'application/vnd.kde.karbon'
+    ],
+    [
+        'kdb',
+        'application/octet-stream'
+    ],
+    [
+        'kdbx',
+        'application/x-keepass2'
+    ],
+    [
+        'key',
+        'application/x-iwork-keynote-sffkey'
+    ],
+    [
+        'kfo',
+        'application/vnd.kde.kformula'
+    ],
+    [
+        'kia',
+        'application/vnd.kidspiration'
+    ],
+    [
+        'kml',
+        'application/vnd.google-earth.kml+xml'
+    ],
+    [
+        'kmz',
+        'application/vnd.google-earth.kmz'
+    ],
+    [
+        'kne',
+        'application/vnd.kinar'
+    ],
+    [
+        'knp',
+        'application/vnd.kinar'
+    ],
+    [
+        'kon',
+        'application/vnd.kde.kontour'
+    ],
+    [
+        'kpr',
+        'application/vnd.kde.kpresenter'
+    ],
+    [
+        'kpt',
+        'application/vnd.kde.kpresenter'
+    ],
+    [
+        'kpxx',
+        'application/vnd.ds-keypoint'
+    ],
+    [
+        'ksp',
+        'application/vnd.kde.kspread'
+    ],
+    [
+        'ktr',
+        'application/vnd.kahootz'
+    ],
+    [
+        'ktx',
+        'image/ktx'
+    ],
+    [
+        'ktx2',
+        'image/ktx2'
+    ],
+    [
+        'ktz',
+        'application/vnd.kahootz'
+    ],
+    [
+        'kwd',
+        'application/vnd.kde.kword'
+    ],
+    [
+        'kwt',
+        'application/vnd.kde.kword'
+    ],
+    [
+        'lasxml',
+        'application/vnd.las.las+xml'
+    ],
+    [
+        'latex',
+        'application/x-latex'
+    ],
+    [
+        'lbd',
+        'application/vnd.llamagraphics.life-balance.desktop'
+    ],
+    [
+        'lbe',
+        'application/vnd.llamagraphics.life-balance.exchange+xml'
+    ],
+    [
+        'les',
+        'application/vnd.hhe.lesson-player'
+    ],
+    [
+        'less',
+        'text/less'
+    ],
+    [
+        'lgr',
+        'application/lgr+xml'
+    ],
+    [
+        'lha',
+        'application/octet-stream'
+    ],
+    [
+        'link66',
+        'application/vnd.route66.link66+xml'
+    ],
+    [
+        'list',
+        'text/plain'
+    ],
+    [
+        'list3820',
+        'application/vnd.ibm.modcap'
+    ],
+    [
+        'listafp',
+        'application/vnd.ibm.modcap'
+    ],
+    [
+        'litcoffee',
+        'text/coffeescript'
+    ],
+    [
+        'lnk',
+        'application/x-ms-shortcut'
+    ],
+    [
+        'log',
+        'text/plain'
+    ],
+    [
+        'lostxml',
+        'application/lost+xml'
+    ],
+    [
+        'lrf',
+        'application/octet-stream'
+    ],
+    [
+        'lrm',
+        'application/vnd.ms-lrm'
+    ],
+    [
+        'ltf',
+        'application/vnd.frogans.ltf'
+    ],
+    [
+        'lua',
+        'text/x-lua'
+    ],
+    [
+        'luac',
+        'application/x-lua-bytecode'
+    ],
+    [
+        'lvp',
+        'audio/vnd.lucent.voice'
+    ],
+    [
+        'lwp',
+        'application/vnd.lotus-wordpro'
+    ],
+    [
+        'lzh',
+        'application/octet-stream'
+    ],
+    [
+        'm1v',
+        'video/mpeg'
+    ],
+    [
+        'm2a',
+        'audio/mpeg'
+    ],
+    [
+        'm2v',
+        'video/mpeg'
+    ],
+    [
+        'm3a',
+        'audio/mpeg'
+    ],
+    [
+        'm3u',
+        'text/plain'
+    ],
+    [
+        'm3u8',
+        'application/vnd.apple.mpegurl'
+    ],
+    [
+        'm4a',
+        'audio/x-m4a'
+    ],
+    [
+        'm4p',
+        'application/mp4'
+    ],
+    [
+        'm4s',
+        'video/iso.segment'
+    ],
+    [
+        'm4u',
+        'application/vnd.mpegurl'
+    ],
+    [
+        'm4v',
+        'video/x-m4v'
+    ],
+    [
+        'm13',
+        'application/x-msmediaview'
+    ],
+    [
+        'm14',
+        'application/x-msmediaview'
+    ],
+    [
+        'm21',
+        'application/mp21'
+    ],
+    [
+        'ma',
+        'application/mathematica'
+    ],
+    [
+        'mads',
+        'application/mads+xml'
+    ],
+    [
+        'maei',
+        'application/mmt-aei+xml'
+    ],
+    [
+        'mag',
+        'application/vnd.ecowin.chart'
+    ],
+    [
+        'maker',
+        'application/vnd.framemaker'
+    ],
+    [
+        'man',
+        'text/troff'
+    ],
+    [
+        'manifest',
+        'text/cache-manifest'
+    ],
+    [
+        'map',
+        'application/json'
+    ],
+    [
+        'mar',
+        'application/octet-stream'
+    ],
+    [
+        'markdown',
+        'text/markdown'
+    ],
+    [
+        'mathml',
+        'application/mathml+xml'
+    ],
+    [
+        'mb',
+        'application/mathematica'
+    ],
+    [
+        'mbk',
+        'application/vnd.mobius.mbk'
+    ],
+    [
+        'mbox',
+        'application/mbox'
+    ],
+    [
+        'mc1',
+        'application/vnd.medcalcdata'
+    ],
+    [
+        'mcd',
+        'application/vnd.mcd'
+    ],
+    [
+        'mcurl',
+        'text/vnd.curl.mcurl'
+    ],
+    [
+        'md',
+        'text/markdown'
+    ],
+    [
+        'mdb',
+        'application/x-msaccess'
+    ],
+    [
+        'mdi',
+        'image/vnd.ms-modi'
+    ],
+    [
+        'mdx',
+        'text/mdx'
+    ],
+    [
+        'me',
+        'text/troff'
+    ],
+    [
+        'mesh',
+        'model/mesh'
+    ],
+    [
+        'meta4',
+        'application/metalink4+xml'
+    ],
+    [
+        'metalink',
+        'application/metalink+xml'
+    ],
+    [
+        'mets',
+        'application/mets+xml'
+    ],
+    [
+        'mfm',
+        'application/vnd.mfmp'
+    ],
+    [
+        'mft',
+        'application/rpki-manifest'
+    ],
+    [
+        'mgp',
+        'application/vnd.osgeo.mapguide.package'
+    ],
+    [
+        'mgz',
+        'application/vnd.proteus.magazine'
+    ],
+    [
+        'mid',
+        'audio/midi'
+    ],
+    [
+        'midi',
+        'audio/midi'
+    ],
+    [
+        'mie',
+        'application/x-mie'
+    ],
+    [
+        'mif',
+        'application/vnd.mif'
+    ],
+    [
+        'mime',
+        'message/rfc822'
+    ],
+    [
+        'mj2',
+        'video/mj2'
+    ],
+    [
+        'mjp2',
+        'video/mj2'
+    ],
+    [
+        'mjs',
+        'application/javascript'
+    ],
+    [
+        'mk3d',
+        'video/x-matroska'
+    ],
+    [
+        'mka',
+        'audio/x-matroska'
+    ],
+    [
+        'mkd',
+        'text/x-markdown'
+    ],
+    [
+        'mks',
+        'video/x-matroska'
+    ],
+    [
+        'mkv',
+        'video/x-matroska'
+    ],
+    [
+        'mlp',
+        'application/vnd.dolby.mlp'
+    ],
+    [
+        'mmd',
+        'application/vnd.chipnuts.karaoke-mmd'
+    ],
+    [
+        'mmf',
+        'application/vnd.smaf'
+    ],
+    [
+        'mml',
+        'text/mathml'
+    ],
+    [
+        'mmr',
+        'image/vnd.fujixerox.edmics-mmr'
+    ],
+    [
+        'mng',
+        'video/x-mng'
+    ],
+    [
+        'mny',
+        'application/x-msmoney'
+    ],
+    [
+        'mobi',
+        'application/x-mobipocket-ebook'
+    ],
+    [
+        'mods',
+        'application/mods+xml'
+    ],
+    [
+        'mov',
+        'video/quicktime'
+    ],
+    [
+        'movie',
+        'video/x-sgi-movie'
+    ],
+    [
+        'mp2',
+        'audio/mpeg'
+    ],
+    [
+        'mp2a',
+        'audio/mpeg'
+    ],
+    [
+        'mp3',
+        'audio/mpeg'
+    ],
+    [
+        'mp4',
+        'video/mp4'
+    ],
+    [
+        'mp4a',
+        'audio/mp4'
+    ],
+    [
+        'mp4s',
+        'application/mp4'
+    ],
+    [
+        'mp4v',
+        'video/mp4'
+    ],
+    [
+        'mp21',
+        'application/mp21'
+    ],
+    [
+        'mpc',
+        'application/vnd.mophun.certificate'
+    ],
+    [
+        'mpd',
+        'application/dash+xml'
+    ],
+    [
+        'mpe',
+        'video/mpeg'
+    ],
+    [
+        'mpeg',
+        'video/mpeg'
+    ],
+    [
+        'mpg',
+        'video/mpeg'
+    ],
+    [
+        'mpg4',
+        'video/mp4'
+    ],
+    [
+        'mpga',
+        'audio/mpeg'
+    ],
+    [
+        'mpkg',
+        'application/vnd.apple.installer+xml'
+    ],
+    [
+        'mpm',
+        'application/vnd.blueice.multipass'
+    ],
+    [
+        'mpn',
+        'application/vnd.mophun.application'
+    ],
+    [
+        'mpp',
+        'application/vnd.ms-project'
+    ],
+    [
+        'mpt',
+        'application/vnd.ms-project'
+    ],
+    [
+        'mpy',
+        'application/vnd.ibm.minipay'
+    ],
+    [
+        'mqy',
+        'application/vnd.mobius.mqy'
+    ],
+    [
+        'mrc',
+        'application/marc'
+    ],
+    [
+        'mrcx',
+        'application/marcxml+xml'
+    ],
+    [
+        'ms',
+        'text/troff'
+    ],
+    [
+        'mscml',
+        'application/mediaservercontrol+xml'
+    ],
+    [
+        'mseed',
+        'application/vnd.fdsn.mseed'
+    ],
+    [
+        'mseq',
+        'application/vnd.mseq'
+    ],
+    [
+        'msf',
+        'application/vnd.epson.msf'
+    ],
+    [
+        'msg',
+        'application/vnd.ms-outlook'
+    ],
+    [
+        'msh',
+        'model/mesh'
+    ],
+    [
+        'msi',
+        'application/x-msdownload'
+    ],
+    [
+        'msl',
+        'application/vnd.mobius.msl'
+    ],
+    [
+        'msm',
+        'application/octet-stream'
+    ],
+    [
+        'msp',
+        'application/octet-stream'
+    ],
+    [
+        'msty',
+        'application/vnd.muvee.style'
+    ],
+    [
+        'mtl',
+        'model/mtl'
+    ],
+    [
+        'mts',
+        'model/vnd.mts'
+    ],
+    [
+        'mus',
+        'application/vnd.musician'
+    ],
+    [
+        'musd',
+        'application/mmt-usd+xml'
+    ],
+    [
+        'musicxml',
+        'application/vnd.recordare.musicxml+xml'
+    ],
+    [
+        'mvb',
+        'application/x-msmediaview'
+    ],
+    [
+        'mvt',
+        'application/vnd.mapbox-vector-tile'
+    ],
+    [
+        'mwf',
+        'application/vnd.mfer'
+    ],
+    [
+        'mxf',
+        'application/mxf'
+    ],
+    [
+        'mxl',
+        'application/vnd.recordare.musicxml'
+    ],
+    [
+        'mxmf',
+        'audio/mobile-xmf'
+    ],
+    [
+        'mxml',
+        'application/xv+xml'
+    ],
+    [
+        'mxs',
+        'application/vnd.triscape.mxs'
+    ],
+    [
+        'mxu',
+        'video/vnd.mpegurl'
+    ],
+    [
+        'n-gage',
+        'application/vnd.nokia.n-gage.symbian.install'
+    ],
+    [
+        'n3',
+        'text/n3'
+    ],
+    [
+        'nb',
+        'application/mathematica'
+    ],
+    [
+        'nbp',
+        'application/vnd.wolfram.player'
+    ],
+    [
+        'nc',
+        'application/x-netcdf'
+    ],
+    [
+        'ncx',
+        'application/x-dtbncx+xml'
+    ],
+    [
+        'nfo',
+        'text/x-nfo'
+    ],
+    [
+        'ngdat',
+        'application/vnd.nokia.n-gage.data'
+    ],
+    [
+        'nitf',
+        'application/vnd.nitf'
+    ],
+    [
+        'nlu',
+        'application/vnd.neurolanguage.nlu'
+    ],
+    [
+        'nml',
+        'application/vnd.enliven'
+    ],
+    [
+        'nnd',
+        'application/vnd.noblenet-directory'
+    ],
+    [
+        'nns',
+        'application/vnd.noblenet-sealer'
+    ],
+    [
+        'nnw',
+        'application/vnd.noblenet-web'
+    ],
+    [
+        'npx',
+        'image/vnd.net-fpx'
+    ],
+    [
+        'nq',
+        'application/n-quads'
+    ],
+    [
+        'nsc',
+        'application/x-conference'
+    ],
+    [
+        'nsf',
+        'application/vnd.lotus-notes'
+    ],
+    [
+        'nt',
+        'application/n-triples'
+    ],
+    [
+        'ntf',
+        'application/vnd.nitf'
+    ],
+    [
+        'numbers',
+        'application/x-iwork-numbers-sffnumbers'
+    ],
+    [
+        'nzb',
+        'application/x-nzb'
+    ],
+    [
+        'oa2',
+        'application/vnd.fujitsu.oasys2'
+    ],
+    [
+        'oa3',
+        'application/vnd.fujitsu.oasys3'
+    ],
+    [
+        'oas',
+        'application/vnd.fujitsu.oasys'
+    ],
+    [
+        'obd',
+        'application/x-msbinder'
+    ],
+    [
+        'obgx',
+        'application/vnd.openblox.game+xml'
+    ],
+    [
+        'obj',
+        'model/obj'
+    ],
+    [
+        'oda',
+        'application/oda'
+    ],
+    [
+        'odb',
+        'application/vnd.oasis.opendocument.database'
+    ],
+    [
+        'odc',
+        'application/vnd.oasis.opendocument.chart'
+    ],
+    [
+        'odf',
+        'application/vnd.oasis.opendocument.formula'
+    ],
+    [
+        'odft',
+        'application/vnd.oasis.opendocument.formula-template'
+    ],
+    [
+        'odg',
+        'application/vnd.oasis.opendocument.graphics'
+    ],
+    [
+        'odi',
+        'application/vnd.oasis.opendocument.image'
+    ],
+    [
+        'odm',
+        'application/vnd.oasis.opendocument.text-master'
+    ],
+    [
+        'odp',
+        'application/vnd.oasis.opendocument.presentation'
+    ],
+    [
+        'ods',
+        'application/vnd.oasis.opendocument.spreadsheet'
+    ],
+    [
+        'odt',
+        'application/vnd.oasis.opendocument.text'
+    ],
+    [
+        'oga',
+        'audio/ogg'
+    ],
+    [
+        'ogex',
+        'model/vnd.opengex'
+    ],
+    [
+        'ogg',
+        'audio/ogg'
+    ],
+    [
+        'ogv',
+        'video/ogg'
+    ],
+    [
+        'ogx',
+        'application/ogg'
+    ],
+    [
+        'omdoc',
+        'application/omdoc+xml'
+    ],
+    [
+        'onepkg',
+        'application/onenote'
+    ],
+    [
+        'onetmp',
+        'application/onenote'
+    ],
+    [
+        'onetoc',
+        'application/onenote'
+    ],
+    [
+        'onetoc2',
+        'application/onenote'
+    ],
+    [
+        'opf',
+        'application/oebps-package+xml'
+    ],
+    [
+        'opml',
+        'text/x-opml'
+    ],
+    [
+        'oprc',
+        'application/vnd.palm'
+    ],
+    [
+        'opus',
+        'audio/ogg'
+    ],
+    [
+        'org',
+        'text/x-org'
+    ],
+    [
+        'osf',
+        'application/vnd.yamaha.openscoreformat'
+    ],
+    [
+        'osfpvg',
+        'application/vnd.yamaha.openscoreformat.osfpvg+xml'
+    ],
+    [
+        'osm',
+        'application/vnd.openstreetmap.data+xml'
+    ],
+    [
+        'otc',
+        'application/vnd.oasis.opendocument.chart-template'
+    ],
+    [
+        'otf',
+        'font/otf'
+    ],
+    [
+        'otg',
+        'application/vnd.oasis.opendocument.graphics-template'
+    ],
+    [
+        'oth',
+        'application/vnd.oasis.opendocument.text-web'
+    ],
+    [
+        'oti',
+        'application/vnd.oasis.opendocument.image-template'
+    ],
+    [
+        'otp',
+        'application/vnd.oasis.opendocument.presentation-template'
+    ],
+    [
+        'ots',
+        'application/vnd.oasis.opendocument.spreadsheet-template'
+    ],
+    [
+        'ott',
+        'application/vnd.oasis.opendocument.text-template'
+    ],
+    [
+        'ova',
+        'application/x-virtualbox-ova'
+    ],
+    [
+        'ovf',
+        'application/x-virtualbox-ovf'
+    ],
+    [
+        'owl',
+        'application/rdf+xml'
+    ],
+    [
+        'oxps',
+        'application/oxps'
+    ],
+    [
+        'oxt',
+        'application/vnd.openofficeorg.extension'
+    ],
+    [
+        'p',
+        'text/x-pascal'
+    ],
+    [
+        'p7a',
+        'application/x-pkcs7-signature'
+    ],
+    [
+        'p7b',
+        'application/x-pkcs7-certificates'
+    ],
+    [
+        'p7c',
+        'application/pkcs7-mime'
+    ],
+    [
+        'p7m',
+        'application/pkcs7-mime'
+    ],
+    [
+        'p7r',
+        'application/x-pkcs7-certreqresp'
+    ],
+    [
+        'p7s',
+        'application/pkcs7-signature'
+    ],
+    [
+        'p8',
+        'application/pkcs8'
+    ],
+    [
+        'p10',
+        'application/x-pkcs10'
+    ],
+    [
+        'p12',
+        'application/x-pkcs12'
+    ],
+    [
+        'pac',
+        'application/x-ns-proxy-autoconfig'
+    ],
+    [
+        'pages',
+        'application/x-iwork-pages-sffpages'
+    ],
+    [
+        'pas',
+        'text/x-pascal'
+    ],
+    [
+        'paw',
+        'application/vnd.pawaafile'
+    ],
+    [
+        'pbd',
+        'application/vnd.powerbuilder6'
+    ],
+    [
+        'pbm',
+        'image/x-portable-bitmap'
+    ],
+    [
+        'pcap',
+        'application/vnd.tcpdump.pcap'
+    ],
+    [
+        'pcf',
+        'application/x-font-pcf'
+    ],
+    [
+        'pcl',
+        'application/vnd.hp-pcl'
+    ],
+    [
+        'pclxl',
+        'application/vnd.hp-pclxl'
+    ],
+    [
+        'pct',
+        'image/x-pict'
+    ],
+    [
+        'pcurl',
+        'application/vnd.curl.pcurl'
+    ],
+    [
+        'pcx',
+        'image/x-pcx'
+    ],
+    [
+        'pdb',
+        'application/x-pilot'
+    ],
+    [
+        'pde',
+        'text/x-processing'
+    ],
+    [
+        'pdf',
+        'application/pdf'
+    ],
+    [
+        'pem',
+        'application/x-x509-user-cert'
+    ],
+    [
+        'pfa',
+        'application/x-font-type1'
+    ],
+    [
+        'pfb',
+        'application/x-font-type1'
+    ],
+    [
+        'pfm',
+        'application/x-font-type1'
+    ],
+    [
+        'pfr',
+        'application/font-tdpfr'
+    ],
+    [
+        'pfx',
+        'application/x-pkcs12'
+    ],
+    [
+        'pgm',
+        'image/x-portable-graymap'
+    ],
+    [
+        'pgn',
+        'application/x-chess-pgn'
+    ],
+    [
+        'pgp',
+        'application/pgp'
+    ],
+    [
+        'php',
+        'application/x-httpd-php'
+    ],
+    [
+        'php3',
+        'application/x-httpd-php'
+    ],
+    [
+        'php4',
+        'application/x-httpd-php'
+    ],
+    [
+        'phps',
+        'application/x-httpd-php-source'
+    ],
+    [
+        'phtml',
+        'application/x-httpd-php'
+    ],
+    [
+        'pic',
+        'image/x-pict'
+    ],
+    [
+        'pkg',
+        'application/octet-stream'
+    ],
+    [
+        'pki',
+        'application/pkixcmp'
+    ],
+    [
+        'pkipath',
+        'application/pkix-pkipath'
+    ],
+    [
+        'pkpass',
+        'application/vnd.apple.pkpass'
+    ],
+    [
+        'pl',
+        'application/x-perl'
+    ],
+    [
+        'plb',
+        'application/vnd.3gpp.pic-bw-large'
+    ],
+    [
+        'plc',
+        'application/vnd.mobius.plc'
+    ],
+    [
+        'plf',
+        'application/vnd.pocketlearn'
+    ],
+    [
+        'pls',
+        'application/pls+xml'
+    ],
+    [
+        'pm',
+        'application/x-perl'
+    ],
+    [
+        'pml',
+        'application/vnd.ctc-posml'
+    ],
+    [
+        'png',
+        'image/png'
+    ],
+    [
+        'pnm',
+        'image/x-portable-anymap'
+    ],
+    [
+        'portpkg',
+        'application/vnd.macports.portpkg'
+    ],
+    [
+        'pot',
+        'application/vnd.ms-powerpoint'
+    ],
+    [
+        'potm',
+        'application/vnd.ms-powerpoint.presentation.macroEnabled.12'
+    ],
+    [
+        'potx',
+        'application/vnd.openxmlformats-officedocument.presentationml.template'
+    ],
+    [
+        'ppa',
+        'application/vnd.ms-powerpoint'
+    ],
+    [
+        'ppam',
+        'application/vnd.ms-powerpoint.addin.macroEnabled.12'
+    ],
+    [
+        'ppd',
+        'application/vnd.cups-ppd'
+    ],
+    [
+        'ppm',
+        'image/x-portable-pixmap'
+    ],
+    [
+        'pps',
+        'application/vnd.ms-powerpoint'
+    ],
+    [
+        'ppsm',
+        'application/vnd.ms-powerpoint.slideshow.macroEnabled.12'
+    ],
+    [
+        'ppsx',
+        'application/vnd.openxmlformats-officedocument.presentationml.slideshow'
+    ],
+    [
+        'ppt',
+        'application/powerpoint'
+    ],
+    [
+        'pptm',
+        'application/vnd.ms-powerpoint.presentation.macroEnabled.12'
+    ],
+    [
+        'pptx',
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+    ],
+    [
+        'pqa',
+        'application/vnd.palm'
+    ],
+    [
+        'prc',
+        'application/x-pilot'
+    ],
+    [
+        'pre',
+        'application/vnd.lotus-freelance'
+    ],
+    [
+        'prf',
+        'application/pics-rules'
+    ],
+    [
+        'provx',
+        'application/provenance+xml'
+    ],
+    [
+        'ps',
+        'application/postscript'
+    ],
+    [
+        'psb',
+        'application/vnd.3gpp.pic-bw-small'
+    ],
+    [
+        'psd',
+        'application/x-photoshop'
+    ],
+    [
+        'psf',
+        'application/x-font-linux-psf'
+    ],
+    [
+        'pskcxml',
+        'application/pskc+xml'
+    ],
+    [
+        'pti',
+        'image/prs.pti'
+    ],
+    [
+        'ptid',
+        'application/vnd.pvi.ptid1'
+    ],
+    [
+        'pub',
+        'application/x-mspublisher'
+    ],
+    [
+        'pvb',
+        'application/vnd.3gpp.pic-bw-var'
+    ],
+    [
+        'pwn',
+        'application/vnd.3m.post-it-notes'
+    ],
+    [
+        'pya',
+        'audio/vnd.ms-playready.media.pya'
+    ],
+    [
+        'pyv',
+        'video/vnd.ms-playready.media.pyv'
+    ],
+    [
+        'qam',
+        'application/vnd.epson.quickanime'
+    ],
+    [
+        'qbo',
+        'application/vnd.intu.qbo'
+    ],
+    [
+        'qfx',
+        'application/vnd.intu.qfx'
+    ],
+    [
+        'qps',
+        'application/vnd.publishare-delta-tree'
+    ],
+    [
+        'qt',
+        'video/quicktime'
+    ],
+    [
+        'qwd',
+        'application/vnd.quark.quarkxpress'
+    ],
+    [
+        'qwt',
+        'application/vnd.quark.quarkxpress'
+    ],
+    [
+        'qxb',
+        'application/vnd.quark.quarkxpress'
+    ],
+    [
+        'qxd',
+        'application/vnd.quark.quarkxpress'
+    ],
+    [
+        'qxl',
+        'application/vnd.quark.quarkxpress'
+    ],
+    [
+        'qxt',
+        'application/vnd.quark.quarkxpress'
+    ],
+    [
+        'ra',
+        'audio/x-realaudio'
+    ],
+    [
+        'ram',
+        'audio/x-pn-realaudio'
+    ],
+    [
+        'raml',
+        'application/raml+yaml'
+    ],
+    [
+        'rapd',
+        'application/route-apd+xml'
+    ],
+    [
+        'rar',
+        'application/x-rar'
+    ],
+    [
+        'ras',
+        'image/x-cmu-raster'
+    ],
+    [
+        'rcprofile',
+        'application/vnd.ipunplugged.rcprofile'
+    ],
+    [
+        'rdf',
+        'application/rdf+xml'
+    ],
+    [
+        'rdz',
+        'application/vnd.data-vision.rdz'
+    ],
+    [
+        'relo',
+        'application/p2p-overlay+xml'
+    ],
+    [
+        'rep',
+        'application/vnd.businessobjects'
+    ],
+    [
+        'res',
+        'application/x-dtbresource+xml'
+    ],
+    [
+        'rgb',
+        'image/x-rgb'
+    ],
+    [
+        'rif',
+        'application/reginfo+xml'
+    ],
+    [
+        'rip',
+        'audio/vnd.rip'
+    ],
+    [
+        'ris',
+        'application/x-research-info-systems'
+    ],
+    [
+        'rl',
+        'application/resource-lists+xml'
+    ],
+    [
+        'rlc',
+        'image/vnd.fujixerox.edmics-rlc'
+    ],
+    [
+        'rld',
+        'application/resource-lists-diff+xml'
+    ],
+    [
+        'rm',
+        'audio/x-pn-realaudio'
+    ],
+    [
+        'rmi',
+        'audio/midi'
+    ],
+    [
+        'rmp',
+        'audio/x-pn-realaudio-plugin'
+    ],
+    [
+        'rms',
+        'application/vnd.jcp.javame.midlet-rms'
+    ],
+    [
+        'rmvb',
+        'application/vnd.rn-realmedia-vbr'
+    ],
+    [
+        'rnc',
+        'application/relax-ng-compact-syntax'
+    ],
+    [
+        'rng',
+        'application/xml'
+    ],
+    [
+        'roa',
+        'application/rpki-roa'
+    ],
+    [
+        'roff',
+        'text/troff'
+    ],
+    [
+        'rp9',
+        'application/vnd.cloanto.rp9'
+    ],
+    [
+        'rpm',
+        'audio/x-pn-realaudio-plugin'
+    ],
+    [
+        'rpss',
+        'application/vnd.nokia.radio-presets'
+    ],
+    [
+        'rpst',
+        'application/vnd.nokia.radio-preset'
+    ],
+    [
+        'rq',
+        'application/sparql-query'
+    ],
+    [
+        'rs',
+        'application/rls-services+xml'
+    ],
+    [
+        'rsa',
+        'application/x-pkcs7'
+    ],
+    [
+        'rsat',
+        'application/atsc-rsat+xml'
+    ],
+    [
+        'rsd',
+        'application/rsd+xml'
+    ],
+    [
+        'rsheet',
+        'application/urc-ressheet+xml'
+    ],
+    [
+        'rss',
+        'application/rss+xml'
+    ],
+    [
+        'rtf',
+        'text/rtf'
+    ],
+    [
+        'rtx',
+        'text/richtext'
+    ],
+    [
+        'run',
+        'application/x-makeself'
+    ],
+    [
+        'rusd',
+        'application/route-usd+xml'
+    ],
+    [
+        'rv',
+        'video/vnd.rn-realvideo'
+    ],
+    [
+        's',
+        'text/x-asm'
+    ],
+    [
+        's3m',
+        'audio/s3m'
+    ],
+    [
+        'saf',
+        'application/vnd.yamaha.smaf-audio'
+    ],
+    [
+        'sass',
+        'text/x-sass'
+    ],
+    [
+        'sbml',
+        'application/sbml+xml'
+    ],
+    [
+        'sc',
+        'application/vnd.ibm.secure-container'
+    ],
+    [
+        'scd',
+        'application/x-msschedule'
+    ],
+    [
+        'scm',
+        'application/vnd.lotus-screencam'
+    ],
+    [
+        'scq',
+        'application/scvp-cv-request'
+    ],
+    [
+        'scs',
+        'application/scvp-cv-response'
+    ],
+    [
+        'scss',
+        'text/x-scss'
+    ],
+    [
+        'scurl',
+        'text/vnd.curl.scurl'
+    ],
+    [
+        'sda',
+        'application/vnd.stardivision.draw'
+    ],
+    [
+        'sdc',
+        'application/vnd.stardivision.calc'
+    ],
+    [
+        'sdd',
+        'application/vnd.stardivision.impress'
+    ],
+    [
+        'sdkd',
+        'application/vnd.solent.sdkm+xml'
+    ],
+    [
+        'sdkm',
+        'application/vnd.solent.sdkm+xml'
+    ],
+    [
+        'sdp',
+        'application/sdp'
+    ],
+    [
+        'sdw',
+        'application/vnd.stardivision.writer'
+    ],
+    [
+        'sea',
+        'application/octet-stream'
+    ],
+    [
+        'see',
+        'application/vnd.seemail'
+    ],
+    [
+        'seed',
+        'application/vnd.fdsn.seed'
+    ],
+    [
+        'sema',
+        'application/vnd.sema'
+    ],
+    [
+        'semd',
+        'application/vnd.semd'
+    ],
+    [
+        'semf',
+        'application/vnd.semf'
+    ],
+    [
+        'senmlx',
+        'application/senml+xml'
+    ],
+    [
+        'sensmlx',
+        'application/sensml+xml'
+    ],
+    [
+        'ser',
+        'application/java-serialized-object'
+    ],
+    [
+        'setpay',
+        'application/set-payment-initiation'
+    ],
+    [
+        'setreg',
+        'application/set-registration-initiation'
+    ],
+    [
+        'sfd-hdstx',
+        'application/vnd.hydrostatix.sof-data'
+    ],
+    [
+        'sfs',
+        'application/vnd.spotfire.sfs'
+    ],
+    [
+        'sfv',
+        'text/x-sfv'
+    ],
+    [
+        'sgi',
+        'image/sgi'
+    ],
+    [
+        'sgl',
+        'application/vnd.stardivision.writer-global'
+    ],
+    [
+        'sgm',
+        'text/sgml'
+    ],
+    [
+        'sgml',
+        'text/sgml'
+    ],
+    [
+        'sh',
+        'application/x-sh'
+    ],
+    [
+        'shar',
+        'application/x-shar'
+    ],
+    [
+        'shex',
+        'text/shex'
+    ],
+    [
+        'shf',
+        'application/shf+xml'
+    ],
+    [
+        'shtml',
+        'text/html'
+    ],
+    [
+        'sid',
+        'image/x-mrsid-image'
+    ],
+    [
+        'sieve',
+        'application/sieve'
+    ],
+    [
+        'sig',
+        'application/pgp-signature'
+    ],
+    [
+        'sil',
+        'audio/silk'
+    ],
+    [
+        'silo',
+        'model/mesh'
+    ],
+    [
+        'sis',
+        'application/vnd.symbian.install'
+    ],
+    [
+        'sisx',
+        'application/vnd.symbian.install'
+    ],
+    [
+        'sit',
+        'application/x-stuffit'
+    ],
+    [
+        'sitx',
+        'application/x-stuffitx'
+    ],
+    [
+        'siv',
+        'application/sieve'
+    ],
+    [
+        'skd',
+        'application/vnd.koan'
+    ],
+    [
+        'skm',
+        'application/vnd.koan'
+    ],
+    [
+        'skp',
+        'application/vnd.koan'
+    ],
+    [
+        'skt',
+        'application/vnd.koan'
+    ],
+    [
+        'sldm',
+        'application/vnd.ms-powerpoint.slide.macroenabled.12'
+    ],
+    [
+        'sldx',
+        'application/vnd.openxmlformats-officedocument.presentationml.slide'
+    ],
+    [
+        'slim',
+        'text/slim'
+    ],
+    [
+        'slm',
+        'text/slim'
+    ],
+    [
+        'sls',
+        'application/route-s-tsid+xml'
+    ],
+    [
+        'slt',
+        'application/vnd.epson.salt'
+    ],
+    [
+        'sm',
+        'application/vnd.stepmania.stepchart'
+    ],
+    [
+        'smf',
+        'application/vnd.stardivision.math'
+    ],
+    [
+        'smi',
+        'application/smil'
+    ],
+    [
+        'smil',
+        'application/smil'
+    ],
+    [
+        'smv',
+        'video/x-smv'
+    ],
+    [
+        'smzip',
+        'application/vnd.stepmania.package'
+    ],
+    [
+        'snd',
+        'audio/basic'
+    ],
+    [
+        'snf',
+        'application/x-font-snf'
+    ],
+    [
+        'so',
+        'application/octet-stream'
+    ],
+    [
+        'spc',
+        'application/x-pkcs7-certificates'
+    ],
+    [
+        'spdx',
+        'text/spdx'
+    ],
+    [
+        'spf',
+        'application/vnd.yamaha.smaf-phrase'
+    ],
+    [
+        'spl',
+        'application/x-futuresplash'
+    ],
+    [
+        'spot',
+        'text/vnd.in3d.spot'
+    ],
+    [
+        'spp',
+        'application/scvp-vp-response'
+    ],
+    [
+        'spq',
+        'application/scvp-vp-request'
+    ],
+    [
+        'spx',
+        'audio/ogg'
+    ],
+    [
+        'sql',
+        'application/x-sql'
+    ],
+    [
+        'src',
+        'application/x-wais-source'
+    ],
+    [
+        'srt',
+        'application/x-subrip'
+    ],
+    [
+        'sru',
+        'application/sru+xml'
+    ],
+    [
+        'srx',
+        'application/sparql-results+xml'
+    ],
+    [
+        'ssdl',
+        'application/ssdl+xml'
+    ],
+    [
+        'sse',
+        'application/vnd.kodak-descriptor'
+    ],
+    [
+        'ssf',
+        'application/vnd.epson.ssf'
+    ],
+    [
+        'ssml',
+        'application/ssml+xml'
+    ],
+    [
+        'sst',
+        'application/octet-stream'
+    ],
+    [
+        'st',
+        'application/vnd.sailingtracker.track'
+    ],
+    [
+        'stc',
+        'application/vnd.sun.xml.calc.template'
+    ],
+    [
+        'std',
+        'application/vnd.sun.xml.draw.template'
+    ],
+    [
+        'stf',
+        'application/vnd.wt.stf'
+    ],
+    [
+        'sti',
+        'application/vnd.sun.xml.impress.template'
+    ],
+    [
+        'stk',
+        'application/hyperstudio'
+    ],
+    [
+        'stl',
+        'model/stl'
+    ],
+    [
+        'stpx',
+        'model/step+xml'
+    ],
+    [
+        'stpxz',
+        'model/step-xml+zip'
+    ],
+    [
+        'stpz',
+        'model/step+zip'
+    ],
+    [
+        'str',
+        'application/vnd.pg.format'
+    ],
+    [
+        'stw',
+        'application/vnd.sun.xml.writer.template'
+    ],
+    [
+        'styl',
+        'text/stylus'
+    ],
+    [
+        'stylus',
+        'text/stylus'
+    ],
+    [
+        'sub',
+        'text/vnd.dvb.subtitle'
+    ],
+    [
+        'sus',
+        'application/vnd.sus-calendar'
+    ],
+    [
+        'susp',
+        'application/vnd.sus-calendar'
+    ],
+    [
+        'sv4cpio',
+        'application/x-sv4cpio'
+    ],
+    [
+        'sv4crc',
+        'application/x-sv4crc'
+    ],
+    [
+        'svc',
+        'application/vnd.dvb.service'
+    ],
+    [
+        'svd',
+        'application/vnd.svd'
+    ],
+    [
+        'svg',
+        'image/svg+xml'
+    ],
+    [
+        'svgz',
+        'image/svg+xml'
+    ],
+    [
+        'swa',
+        'application/x-director'
+    ],
+    [
+        'swf',
+        'application/x-shockwave-flash'
+    ],
+    [
+        'swi',
+        'application/vnd.aristanetworks.swi'
+    ],
+    [
+        'swidtag',
+        'application/swid+xml'
+    ],
+    [
+        'sxc',
+        'application/vnd.sun.xml.calc'
+    ],
+    [
+        'sxd',
+        'application/vnd.sun.xml.draw'
+    ],
+    [
+        'sxg',
+        'application/vnd.sun.xml.writer.global'
+    ],
+    [
+        'sxi',
+        'application/vnd.sun.xml.impress'
+    ],
+    [
+        'sxm',
+        'application/vnd.sun.xml.math'
+    ],
+    [
+        'sxw',
+        'application/vnd.sun.xml.writer'
+    ],
+    [
+        't',
+        'text/troff'
+    ],
+    [
+        't3',
+        'application/x-t3vm-image'
+    ],
+    [
+        't38',
+        'image/t38'
+    ],
+    [
+        'taglet',
+        'application/vnd.mynfc'
+    ],
+    [
+        'tao',
+        'application/vnd.tao.intent-module-archive'
+    ],
+    [
+        'tap',
+        'image/vnd.tencent.tap'
+    ],
+    [
+        'tar',
+        'application/x-tar'
+    ],
+    [
+        'tcap',
+        'application/vnd.3gpp2.tcap'
+    ],
+    [
+        'tcl',
+        'application/x-tcl'
+    ],
+    [
+        'td',
+        'application/urc-targetdesc+xml'
+    ],
+    [
+        'teacher',
+        'application/vnd.smart.teacher'
+    ],
+    [
+        'tei',
+        'application/tei+xml'
+    ],
+    [
+        'teicorpus',
+        'application/tei+xml'
+    ],
+    [
+        'tex',
+        'application/x-tex'
+    ],
+    [
+        'texi',
+        'application/x-texinfo'
+    ],
+    [
+        'texinfo',
+        'application/x-texinfo'
+    ],
+    [
+        'text',
+        'text/plain'
+    ],
+    [
+        'tfi',
+        'application/thraud+xml'
+    ],
+    [
+        'tfm',
+        'application/x-tex-tfm'
+    ],
+    [
+        'tfx',
+        'image/tiff-fx'
+    ],
+    [
+        'tga',
+        'image/x-tga'
+    ],
+    [
+        'tgz',
+        'application/x-tar'
+    ],
+    [
+        'thmx',
+        'application/vnd.ms-officetheme'
+    ],
+    [
+        'tif',
+        'image/tiff'
+    ],
+    [
+        'tiff',
+        'image/tiff'
+    ],
+    [
+        'tk',
+        'application/x-tcl'
+    ],
+    [
+        'tmo',
+        'application/vnd.tmobile-livetv'
+    ],
+    [
+        'toml',
+        'application/toml'
+    ],
+    [
+        'torrent',
+        'application/x-bittorrent'
+    ],
+    [
+        'tpl',
+        'application/vnd.groove-tool-template'
+    ],
+    [
+        'tpt',
+        'application/vnd.trid.tpt'
+    ],
+    [
+        'tr',
+        'text/troff'
+    ],
+    [
+        'tra',
+        'application/vnd.trueapp'
+    ],
+    [
+        'trig',
+        'application/trig'
+    ],
+    [
+        'trm',
+        'application/x-msterminal'
+    ],
+    [
+        'ts',
+        'video/mp2t'
+    ],
+    [
+        'tsd',
+        'application/timestamped-data'
+    ],
+    [
+        'tsv',
+        'text/tab-separated-values'
+    ],
+    [
+        'ttc',
+        'font/collection'
+    ],
+    [
+        'ttf',
+        'font/ttf'
+    ],
+    [
+        'ttl',
+        'text/turtle'
+    ],
+    [
+        'ttml',
+        'application/ttml+xml'
+    ],
+    [
+        'twd',
+        'application/vnd.simtech-mindmapper'
+    ],
+    [
+        'twds',
+        'application/vnd.simtech-mindmapper'
+    ],
+    [
+        'txd',
+        'application/vnd.genomatix.tuxedo'
+    ],
+    [
+        'txf',
+        'application/vnd.mobius.txf'
+    ],
+    [
+        'txt',
+        'text/plain'
+    ],
+    [
+        'u8dsn',
+        'message/global-delivery-status'
+    ],
+    [
+        'u8hdr',
+        'message/global-headers'
+    ],
+    [
+        'u8mdn',
+        'message/global-disposition-notification'
+    ],
+    [
+        'u8msg',
+        'message/global'
+    ],
+    [
+        'u32',
+        'application/x-authorware-bin'
+    ],
+    [
+        'ubj',
+        'application/ubjson'
+    ],
+    [
+        'udeb',
+        'application/x-debian-package'
+    ],
+    [
+        'ufd',
+        'application/vnd.ufdl'
+    ],
+    [
+        'ufdl',
+        'application/vnd.ufdl'
+    ],
+    [
+        'ulx',
+        'application/x-glulx'
+    ],
+    [
+        'umj',
+        'application/vnd.umajin'
+    ],
+    [
+        'unityweb',
+        'application/vnd.unity'
+    ],
+    [
+        'uoml',
+        'application/vnd.uoml+xml'
+    ],
+    [
+        'uri',
+        'text/uri-list'
+    ],
+    [
+        'uris',
+        'text/uri-list'
+    ],
+    [
+        'urls',
+        'text/uri-list'
+    ],
+    [
+        'usdz',
+        'model/vnd.usdz+zip'
+    ],
+    [
+        'ustar',
+        'application/x-ustar'
+    ],
+    [
+        'utz',
+        'application/vnd.uiq.theme'
+    ],
+    [
+        'uu',
+        'text/x-uuencode'
+    ],
+    [
+        'uva',
+        'audio/vnd.dece.audio'
+    ],
+    [
+        'uvd',
+        'application/vnd.dece.data'
+    ],
+    [
+        'uvf',
+        'application/vnd.dece.data'
+    ],
+    [
+        'uvg',
+        'image/vnd.dece.graphic'
+    ],
+    [
+        'uvh',
+        'video/vnd.dece.hd'
+    ],
+    [
+        'uvi',
+        'image/vnd.dece.graphic'
+    ],
+    [
+        'uvm',
+        'video/vnd.dece.mobile'
+    ],
+    [
+        'uvp',
+        'video/vnd.dece.pd'
+    ],
+    [
+        'uvs',
+        'video/vnd.dece.sd'
+    ],
+    [
+        'uvt',
+        'application/vnd.dece.ttml+xml'
+    ],
+    [
+        'uvu',
+        'video/vnd.uvvu.mp4'
+    ],
+    [
+        'uvv',
+        'video/vnd.dece.video'
+    ],
+    [
+        'uvva',
+        'audio/vnd.dece.audio'
+    ],
+    [
+        'uvvd',
+        'application/vnd.dece.data'
+    ],
+    [
+        'uvvf',
+        'application/vnd.dece.data'
+    ],
+    [
+        'uvvg',
+        'image/vnd.dece.graphic'
+    ],
+    [
+        'uvvh',
+        'video/vnd.dece.hd'
+    ],
+    [
+        'uvvi',
+        'image/vnd.dece.graphic'
+    ],
+    [
+        'uvvm',
+        'video/vnd.dece.mobile'
+    ],
+    [
+        'uvvp',
+        'video/vnd.dece.pd'
+    ],
+    [
+        'uvvs',
+        'video/vnd.dece.sd'
+    ],
+    [
+        'uvvt',
+        'application/vnd.dece.ttml+xml'
+    ],
+    [
+        'uvvu',
+        'video/vnd.uvvu.mp4'
+    ],
+    [
+        'uvvv',
+        'video/vnd.dece.video'
+    ],
+    [
+        'uvvx',
+        'application/vnd.dece.unspecified'
+    ],
+    [
+        'uvvz',
+        'application/vnd.dece.zip'
+    ],
+    [
+        'uvx',
+        'application/vnd.dece.unspecified'
+    ],
+    [
+        'uvz',
+        'application/vnd.dece.zip'
+    ],
+    [
+        'vbox',
+        'application/x-virtualbox-vbox'
+    ],
+    [
+        'vbox-extpack',
+        'application/x-virtualbox-vbox-extpack'
+    ],
+    [
+        'vcard',
+        'text/vcard'
+    ],
+    [
+        'vcd',
+        'application/x-cdlink'
+    ],
+    [
+        'vcf',
+        'text/x-vcard'
+    ],
+    [
+        'vcg',
+        'application/vnd.groove-vcard'
+    ],
+    [
+        'vcs',
+        'text/x-vcalendar'
+    ],
+    [
+        'vcx',
+        'application/vnd.vcx'
+    ],
+    [
+        'vdi',
+        'application/x-virtualbox-vdi'
+    ],
+    [
+        'vds',
+        'model/vnd.sap.vds'
+    ],
+    [
+        'vhd',
+        'application/x-virtualbox-vhd'
+    ],
+    [
+        'vis',
+        'application/vnd.visionary'
+    ],
+    [
+        'viv',
+        'video/vnd.vivo'
+    ],
+    [
+        'vlc',
+        'application/videolan'
+    ],
+    [
+        'vmdk',
+        'application/x-virtualbox-vmdk'
+    ],
+    [
+        'vob',
+        'video/x-ms-vob'
+    ],
+    [
+        'vor',
+        'application/vnd.stardivision.writer'
+    ],
+    [
+        'vox',
+        'application/x-authorware-bin'
+    ],
+    [
+        'vrml',
+        'model/vrml'
+    ],
+    [
+        'vsd',
+        'application/vnd.visio'
+    ],
+    [
+        'vsf',
+        'application/vnd.vsf'
+    ],
+    [
+        'vss',
+        'application/vnd.visio'
+    ],
+    [
+        'vst',
+        'application/vnd.visio'
+    ],
+    [
+        'vsw',
+        'application/vnd.visio'
+    ],
+    [
+        'vtf',
+        'image/vnd.valve.source.texture'
+    ],
+    [
+        'vtt',
+        'text/vtt'
+    ],
+    [
+        'vtu',
+        'model/vnd.vtu'
+    ],
+    [
+        'vxml',
+        'application/voicexml+xml'
+    ],
+    [
+        'w3d',
+        'application/x-director'
+    ],
+    [
+        'wad',
+        'application/x-doom'
+    ],
+    [
+        'wadl',
+        'application/vnd.sun.wadl+xml'
+    ],
+    [
+        'war',
+        'application/java-archive'
+    ],
+    [
+        'wasm',
+        'application/wasm'
+    ],
+    [
+        'wav',
+        'audio/x-wav'
+    ],
+    [
+        'wax',
+        'audio/x-ms-wax'
+    ],
+    [
+        'wbmp',
+        'image/vnd.wap.wbmp'
+    ],
+    [
+        'wbs',
+        'application/vnd.criticaltools.wbs+xml'
+    ],
+    [
+        'wbxml',
+        'application/wbxml'
+    ],
+    [
+        'wcm',
+        'application/vnd.ms-works'
+    ],
+    [
+        'wdb',
+        'application/vnd.ms-works'
+    ],
+    [
+        'wdp',
+        'image/vnd.ms-photo'
+    ],
+    [
+        'weba',
+        'audio/webm'
+    ],
+    [
+        'webapp',
+        'application/x-web-app-manifest+json'
+    ],
+    [
+        'webm',
+        'video/webm'
+    ],
+    [
+        'webmanifest',
+        'application/manifest+json'
+    ],
+    [
+        'webp',
+        'image/webp'
+    ],
+    [
+        'wg',
+        'application/vnd.pmi.widget'
+    ],
+    [
+        'wgt',
+        'application/widget'
+    ],
+    [
+        'wks',
+        'application/vnd.ms-works'
+    ],
+    [
+        'wm',
+        'video/x-ms-wm'
+    ],
+    [
+        'wma',
+        'audio/x-ms-wma'
+    ],
+    [
+        'wmd',
+        'application/x-ms-wmd'
+    ],
+    [
+        'wmf',
+        'image/wmf'
+    ],
+    [
+        'wml',
+        'text/vnd.wap.wml'
+    ],
+    [
+        'wmlc',
+        'application/wmlc'
+    ],
+    [
+        'wmls',
+        'text/vnd.wap.wmlscript'
+    ],
+    [
+        'wmlsc',
+        'application/vnd.wap.wmlscriptc'
+    ],
+    [
+        'wmv',
+        'video/x-ms-wmv'
+    ],
+    [
+        'wmx',
+        'video/x-ms-wmx'
+    ],
+    [
+        'wmz',
+        'application/x-msmetafile'
+    ],
+    [
+        'woff',
+        'font/woff'
+    ],
+    [
+        'woff2',
+        'font/woff2'
+    ],
+    [
+        'word',
+        'application/msword'
+    ],
+    [
+        'wpd',
+        'application/vnd.wordperfect'
+    ],
+    [
+        'wpl',
+        'application/vnd.ms-wpl'
+    ],
+    [
+        'wps',
+        'application/vnd.ms-works'
+    ],
+    [
+        'wqd',
+        'application/vnd.wqd'
+    ],
+    [
+        'wri',
+        'application/x-mswrite'
+    ],
+    [
+        'wrl',
+        'model/vrml'
+    ],
+    [
+        'wsc',
+        'message/vnd.wfa.wsc'
+    ],
+    [
+        'wsdl',
+        'application/wsdl+xml'
+    ],
+    [
+        'wspolicy',
+        'application/wspolicy+xml'
+    ],
+    [
+        'wtb',
+        'application/vnd.webturbo'
+    ],
+    [
+        'wvx',
+        'video/x-ms-wvx'
+    ],
+    [
+        'x3d',
+        'model/x3d+xml'
+    ],
+    [
+        'x3db',
+        'model/x3d+fastinfoset'
+    ],
+    [
+        'x3dbz',
+        'model/x3d+binary'
+    ],
+    [
+        'x3dv',
+        'model/x3d-vrml'
+    ],
+    [
+        'x3dvz',
+        'model/x3d+vrml'
+    ],
+    [
+        'x3dz',
+        'model/x3d+xml'
+    ],
+    [
+        'x32',
+        'application/x-authorware-bin'
+    ],
+    [
+        'x_b',
+        'model/vnd.parasolid.transmit.binary'
+    ],
+    [
+        'x_t',
+        'model/vnd.parasolid.transmit.text'
+    ],
+    [
+        'xaml',
+        'application/xaml+xml'
+    ],
+    [
+        'xap',
+        'application/x-silverlight-app'
+    ],
+    [
+        'xar',
+        'application/vnd.xara'
+    ],
+    [
+        'xav',
+        'application/xcap-att+xml'
+    ],
+    [
+        'xbap',
+        'application/x-ms-xbap'
+    ],
+    [
+        'xbd',
+        'application/vnd.fujixerox.docuworks.binder'
+    ],
+    [
+        'xbm',
+        'image/x-xbitmap'
+    ],
+    [
+        'xca',
+        'application/xcap-caps+xml'
+    ],
+    [
+        'xcs',
+        'application/calendar+xml'
+    ],
+    [
+        'xdf',
+        'application/xcap-diff+xml'
+    ],
+    [
+        'xdm',
+        'application/vnd.syncml.dm+xml'
+    ],
+    [
+        'xdp',
+        'application/vnd.adobe.xdp+xml'
+    ],
+    [
+        'xdssc',
+        'application/dssc+xml'
+    ],
+    [
+        'xdw',
+        'application/vnd.fujixerox.docuworks'
+    ],
+    [
+        'xel',
+        'application/xcap-el+xml'
+    ],
+    [
+        'xenc',
+        'application/xenc+xml'
+    ],
+    [
+        'xer',
+        'application/patch-ops-error+xml'
+    ],
+    [
+        'xfdf',
+        'application/vnd.adobe.xfdf'
+    ],
+    [
+        'xfdl',
+        'application/vnd.xfdl'
+    ],
+    [
+        'xht',
+        'application/xhtml+xml'
+    ],
+    [
+        'xhtml',
+        'application/xhtml+xml'
+    ],
+    [
+        'xhvml',
+        'application/xv+xml'
+    ],
+    [
+        'xif',
+        'image/vnd.xiff'
+    ],
+    [
+        'xl',
+        'application/excel'
+    ],
+    [
+        'xla',
+        'application/vnd.ms-excel'
+    ],
+    [
+        'xlam',
+        'application/vnd.ms-excel.addin.macroEnabled.12'
+    ],
+    [
+        'xlc',
+        'application/vnd.ms-excel'
+    ],
+    [
+        'xlf',
+        'application/xliff+xml'
+    ],
+    [
+        'xlm',
+        'application/vnd.ms-excel'
+    ],
+    [
+        'xls',
+        'application/vnd.ms-excel'
+    ],
+    [
+        'xlsb',
+        'application/vnd.ms-excel.sheet.binary.macroEnabled.12'
+    ],
+    [
+        'xlsm',
+        'application/vnd.ms-excel.sheet.macroEnabled.12'
+    ],
+    [
+        'xlsx',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    ],
+    [
+        'xlt',
+        'application/vnd.ms-excel'
+    ],
+    [
+        'xltm',
+        'application/vnd.ms-excel.template.macroEnabled.12'
+    ],
+    [
+        'xltx',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.template'
+    ],
+    [
+        'xlw',
+        'application/vnd.ms-excel'
+    ],
+    [
+        'xm',
+        'audio/xm'
+    ],
+    [
+        'xml',
+        'application/xml'
+    ],
+    [
+        'xns',
+        'application/xcap-ns+xml'
+    ],
+    [
+        'xo',
+        'application/vnd.olpc-sugar'
+    ],
+    [
+        'xop',
+        'application/xop+xml'
+    ],
+    [
+        'xpi',
+        'application/x-xpinstall'
+    ],
+    [
+        'xpl',
+        'application/xproc+xml'
+    ],
+    [
+        'xpm',
+        'image/x-xpixmap'
+    ],
+    [
+        'xpr',
+        'application/vnd.is-xpr'
+    ],
+    [
+        'xps',
+        'application/vnd.ms-xpsdocument'
+    ],
+    [
+        'xpw',
+        'application/vnd.intercon.formnet'
+    ],
+    [
+        'xpx',
+        'application/vnd.intercon.formnet'
+    ],
+    [
+        'xsd',
+        'application/xml'
+    ],
+    [
+        'xsl',
+        'application/xml'
+    ],
+    [
+        'xslt',
+        'application/xslt+xml'
+    ],
+    [
+        'xsm',
+        'application/vnd.syncml+xml'
+    ],
+    [
+        'xspf',
+        'application/xspf+xml'
+    ],
+    [
+        'xul',
+        'application/vnd.mozilla.xul+xml'
+    ],
+    [
+        'xvm',
+        'application/xv+xml'
+    ],
+    [
+        'xvml',
+        'application/xv+xml'
+    ],
+    [
+        'xwd',
+        'image/x-xwindowdump'
+    ],
+    [
+        'xyz',
+        'chemical/x-xyz'
+    ],
+    [
+        'xz',
+        'application/x-xz'
+    ],
+    [
+        'yaml',
+        'text/yaml'
+    ],
+    [
+        'yang',
+        'application/yang'
+    ],
+    [
+        'yin',
+        'application/yin+xml'
+    ],
+    [
+        'yml',
+        'text/yaml'
+    ],
+    [
+        'ymp',
+        'text/x-suse-ymp'
+    ],
+    [
+        'z',
+        'application/x-compress'
+    ],
+    [
+        'z1',
+        'application/x-zmachine'
+    ],
+    [
+        'z2',
+        'application/x-zmachine'
+    ],
+    [
+        'z3',
+        'application/x-zmachine'
+    ],
+    [
+        'z4',
+        'application/x-zmachine'
+    ],
+    [
+        'z5',
+        'application/x-zmachine'
+    ],
+    [
+        'z6',
+        'application/x-zmachine'
+    ],
+    [
+        'z7',
+        'application/x-zmachine'
+    ],
+    [
+        'z8',
+        'application/x-zmachine'
+    ],
+    [
+        'zaz',
+        'application/vnd.zzazz.deck+xml'
+    ],
+    [
+        'zip',
+        'application/zip'
+    ],
+    [
+        'zir',
+        'application/vnd.zul'
+    ],
+    [
+        'zirz',
+        'application/vnd.zul'
+    ],
+    [
+        'zmm',
+        'application/vnd.handheld-entertainment+xml'
+    ],
+    [
+        'zsh',
+        'text/x-scriptzsh'
+    ]
+]);
+function toFileWithPath(file, path, h) {
+    const f = withMimeType(file);
+    const { webkitRelativePath } = file;
+    const p = typeof path === 'string' ? path : typeof webkitRelativePath === 'string' && webkitRelativePath.length > 0 ? webkitRelativePath : `./${file.name}`;
+    if (typeof f.path !== 'string') {
+        setObjProp(f, 'path', p);
+    }
+    if (h !== undefined) {
+        Object.defineProperty(f, 'handle', {
+            value: h,
+            writable: false,
+            configurable: false,
+            enumerable: true
+        });
+    }
+    // Always populate a relative path so that even electron apps have access to a relativePath value
+    setObjProp(f, 'relativePath', p);
+    return f;
+}
+function withMimeType(file) {
+    const { name } = file;
+    const hasExtension = name && name.lastIndexOf('.') !== -1;
+    if (hasExtension && !file.type) {
+        const ext = name.split('.').pop().toLowerCase();
+        const type = COMMON_MIME_TYPES.get(ext);
+        if (type) {
+            Object.defineProperty(file, 'type', {
+                value: type,
+                writable: false,
+                configurable: false,
+                enumerable: true
+            });
+        }
+    }
+    return file;
+}
+function setObjProp(f, key, value) {
+    Object.defineProperty(f, key, {
+        value,
+        writable: false,
+        configurable: false,
+        enumerable: true
+    });
+} //# sourceMappingURL=file.js.map
+}),
+"[project]/frontend/node_modules/file-selector/dist/es2015/file-selector.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "fromEvent",
+    ()=>fromEvent
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/tslib/tslib.es6.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/file-selector/dist/es2015/file.js [app-ssr] (ecmascript)");
+;
+;
+const FILES_TO_IGNORE = [
+    // Thumbnail cache files for macOS and Windows
+    '.DS_Store',
+    'Thumbs.db' // Windows
+];
+function fromEvent(evt) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, void 0, void 0, function*() {
+        if (isObject(evt) && isDataTransfer(evt.dataTransfer)) {
+            return getDataTransferFiles(evt.dataTransfer, evt.type);
+        } else if (isChangeEvt(evt)) {
+            return getInputFiles(evt);
+        } else if (Array.isArray(evt) && evt.every((item)=>'getFile' in item && typeof item.getFile === 'function')) {
+            return getFsHandleFiles(evt);
+        }
+        return [];
+    });
+}
+function isDataTransfer(value) {
+    return isObject(value);
+}
+function isChangeEvt(value) {
+    return isObject(value) && isObject(value.target);
+}
+function isObject(v) {
+    return typeof v === 'object' && v !== null;
+}
+function getInputFiles(evt) {
+    return fromList(evt.target.files).map((file)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toFileWithPath"])(file));
+}
+// Ee expect each handle to be https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle
+function getFsHandleFiles(handles) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, void 0, void 0, function*() {
+        const files = yield Promise.all(handles.map((h)=>h.getFile()));
+        return files.map((file)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toFileWithPath"])(file));
+    });
+}
+function getDataTransferFiles(dt, type) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, void 0, void 0, function*() {
+        // IE11 does not support dataTransfer.items
+        // See https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items#Browser_compatibility
+        if (dt.items) {
+            const items = fromList(dt.items).filter((item)=>item.kind === 'file');
+            // According to https://html.spec.whatwg.org/multipage/dnd.html#dndevents,
+            // only 'dragstart' and 'drop' has access to the data (source node)
+            if (type !== 'drop') {
+                return items;
+            }
+            const files = yield Promise.all(items.map(toFilePromises));
+            return noIgnoredFiles(flatten(files));
+        }
+        return noIgnoredFiles(fromList(dt.files).map((file)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toFileWithPath"])(file)));
+    });
+}
+function noIgnoredFiles(files) {
+    return files.filter((file)=>FILES_TO_IGNORE.indexOf(file.name) === -1);
+}
+// IE11 does not support Array.from()
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#Browser_compatibility
+// https://developer.mozilla.org/en-US/docs/Web/API/FileList
+// https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList
+function fromList(items) {
+    if (items === null) {
+        return [];
+    }
+    const files = [];
+    // tslint:disable: prefer-for-of
+    for(let i = 0; i < items.length; i++){
+        const file = items[i];
+        files.push(file);
+    }
+    return files;
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem
+function toFilePromises(item) {
+    if (typeof item.webkitGetAsEntry !== 'function') {
+        return fromDataTransferItem(item);
+    }
+    const entry = item.webkitGetAsEntry();
+    // Safari supports dropping an image node from a different window and can be retrieved using
+    // the DataTransferItem.getAsFile() API
+    // NOTE: FileSystemEntry.file() throws if trying to get the file
+    if (entry && entry.isDirectory) {
+        return fromDirEntry(entry);
+    }
+    return fromDataTransferItem(item, entry);
+}
+function flatten(items) {
+    return items.reduce((acc, files)=>[
+            ...acc,
+            ...Array.isArray(files) ? flatten(files) : [
+                files
+            ]
+        ], []);
+}
+function fromDataTransferItem(item, entry) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, void 0, void 0, function*() {
+        var _a;
+        // Check if we're in a secure context; due to a bug in Chrome (as far as we know)
+        // the browser crashes when calling this API (yet to be confirmed as a consistent behaviour).
+        //
+        // See:
+        // - https://issues.chromium.org/issues/40186242
+        // - https://github.com/react-dropzone/react-dropzone/issues/1397
+        if (globalThis.isSecureContext && typeof item.getAsFileSystemHandle === 'function') {
+            const h = yield item.getAsFileSystemHandle();
+            if (h === null) {
+                throw new Error(`${item} is not a File`);
+            }
+            // It seems that the handle can be `undefined` (see https://github.com/react-dropzone/file-selector/issues/120),
+            // so we check if it isn't; if it is, the code path continues to the next API (`getAsFile`).
+            if (h !== undefined) {
+                const file = yield h.getFile();
+                file.handle = h;
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toFileWithPath"])(file);
+            }
+        }
+        const file = item.getAsFile();
+        if (!file) {
+            throw new Error(`${item} is not a File`);
+        }
+        const fwp = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toFileWithPath"])(file, (_a = entry === null || entry === void 0 ? void 0 : entry.fullPath) !== null && _a !== void 0 ? _a : undefined);
+        return fwp;
+    });
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry
+function fromEntry(entry) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, void 0, void 0, function*() {
+        return entry.isDirectory ? fromDirEntry(entry) : fromFileEntry(entry);
+    });
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry
+function fromDirEntry(entry) {
+    const reader = entry.createReader();
+    return new Promise((resolve, reject)=>{
+        const entries = [];
+        function readEntries() {
+            // https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/createReader
+            // https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader/readEntries
+            reader.readEntries((batch)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, void 0, void 0, function*() {
+                    if (!batch.length) {
+                        // Done reading directory
+                        try {
+                            const files = yield Promise.all(entries);
+                            resolve(files);
+                        } catch (err) {
+                            reject(err);
+                        }
+                    } else {
+                        const items = Promise.all(batch.map(fromEntry));
+                        entries.push(items);
+                        // Continue reading
+                        readEntries();
+                    }
+                }), (err)=>{
+                reject(err);
+            });
+        }
+        readEntries();
+    });
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry
+function fromFileEntry(entry) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["__awaiter"])(this, void 0, void 0, function*() {
+        return new Promise((resolve, reject)=>{
+            entry.file((file)=>{
+                const fwp = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toFileWithPath"])(file, entry.fullPath);
+                resolve(fwp);
+            }, (err)=>{
+                reject(err);
+            });
+        });
+    });
+} //# sourceMappingURL=file-selector.js.map
+}),
+"[project]/frontend/node_modules/file-selector/dist/es2015/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2d$selector$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/file-selector/dist/es2015/file-selector.js [app-ssr] (ecmascript)"); //# sourceMappingURL=index.js.map
+;
+}),
+"[project]/frontend/node_modules/attr-accept/dist/es/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+exports.__esModule = true;
+exports.default = function(file, acceptedFiles) {
+    if (file && acceptedFiles) {
+        var acceptedFilesArray = Array.isArray(acceptedFiles) ? acceptedFiles : acceptedFiles.split(',');
+        if (acceptedFilesArray.length === 0) {
+            return true;
+        }
+        var fileName = file.name || '';
+        var mimeType = (file.type || '').toLowerCase();
+        var baseMimeType = mimeType.replace(/\/.*$/, '');
+        return acceptedFilesArray.some(function(type) {
+            var validType = type.trim().toLowerCase();
+            if (validType.charAt(0) === '.') {
+                return fileName.toLowerCase().endsWith(validType);
+            } else if (validType.endsWith('/*')) {
+                // This is something like a image/* mime type
+                return baseMimeType === validType.replace(/\/.*$/, '');
+            }
+            return mimeType === validType;
+        });
+    }
+    return true;
+};
+}),
+"[project]/frontend/node_modules/react-dropzone/dist/es/utils/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ErrorCode",
+    ()=>ErrorCode,
+    "FILE_INVALID_TYPE",
+    ()=>FILE_INVALID_TYPE,
+    "FILE_TOO_LARGE",
+    ()=>FILE_TOO_LARGE,
+    "FILE_TOO_SMALL",
+    ()=>FILE_TOO_SMALL,
+    "TOO_MANY_FILES",
+    ()=>TOO_MANY_FILES,
+    "TOO_MANY_FILES_REJECTION",
+    ()=>TOO_MANY_FILES_REJECTION,
+    "acceptPropAsAcceptAttr",
+    ()=>acceptPropAsAcceptAttr,
+    "allFilesAccepted",
+    ()=>allFilesAccepted,
+    "canUseFileSystemAccessAPI",
+    ()=>canUseFileSystemAccessAPI,
+    "composeEventHandlers",
+    ()=>composeEventHandlers,
+    "fileAccepted",
+    ()=>fileAccepted,
+    "fileMatchSize",
+    ()=>fileMatchSize,
+    "getInvalidTypeRejectionErr",
+    ()=>getInvalidTypeRejectionErr,
+    "getTooLargeRejectionErr",
+    ()=>getTooLargeRejectionErr,
+    "getTooSmallRejectionErr",
+    ()=>getTooSmallRejectionErr,
+    "isAbort",
+    ()=>isAbort,
+    "isEvtWithFiles",
+    ()=>isEvtWithFiles,
+    "isExt",
+    ()=>isExt,
+    "isIeOrEdge",
+    ()=>isIeOrEdge,
+    "isKindFile",
+    ()=>isKindFile,
+    "isMIMEType",
+    ()=>isMIMEType,
+    "isPropagationStopped",
+    ()=>isPropagationStopped,
+    "isSecurityError",
+    ()=>isSecurityError,
+    "onDocumentDragOver",
+    ()=>onDocumentDragOver,
+    "pickerOptionsFromAccept",
+    ()=>pickerOptionsFromAccept
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$attr$2d$accept$2f$dist$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/attr-accept/dist/es/index.js [app-ssr] (ecmascript)");
+function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        enumerableOnly && (symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        })), keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = null != arguments[i] ? arguments[i] : {};
+        i % 2 ? ownKeys(Object(source), !0).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _typeof(obj) {
+    "@babel/helpers - typeof";
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj) {
+        return typeof obj;
+    } : function(obj) {
+        return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    }, _typeof(obj);
+}
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++){
+        arr2[i] = arr[i];
+    }
+    return arr2;
+}
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+;
+var accepts = typeof __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$attr$2d$accept$2f$dist$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"] === "function" ? __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$attr$2d$accept$2f$dist$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"] : __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$attr$2d$accept$2f$dist$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].default; // Error codes
+var FILE_INVALID_TYPE = "file-invalid-type";
+var FILE_TOO_LARGE = "file-too-large";
+var FILE_TOO_SMALL = "file-too-small";
+var TOO_MANY_FILES = "too-many-files";
+var ErrorCode = {
+    FileInvalidType: FILE_INVALID_TYPE,
+    FileTooLarge: FILE_TOO_LARGE,
+    FileTooSmall: FILE_TOO_SMALL,
+    TooManyFiles: TOO_MANY_FILES
+};
+var getInvalidTypeRejectionErr = function getInvalidTypeRejectionErr() {
+    var accept = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var acceptArr = accept.split(",");
+    var msg = acceptArr.length > 1 ? "one of ".concat(acceptArr.join(", ")) : acceptArr[0];
+    return {
+        code: FILE_INVALID_TYPE,
+        message: "File type must be ".concat(msg)
+    };
+};
+var getTooLargeRejectionErr = function getTooLargeRejectionErr(maxSize) {
+    return {
+        code: FILE_TOO_LARGE,
+        message: "File is larger than ".concat(maxSize, " ").concat(maxSize === 1 ? "byte" : "bytes")
+    };
+};
+var getTooSmallRejectionErr = function getTooSmallRejectionErr(minSize) {
+    return {
+        code: FILE_TOO_SMALL,
+        message: "File is smaller than ".concat(minSize, " ").concat(minSize === 1 ? "byte" : "bytes")
+    };
+};
+var TOO_MANY_FILES_REJECTION = {
+    code: TOO_MANY_FILES,
+    message: "Too many files"
+};
+function fileAccepted(file, accept) {
+    var isAcceptable = file.type === "application/x-moz-file" || accepts(file, accept);
+    return [
+        isAcceptable,
+        isAcceptable ? null : getInvalidTypeRejectionErr(accept)
+    ];
+}
+function fileMatchSize(file, minSize, maxSize) {
+    if (isDefined(file.size)) {
+        if (isDefined(minSize) && isDefined(maxSize)) {
+            if (file.size > maxSize) return [
+                false,
+                getTooLargeRejectionErr(maxSize)
+            ];
+            if (file.size < minSize) return [
+                false,
+                getTooSmallRejectionErr(minSize)
+            ];
+        } else if (isDefined(minSize) && file.size < minSize) return [
+            false,
+            getTooSmallRejectionErr(minSize)
+        ];
+        else if (isDefined(maxSize) && file.size > maxSize) return [
+            false,
+            getTooLargeRejectionErr(maxSize)
+        ];
+    }
+    return [
+        true,
+        null
+    ];
+}
+function isDefined(value) {
+    return value !== undefined && value !== null;
+}
+function allFilesAccepted(_ref) {
+    var files = _ref.files, accept = _ref.accept, minSize = _ref.minSize, maxSize = _ref.maxSize, multiple = _ref.multiple, maxFiles = _ref.maxFiles, validator = _ref.validator;
+    if (!multiple && files.length > 1 || multiple && maxFiles >= 1 && files.length > maxFiles) {
+        return false;
+    }
+    return files.every(function(file) {
+        var _fileAccepted = fileAccepted(file, accept), _fileAccepted2 = _slicedToArray(_fileAccepted, 1), accepted = _fileAccepted2[0];
+        var _fileMatchSize = fileMatchSize(file, minSize, maxSize), _fileMatchSize2 = _slicedToArray(_fileMatchSize, 1), sizeMatch = _fileMatchSize2[0];
+        var customErrors = validator ? validator(file) : null;
+        return accepted && sizeMatch && !customErrors;
+    });
+} // React's synthetic events has event.isPropagationStopped,
+function isPropagationStopped(event) {
+    if (typeof event.isPropagationStopped === "function") {
+        return event.isPropagationStopped();
+    } else if (typeof event.cancelBubble !== "undefined") {
+        return event.cancelBubble;
+    }
+    return false;
+}
+function isEvtWithFiles(event) {
+    if (!event.dataTransfer) {
+        return !!event.target && !!event.target.files;
+    } // https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Recommended_drag_types#file
+    return Array.prototype.some.call(event.dataTransfer.types, function(type) {
+        return type === "Files" || type === "application/x-moz-file";
+    });
+}
+function isKindFile(item) {
+    return _typeof(item) === "object" && item !== null && item.kind === "file";
+} // allow the entire document to be a drag target
+function onDocumentDragOver(event) {
+    event.preventDefault();
+}
+function isIe(userAgent) {
+    return userAgent.indexOf("MSIE") !== -1 || userAgent.indexOf("Trident/") !== -1;
+}
+function isEdge(userAgent) {
+    return userAgent.indexOf("Edge/") !== -1;
+}
+function isIeOrEdge() {
+    var userAgent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window.navigator.userAgent;
+    return isIe(userAgent) || isEdge(userAgent);
+}
+function composeEventHandlers() {
+    for(var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++){
+        fns[_key] = arguments[_key];
+    }
+    return function(event) {
+        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++){
+            args[_key2 - 1] = arguments[_key2];
+        }
+        return fns.some(function(fn) {
+            if (!isPropagationStopped(event) && fn) {
+                fn.apply(void 0, [
+                    event
+                ].concat(args));
+            }
+            return isPropagationStopped(event);
+        });
+    };
+}
+function canUseFileSystemAccessAPI() {
+    return "showOpenFilePicker" in window;
+}
+function pickerOptionsFromAccept(accept) {
+    if (isDefined(accept)) {
+        var acceptForPicker = Object.entries(accept).filter(function(_ref2) {
+            var _ref3 = _slicedToArray(_ref2, 2), mimeType = _ref3[0], ext = _ref3[1];
+            var ok = true;
+            if (!isMIMEType(mimeType)) {
+                console.warn("Skipped \"".concat(mimeType, "\" because it is not a valid MIME type. Check https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types for a list of valid MIME types."));
+                ok = false;
+            }
+            if (!Array.isArray(ext) || !ext.every(isExt)) {
+                console.warn("Skipped \"".concat(mimeType, "\" because an invalid file extension was provided."));
+                ok = false;
+            }
+            return ok;
+        }).reduce(function(agg, _ref4) {
+            var _ref5 = _slicedToArray(_ref4, 2), mimeType = _ref5[0], ext = _ref5[1];
+            return _objectSpread(_objectSpread({}, agg), {}, _defineProperty({}, mimeType, ext));
+        }, {});
+        return [
+            {
+                // description is required due to https://crbug.com/1264708
+                description: "Files",
+                accept: acceptForPicker
+            }
+        ];
+    }
+    return accept;
+}
+function acceptPropAsAcceptAttr(accept) {
+    if (isDefined(accept)) {
+        return Object.entries(accept).reduce(function(a, _ref6) {
+            var _ref7 = _slicedToArray(_ref6, 2), mimeType = _ref7[0], ext = _ref7[1];
+            return [].concat(_toConsumableArray(a), [
+                mimeType
+            ], _toConsumableArray(ext));
+        }, []) // Silently discard invalid entries as pickerOptionsFromAccept warns about these
+        .filter(function(v) {
+            return isMIMEType(v) || isExt(v);
+        }).join(",");
+    }
+    return undefined;
+}
+function isAbort(v) {
+    return v instanceof DOMException && (v.name === "AbortError" || v.code === v.ABORT_ERR);
+}
+function isSecurityError(v) {
+    return v instanceof DOMException && (v.name === "SecurityError" || v.code === v.SECURITY_ERR);
+}
+function isMIMEType(v) {
+    return v === "audio/*" || v === "video/*" || v === "image/*" || v === "text/*" || v === "application/*" || /\w+\/[-+.\w]+/g.test(v);
+}
+function isExt(v) {
+    return /^.*\.[\w]+$/.test(v);
+} /**
+ * @typedef {Object.<string, string[]>} AcceptProp
+ */  /**
+ * @typedef {object} FileError
+ * @property {string} message
+ * @property {ErrorCode|string} code
+ */  /**
+ * @typedef {"file-invalid-type"|"file-too-large"|"file-too-small"|"too-many-files"} ErrorCode
+ */ 
+}),
+"[project]/frontend/node_modules/react-dropzone/dist/es/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "useDropzone",
+    ()=>useDropzone
+]);
+/* eslint prefer-template: 0 */ var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/prop-types/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/frontend/node_modules/file-selector/dist/es2015/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2d$selector$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/file-selector/dist/es2015/file-selector.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-dropzone/dist/es/utils/index.js [app-ssr] (ecmascript)");
+var _excluded = [
+    "children"
+], _excluded2 = [
+    "open"
+], _excluded3 = [
+    "refKey",
+    "role",
+    "onKeyDown",
+    "onFocus",
+    "onBlur",
+    "onClick",
+    "onDragEnter",
+    "onDragOver",
+    "onDragLeave",
+    "onDrop"
+], _excluded4 = [
+    "refKey",
+    "onChange",
+    "onClick"
+];
+function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++){
+        arr2[i] = arr[i];
+    }
+    return arr2;
+}
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        enumerableOnly && (symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        })), keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = null != arguments[i] ? arguments[i] : {};
+        i % 2 ? ownKeys(Object(source), !0).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {};
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+    var key, i;
+    if (Object.getOwnPropertySymbols) {
+        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+        for(i = 0; i < sourceSymbolKeys.length; i++){
+            key = sourceSymbolKeys[i];
+            if (excluded.indexOf(key) >= 0) continue;
+            if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+            target[key] = source[key];
+        }
+    }
+    return target;
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+;
+;
+;
+;
+/**
+ * Convenience wrapper component for the `useDropzone` hook
+ *
+ * ```jsx
+ * <Dropzone>
+ *   {({getRootProps, getInputProps}) => (
+ *     <div {...getRootProps()}>
+ *       <input {...getInputProps()} />
+ *       <p>Drag 'n' drop some files here, or click to select files</p>
+ *     </div>
+ *   )}
+ * </Dropzone>
+ * ```
+ */ var Dropzone = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(function(_ref, ref) {
+    var children = _ref.children, params = _objectWithoutProperties(_ref, _excluded);
+    var _useDropzone = useDropzone(params), open = _useDropzone.open, props = _objectWithoutProperties(_useDropzone, _excluded2);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useImperativeHandle"])(ref, function() {
+        return {
+            open: open
+        };
+    }, [
+        open
+    ]); // TODO: Figure out why react-styleguidist cannot create docs if we don't return a jsx element
+    return /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].createElement(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], null, children(_objectSpread(_objectSpread({}, props), {}, {
+        open: open
+    })));
+});
+Dropzone.displayName = "Dropzone"; // Add default props for react-docgen
+var defaultProps = {
+    disabled: false,
+    getFilesFromEvent: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$file$2d$selector$2f$dist$2f$es2015$2f$file$2d$selector$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fromEvent"],
+    maxSize: Infinity,
+    minSize: 0,
+    multiple: true,
+    maxFiles: 0,
+    preventDropOnDocument: true,
+    noClick: false,
+    noKeyboard: false,
+    noDrag: false,
+    noDragEventsBubbling: false,
+    validator: null,
+    useFsAccessApi: false,
+    autoFocus: false
+};
+Dropzone.defaultProps = defaultProps;
+Dropzone.propTypes = {
+    /**
+   * Render function that exposes the dropzone state and prop getter fns
+   *
+   * @param {object} params
+   * @param {Function} params.getRootProps Returns the props you should apply to the root drop container you render
+   * @param {Function} params.getInputProps Returns the props you should apply to hidden file input you render
+   * @param {Function} params.open Open the native file selection dialog
+   * @param {boolean} params.isFocused Dropzone area is in focus
+   * @param {boolean} params.isFileDialogActive File dialog is opened
+   * @param {boolean} params.isDragActive Active drag is in progress
+   * @param {boolean} params.isDragAccept Dragged files are accepted
+   * @param {boolean} params.isDragReject Some dragged files are rejected
+   * @param {File[]} params.acceptedFiles Accepted files
+   * @param {FileRejection[]} params.fileRejections Rejected files and why they were rejected
+   */ children: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Set accepted file types.
+   * Checkout https://developer.mozilla.org/en-US/docs/Web/API/window/showOpenFilePicker types option for more information.
+   * Keep in mind that mime type determination is not reliable across platforms. CSV files,
+   * for example, are reported as text/plain under macOS but as application/vnd.ms-excel under
+   * Windows. In some cases there might not be a mime type set at all (https://github.com/react-dropzone/react-dropzone/issues/276).
+   */ accept: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].objectOf(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].arrayOf(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].string)),
+    /**
+   * Allow drag 'n' drop (or selection from the file dialog) of multiple files
+   */ multiple: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * If false, allow dropped items to take over the current browser window
+   */ preventDropOnDocument: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * If true, disables click to open the native file selection dialog
+   */ noClick: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * If true, disables SPACE/ENTER to open the native file selection dialog.
+   * Note that it also stops tracking the focus state.
+   */ noKeyboard: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * If true, disables drag 'n' drop
+   */ noDrag: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * If true, stops drag event propagation to parents
+   */ noDragEventsBubbling: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * Minimum file size (in bytes)
+   */ minSize: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].number,
+    /**
+   * Maximum file size (in bytes)
+   */ maxSize: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].number,
+    /**
+   * Maximum accepted number of files
+   * The default value is 0 which means there is no limitation to how many files are accepted.
+   */ maxFiles: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].number,
+    /**
+   * Enable/disable the dropzone
+   */ disabled: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * Use this to provide a custom file aggregator
+   *
+   * @param {(DragEvent|Event|Array<FileSystemFileHandle>)} event A drag event or input change event (if files were selected via the file dialog)
+   */ getFilesFromEvent: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when closing the file dialog with no selection
+   */ onFileDialogCancel: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when opening the file dialog
+   */ onFileDialogOpen: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Set to true to use the https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
+   * to open the file picker instead of using an `<input type="file">` click event.
+   */ useFsAccessApi: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * Set to true to focus the root element on render
+   */ autoFocus: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].bool,
+    /**
+   * Cb for when the `dragenter` event occurs.
+   *
+   * @param {DragEvent} event
+   */ onDragEnter: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when the `dragleave` event occurs
+   *
+   * @param {DragEvent} event
+   */ onDragLeave: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when the `dragover` event occurs
+   *
+   * @param {DragEvent} event
+   */ onDragOver: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when the `drop` event occurs.
+   * Note that this callback is invoked after the `getFilesFromEvent` callback is done.
+   *
+   * Files are accepted or rejected based on the `accept`, `multiple`, `minSize` and `maxSize` props.
+   * `accept` must be a valid [MIME type](http://www.iana.org/assignments/media-types/media-types.xhtml) according to [input element specification](https://www.w3.org/wiki/HTML/Elements/input/file) or a valid file extension.
+   * If `multiple` is set to false and additional files are dropped,
+   * all files besides the first will be rejected.
+   * Any file which does not have a size in the [`minSize`, `maxSize`] range, will be rejected as well.
+   *
+   * Note that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.
+   * If you'd like to react to a specific scenario, use the `onDropAccepted`/`onDropRejected` props.
+   *
+   * `onDrop` will provide you with an array of [File](https://developer.mozilla.org/en-US/docs/Web/API/File) objects which you can then process and send to a server.
+   * For example, with [SuperAgent](https://github.com/visionmedia/superagent) as a http/ajax library:
+   *
+   * ```js
+   * function onDrop(acceptedFiles) {
+   *   const req = request.post('/upload')
+   *   acceptedFiles.forEach(file => {
+   *     req.attach(file.name, file)
+   *   })
+   *   req.end(callback)
+   * }
+   * ```
+   *
+   * @param {File[]} acceptedFiles
+   * @param {FileRejection[]} fileRejections
+   * @param {(DragEvent|Event)} event A drag event or input change event (if files were selected via the file dialog)
+   */ onDrop: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when the `drop` event occurs.
+   * Note that if no files are accepted, this callback is not invoked.
+   *
+   * @param {File[]} files
+   * @param {(DragEvent|Event)} event
+   */ onDropAccepted: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when the `drop` event occurs.
+   * Note that if no files are rejected, this callback is not invoked.
+   *
+   * @param {FileRejection[]} fileRejections
+   * @param {(DragEvent|Event)} event
+   */ onDropRejected: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Cb for when there's some error from any of the promises.
+   *
+   * @param {Error} error
+   */ onError: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func,
+    /**
+   * Custom validation function. It must return null if there's no errors.
+   * @param {File} file
+   * @returns {FileError|FileError[]|null}
+   */ validator: __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$prop$2d$types$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].func
+};
+const __TURBOPACK__default__export__ = Dropzone;
+/**
+ * A function that is invoked for the `dragenter`,
+ * `dragover` and `dragleave` events.
+ * It is not invoked if the items are not files (such as link, text, etc.).
+ *
+ * @callback dragCb
+ * @param {DragEvent} event
+ */ /**
+ * A function that is invoked for the `drop` or input change event.
+ * It is not invoked if the items are not files (such as link, text, etc.).
+ *
+ * @callback dropCb
+ * @param {File[]} acceptedFiles List of accepted files
+ * @param {FileRejection[]} fileRejections List of rejected files and why they were rejected
+ * @param {(DragEvent|Event)} event A drag event or input change event (if files were selected via the file dialog)
+ */ /**
+ * A function that is invoked for the `drop` or input change event.
+ * It is not invoked if the items are files (such as link, text, etc.).
+ *
+ * @callback dropAcceptedCb
+ * @param {File[]} files List of accepted files that meet the given criteria
+ * (`accept`, `multiple`, `minSize`, `maxSize`)
+ * @param {(DragEvent|Event)} event A drag event or input change event (if files were selected via the file dialog)
+ */ /**
+ * A function that is invoked for the `drop` or input change event.
+ *
+ * @callback dropRejectedCb
+ * @param {File[]} files List of rejected files that do not meet the given criteria
+ * (`accept`, `multiple`, `minSize`, `maxSize`)
+ * @param {(DragEvent|Event)} event A drag event or input change event (if files were selected via the file dialog)
+ */ /**
+ * A function that is used aggregate files,
+ * in a asynchronous fashion, from drag or input change events.
+ *
+ * @callback getFilesFromEvent
+ * @param {(DragEvent|Event|Array<FileSystemFileHandle>)} event A drag event or input change event (if files were selected via the file dialog)
+ * @returns {(File[]|Promise<File[]>)}
+ */ /**
+ * An object with the current dropzone state.
+ *
+ * @typedef {object} DropzoneState
+ * @property {boolean} isFocused Dropzone area is in focus
+ * @property {boolean} isFileDialogActive File dialog is opened
+ * @property {boolean} isDragActive Active drag is in progress
+ * @property {boolean} isDragAccept Dragged files are accepted
+ * @property {boolean} isDragReject Some dragged files are rejected
+ * @property {File[]} acceptedFiles Accepted files
+ * @property {FileRejection[]} fileRejections Rejected files and why they were rejected
+ */ /**
+ * An object with the dropzone methods.
+ *
+ * @typedef {object} DropzoneMethods
+ * @property {Function} getRootProps Returns the props you should apply to the root drop container you render
+ * @property {Function} getInputProps Returns the props you should apply to hidden file input you render
+ * @property {Function} open Open the native file selection dialog
+ */ var initialState = {
+    isFocused: false,
+    isFileDialogActive: false,
+    isDragActive: false,
+    isDragAccept: false,
+    isDragReject: false,
+    acceptedFiles: [],
+    fileRejections: []
+};
+function useDropzone() {
+    var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var _defaultProps$props = _objectSpread(_objectSpread({}, defaultProps), props), accept = _defaultProps$props.accept, disabled = _defaultProps$props.disabled, getFilesFromEvent = _defaultProps$props.getFilesFromEvent, maxSize = _defaultProps$props.maxSize, minSize = _defaultProps$props.minSize, multiple = _defaultProps$props.multiple, maxFiles = _defaultProps$props.maxFiles, onDragEnter = _defaultProps$props.onDragEnter, onDragLeave = _defaultProps$props.onDragLeave, onDragOver = _defaultProps$props.onDragOver, onDrop = _defaultProps$props.onDrop, onDropAccepted = _defaultProps$props.onDropAccepted, onDropRejected = _defaultProps$props.onDropRejected, onFileDialogCancel = _defaultProps$props.onFileDialogCancel, onFileDialogOpen = _defaultProps$props.onFileDialogOpen, useFsAccessApi = _defaultProps$props.useFsAccessApi, autoFocus = _defaultProps$props.autoFocus, preventDropOnDocument = _defaultProps$props.preventDropOnDocument, noClick = _defaultProps$props.noClick, noKeyboard = _defaultProps$props.noKeyboard, noDrag = _defaultProps$props.noDrag, noDragEventsBubbling = _defaultProps$props.noDragEventsBubbling, onError = _defaultProps$props.onError, validator = _defaultProps$props.validator;
+    var acceptAttr = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["acceptPropAsAcceptAttr"])(accept);
+    }, [
+        accept
+    ]);
+    var pickerTypes = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["pickerOptionsFromAccept"])(accept);
+    }, [
+        accept
+    ]);
+    var onFileDialogOpenCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return typeof onFileDialogOpen === "function" ? onFileDialogOpen : noop;
+    }, [
+        onFileDialogOpen
+    ]);
+    var onFileDialogCancelCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return typeof onFileDialogCancel === "function" ? onFileDialogCancel : noop;
+    }, [
+        onFileDialogCancel
+    ]);
+    /**
+   * @constant
+   * @type {React.MutableRefObject<HTMLElement>}
+   */ var rootRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    var inputRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    var _useReducer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useReducer"])(reducer, initialState), _useReducer2 = _slicedToArray(_useReducer, 2), state = _useReducer2[0], dispatch = _useReducer2[1];
+    var isFocused = state.isFocused, isFileDialogActive = state.isFileDialogActive;
+    var fsAccessApiWorksRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(("TURBOPACK compile-time value", "undefined") !== "undefined" && window.isSecureContext && useFsAccessApi && (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["canUseFileSystemAccessAPI"])()); // Update file dialog active state when the window is focused on
+    var onWindowFocus = function onWindowFocus() {
+        // Execute the timeout only if the file dialog is opened in the browser
+        if (!fsAccessApiWorksRef.current && isFileDialogActive) {
+            setTimeout(function() {
+                if (inputRef.current) {
+                    var files = inputRef.current.files;
+                    if (!files.length) {
+                        dispatch({
+                            type: "closeDialog"
+                        });
+                        onFileDialogCancelCb();
+                    }
+                }
+            }, 300);
+        }
+    };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(function() {
+        window.addEventListener("focus", onWindowFocus, false);
+        return function() {
+            window.removeEventListener("focus", onWindowFocus, false);
+        };
+    }, [
+        inputRef,
+        isFileDialogActive,
+        onFileDialogCancelCb,
+        fsAccessApiWorksRef
+    ]);
+    var dragTargetsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])([]);
+    var onDocumentDrop = function onDocumentDrop(event) {
+        if (rootRef.current && rootRef.current.contains(event.target)) {
+            // If we intercepted an event for our instance, let it propagate down to the instance's onDrop handler
+            return;
+        }
+        event.preventDefault();
+        dragTargetsRef.current = [];
+    };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(function() {
+        if (preventDropOnDocument) {
+            document.addEventListener("dragover", __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onDocumentDragOver"], false);
+            document.addEventListener("drop", onDocumentDrop, false);
+        }
+        return function() {
+            if (preventDropOnDocument) {
+                document.removeEventListener("dragover", __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onDocumentDragOver"]);
+                document.removeEventListener("drop", onDocumentDrop);
+            }
+        };
+    }, [
+        rootRef,
+        preventDropOnDocument
+    ]); // Auto focus the root when autoFocus is true
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(function() {
+        if (!disabled && autoFocus && rootRef.current) {
+            rootRef.current.focus();
+        }
+        return function() {};
+    }, [
+        rootRef,
+        autoFocus,
+        disabled
+    ]);
+    var onErrCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(e) {
+        if (onError) {
+            onError(e);
+        } else {
+            // Let the user know something's gone wrong if they haven't provided the onError cb.
+            console.error(e);
+        }
+    }, [
+        onError
+    ]);
+    var onDragEnterCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(event) {
+        event.preventDefault(); // Persist here because we need the event later after getFilesFromEvent() is done
+        event.persist();
+        stopPropagation(event);
+        dragTargetsRef.current = [].concat(_toConsumableArray(dragTargetsRef.current), [
+            event.target
+        ]);
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isEvtWithFiles"])(event)) {
+            Promise.resolve(getFilesFromEvent(event)).then(function(files) {
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isPropagationStopped"])(event) && !noDragEventsBubbling) {
+                    return;
+                }
+                var fileCount = files.length;
+                var isDragAccept = fileCount > 0 && (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["allFilesAccepted"])({
+                    files: files,
+                    accept: acceptAttr,
+                    minSize: minSize,
+                    maxSize: maxSize,
+                    multiple: multiple,
+                    maxFiles: maxFiles,
+                    validator: validator
+                });
+                var isDragReject = fileCount > 0 && !isDragAccept;
+                dispatch({
+                    isDragAccept: isDragAccept,
+                    isDragReject: isDragReject,
+                    isDragActive: true,
+                    type: "setDraggedFiles"
+                });
+                if (onDragEnter) {
+                    onDragEnter(event);
+                }
+            }).catch(function(e) {
+                return onErrCb(e);
+            });
+        }
+    }, [
+        getFilesFromEvent,
+        onDragEnter,
+        onErrCb,
+        noDragEventsBubbling,
+        acceptAttr,
+        minSize,
+        maxSize,
+        multiple,
+        maxFiles,
+        validator
+    ]);
+    var onDragOverCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(event) {
+        event.preventDefault();
+        event.persist();
+        stopPropagation(event);
+        var hasFiles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isEvtWithFiles"])(event);
+        if (hasFiles && event.dataTransfer) {
+            try {
+                event.dataTransfer.dropEffect = "copy";
+            } catch (_unused) {}
+        /* eslint-disable-line no-empty */ }
+        if (hasFiles && onDragOver) {
+            onDragOver(event);
+        }
+        return false;
+    }, [
+        onDragOver,
+        noDragEventsBubbling
+    ]);
+    var onDragLeaveCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(event) {
+        event.preventDefault();
+        event.persist();
+        stopPropagation(event); // Only deactivate once the dropzone and all children have been left
+        var targets = dragTargetsRef.current.filter(function(target) {
+            return rootRef.current && rootRef.current.contains(target);
+        }); // Make sure to remove a target present multiple times only once
+        // (Firefox may fire dragenter/dragleave multiple times on the same element)
+        var targetIdx = targets.indexOf(event.target);
+        if (targetIdx !== -1) {
+            targets.splice(targetIdx, 1);
+        }
+        dragTargetsRef.current = targets;
+        if (targets.length > 0) {
+            return;
+        }
+        dispatch({
+            type: "setDraggedFiles",
+            isDragActive: false,
+            isDragAccept: false,
+            isDragReject: false
+        });
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isEvtWithFiles"])(event) && onDragLeave) {
+            onDragLeave(event);
+        }
+    }, [
+        rootRef,
+        onDragLeave,
+        noDragEventsBubbling
+    ]);
+    var setFiles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(files, event) {
+        var acceptedFiles = [];
+        var fileRejections = [];
+        files.forEach(function(file) {
+            var _fileAccepted = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fileAccepted"])(file, acceptAttr), _fileAccepted2 = _slicedToArray(_fileAccepted, 2), accepted = _fileAccepted2[0], acceptError = _fileAccepted2[1];
+            var _fileMatchSize = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fileMatchSize"])(file, minSize, maxSize), _fileMatchSize2 = _slicedToArray(_fileMatchSize, 2), sizeMatch = _fileMatchSize2[0], sizeError = _fileMatchSize2[1];
+            var customErrors = validator ? validator(file) : null;
+            if (accepted && sizeMatch && !customErrors) {
+                acceptedFiles.push(file);
+            } else {
+                var errors = [
+                    acceptError,
+                    sizeError
+                ];
+                if (customErrors) {
+                    errors = errors.concat(customErrors);
+                }
+                fileRejections.push({
+                    file: file,
+                    errors: errors.filter(function(e) {
+                        return e;
+                    })
+                });
+            }
+        });
+        if (!multiple && acceptedFiles.length > 1 || multiple && maxFiles >= 1 && acceptedFiles.length > maxFiles) {
+            // Reject everything and empty accepted files
+            acceptedFiles.forEach(function(file) {
+                fileRejections.push({
+                    file: file,
+                    errors: [
+                        __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TOO_MANY_FILES_REJECTION"]
+                    ]
+                });
+            });
+            acceptedFiles.splice(0);
+        }
+        dispatch({
+            acceptedFiles: acceptedFiles,
+            fileRejections: fileRejections,
+            isDragReject: fileRejections.length > 0,
+            type: "setFiles"
+        });
+        if (onDrop) {
+            onDrop(acceptedFiles, fileRejections, event);
+        }
+        if (fileRejections.length > 0 && onDropRejected) {
+            onDropRejected(fileRejections, event);
+        }
+        if (acceptedFiles.length > 0 && onDropAccepted) {
+            onDropAccepted(acceptedFiles, event);
+        }
+    }, [
+        dispatch,
+        multiple,
+        acceptAttr,
+        minSize,
+        maxSize,
+        maxFiles,
+        onDrop,
+        onDropAccepted,
+        onDropRejected,
+        validator
+    ]);
+    var onDropCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(event) {
+        event.preventDefault(); // Persist here because we need the event later after getFilesFromEvent() is done
+        event.persist();
+        stopPropagation(event);
+        dragTargetsRef.current = [];
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isEvtWithFiles"])(event)) {
+            Promise.resolve(getFilesFromEvent(event)).then(function(files) {
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isPropagationStopped"])(event) && !noDragEventsBubbling) {
+                    return;
+                }
+                setFiles(files, event);
+            }).catch(function(e) {
+                return onErrCb(e);
+            });
+        }
+        dispatch({
+            type: "reset"
+        });
+    }, [
+        getFilesFromEvent,
+        setFiles,
+        onErrCb,
+        noDragEventsBubbling
+    ]); // Fn for opening the file dialog programmatically
+    var openFileDialog = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function() {
+        // No point to use FS access APIs if context is not secure
+        // https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts#feature_detection
+        if (fsAccessApiWorksRef.current) {
+            dispatch({
+                type: "openDialog"
+            });
+            onFileDialogOpenCb(); // https://developer.mozilla.org/en-US/docs/Web/API/window/showOpenFilePicker
+            var opts = {
+                multiple: multiple,
+                types: pickerTypes
+            };
+            window.showOpenFilePicker(opts).then(function(handles) {
+                return getFilesFromEvent(handles);
+            }).then(function(files) {
+                setFiles(files, null);
+                dispatch({
+                    type: "closeDialog"
+                });
+            }).catch(function(e) {
+                // AbortError means the user canceled
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isAbort"])(e)) {
+                    onFileDialogCancelCb(e);
+                    dispatch({
+                        type: "closeDialog"
+                    });
+                } else if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isSecurityError"])(e)) {
+                    fsAccessApiWorksRef.current = false; // CORS, so cannot use this API
+                    // Try using the input
+                    if (inputRef.current) {
+                        inputRef.current.value = null;
+                        inputRef.current.click();
+                    } else {
+                        onErrCb(new Error("Cannot open the file picker because the https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API is not supported and no <input> was provided."));
+                    }
+                } else {
+                    onErrCb(e);
+                }
+            });
+            return;
+        }
+        if (inputRef.current) {
+            dispatch({
+                type: "openDialog"
+            });
+            onFileDialogOpenCb();
+            inputRef.current.value = null;
+            inputRef.current.click();
+        }
+    }, [
+        dispatch,
+        onFileDialogOpenCb,
+        onFileDialogCancelCb,
+        useFsAccessApi,
+        setFiles,
+        onErrCb,
+        pickerTypes,
+        multiple
+    ]); // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
+    var onKeyDownCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(event) {
+        // Ignore keyboard events bubbling up the DOM tree
+        if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
+            return;
+        }
+        if (event.key === " " || event.key === "Enter" || event.keyCode === 32 || event.keyCode === 13) {
+            event.preventDefault();
+            openFileDialog();
+        }
+    }, [
+        rootRef,
+        openFileDialog
+    ]); // Update focus state for the dropzone
+    var onFocusCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function() {
+        dispatch({
+            type: "focus"
+        });
+    }, []);
+    var onBlurCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function() {
+        dispatch({
+            type: "blur"
+        });
+    }, []); // Cb to open the file dialog when click occurs on the dropzone
+    var onClickCb = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function() {
+        if (noClick) {
+            return;
+        } // In IE11/Edge the file-browser dialog is blocking, therefore, use setTimeout()
+        // to ensure React can handle state changes
+        // See: https://github.com/react-dropzone/react-dropzone/issues/450
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isIeOrEdge"])()) {
+            setTimeout(openFileDialog, 0);
+        } else {
+            openFileDialog();
+        }
+    }, [
+        noClick,
+        openFileDialog
+    ]);
+    var composeHandler = function composeHandler(fn) {
+        return disabled ? null : fn;
+    };
+    var composeKeyboardHandler = function composeKeyboardHandler(fn) {
+        return noKeyboard ? null : composeHandler(fn);
+    };
+    var composeDragHandler = function composeDragHandler(fn) {
+        return noDrag ? null : composeHandler(fn);
+    };
+    var stopPropagation = function stopPropagation(event) {
+        if (noDragEventsBubbling) {
+            event.stopPropagation();
+        }
+    };
+    var getRootProps = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return function() {
+            var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}, _ref2$refKey = _ref2.refKey, refKey = _ref2$refKey === void 0 ? "ref" : _ref2$refKey, role = _ref2.role, onKeyDown = _ref2.onKeyDown, onFocus = _ref2.onFocus, onBlur = _ref2.onBlur, onClick = _ref2.onClick, onDragEnter = _ref2.onDragEnter, onDragOver = _ref2.onDragOver, onDragLeave = _ref2.onDragLeave, onDrop = _ref2.onDrop, rest = _objectWithoutProperties(_ref2, _excluded3);
+            return _objectSpread(_objectSpread(_defineProperty({
+                onKeyDown: composeKeyboardHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onKeyDown, onKeyDownCb)),
+                onFocus: composeKeyboardHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onFocus, onFocusCb)),
+                onBlur: composeKeyboardHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onBlur, onBlurCb)),
+                onClick: composeHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onClick, onClickCb)),
+                onDragEnter: composeDragHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onDragEnter, onDragEnterCb)),
+                onDragOver: composeDragHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onDragOver, onDragOverCb)),
+                onDragLeave: composeDragHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onDragLeave, onDragLeaveCb)),
+                onDrop: composeDragHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onDrop, onDropCb)),
+                role: typeof role === "string" && role !== "" ? role : "presentation"
+            }, refKey, rootRef), !disabled && !noKeyboard ? {
+                tabIndex: 0
+            } : {}), rest);
+        };
+    }, [
+        rootRef,
+        onKeyDownCb,
+        onFocusCb,
+        onBlurCb,
+        onClickCb,
+        onDragEnterCb,
+        onDragOverCb,
+        onDragLeaveCb,
+        onDropCb,
+        noKeyboard,
+        noDrag,
+        disabled
+    ]);
+    var onInputElementClick = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(function(event) {
+        event.stopPropagation();
+    }, []);
+    var getInputProps = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return function() {
+            var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}, _ref3$refKey = _ref3.refKey, refKey = _ref3$refKey === void 0 ? "ref" : _ref3$refKey, onChange = _ref3.onChange, onClick = _ref3.onClick, rest = _objectWithoutProperties(_ref3, _excluded4);
+            var inputProps = _defineProperty({
+                accept: acceptAttr,
+                multiple: multiple,
+                type: "file",
+                style: {
+                    border: 0,
+                    clip: "rect(0, 0, 0, 0)",
+                    clipPath: "inset(50%)",
+                    height: "1px",
+                    margin: "0 -1px -1px 0",
+                    overflow: "hidden",
+                    padding: 0,
+                    position: "absolute",
+                    width: "1px",
+                    whiteSpace: "nowrap"
+                },
+                onChange: composeHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onChange, onDropCb)),
+                onClick: composeHandler((0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$dropzone$2f$dist$2f$es$2f$utils$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeEventHandlers"])(onClick, onInputElementClick)),
+                tabIndex: -1
+            }, refKey, inputRef);
+            return _objectSpread(_objectSpread({}, inputProps), rest);
+        };
+    }, [
+        inputRef,
+        accept,
+        multiple,
+        onDropCb,
+        disabled
+    ]);
+    return _objectSpread(_objectSpread({}, state), {}, {
+        isFocused: isFocused && !disabled,
+        getRootProps: getRootProps,
+        getInputProps: getInputProps,
+        rootRef: rootRef,
+        inputRef: inputRef,
+        open: composeHandler(openFileDialog)
+    });
+}
+/**
+ * @param {DropzoneState} state
+ * @param {{type: string} & DropzoneState} action
+ * @returns {DropzoneState}
+ */ function reducer(state, action) {
+    /* istanbul ignore next */ switch(action.type){
+        case "focus":
+            return _objectSpread(_objectSpread({}, state), {}, {
+                isFocused: true
+            });
+        case "blur":
+            return _objectSpread(_objectSpread({}, state), {}, {
+                isFocused: false
+            });
+        case "openDialog":
+            return _objectSpread(_objectSpread({}, initialState), {}, {
+                isFileDialogActive: true
+            });
+        case "closeDialog":
+            return _objectSpread(_objectSpread({}, state), {}, {
+                isFileDialogActive: false
+            });
+        case "setDraggedFiles":
+            return _objectSpread(_objectSpread({}, state), {}, {
+                isDragActive: action.isDragActive,
+                isDragAccept: action.isDragAccept,
+                isDragReject: action.isDragReject
+            });
+        case "setFiles":
+            return _objectSpread(_objectSpread({}, state), {}, {
+                acceptedFiles: action.acceptedFiles,
+                fileRejections: action.fileRejections,
+                isDragReject: action.isDragReject
+            });
+        case "reset":
+            return _objectSpread({}, initialState);
+        default:
+            return state;
+    }
+}
+function noop() {}
+;
+}),
+];
+
+//# sourceMappingURL=9e883_426075a4._.js.map

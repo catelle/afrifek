@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/frontend/src/styles/translation.css"],"sourcesContent":["/* Translation loading styles */\n.translating {\n  opacity: 0.3;\n  transition: opacity 0.3s ease;\n}\n\n.translation-complete {\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n\n/* Prevent layout shift during translation */\n.translation-container {\n  min-height: 100vh;\n}\n\n/* Loading overlay for translation */\n.translation-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(255, 255, 255, 0.8);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 9999;\n  backdrop-filter: blur(2px);\n}\n\n.translation-spinner {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  border: 3px solid #f3f3f3;\n  border-top: 3px solid #f97316;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}"],"names":[],"mappings":"AACA;;;;;AAKA;;;;;AAMA;;;;AAKA;;;;;;;;;;;;AAcA;;;;;;;;;;AAUA"}}]
+}

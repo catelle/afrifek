@@ -1,0 +1,237 @@
+"use client"
+
+import Link from 'next/link'
+import Image from 'next/image'
+import { ArrowRight, Play, Star } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { DotPattern } from './dot-pattern'
+import { useLandingData } from '@/hooks/useLandingData'
+import { useState, useEffect } from 'react'
+import { HeroSearchBar } from './HeroSearchBar'
+import { ResizedImage } from './ResizeImage'
+import { getTranslation, type Language } from '@/lib/translations'
+
+
+interface HerosectionProps {
+  onNavigateToJournals?: () => void;
+  onSearchSelect?: (searchTerm: string) => void;
+  language: Language;
+}
+export const Herosection = ({ onNavigateToJournals, onSearchSelect, language }: HerosectionProps) => {
+  const { images } = useLandingData();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+    
+  return (
+    <section className="relative mt-[50px] overflow-hidden  pb-16">
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        {/* Dot pattern overlay using reusable component */}
+        <DotPattern className="opacity-100" size="md" fadeStyle="ellipse" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="mx-auto max-w-7xl text-center">
+        
+
+          {/* Main Headline */}
+          <h1 className="mb-6 text-3xl font-bold text-gray-700 dark:text-slate-100 tracking-tight sm:text-5xl lg:text-6xl">
+            Afri-Fek, {getTranslation('heroTitle', language)}
+          </h1>
+
+          {/* Subheading */}
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground dark:text-slate-300 sm:text-xl">
+            {getTranslation('heroSubtitle', language)}
+          </p>
+
+          {/* Search Bar */}
+          {onSearchSelect && (
+            <HeroSearchBar onSearchSelect={onSearchSelect} />
+          )}
+
+          {/* CTA Buttons */}
+          <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <Button size="lg" className="bg-red-800 dark:bg-amber-600 text-white dark:text-white text-base cursor-pointer" onClick={onNavigateToJournals}>
+              {getTranslation('exploreJournals', language)}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a href="https://www.scopus.com/home.uri?zone=header&origin=sbrowse"
+              target="_blank" 
+              rel="noopener noreferrer">
+                <Play className="mr-2 h-4 w-4" />
+                <Image 
+                    src="/logoscopus.png" 
+                    alt="Scopus" 
+                    width={120} 
+                    height={60}
+                    className="object-contain"
+                  />Resources Scopus
+              </a>
+            </Button>
+              <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a 
+              target="_blank" 
+              rel="noopener noreferrer"
+              href="https://search.bvsalud.org/aimafro/?output=site&lang=fr&from=0&sort=&format=summary&count=20&fb=&page=1&index=tw&q=">
+                <Play className="mr-2 h-4 w-4" />
+                 <Image 
+                    src="/logoOms.png" 
+                    alt="OMS" 
+                    width={70} 
+                    height={30}
+                    className="object-contain"
+                  />Resources OMS
+              </a>
+            </Button>
+            
+             <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a href="https://zenodo.org/communities/8181/records?q=&l=list&p=1&s=10&sort=newest"
+              target="_blank" 
+              rel="noopener noreferrer">
+                <Play className="mr-2 h-4 w-4" />
+                 <Image 
+                    src="/hra.png" 
+                    alt="HRA" 
+                    width={30} 
+                    height={60}
+                    className="object-contain"
+                  /><Image 
+                    src="/hsd.png" 
+                    alt="HSD" 
+                    width={30} 
+                    height={60}
+                    className="object-contain"
+                  />Ressources de la communauté HRA-HSD
+              </a>
+            </Button>
+
+          </div>
+          <div className='mt-[20px] flex flex-col gap-4 sm:flex-row sm:justify-center'>  <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a href="https://www.ncbi.nlm.nih.gov/nlmcatalog/journals/"
+              target="_blank" 
+              rel="noopener noreferrer">
+                <Play className="mr-2 h-4 w-4" />
+                 <Image 
+                    src="/pub.png" 
+                    alt="PubMed" 
+                    width={80} 
+                    height={60}
+                    className="object-contain"
+                  />Resources NLM
+              </a>
+            </Button>
+
+           
+             <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a href="https://www.ajol.info/index.php/ajol/browseBy/alpha-all"
+              target="_blank" 
+              rel="noopener noreferrer">
+                <Play className="mr-2 h-4 w-4" />
+                 <Image 
+                    src="/ajol.png" 
+                    alt="AJOL" 
+                    width={80} 
+                    height={60}
+                    className="object-contain"
+                  />Resources AJOL
+              </a>
+            </Button>
+             <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a href="https://afjur.com/"
+              target="_blank" 
+              rel="noopener noreferrer">
+                <Play className="mr-2 h-4 w-4" />
+                 <Image 
+                    src="/afjur.png" 
+                    alt="AFJUR" 
+                    width={40} 
+                    height={10}
+                    className="object-contain"
+                  />Resources AFJUR 
+              </a>
+            </Button>
+             <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a href="https://mjl.clarivate.com/home"
+              target="_blank" 
+              rel="noopener noreferrer">
+                <Play className="mr-2 h-4 w-4" />
+                 <Image 
+                    src="/wos.png" 
+                    alt="WOS" 
+                    width={80} 
+                    height={60}
+                    className="object-contain"
+                  />Resources WOS
+              </a>
+            </Button>
+             <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
+              <a href="https://scholar.google.fr/"
+              target="_blank" 
+              rel="noopener noreferrer">
+                <Play className="mr-2 h-4 w-4" />
+                 <Image 
+                    src="/scholar.png" 
+                    alt="WOS" 
+                    width={40} 
+                    height={40}
+                    className="object-contain"
+                  />Resources Google Scholar
+              </a>
+            </Button></div>
+        </div>
+
+        {/* Hero Image/Visual */}
+        <div className="mx-auto mt-20 max-w-6xl">
+          <div className="relative group">
+            {/* Top background glow effect - positioned above the image */}
+            <div className="absolute top-2 lg:-top-8 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-10 lg:h-80 bg-primary/50 rounded-full blur-2xl"></div>
+
+            <div className="relative rounded-xl border bg-card shadow-2xl overflow-hidden">
+              <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}>
+                {images.map((image, index) => (
+                 <Image
+  key={index}
+  src={image}
+  alt={`Hero Image ${index + 1}`}
+ width={500}
+height={300}
+  className="w-full h-90 flex-shrink-0 rounded-xl object-cover"  // ← change height here
+  priority={index === 0}
+/>
+
+                  
+                ))}
+              </div>
+
+              {/* Bottom fade effect - gradient overlay that fades the image to background */}
+              <div className="absolute bottom-0 left-0 w-full h-32 md:h-40 lg:h-48 bg-gradient-to-b from-transparent via-black/50 to-black/70 rounded-b-xl"></div>
+
+              {/* Overlay play button for demo */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Button
+                  size="lg"
+                  className="rounded-full h-16 w-16 p-0 cursor-pointer hover:scale-105 transition-transform"
+                  asChild
+                >
+                  <a href="#" aria-label="Watch demo video">
+                    <Play className="h-6 w-6 fill-current" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    
+      </div>
+    </section>
+  )
+}

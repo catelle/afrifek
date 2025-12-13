@@ -1,0 +1,48 @@
+/* [project]/frontend/src/styles/translation.css [app-client] (css) */
+.translating {
+  opacity: .3;
+  transition: opacity .3s;
+}
+
+.translation-complete {
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.translation-container {
+  min-height: 100vh;
+}
+
+.translation-overlay {
+  z-index: 9999;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  background: #fffc;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+.translation-spinner {
+  border: 3px solid #f3f3f3;
+  border-top-color: #f97316;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: 1s linear infinite spin;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=frontend_src_styles_translation_css_bad6b30c._.single.css.map*/
