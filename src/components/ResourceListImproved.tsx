@@ -2,8 +2,7 @@
 
 import { ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
-import { collection, query, orderBy, limit, startAfter, getDocs, DocumentSnapshot, where } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { resourcesApi } from "@/lib/api-client";
 import { getDomainName } from "@/hooks/constants";
 import { Card, CardContent } from "./ui/card";
 import { Skeleton } from "./ui/skeleton";
@@ -43,72 +42,34 @@ export default function ResourceList2({
   resourceType,
 }: ResourceListProps) {
   const [resources, setResources] = useState<Resource[]>([]);
+  const [allResources, setAllResources] = useState<Resource[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [lastDoc, setLastDoc] = useState<DocumentSnapshot | null>(null);
   const [hasMore, setHasMore] = useState(true);
-  const [pageHistory, setPageHistory] = useState<DocumentSnapshot[]>([]);
 
   const ITEMS_PER_PAGE = 10;
 
-  const fetchResources = async (isNext = false, isPrev = false) => {
+  const fetchResources = async () => {
     setLoading(true);
     try {
-      let  q = query(
-          collection(db, collectionName),
-          where('type', '==', resourceType),
-          orderBy('uploadedAt', 'desc'),
-          limit(ITEMS_PER_PAGE)
-        
-      );
-
-      if (isNext && lastDoc) {
-        q = query(
-          collection(db, collectionName),
-          where('type', '==', resourceType),
-          orderBy('name'),
-          startAfter(lastDoc),
-          limit(ITEMS_PER_PAGE)
-        );
-      }
-
-      if (isPrev && pageHistory.length > 0) {
-        const prevDoc = pageHistory[pageHistory.length - 2];
-        if (prevDoc) {
-          q = query(
-            collection(db, collectionName),
-            where('type', '==', resourceType),
-            orderBy('name'),
-            startAfter(prevDoc),
-            limit(ITEMS_PER_PAGE)
-          );
-        } else {
-          q = query(
-            collection(db, collectionName),
-            where('type', '==', resourceType),
-            orderBy('name'),
-            limit(ITEMS_PER_PAGE)
-          );
-        }
-      }
-
-      const snapshot = await getDocs(q);
-      const data = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as Resource[];
-
-      setResources(data);
+      const response = await resourcesApi.getAll({ type: resourceType });
+      const data = response.data as Resource[];
       
-      if (isNext) {
-        setPageHistory(prev => [...prev, lastDoc!]);
-      } else if (isPrev) {
-        setPageHistory(prev => prev.slice(0, -1));
-      }
-
-      setLastDoc(snapshot.docs[snapshot.docs.length - 1] || null);
-      setHasMore(snapshot.docs.length === ITEMS_PER_PAGE);
+      // Sort by uploadedAt desc or name
+      const sorted = data.sort((a, b) => {
+        // Assuming uploadedAt is a date string or timestamp
+        return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
+      });
+      
+      setAllResources(sorted);
+      setHasMore(sorted.length > ITEMS_PER_PAGE);
     } catch (error) {
+      console.error('Error fetching resources:', error);
+      setAllResources([]);
+    } finally {
+      setLoading(false);
+    }
+  };
       console.error('Error fetching resources:', error);
     } finally {
       setLoading(false);
@@ -119,17 +80,22 @@ export default function ResourceList2({
     fetchResources();
   }, [collectionName]);
 
+  useEffect(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    setResources(allResources.slice(start, end));
+    setHasMore(end < allResources.length);
+  }, [allResources, currentPage]);
+
   const handleNext = () => {
     if (hasMore) {
       setCurrentPage(prev => prev + 1);
-      fetchResources(true);
     }
   };
 
   const handlePrev = () => {
     if (currentPage > 1) {
       setCurrentPage(prev => prev - 1);
-      fetchResources(false, true);
     }
   };
 console.log({resourceType});

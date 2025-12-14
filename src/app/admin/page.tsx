@@ -1,15 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { collection, getDocs, doc, updateDoc, deleteDoc, addDoc, query } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { resourcesApi, landingApi } from '@/lib/api-client';
 import { cache } from '@/lib/cache';
 import { Edit, Trash2, Save, X, Filter, Search, Shield, LogOut, Upload, FileText, BarChart3, TrendingUp, Users, Globe, Calendar, Activity, Home, Settings, Image, Database, Menu, Mail } from 'lucide-react';
 import ResourceForm from '@/components/ResourceForm';
 import Footer from '@/components/Footer';
 import RichTextEditor from '@/components/RichTextEditor';
 import { getDomainName } from '@/hooks/constants';
-import { ref } from 'firebase/storage';
 import NewsletterManagement from '@/components/admin/NewsletterManagement';
 import PartnersManagement from '@/components/admin/PartnersManagement';
 
@@ -149,21 +147,20 @@ export default function AdminPage() {
 
   const loadLandingContent = async () => {
     try {
-      const contentDoc = await getDocs(query(collection(db, 'landingContent')));
-      if (!contentDoc.empty) {
-        const content = contentDoc.docs[0].data();
-        console.log('Loaded content from Firebase:', content);
-        // Ensure visionTexts is properly loaded
-        setLandingContent({
-          heroTitle: content.heroTitle || 'Découvrez la Recherche en Santé Africaine',
-          heroSubtitle: content.heroSubtitle || 'La plateforme de référence pour accéder aux journaux, académies et institutions de recherche en santé à travers l\'Afrique',
-          visionTitle: content.visionTitle || 'Notre vision',
-          visionTexts: content.visionTexts || [
-            'Booster l\'accès mondial aux recherches publiées dans les journaux africains. Des <strong class="text-amber-600">millions</strong> d\'articles de recherche africains sont téléchargés chaque mois, amplifiant la portée africaine et mondiale de la recherche du continent.',
-            'Nous avons <strong class="text-amber-600">répertorié des académies, des institutions et des organisations dans le domaine de la santé en Afrique</strong>, afin de faciliter l\'accès aux savoirs, encourager les échanges scientifiques et valoriser les expertises locales sur la scène mondiale.',
-            '<strong class="text-amber-600">Afri-Fek</strong> soutient les <strong class="text-amber-600"> modèles de publication Open Access et gratuits</strong>, et fournit l\'accès à une gamme complète de ressources gratuites pour assister les chercheurs, auteurs, éditeurs et journaux africains.'
-          ],
-          quotes: content.quotes || [
+      const response = await landingApi.getContent();
+      const content = response.data;
+      console.log('Loaded content from API:', content);
+      // Ensure visionTexts is properly loaded
+      setLandingContent({
+        heroTitle: content.heroTitle || 'Découvrez la Recherche en Santé Africaine',
+        heroSubtitle: content.heroSubtitle || 'La plateforme de référence pour accéder aux journaux, académies et institutions de recherche en santé à travers l\'Afrique',
+        visionTitle: content.visionTitle || 'Notre vision',
+        visionTexts: content.visionTexts || [
+          'Booster l\'accès mondial aux recherches publiées dans les journaux africains. Des <strong class="text-amber-600">millions</strong> d\'articles de recherche africains sont téléchargés chaque mois, amplifiant la portée africaine et mondiale de la recherche du continent.',
+          'Nous avons <strong class="text-amber-600">répertorié des académies, des institutions et des organisations dans le domaine de la santé en Afrique</strong>, afin de faciliter l\'accès aux savoirs, encourager les échanges scientifiques et valoriser les expertises locales sur la scène mondiale.',
+          '<strong class="text-amber-600">Afri-Fek</strong> soutient les <strong class="text-amber-600"> modèles de publication Open Access et gratuits</strong>, et fournit l\'accès à une gamme complète de ressources gratuites pour assister les chercheurs, auteurs, éditeurs et journaux africains.'
+        ],
+        quotes: content.quotes || [
             {
               scientist: 'Tedros Adhanom Ghebreyesus',
               field: 'Santé publique & OMS',
@@ -181,7 +178,6 @@ export default function AdminPage() {
             }
           ]
         });
-      }
       // If empty, keep the default values already set in state
     } catch (error) {
       console.error('Error loading landing content:', error);
@@ -190,11 +186,9 @@ export default function AdminPage() {
 
   const loadHeroImages = async () => {
     try {
-      const imagesDoc = await getDocs(query(collection(db, 'heroImages')));
-      if (!imagesDoc.empty) {
-        const images = imagesDoc.docs[0].data().images || [];
-        setHeroImages(images);
-      }
+      const response = await landingApi.getImages();
+      const images = response.data || [];
+      setHeroImages(images);
       // If empty, keep the default hero images already set in state
     } catch (error) {
       console.error('Error loading hero images:', error);
@@ -232,14 +226,11 @@ export default function AdminPage() {
   const fetchAllResources = async (showLoading: boolean = true) => {
     if (showLoading) setLoading(true);
     try {
-      const [resourcesSnapshot] = await Promise.all([
-        getDocs(collection(db, 'ResourceFromA'))
-        // getDocs(collection(db, 'FormuploadedResult'))
-      ]);
+      const response = await resourcesApi.getAll();
       
-      const allResources = resourcesSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
+      const allResources = response.data.map((data: any) => ({
+        id: data.id,
+        ...data
       } as Resource)).sort((a, b) => {
         // Sort by status: pending first, then approved, then rejected
         const statusOrder = { pending: 0, approved: 1, rejected: 2 };
@@ -395,18 +386,11 @@ export default function AdminPage() {
       }
       
       const collection_name = 'ResourceFromA';
-      const resourceRef = doc(db, collection_name, editingResource.id);
-      await updateDoc(resourceRef, updatedForm);
+      await resourcesApi.update(editingResource.id, updatedForm);
       
-      if (editingResource.source === 'XLSX_UPLOAD') {
-        setUploadedResources(prev => prev.map(r => 
-          r.id === editingResource.id ? { ...r, ...updatedForm } : r
-        ));
-      } else {
-        setResources(prev => prev.map(r => 
-          r.id === editingResource.id ? { ...r, ...updatedForm } : r
-        ));
-      }
+      setResources(prev => prev.map(r => 
+        r.id === editingResource.id ? { ...r, ...updatedForm } : r
+      ));
       
       // Invalidate cache after update
       await cache.delete('admin-resources');
@@ -426,17 +410,10 @@ export default function AdminPage() {
     if (!confirm('Êtes-vous sûr de vouloir supprimer cette ressource ?')) return;
     
     try {
-      // Find the resource to determine which collection it belongs to
-      const resource = [...resources, ...uploadedResources].find(r => r.id === id);
-      const collection_name = 'ResourceFromA';
+      await resourcesApi.delete(id);
       
-      await deleteDoc(doc(db, collection_name, id));
-      
-      if (resource?.source === 'XLSX_UPLOAD') {
-        setUploadedResources(prev => prev.filter(r => r.id !== id));
-      } else {
-        setResources(prev => prev.filter(r => r.id !== id));
-      }
+      setResources(prev => prev.filter(r => r.id !== id));
+      setUploadedResources(prev => prev.filter(r => r.id !== id));
       
       // Invalidate cache after delete
       await cache.delete('admin-resources');
@@ -462,20 +439,15 @@ export default function AdminPage() {
           setResources(prev => prev.filter(r => r.id !== id));
         }
       } else {
-        // Update status for approved resources
-        const resourceRef = doc(db, collection_name, id);
-        await updateDoc(resourceRef, { status: newStatus, statut: 'ACTIVE' });
+        await resourcesApi.update(id, { status: newStatus, statut: 'ACTIVE' });
         
         // Update local state
-        if (resource?.source === 'XLSX_UPLOAD') {
-          setUploadedResources(prev => prev.map(r => 
-            r.id === id ? { ...r, status: newStatus, statut: 'ACTIVE' } : r
-          ));
-        } else {
-          setResources(prev => prev.map(r => 
-            r.id === id ? { ...r, status: newStatus, statut: 'ACTIVE' } : r
-          ));
-        }
+        setResources(prev => prev.map(r => 
+          r.id === id ? { ...r, status: newStatus, statut: 'ACTIVE' } : r
+        ));
+        setUploadedResources(prev => prev.map(r => 
+          r.id === id ? { ...r, status: newStatus, statut: 'ACTIVE' } : r
+        ));
       }
       
       // Invalidate cache after update
@@ -518,16 +490,8 @@ export default function AdminPage() {
       const updatedImages = [...heroImages, newImage];
       setHeroImages(updatedImages);
       
-      // Save to Firestore
-      const imagesCollection = collection(db, 'heroImages');
-      const existingDoc = await getDocs(imagesCollection);
-      
-      if (existingDoc.empty) {
-        await addDoc(imagesCollection, { images: updatedImages });
-      } else {
-        const docRef = doc(db, 'heroImages', existingDoc.docs[0].id);
-        await updateDoc(docRef, { images: updatedImages });
-      }
+      // Save to API - TODO: implement image update endpoint
+      // const response = await landingApi.updateContent({ images: updatedImages });
       
       // Clear cache to force refresh
       await cache.delete('hero-images');
@@ -552,14 +516,8 @@ export default function AdminPage() {
       const updatedImages = heroImages.filter((_, i) => i !== index);
       setHeroImages(updatedImages);
       
-      // Update Firestore
-      const imagesCollection = collection(db, 'heroImages');
-      const existingDoc = await getDocs(imagesCollection);
-      
-      if (!existingDoc.empty) {
-        const docRef = doc(db, 'heroImages', existingDoc.docs[0].id);
-        await updateDoc(docRef, { images: updatedImages });
-      }
+      // Update API - TODO: implement image update endpoint
+      // const response = await landingApi.updateContent({ images: updatedImages });
       
       // Clear cache to force refresh
       await cache.delete('hero-images');
@@ -574,15 +532,7 @@ export default function AdminPage() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      const contentCollection = collection(db, 'landingContent');
-      const existingDoc = await getDocs(contentCollection);
-      
-      if (existingDoc.empty) {
-        await addDoc(contentCollection, landingContent);
-      } else {
-        const docRef = doc(db, 'landingContent', existingDoc.docs[0].id);
-        await updateDoc(docRef, landingContent);
-      }
+      await landingApi.updateContent(landingContent);
       
       // Clear cache to force refresh
       await cache.delete('landing-content');
@@ -1055,7 +1005,7 @@ export default function AdminPage() {
             createdAt: new Date()
           };
           
-          await addDoc(collection(db, 'FormuploadedResult'), resourceData);
+          await resourcesApi.create(resourceData);
         }
         processedRows++;
         const progress = Math.round((processedRows / totalRows) * 100);
@@ -1129,7 +1079,7 @@ export default function AdminPage() {
         citationCount:''
       };
       
-      await addDoc(collection(db, 'FormuploadedResult'), resourceData);
+      await resourcesApi.create(resourceData);
       
       // Invalidate cache and refetch data
       await cache.delete('admin-resources');

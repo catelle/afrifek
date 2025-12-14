@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { X, Mail, Send, CheckCircle } from 'lucide-react';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { newsletterApi } from '@/lib/api-client';
 
 interface NewsletterModalProps {
   isOpen: boolean;
@@ -21,12 +20,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
     setIsSubmitting(true);
 
     try {
-      await addDoc(collection(db, 'newsletter'), {
-        email,
-        name,
-        subscribedAt: new Date(),
-        status: 'active'
-      });
+      await newsletterApi.subscribe({ email, name });
       
       setIsSuccess(true);
       setTimeout(() => {

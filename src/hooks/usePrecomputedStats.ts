@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '@/lib/firebase'
+import { resourcesApi } from '@/lib/api-client'
 
 interface PrecomputedStats {
   total: number
@@ -47,10 +46,10 @@ export function usePrecomputedStats() {
         setLoading(true)
         console.log('📊 Fetching precomputed stats (1 read)')
         
-        const statsDoc = await getDoc(doc(db, 'metadata', 'stats'))
+        const response = await resourcesApi.getStats()
         
-        if (statsDoc.exists()) {
-          const data = statsDoc.data() as PrecomputedStats
+        if (response.data) {
+          const data = response.data as PrecomputedStats
           data.lastUpdated = Date.now()
           
           setStats(data)

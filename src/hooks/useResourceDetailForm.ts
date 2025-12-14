@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { resourcesApi } from '@/lib/api-client';
 import { uploadImage } from '@/lib/supabase';
 import { getInitialResourceFormData } from '@/utils/resourceDetailUtils';
 
@@ -96,8 +95,8 @@ export const useResourceDetailForm = () => {
         submittedAt: new Date().toISOString()
       };
       
-      const docRef = await addDoc(collection(db, 'resources'), resourceData);
-      setPendingResourceData({ ...resourceData, id: docRef.id });
+      const response = await resourcesApi.create(resourceData);
+      setPendingResourceData({ ...resourceData, id: response.data.id });
       
       clearTimeout(timeoutId);
       setSubmitMessage('Ressource soumise avec succès!');

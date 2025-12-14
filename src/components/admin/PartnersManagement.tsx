@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { collection, getDocs, updateDoc, doc, deleteDoc, addDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { partnersApi } from '@/lib/api-client';
 import { Building2, Check, X, Eye, Trash2, Plus, Users } from 'lucide-react';
 
 interface PartnerRequest {
@@ -46,18 +45,13 @@ export default function PartnersManagement() {
 
   const loadData = async () => {
     try {
-      const requestsSnapshot = await getDocs(collection(db, 'partnerRequests'));
-      const requestsData = requestsSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as PartnerRequest[];
+      const response = await partnersApi.getAll();
+      const allPartners = response.data;
+      
+      const requestsData = allPartners.filter((p: any) => p.status === 'pending') as PartnerRequest[];
       setPartnerRequests(requestsData);
 
-      const partnersSnapshot = await getDocs(collection(db, 'approvedPartners'));
-      const partnersData = partnersSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as ApprovedPartner[];
+      const partnersData = allPartners.filter((p: any) => p.status === 'approved') as ApprovedPartner[];
       setApprovedPartners(partnersData);
     } catch (error) {
       console.error('Error loading data:', error);
@@ -68,17 +62,8 @@ export default function PartnersManagement() {
 
   const approvePartner = async (request: PartnerRequest) => {
     try {
-      await addDoc(collection(db, 'approvedPartners'), {
-        organizationName: request.organizationName,
-        organizationType: request.organizationType,
-        country: request.country,
-        website: request.website,
-        description: request.description,
-        partnershipType: request.partnershipType,
-        approvedAt: new Date(),
-        contactEmail: request.contactEmail,
-        contactName: request.contactName
-      });
+      await partnersApi.update(request.id, { status: 'approved', approvedAt: new Date() });
+      loadData(); // Reload data
 
       await updateDoc(doc(db, 'partnerRequests', request.id), {
         status: 'approved'
@@ -89,7 +74,6 @@ export default function PartnersManagement() {
       ));
 
       alert('Partenaire approuvé avec succès!');
-      loadData();
     } catch (error) {
       console.error('Error approving partner:', error);
       alert('Erreur lors de l\'approbation');
@@ -100,9 +84,7 @@ export default function PartnersManagement() {
     if (!confirm('Rejeter cette demande de partenariat ?')) return;
 
     try {
-      await updateDoc(doc(db, 'partnerRequests', requestId), {
-        status: 'rejected'
-      });
+      await partnersApi.update(requestId, { status: 'rejected' });
 
       setPartnerRequests(prev => prev.map(r => 
         r.id === requestId ? { ...r, status: 'rejected' } : r
@@ -118,7 +100,7 @@ export default function PartnersManagement() {
     if (!confirm('Supprimer ce partenaire ?')) return;
 
     try {
-      await deleteDoc(doc(db, 'approvedPartners', partnerId));
+      await partnersApi.delete(partnerId);
       setApprovedPartners(prev => prev.filter(p => p.id !== partnerId));
       alert('Partenaire supprimé');
     } catch (error) {

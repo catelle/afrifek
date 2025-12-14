@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { newsletterApi } from '@/lib/api-client';
 import { Mail, Send, Trash2, Users, Calendar, Edit } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
@@ -29,11 +28,8 @@ export default function NewsletterManagement() {
 
   const loadSubscribers = async () => {
     try {
-      const snapshot = await getDocs(collection(db, 'newsletter'));
-      const subscribersData = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as Subscriber[];
+      const response = await newsletterApi.getSubscribers();
+      const subscribersData = response.data as Subscriber[];
       setSubscribers(subscribersData);
     } catch (error) {
       console.error('Error loading subscribers:', error);
@@ -46,7 +42,7 @@ export default function NewsletterManagement() {
     if (!confirm('Supprimer cet abonné ?')) return;
     
     try {
-      await deleteDoc(doc(db, 'newsletter', id));
+      await newsletterApi.unsubscribe(id);
       setSubscribers(prev => prev.filter(s => s.id !== id));
     } catch (error) {
       console.error('Error deleting subscriber:', error);

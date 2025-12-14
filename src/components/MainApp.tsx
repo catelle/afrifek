@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '@/lib/firebase'
+import { resourcesApi } from '@/lib/api-client'
 import { t } from '@/lib/traduction'
 import { useAITranslation } from '@/hooks/useAITranslation'
 import { uploadImage } from '@/lib/supabase'
@@ -245,8 +244,8 @@ export default function MainApp() {
         agree: formData.agree || '',
       }
 
-      const docRef = await addDoc(collection(db, 'ResourceFromA'), resourceData)
-      setPendingResourceData({ ...resourceData, id: docRef.id })
+      const response = await resourcesApi.create(resourceData)
+      setPendingResourceData({ ...resourceData, id: response.data.id })
 
       clearTimeout(timeoutId)
       setSubmitMessage({ type: 'success', message: 'Ressource soumise avec succès!' })

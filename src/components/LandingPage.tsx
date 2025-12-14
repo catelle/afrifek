@@ -3,9 +3,8 @@
 import { ArrowRight, BookOpen, Globe, Users, Award, CheckCircle, Star, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, X, Undo2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { AfricaMap } from './Map';
-import { collection, getDocs, query } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 import { cache } from '@/lib/cache';
+import { landingApi } from '@/lib/api-client';
 // import { useAITranslation } from '@/hooks/useAITranslation';
 
 
@@ -82,16 +81,14 @@ export default function LandingPage({ resources, language, t, onNavigateToJourna
         }
         
         // Always fetch fresh data
-        const imagesDoc = await getDocs(query(collection(db, 'heroImages')));
-        if (!imagesDoc.empty) {
-          const imagesData = imagesDoc.docs[0].data().images || [];
-          const imageUrls = imagesData.map((img: any) => img.url);
-          const finalImages = imageUrls.length > 0 ? imageUrls : ["/hero.jpg", "/hero2.jpg", "/minesup.jpeg"];
-          setImages(finalImages);
-          
-          // Cache the data
-          await cache.set('hero-images', imagesData);
-        }
+        const response = await landingApi.getImages();
+        const imagesData = response.data || [];
+        const imageUrls = imagesData.map((img: any) => img.url);
+        const finalImages = imageUrls.length > 0 ? imageUrls : ["/hero.jpg", "/hero2.jpg", "/minesup.jpeg"];
+        setImages(finalImages);
+        
+        // Cache the data
+        await cache.set('hero-images', imagesData);
       } catch (error) {
         console.error('Error loading hero images:', error);
       }
@@ -110,48 +107,46 @@ export default function LandingPage({ resources, language, t, onNavigateToJourna
         }
         
         // Always fetch fresh data
-        const contentDoc = await getDocs(query(collection(db, 'landingContent')));
-        if (!contentDoc.empty) {
-          const content = contentDoc.docs[0].data();
-          // Use language-specific content or fallback to default
-          const languageContent = {
-            heroTitle: content[`heroTitle_${language}`] || content.heroTitle || t[language].hero.title,
-            heroSubtitle: content[`heroSubtitle_${language}`] || content.heroSubtitle || t[language].hero.subtitle,
-            visionTitle: content[`visionTitle_${language}`] || content.visionTitle || (language === 'en' ? 'Our Vision' : 'Notre vision'),
-            visionTexts: content[`visionTexts_${language}`] || content.visionTexts || [
-              language === 'en' ? 
-                'Boost global access to research published in African journals. <strong class="text-amber-600">Millions</strong> of African research articles are downloaded monthly, amplifying the African and global reach of the continent\'s research.' :
-                'Booster l\'accès mondial aux recherches publiées dans les journaux africains. Des <strong class="text-amber-600">millions</strong> d\'articles de recherche africains sont téléchargés chaque mois, amplifiant la portée africaine et mondiale de la recherche du continent.',
-              language === 'en' ? 
-                'We have <strong class="text-amber-600">listed academies, institutions and organizations in the field of health in Africa</strong>, in order to facilitate access to knowledge, encourage scientific exchanges and enhance local expertise on the global stage.' :
-                'Nous avons <strong class="text-amber-600">répertorié des académies, des institutions et des organisations dans le domaine de la santé en Afrique</strong>, afin de faciliter l\'accès aux savoirs, encourager les échanges scientifiques et valoriser les expertises locales sur la scène mondiale.',
-              language === 'en' ? 
-                '<strong class="text-amber-600">Afri-Fek</strong> supports <strong class="text-amber-600">Open Access and free publication models</strong>, and provides access to a full range of free resources to assist African researchers, authors, editors and journals.' :
-                '<strong class="text-amber-600">Afri-Fek</strong> soutient les <strong class="text-amber-600"> modèles de publication Open Access et gratuits</strong>, et fournit l\'accès à une gamme complète de ressources gratuites pour assister les chercheurs, auteurs, éditeurs et journaux africains.'
-            ],
-            quotes: content[`quotes_${language}`] || content.quotes || [
-              {
-                scientist: 'Tedros Adhanom Ghebreyesus',
-                field: language === 'en' ? 'Public Health & WHO' : 'Santé publique & OMS',
-                quote: language === 'en' ? 'When people are healthy, their families, communities and countries thrive.' : 'Quand les gens sont en bonne santé, leurs familles, leurs communautés et leurs pays prospèrent.'
-              },
-              {
-                scientist: 'Catherine Kyobutungi',
-                field: language === 'en' ? 'Epidemiologist' : 'Épidémiologiste',
-                quote: language === 'en' ? 'We only see and access a tiny part – like the ears of a hippo in water – but we know that immense potential lies just below the surface.' : 'Nous ne voyons et n\'accédons qu\'à une toute petite partie – comme les oreilles d\'un hippopotame dans l\'eau – mais nous savons qu\'un immense potentiel se cache juste sous la surface.'
-              },
-              {
-                scientist: 'Monique Wasunna',
-                field: language === 'en' ? 'Medical Research' : 'Recherche médicale',
-                quote: language === 'en' ? 'This disease that took my friend, I will do everything in my power to help other patients. I will be their advocate.' : 'Cette maladie qui a emporté mon amie, je ferai tout ce qui est en mon pouvoir pour aider les autres patients. Je serai leur avocate.'
-              }
-            ]
-          };
-          setLandingContent(languageContent);
-          
-          // Cache the data with language key
-          await cache.set(`landing-content-${language}`, languageContent);
-        }
+        const response = await landingApi.getContent();
+        const content = response.data;
+        // Use language-specific content or fallback to default
+        const languageContent = {
+          heroTitle: content[`heroTitle_${language}`] || content.heroTitle || t[language].hero.title,
+          heroSubtitle: content[`heroSubtitle_${language}`] || content.heroSubtitle || t[language].hero.subtitle,
+          visionTitle: content[`visionTitle_${language}`] || content.visionTitle || (language === 'en' ? 'Our Vision' : 'Notre vision'),
+          visionTexts: content[`visionTexts_${language}`] || content.visionTexts || [
+            language === 'en' ? 
+              'Boost global access to research published in African journals. <strong class="text-amber-600">Millions</strong> of African research articles are downloaded monthly, amplifying the African and global reach of the continent\'s research.' :
+              'Booster l\'accès mondial aux recherches publiées dans les journaux africains. Des <strong class="text-amber-600">millions</strong> d\'articles de recherche africains sont téléchargés chaque mois, amplifiant la portée africaine et mondiale de la recherche du continent.',
+            language === 'en' ? 
+              'We have <strong class="text-amber-600">listed academies, institutions and organizations in the field of health in Africa</strong>, in order to facilitate access to knowledge, encourage scientific exchanges and enhance local expertise on the global stage.' :
+              'Nous avons <strong class="text-amber-600">répertorié des académies, des institutions et des organisations dans le domaine de la santé en Afrique</strong>, afin de faciliter l\'accès aux savoirs, encourager les échanges scientifiques et valoriser les expertises locales sur la scène mondiale.',
+            language === 'en' ? 
+              '<strong class="text-amber-600">Afri-Fek</strong> supports <strong class="text-amber-600">Open Access and free publication models</strong>, and provides access to a full range of free resources to assist African researchers, authors, editors and journals.' :
+              '<strong class="text-amber-600">Afri-Fek</strong> soutient les <strong class="text-amber-600"> modèles de publication Open Access et gratuits</strong>, et fournit l\'accès à une gamme complète de ressources gratuites pour assister les chercheurs, auteurs, éditeurs et journaux africains.'
+          ],
+          quotes: content[`quotes_${language}`] || content.quotes || [
+            {
+              scientist: 'Tedros Adhanom Ghebreyesus',
+              field: language === 'en' ? 'Public Health & WHO' : 'Santé publique & OMS',
+              quote: language === 'en' ? 'When people are healthy, their families, communities and countries thrive.' : 'Quand les gens sont en bonne santé, leurs familles, leurs communautés et leurs pays prospèrent.'
+            },
+            {
+              scientist: 'Catherine Kyobutungi',
+              field: language === 'en' ? 'Epidemiologist' : 'Épidémiologiste',
+              quote: language === 'en' ? 'We only see and access a tiny part – like the ears of a hippo in water – but we know that immense potential lies just below the surface.' : 'Nous ne voyons et n\'accédons qu\'à une toute petite partie – comme les oreilles d\'un hippopotame dans l\'eau – mais nous savons qu\'un immense potentiel se cache juste sous la surface.'
+            },
+            {
+              scientist: 'Monique Wasunna',
+              field: language === 'en' ? 'Medical Research' : 'Recherche médicale',
+              quote: language === 'en' ? 'This disease that took my friend, I will do everything in my power to help other patients. I will be their advocate.' : 'Cette maladie qui a emporté mon amie, je ferai tout ce qui est en mon pouvoir pour aider les autres patients. Je serai leur avocate.'
+            }
+          ]
+        };
+        setLandingContent(languageContent);
+        
+        // Cache the data with language key
+        await cache.set(`landing-content-${language}`, languageContent);
       } catch (error) {
         console.error('Error loading landing content:', error);
       }

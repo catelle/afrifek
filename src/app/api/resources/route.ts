@@ -1,18 +1,6 @@
 import { NextResponse } from 'next/server';
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDVC4CqHBMSr9quu2q9lJODSfQvITAM-SQ",
-  authDomain: "afri-fek.firebaseapp.com",
-  projectId: "afri-fek",
-  storageBucket: "afri-fek.firebasestorage.app",
-  messagingSenderId: "1032447928128",
-  appId: "1:1032447928128:web:9fa19b789243f96f6d3ca5"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
 
 let cachedResources: any[] | null = null;
 let cacheTimestamp: number = 0;
@@ -29,25 +17,19 @@ export async function GET() {
       });
     }
 
-    const [resourcesSnapshot, uploadedSnapshot] = await Promise.all([
-      getDocs(collection(db, 'resources')),
-      getDocs(collection(db, 'FormuploadedResult'))
-    ]);
+    const response = await fetch(`${API_BASE_URL}/resources`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-    const resources = resourcesSnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
+    if (!response.ok) {
+      throw new Error(`Backend API error: ${response.status}`);
+    }
 
-    const uploaded = uploadedSnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
-
-    const allResources = [...resources, ...uploaded];
-    const approved = allResources.filter(r => 
-      r.status === 'approved' || !r.status || r.status === ''
-    );
+    const data = await response.json();
+    const approved = data.resources || data;
 
     cachedResources = approved;
     cacheTimestamp = now;

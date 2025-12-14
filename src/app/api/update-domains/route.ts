@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { collection, getDocs, doc, updateDoc, query, where } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,20 +10,20 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Missing parameters' }, { status: 400 });
     }
 
-    const resourcesRef = collection(db, 'ResourceFromA');
-    const q = query(resourcesRef, where('domainJournal', '==', fromDomain));
-    const snapshot = await getDocs(q);
-    
-    let updated = 0;
-    const updatePromises = snapshot.docs.map(async (docSnapshot) => {
-      const docRef = doc(db, 'ResourceFromA', docSnapshot.id);
-      await updateDoc(docRef, { domainJournal: toDomain });
-      updated++;
+    const response = await fetch(`${API_BASE_URL}/resources/update-domains`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fromDomain, toDomain })
     });
-    
-    await Promise.all(updatePromises);
-    
-    return NextResponse.json({ success: true, updated });
+
+    if (!response.ok) {
+      throw new Error(`Backend API error: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return NextResponse.json(result);
   } catch (error) {
     console.error('Error updating domains:', error);
     return NextResponse.json({ error: 'Update failed' }, { status: 500 });

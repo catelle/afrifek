@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { collection, addDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,17 +10,20 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid data' }, { status: 400 });
     }
     
-    let count = 0;
-    for (const resource of resources) {
-      const { id, ...data } = resource;
-      await addDoc(collection(db, 'ResourceFromA'), {
-        ...data,
-        createdAt: new Date()
-      });
-      count++;
+    const response = await fetch(`${API_BASE_URL}/resources/import`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ resources })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Backend API error: ${response.status}`);
     }
-    
-    return NextResponse.json({ success: true, count });
+
+    const result = await response.json();
+    return NextResponse.json(result);
   } catch (error: any) {
     console.error('Import error:', error);
     return NextResponse.json({ error: error.message || 'Import failed' }, { status: 500 });

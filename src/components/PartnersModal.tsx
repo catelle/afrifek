@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { X, Building2, Users, FileText, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { partnersApi } from '@/lib/api-client';
 
 interface PartnersModalProps {
   isOpen: boolean;
@@ -135,10 +136,7 @@ function PartnerForm({ onBack, onClose }: { onBack: () => void; onClose: () => v
     setIsSubmitting(true);
 
     try {
-      const { addDoc, collection } = await import('firebase/firestore');
-      const { db } = await import('@/lib/firebase');
-      
-      await addDoc(collection(db, 'partnerRequests'), {
+      await partnersApi.create({
         ...formData,
         submittedAt: new Date(),
         status: 'pending'

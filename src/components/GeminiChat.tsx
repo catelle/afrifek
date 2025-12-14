@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { resourcesApi } from '@/lib/api-client';
 
 interface Message {
   id: string;
@@ -42,31 +41,21 @@ export default function GeminiChat() {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        // Fetch from both collections
-        const [resourcesSnapshot] = await Promise.all([
-          getDocs(collection(db, 'ResourceFromA')),
+        // Fetch resources
+        const response = await resourcesApi.getAll();
+        const resourcesData = response.data.map((data: any) => ({
+          id: data.id,
+          name: data.name,
+          type: data.type,
+          description: data.description || '',
+          about: data.about || '',
+          country: data.country || '',
+          date: data.date || new Date().toISOString().split('T')[0],
+          status: data.status,
+          source: 'resources'
+        }));
         
-        ]);
-        
-        const resourcesData = resourcesSnapshot.docs.map(doc => {
-          const data = doc.data();
-          return {
-            id: doc.id,
-            name: data.name,
-            type: data.type,
-            description: data.description || '',
-            about: data.about || '',
-            country: data.country || '',
-            date: data.date || new Date().toISOString().split('T')[0],
-            status: data.status,
-            source: 'resources'
-          };
-        });
-        
-      
-        
-        const allDbResources = [...resourcesData];
-        setAllResources(allDbResources);
+        setAllResources(resourcesData);
       } catch (error) {
         console.error('Error fetching resources:', error);
         setAllResources([]);

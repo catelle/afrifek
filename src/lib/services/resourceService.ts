@@ -1,5 +1,4 @@
-import { collection, getDocs, query, where, addDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { resourcesApi } from '@/lib/api-client';
 import { cache } from '@/lib/cache';
 
 export interface ResourceData {
@@ -30,15 +29,28 @@ export class ResourceService {
         return [];
       }
 
-      const [manualResources, uploadedResources] = await Promise.all([
-        this.fetchManualResources(),
-        this.fetchUploadedResources()
-      ]);
+      const response = await resourcesApi.getAll({ status: 'approved' });
+      const allResources = response.data.map((data: any) => ({
+        id: data.id,
+        name: data.name || '',
+        type: data.type || 'article',
+        description: data.description || '',
+        about: data.about,
+        link: data.link || '',
+        country: data.country || '',
+        language: data.language || 'fr',
+        image: data.image || this.getDefaultImage(data.type),
+        date: data.date || new Date().toISOString().split('T')[0],
+        status: data.status || 'approved',
+        createdAt: new Date(data.createdAt || Date.now()),
+        source: 'api',
+        ...data
+      })) as ResourceData[];
 
-      const allResources = [...manualResources, ...uploadedResources].sort(this.sortResources);
-      await cache.set('all-resources', allResources);
+      const sortedResources = allResources.sort(this.sortResources);
+      await cache.set('all-resources', sortedResources);
       
-      return allResources;
+      return sortedResources;
     } catch (error) {
       console.error('Error fetching resources:', error);
       return [];
@@ -46,64 +58,14 @@ export class ResourceService {
   }
 
   static async createResource(resourceData: Omit<ResourceData, 'id' | 'createdAt'>): Promise<string> {
-    const docRef = await addDoc(collection(db, 'resources'), {
+    const response = await resourcesApi.create({
       ...resourceData,
       createdAt: new Date(),
       status: 'pending'
     });
     
     await cache.delete('all-resources');
-    return docRef.id;
-  }
-
-  private static async fetchManualResources(): Promise<ResourceData[]> {
-    const snapshot = await getDocs(
-      query(collection(db, 'resources'), where('status', '==', 'approved'))
-    );
-    
-    return snapshot.docs.map(doc => {
-      const data = doc.data();
-      return {
-        id: doc.id,
-        name: data.name || '',
-        type: data.type || 'article',
-        description: data.description || '',
-        about: data.about,
-        link: data.link || '',
-        country: data.country || '',
-        language: data.language || 'fr',
-        image: data.image || this.getDefaultImage(data.type),
-        date: data.date || new Date().toISOString().split('T')[0],
-        status: data.status || 'approved',
-        createdAt: data.createdAt?.toDate() || new Date(),
-        source: 'manual',
-        ...data
-      } as ResourceData;
-    });
-  }
-
-  private static async fetchUploadedResources(): Promise<ResourceData[]> {
-    const snapshot = await getDocs(collection(db, 'FormuploadedResult'));
-    
-    return snapshot.docs.map(doc => {
-      const data = doc.data();
-      return {
-        id: doc.id,
-        name: data.name || '',
-        type: data.type || 'article',
-        description: data.description || '',
-        about: data.about,
-        link: data.link || '',
-        country: data.country || '',
-        language: data.language || 'fr',
-        image: data.image || this.getDefaultImage(data.type),
-        date: data.date || new Date().toISOString().split('T')[0],
-        status: data.status || 'approved',
-        createdAt: data.createdAt?.toDate() || new Date(),
-        source: 'xlsx',
-        ...data
-      } as ResourceData;
-    });
+    return response.data.id;
   }
 
   private static getDefaultImage(type: string): string {

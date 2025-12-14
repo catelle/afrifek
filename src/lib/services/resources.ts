@@ -1,7 +1,7 @@
-import { collection, getDocs, query, where, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 import { cache } from '@/lib/cache';
 import { Resource, ResourceFilters, ResourceStats } from '@/lib/types/resource';
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
 
 export class ResourceService {
   private static readonly CACHE_KEY = 'all-resources';
@@ -15,8 +15,8 @@ export class ResourceService {
         return this.applyFilters(cachedData.data, filters);
       }
 
-      // Fetch from Firebase
-      const resources = await this.fetchFromFirebase();
+      // Fetch from backend API
+      const resources = await this.fetchFromAPI();
       
       // Cache the data
       await cache.set(this.CACHE_KEY, {
@@ -46,16 +46,27 @@ export class ResourceService {
 
   static async createResource(resourceData: Omit<Resource, 'id' | 'createdAt'>): Promise<string> {
     try {
-      const docRef = await addDoc(collection(db, 'resources'), {
-        ...resourceData,
-        createdAt: new Date(),
-        status: 'pending'
+      const response = await fetch(`${API_BASE_URL}/resources`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...resourceData,
+          status: 'pending'
+        })
       });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const result = await response.json();
       
       // Invalidate cache
       await cache.delete(this.CACHE_KEY);
       
-      return docRef.id;
+      return result.id;
     } catch (error) {
       console.error('Error creating resource:', error);
       throw new Error('Failed to create resource');
@@ -64,11 +75,17 @@ export class ResourceService {
 
   static async updateResource(id: string, updates: Partial<Resource>): Promise<void> {
     try {
-      const resourceRef = doc(db, 'resources', id);
-      await updateDoc(resourceRef, {
-        ...updates,
-        updatedAt: new Date()
+      const response = await fetch(`${API_BASE_URL}/resources/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updates)
       });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
       
       // Invalidate cache
       await cache.delete(this.CACHE_KEY);
@@ -80,7 +97,13 @@ export class ResourceService {
 
   static async deleteResource(id: string): Promise<void> {
     try {
-      await deleteDoc(doc(db, 'resources', id));
+      const response = await fetch(`${API_BASE_URL}/resources/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
       
       // Invalidate cache
       await cache.delete(this.CACHE_KEY);
@@ -109,58 +132,28 @@ export class ResourceService {
       .replace(/(^-|-$)/g, '');
   }
 
-  private static async fetchFromFirebase(): Promise<Resource[]> {
-    const [manualResources, uploadedResources] = await Promise.all([
-      this.fetchManualResources(),
-      this.fetchUploadedResources()
-    ]);
-
-    return [...manualResources, ...uploadedResources].sort(this.sortResources);
-  }
-
-  private static async fetchManualResources(): Promise<Resource[]> {
-    const snapshot = await getDocs(
-      query(collection(db, 'resources'), where('status', '==', 'approved'))
-    );
+  private static async fetchFromAPI(): Promise<Resource[]> {
+    const response = await fetch(`${API_BASE_URL}/resources`);
     
-    return snapshot.docs.map(doc => {
-      const data = doc.data();
-      return {
-        id: doc.id,
-        ...data,
-        name: data.name || '',
-        type: data.type || 'article',
-        description: data.description || '',
-        link: data.link || '',
-        country: data.country || '',
-        language: data.language || 'fr',
-        date: data.date || new Date().toISOString().split('T')[0],
-        status: data.status || 'approved',
-        createdAt: data.createdAt?.toDate() || new Date()
-      } as any;
-    });
-  }
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
 
-  private static async fetchUploadedResources(): Promise<Resource[]> {
-    const snapshot = await getDocs(collection(db, 'FormuploadedResult'));
+    const data = await response.json();
+    const resources = data.resources || data;
     
-    return snapshot.docs.map(doc => {
-      const data = doc.data();
-      return {
-        id: doc.id,
-        ...data,
-        name: data.name || '',
-        type: data.type || 'article',
-        description: data.description || '',
-        link: data.link || '',
-        country: data.country || '',
-        language: data.language || 'fr',
-        date: data.date || new Date().toISOString().split('T')[0],
-        status: data.status || 'approved',
-        createdAt: data.createdAt?.toDate() || new Date(),
-        source: 'xlsx'
-      } as any;
-    });
+    return resources.map((resource: any) => ({
+      ...resource,
+      name: resource.name || '',
+      type: resource.type || 'article',
+      description: resource.description || '',
+      link: resource.link || '',
+      country: resource.country || '',
+      language: resource.language || 'fr',
+      date: resource.date || new Date().toISOString().split('T')[0],
+      status: resource.status || 'approved',
+      createdAt: resource.createdAt ? new Date(resource.createdAt) : new Date()
+    })).sort(this.sortResources);
   }
 
   private static applyFilters(resources: Resource[], filters?: ResourceFilters): Resource[] {
